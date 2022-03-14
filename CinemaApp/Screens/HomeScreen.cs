@@ -15,7 +15,12 @@ namespace CinemaApp.Screens
         //Methods
         public override void run()
         {
-            WriteLine("HomeScreen is running");
+            WriteLine(@"
+██████  ███████     ██████  ██  ██████  ███████ 
+██   ██ ██          ██   ██ ██ ██    ██ ██      
+██   ██ █████       ██████  ██ ██    ██ ███████ 
+██   ██ ██          ██   ██ ██ ██    ██      ██ 
+██████  ███████     ██████  ██  ██████  ███████");
             ConsoleUtils.WaitForKeyPress();
         }
     }   
