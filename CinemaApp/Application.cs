@@ -7,18 +7,18 @@ namespace CinemaApp
     class Application
     {
         //Fields
-        public HomeScreen MyHomeScreen;
+        public HomeScreen homeScreen;
 
         //Constructor
         public Application()
         {
-            MyHomeScreen = new HomeScreen(this);
+            homeScreen = new HomeScreen(this);
         }
 
         //Methods
         public void Start()
         {
-            WriteLine("The Application is starting");
+            homeScreen.run();
             ConsoleUtils.WaitForKeyPress();
         }
     }
