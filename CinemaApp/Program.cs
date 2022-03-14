@@ -1,4 +1,5 @@
 ﻿using System;
+using static System.Console;
 
 namespace CinemaApp
 {
@@ -6,7 +7,8 @@ namespace CinemaApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Application App = new Application();
+            App.Start();
         }
     }
 }
