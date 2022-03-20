@@ -15,12 +15,17 @@ namespace CinemaApp.Screens
         //Methods
         public override void run()
         {
-            WriteLine(@"
+            string titel = @"
 ██████  ███████     ██████  ██  ██████  ███████ 
 ██   ██ ██          ██   ██ ██ ██    ██ ██      
 ██   ██ █████       ██████  ██ ██    ██ ███████ 
 ██   ██ ██          ██   ██ ██ ██    ██      ██ 
-██████  ███████     ██████  ██  ██████  ███████");
+██████  ███████     ██████  ██  ██████  ███████";
+
+            string[] options = {"Films", "Evenementen", "Bioscopen", "Log-in", "Mijn Reserveringen", "Abonnement"};
+            Menu HomeScreenMenu = new Menu(options, titel, 0);
+            HomeScreenMenu.Run();
+
             ConsoleUtils.WaitForKeyPress();
         }
     }   
