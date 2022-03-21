@@ -8,7 +8,7 @@ namespace CinemaApp.Screens
         //Fields
 
         //Constructor
-        public OrderConfirmationScreen(Application app) : base(app) //Neemt appliaction van de parent class
+        public OrderConfirmationScreen(Application app) : base(app) // Neemt appliaction van de parent class
         {
         }
 
