@@ -15,26 +15,25 @@ namespace CinemaApp.Screens
         //Methods
         public override void run()
         {
-            string titel = @"Titel";
-
-            string[] options = {"Optie 1", "Optie 2", "Optie 3"};
+            Clear();
+            string titel = "";
+            string[] bioscoopnaam = new string[]{"De BIOS Rotterdam", "De BIOS Den Haag", "De BIOS Amsterdam", "De BIOS Utrecht", "De BIOS Eindhoven"};
+            string[] adres = new string[]{"Ahoyweg 12, 3084 BA Rotterdam", "President Kennedylaan 10, 2517 JK Den Haag", "Javakade 30, 1019 SZ Amsterdam", "Van Deventerlaan 20, 3528 AE Utrecht", "Willemstraat 40, 5616 GE Eindhoven"};
+            for(int i = 0; i < bioscoopnaam.Length && i < adres.Length; i++)
+            {
+                titel += $"- {bioscoopnaam[i]} \n  {adres[i]} \n";
+            }
+            
+            string[] options = {"Terug"};
             Menu OverviewCinemaMenu = new Menu(options, titel, 0);
             int ChosenOption = OverviewCinemaMenu.Run();
 
             switch(ChosenOption)
             {
                 case 0:
-                    //code
+                    App.homeScreen.run();
                     break;
-                case 1:
-                    //code
-                    break;
-                case 2:
-                    //code
-                    break;      
             }
-
-            ConsoleUtils.WaitForKeyPress();
         }
     }   
 }

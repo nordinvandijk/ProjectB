@@ -35,7 +35,7 @@ namespace CinemaApp.Screens
                     //code
                     break;
                 case 2:
-                    //code
+                    App.overviewCinemaScreen.run();
                     break;
                 case 3:
                     //code
