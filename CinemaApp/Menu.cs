@@ -53,7 +53,7 @@ namespace CinemaApp
                 ConsoleKeyInfo keyInfo = ReadKey(true); //ReadKey geeft ConsoleKeyInfo, onder andere welke key ingedrukt is
                 keyPressed = keyInfo.Key; //keyInfo.Key pakt uit de keyInfo welke key er ingedrukt is
                 
-                if (keyPressed == ConsoleKey.UpArrow) //checkt of up arrow geklikt wordt
+                if (keyPressed == ConsoleKey.UpArrow || keyPressed == ConsoleKey.W) //checkt of up arrow geklikt wordt
                 {
                     SelectedOption--;
                     if (SelectedOption < 0) // zorgt dat selectedOption niet out of index gaat
@@ -61,7 +61,7 @@ namespace CinemaApp
                         SelectedOption = Options.Length - 1;
                     }
                 }
-                if (keyPressed == ConsoleKey.DownArrow)
+                if (keyPressed == ConsoleKey.DownArrow || keyPressed == ConsoleKey.S)
                 {
                     SelectedOption++;
                     if (SelectedOption >= Options.Length)

@@ -24,7 +24,30 @@ namespace CinemaApp.Screens
 
             string[] options = {"Films", "Evenementen", "Bioscopen", "Log-in", "Mijn Reserveringen", "Abonnement"};
             Menu HomeScreenMenu = new Menu(options, titel, 0);
-            HomeScreenMenu.Run();
+            int ChosenOption = HomeScreenMenu.Run();
+
+            switch(ChosenOption)
+            {
+                case 0:
+                    App.filmOverviewScreen.run(); // run object filmOverviewScreen uit App object
+                    break;
+                case 1:
+                    //code
+                    break;
+                case 2:
+                    //code
+                    break;
+                case 3:
+                    //code
+                    break;
+                case 4:
+                    //code
+                    break;
+                case 5:
+                    //code
+                    break;
+                
+            }
 
             ConsoleUtils.WaitForKeyPress();
         }
