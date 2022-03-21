@@ -1,0 +1,90 @@
+[
+  {
+    "Title": "test",
+    "Description": "leuke film",
+    "ReleaseDate": "01-01-2000",
+    "Genre": [
+      "romantic",
+      "thriller"
+    ],
+    "MinimumAge": 12,
+    "Kijkwijzer": [
+      "geweld"
+    ]
+  },
+  {
+    "Title": "test1",
+    "Description": "leuke film",
+    "ReleaseDate": "01-01-2000",
+    "Genre": [
+      "romantic",
+      "thriller"
+    ],
+    "MinimumAge": 12,
+    "Kijkwijzer": [
+      "geweld"
+    ]
+  },
+  {
+    "Title": "test2",
+    "Description": "leuke film",
+    "ReleaseDate": "01-01-2000",
+    "Genre": [
+      "romantic",
+      "thriller"
+    ],
+    "MinimumAge": 12,
+    "Kijkwijzer": [
+      "geweld"
+    ]
+  },
+  {
+    "Title": "test3",
+    "Description": "leuke film",
+    "ReleaseDate": "01-01-2000",
+    "Genre": [
+      "romantic",
+      "thriller"
+    ],
+    "MinimumAge": 12,
+    "Kijkwijzer": [
+      "geweld"
+    ]
+  },
+  {
+    "Title": "test",
+    "Description": "",
+    "ReleaseDate": "",
+    "Genre": [
+      "test"
+    ],
+    "MinimumAge": 1,
+    "Kijkwijzer": [
+      "test"
+    ]
+  },
+  {
+    "Title": "test",
+    "Description": "",
+    "ReleaseDate": "",
+    "Genre": [
+      "test"
+    ],
+    "MinimumAge": 1,
+    "Kijkwijzer": [
+      "test"
+    ]
+  },
+  {
+    "Title": "test",
+    "Description": "",
+    "ReleaseDate": "",
+    "Genre": [
+      "test"
+    ],
+    "MinimumAge": 1,
+    "Kijkwijzer": [
+      "test"
+    ]
+  }
+]

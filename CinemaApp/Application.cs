@@ -24,6 +24,8 @@ namespace CinemaApp
         public SeatsOverviewScreen seatsOverviewScreen;
         public SubscriptionScreen subscriptionScreen;
 
+        public MovieManager movieManager;
+
 
         //Constructor
         public Application()
@@ -44,6 +46,8 @@ namespace CinemaApp
             reservationOverviewScreen = new ReservationOverviewScreen(this);
             seatsOverviewScreen = new SeatsOverviewScreen(this);
             subscriptionScreen = new SubscriptionScreen(this);
+
+            movieManager = new MovieManager();
         }
 
         //Methods
