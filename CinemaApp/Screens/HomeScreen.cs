@@ -21,7 +21,6 @@ namespace CinemaApp.Screens
 ██   ██ █████       ██████  ██ ██    ██ ███████ 
 ██   ██ ██          ██   ██ ██ ██    ██      ██ 
 ██████  ███████     ██████  ██  ██████  ███████");
-            ConsoleUtils.WaitForKeyPress();
         }
     }   
 }

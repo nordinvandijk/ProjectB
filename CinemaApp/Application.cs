@@ -8,17 +8,20 @@ namespace CinemaApp
     {
         //Fields
         public HomeScreen homeScreen;
-
+        public CinemasScreen cinemasScreen;
         //Constructor
         public Application()
         {
             homeScreen = new HomeScreen(this);
+            cinemasScreen = new CinemasScreen(this);
         }
 
         //Methods
         public void Start()
         {
             homeScreen.run();
+            ConsoleUtils.WaitForKeyPress();
+            cinemasScreen.run();
             ConsoleUtils.WaitForKeyPress();
         }
     }
