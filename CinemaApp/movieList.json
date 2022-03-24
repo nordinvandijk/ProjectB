@@ -1,90 +1,59 @@
 [
   {
-    "Title": "test",
-    "Description": "leuke film",
-    "ReleaseDate": "01-01-2000",
+    "Title": "Pulp Fiction",
+    "Description": "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+    "ReleaseDate": "01-12-1994",
     "Genre": [
-      "romantic",
-      "thriller"
+      "Misdaad",
+      "Drama"
+    ],
+    "MinimumAge": 16,
+    "Kijkwijzer": [
+      "Geweld",
+      "Grof taalgebruik"
+    ]
+  },
+  {
+    "Title": "Inception",
+    "Description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O., but his tragic past may doom the project and his team to disaster.",
+    "ReleaseDate": "22-07-2010",
+    "Genre": [
+      "Actie",
+      "Avontuur",
+      "Science Fiction"
     ],
     "MinimumAge": 12,
     "Kijkwijzer": [
-      "geweld"
+      "Geweld",
+      "Angst"
     ]
   },
   {
-    "Title": "test1",
-    "Description": "leuke film",
-    "ReleaseDate": "01-01-2000",
+    "Title": "The Matrix",
+    "Description": "When a beautiful stranger leads computer hacker Neo to a forbidding underworld, he discovers the shocking truth--the life he knows is the elaborate deception of an evil cyber-intelligence.",
+    "ReleaseDate": "17-06-1999",
     "Genre": [
-      "romantic",
-      "thriller"
+      "Actie",
+      "Science Fiction"
     ],
     "MinimumAge": 12,
     "Kijkwijzer": [
-      "geweld"
+      "Geweld",
+      "Angst"
     ]
   },
   {
-    "Title": "test2",
-    "Description": "leuke film",
-    "ReleaseDate": "01-01-2000",
+    "Title": "The Color Purple",
+    "Description": "A black Southern woman struggles to find her identity after suffering abuse from her father and others over four decades.",
+    "ReleaseDate": "10-10-1986",
     "Genre": [
-      "romantic",
-      "thriller"
+      "Drama"
     ],
     "MinimumAge": 12,
     "Kijkwijzer": [
-      "geweld"
-    ]
-  },
-  {
-    "Title": "test3",
-    "Description": "leuke film",
-    "ReleaseDate": "01-01-2000",
-    "Genre": [
-      "romantic",
-      "thriller"
-    ],
-    "MinimumAge": 12,
-    "Kijkwijzer": [
-      "geweld"
-    ]
-  },
-  {
-    "Title": "test",
-    "Description": "",
-    "ReleaseDate": "",
-    "Genre": [
-      "test"
-    ],
-    "MinimumAge": 1,
-    "Kijkwijzer": [
-      "test"
-    ]
-  },
-  {
-    "Title": "test",
-    "Description": "",
-    "ReleaseDate": "",
-    "Genre": [
-      "test"
-    ],
-    "MinimumAge": 1,
-    "Kijkwijzer": [
-      "test"
-    ]
-  },
-  {
-    "Title": "test",
-    "Description": "",
-    "ReleaseDate": "",
-    "Genre": [
-      "test"
-    ],
-    "MinimumAge": 1,
-    "Kijkwijzer": [
-      "test"
+      "Geweld",
+      "Angst",
+      "Discriminatie"
     ]
   }
 ]

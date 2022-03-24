@@ -49,8 +49,6 @@ namespace CinemaApp.Screens
                     break;
                 
             }
-
-            ConsoleUtils.WaitForKeyPress();
         }
     }   
 }
