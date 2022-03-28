@@ -1,0 +1,32 @@
+[
+  {
+    "Username": "hans ",
+    "Password": "willen ",
+    "EmailAdress": "123"
+  },
+  {
+    "Username": "hans ",
+    "Password": "willen ",
+    "EmailAdress": "123"
+  },
+  {
+    "Username": "hans",
+    "Password": "willem2",
+    "EmailAdress": "hoe?"
+  },
+  {
+    "Username": "is",
+    "Password": "123",
+    "EmailAdress": "1234"
+  },
+  {
+    "Username": "nathan",
+    "Password": "nathan123",
+    "EmailAdress": "nathan@gmail.com"
+  },
+  {
+    "Username": "hoe?",
+    "Password": "wat",
+    "EmailAdress": "waarom"
+  }
+]
