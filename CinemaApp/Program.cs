@@ -7,6 +7,7 @@ namespace CinemaApp
     {
         static void Main(string[] args)
         {
+            Console.CursorVisible = false;
             Application App = new Application();
             App.Start();
         }

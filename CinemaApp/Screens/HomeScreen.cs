@@ -23,7 +23,7 @@ namespace CinemaApp.Screens
 ██║░░██║███████╗░░░██║░░░  ██║░░░░░██║███████╗██║░╚═╝░██║██║░░██║╚██████╔╝██║██████╔╝
 ╚═╝░░╚═╝╚══════╝░░░╚═╝░░░  ╚═╝░░░░░╚═╝╚══════╝╚═╝░░░░░╚═╝╚═╝░░╚═╝░╚═════╝░╚═╝╚═════╝░";
 
-            string[] options = {"Films", "Evenementen", "Bioscopen", "Log-in", "Mijn Reserveringen", "Abonnement"};
+            string[] options = {"Films", "Evenementen", "Bioscopen", "Log-in", "Mijn Reserveringen", "Abonnement", "Afsluiten"};
             Menu HomeScreenMenu = new Menu(options, titel, 0);
             int ChosenOption = HomeScreenMenu.Run();
 
@@ -47,10 +47,10 @@ namespace CinemaApp.Screens
                 case 5:
                     //code
                     break;
-                
+                case 6:
+                    Environment.Exit(0);
+                    break;
             }
-
-            ConsoleUtils.WaitForKeyPress();
         }
     }   
 }
