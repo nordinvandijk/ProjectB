@@ -23,7 +23,7 @@ namespace CinemaApp.Screens
                 optionsList.Add(mov.Title);
             }
             
-            optionsList.Add("Terug");
+            optionsList.Add("\nTerug");
 
             string[] options = optionsList.ToArray();
             Menu FilmOverviewMenu = new Menu(options, titel, 0);

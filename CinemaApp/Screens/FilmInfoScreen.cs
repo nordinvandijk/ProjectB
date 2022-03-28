@@ -26,24 +26,16 @@ namespace CinemaApp.Screens
                            "\nGenre: " + string.Join(", ", movie.Genre) + "\nKijkwijzer: " + movie.MinimumAge + 
                            (movie.Kijkwijzer.Length != 0 ? ", " : "") + string.Join(", ", movie.Kijkwijzer);
 
-            string[] options = {"Optie 1", "Optie 2", "Optie 3"};
+            string[] options = {"Filmoverzicht"};
             Menu FilmInfoMenu = new Menu(options, titel, 0);
             int ChosenOption = FilmInfoMenu.Run();
 
             switch(ChosenOption)
             {
                 case 0:
-                    //code
-                    break;
-                case 1:
-                    //code
-                    break;
-                case 2:
-                    //code
+                    App.filmOverviewScreen.run();
                     break;      
             }
-
-            ConsoleUtils.WaitForKeyPress();
         }
     }   
 }
