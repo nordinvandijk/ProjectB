@@ -1,8 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Net.Http;
-using System.Threading.Tasks;
 using static System.Console;
 using Newtonsoft.Json;
 
@@ -28,10 +26,10 @@ namespace CinemaApp.Screens
             switch(ChosenOption)
             {
                 case 0:
-                    LogInFunction(); 
+                    //LogInFunction(); 
                     break;
                 case 1:
-                    CreateAccount();
+                    //CreateAccount();
                     break;
                 case 2:
                     App.homeScreen.run();
@@ -41,30 +39,30 @@ namespace CinemaApp.Screens
 
             ConsoleUtils.WaitForKeyPress();
         }
-        public void LogInFunction(){
-           Write("type je gebruikersnaam ");
-           string userName = Console.ReadLine();
-           Write("type je wachtwoord ");
-           string Password = Console.ReadLine();
-        }
-        public void CreateAccount(){
+        // public void LogInFunction(){
+        //    Write("type je gebruikersnaam ");
+        //    string userName = Console.ReadLine();
+        //    Write("type je wachtwoord ");
+        //    string Password = Console.ReadLine();
+        // }
+        // public void CreateAccount(){
 
-           Write("type je gebruikersnaam ");
-           string userName = ReadLine();
-           Write("type je wachtwoord ");
-           string password = ReadLine();
-           Write("type je email ");
-           string Email = ReadLine();
-           string url = @"login.json";
-           List<LoginData> loginlist = JsonConvert.DeserializeObject<List<LoginData>>(File.ReadAllText(url));
-           loginlist.Add(new LoginData()
-           {
-              Username = userName,
-              Password = password,
-              EmailAdress= Email,
-           });
-           var convertedJson = JsonConvert.SerializeObject(loginlist,Formatting.Indented);
-           File.WriteAllText(url,convertedJson);
+        //    Write("type je gebruikersnaam ");
+        //    string userName = ReadLine();
+        //    Write("type je wachtwoord ");
+        //    string password = ReadLine();
+        //    Write("type je email ");
+        //    string Email = ReadLine();
+        //    string url = @"login.json";
+        //    List<LoginData> loginlist = JsonConvert.DeserializeObject<List<LoginData>>(File.ReadAllText(url));
+        //    loginlist.Add(new LoginData()
+        //    {
+        //       Username = userName,
+        //       Password = password,
+        //       EmailAdress= Email,
+        //    });
+        //    var convertedJson = JsonConvert.SerializeObject(loginlist,Formatting.Indented);
+        //    File.WriteAllText(url,convertedJson);
            
            //var convertedjson = JsonConvert.SerializeObject() 
         //    LoginData loginData = new LoginData()
@@ -92,8 +90,8 @@ namespace CinemaApp.Screens
         //    strData = File.ReadAllText(@"Login.json");
         //    var resultData= JsonConvert.DeserializeObject<LoginData>(strData);    
         //    List<LoginData> listLogins = JsonConvert.DeserializeObject<List<LoginData>>(@"Login.Data");
-        }
+        //}
     }
-} 
+}
 
 
