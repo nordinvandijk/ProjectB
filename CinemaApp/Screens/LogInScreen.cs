@@ -1,8 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
 using static System.Console;
-using Newtonsoft.Json;
 
 namespace CinemaApp.Screens
 {
@@ -24,7 +20,7 @@ namespace CinemaApp.Screens
 
             while (MenuBool){
 
-                string titel = @"Titel";
+                string titel = @"Log-in";
                 string[] options = {$"Gebruikersnaam : {gebruikersnaam}", $"Wachtwoord : {wachtwoord}", "Geen account?\n Aanmelden", "Bevestiggen", "Terug"};
                 Menu LogInMenu = new Menu(options, titel, 0);
                 int ChosenOption = LogInMenu.Run();
@@ -34,13 +30,17 @@ namespace CinemaApp.Screens
                     case 0:
                         Clear();
                         WriteLine("Voer je gebruikersnaam in: ");
+                        CursorVisible = true;
                         gebruikersnaam = ReadLine();
+                        CursorVisible = false;
 
                         break;
                     case 1:
                         Clear();
                         WriteLine("Voer je wachwoord in: ");
+                        CursorVisible = true;
                         wachtwoord = ReadLine();
+                        CursorVisible = false;
                         break;
                     case 2:
                         MenuBool = false;
@@ -61,58 +61,6 @@ namespace CinemaApp.Screens
                 ConsoleUtils.WaitForKeyPress();
             }
         }
-        // public void LogInFunction(){
-        //    Write("type je gebruikersnaam ");
-        //    string userName = Console.ReadLine();
-        //    Write("type je wachtwoord ");
-        //    string Password = Console.ReadLine();
-        // }
-        // public void CreateAccount(){
-
-        //    Write("type je gebruikersnaam ");
-        //    string userName = ReadLine();
-        //    Write("type je wachtwoord ");
-        //    string password = ReadLine();
-        //    Write("type je email ");
-        //    string Email = ReadLine();
-        //    string url = @"login.json";
-        //    List<LoginData> loginlist = JsonConvert.DeserializeObject<List<LoginData>>(File.ReadAllText(url));
-        //    loginlist.Add(new LoginData()
-        //    {
-        //       Username = userName,
-        //       Password = password,
-        //       EmailAdress= Email,
-        //    });
-        //    var convertedJson = JsonConvert.SerializeObject(loginlist,Formatting.Indented);
-        //    File.WriteAllText(url,convertedJson);
-           
-           //var convertedjson = JsonConvert.SerializeObject() 
-        //    LoginData loginData = new LoginData()
-        //        {
-        //         Username = userName,
-        //         Password = password,
-        //         EmailAdress = Email,
-        //         LoginList = new List<string>(){
-        //             userName,
-        //             password,
-        //             Email,
-        //         }
-        //        };
-
-           
-        //   var convertedList = JsonConvert.SerializeObject(loginData);
-        //    string strData = JsonConvert.SerializeObject(loginData);
-        //    File.WriteAllText(@"Login.json",strData);
-        //    strData = String.Empty;
-        //    strData = File.ReadAllText(@"Login.json");
-        //    var dic = JsonConvert.DeserializeObject<IDictionary>(strData,strData);
-        //    var data = JsonConvert.DeserializeObject<LoginData>(strData);
-        //    WriteLine(data.ToString());
-        //    strData = String.Empty;
-        //    strData = File.ReadAllText(@"Login.json");
-        //    var resultData= JsonConvert.DeserializeObject<LoginData>(strData);    
-        //    List<LoginData> listLogins = JsonConvert.DeserializeObject<List<LoginData>>(@"Login.Data");
-        //}
     }
 }
 
