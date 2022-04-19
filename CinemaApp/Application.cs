@@ -25,6 +25,7 @@ namespace CinemaApp
         public SubscriptionScreen subscriptionScreen;
 
         public MovieManager movieManager;
+        public UserManager userManager;
 
 
         //Constructor
@@ -47,12 +48,15 @@ namespace CinemaApp
             seatsOverviewScreen = new SeatsOverviewScreen(this);
             subscriptionScreen = new SubscriptionScreen(this);
             movieManager = new MovieManager();
+            userManager = new UserManager();
         }
 
         //Methods
         public void Start()
         {
             homeScreen.run();
+            Clear();
+            userManager.Test();
             ConsoleUtils.WaitForKeyPress();
         }
     }
