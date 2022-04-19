@@ -49,16 +49,16 @@ namespace CinemaApp.Screens
                     case 3:
                         App.userManager.Login(gebruikersnaam, wachtwoord);
                         if (App.userManager.currentUser != null){
+                            ConsoleUtils.WaitForKeyPress();
                             App.homeScreen.run();
                         }
+                        ConsoleUtils.WaitForKeyPress();
                         break;
                     case 4:
                         MenuBool = false;
                         App.homeScreen.run();
                         break;
                 }
-
-                ConsoleUtils.WaitForKeyPress();
             }
         }
     }
