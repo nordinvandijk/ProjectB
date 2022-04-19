@@ -15,26 +15,44 @@ namespace CinemaApp.Screens
         //Methods
         public override void run()
         {
-            string titel = @"Titel";
+            bool MenuBool = true;
+            string email = "<leeg>";
+            string wachtwoord = "<leeg>";
 
-            string[] options = {"Optie 1", "Optie 2", "Optie 3"};
-            Menu LogInMenu = new Menu(options, titel, 0);
-            int ChosenOption = LogInMenu.Run();
+            while (MenuBool){
 
-            switch(ChosenOption)
-            {
-                case 0:
-                    //code
-                    break;
-                case 1:
-                    //code
-                    break;
-                case 2:
-                    //code
-                    break;      
+                string titel = @"Titel";
+                string[] options = {$"Email : {email}", $"Wachtwoord : {wachtwoord}", "Geen account?\n Aanmelden", "Bevestiggen", "Terug"};
+                Menu LogInMenu = new Menu(options, titel, 0);
+                int ChosenOption = LogInMenu.Run();
+
+                switch(ChosenOption)
+                {
+                    case 0:
+                        Clear();
+                        WriteLine("Voer je Email in: : ");
+                        email = ReadLine();
+
+                        break;
+                    case 1:
+                        Clear();
+                        WriteLine("Voer je wachwoord in: : ");
+                        wachtwoord = ReadLine();
+                        break;
+                    case 2:
+                        MenuBool = false;
+                        App.accountCreationScreen.run();
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        MenuBool = false;
+                        App.homeScreen.run();
+                        break;
+                }
+
+                ConsoleUtils.WaitForKeyPress();
             }
-
-            ConsoleUtils.WaitForKeyPress();
         }
     }   
 }
