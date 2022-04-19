@@ -19,13 +19,13 @@ namespace CinemaApp.Screens
         public override void run()
         {
             bool MenuBool = true;
-            string email = "<leeg>";
+            string gebruikersnaam = "<leeg>";
             string wachtwoord = "<leeg>";
 
             while (MenuBool){
 
                 string titel = @"Titel";
-                string[] options = {$"Email : {email}", $"Wachtwoord : {wachtwoord}", "Geen account?\n Aanmelden", "Bevestiggen", "Terug"};
+                string[] options = {$"Gebruikersnaam : {gebruikersnaam}", $"Wachtwoord : {wachtwoord}", "Geen account?\n Aanmelden", "Bevestiggen", "Terug"};
                 Menu LogInMenu = new Menu(options, titel, 0);
                 int ChosenOption = LogInMenu.Run();
 
@@ -33,13 +33,13 @@ namespace CinemaApp.Screens
                 {
                     case 0:
                         Clear();
-                        WriteLine("Voer je Email in: : ");
-                        email = ReadLine();
+                        WriteLine("Voer je gebruikersnaam in: ");
+                        gebruikersnaam = ReadLine();
 
                         break;
                     case 1:
                         Clear();
-                        WriteLine("Voer je wachwoord in: : ");
+                        WriteLine("Voer je wachwoord in: ");
                         wachtwoord = ReadLine();
                         break;
                     case 2:
@@ -47,6 +47,10 @@ namespace CinemaApp.Screens
                         App.accountCreationScreen.run();
                         break;
                     case 3:
+                        App.userManager.Login(gebruikersnaam, wachtwoord);
+                        if (App.userManager.currentUser != null){
+                            App.homeScreen.run();
+                        }
                         break;
                     case 4:
                         MenuBool = false;

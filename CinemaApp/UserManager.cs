@@ -8,7 +8,7 @@ namespace CinemaApp
 {
     class UserManager
     {
-        public User currentUser;
+        public User currentUser = null;
         private string jsonFile = "userList.json";
         private List<User> users = new List<User>();
 
@@ -27,17 +27,26 @@ namespace CinemaApp
 
         public void Login(string username, string password){
             LoadJson();
+            bool correctUsername = false;
             foreach (User user in users) {
                 if (user.Username == username) {
+                    correctUsername = true;
                     if (user.Password == password) {
                         currentUser = user;
+                        Clear();
                         WriteLine("Ingelogd");
                         break;
                     }
+                    Clear();
                     WriteLine("Verkeerd wachtwoord");
                     break;
                 }
             }
+            if (!correctUsername){
+                Clear();
+                WriteLine("Dit is geen geldige gebruikersnaam");
+            }
+
             users = new List<User>(); // maakt de users weer leeg voor veiligheid
         }
 
