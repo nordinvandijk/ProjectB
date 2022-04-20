@@ -1,18 +1,5 @@
 [
   {
-    "Title": "test",
-    "Description": "leuke film",
-    "ReleaseDate": "01-01-2000",
-    "Genre": [
-      "romantic",
-      "thriller"
-    ],
-    "MinimumAge": 12,
-    "Kijkwijzer": [
-      "geweld"
-    ]
-  },
-  {
     "Title": "test1",
     "Description": "leuke film",
     "ReleaseDate": "01-01-2000",
@@ -52,39 +39,45 @@
     ]
   },
   {
-    "Title": "test",
-    "Description": "",
-    "ReleaseDate": "",
+    "Title": "Spiderman",
+    "Description": "test1",
+    "ReleaseDate": "20-20-20",
     "Genre": [
-      "test"
+      "Spiderman"
     ],
-    "MinimumAge": 1,
+    "MinimumAge": 18,
     "Kijkwijzer": [
-      "test"
+      null
     ]
   },
   {
-    "Title": "test",
-    "Description": "",
-    "ReleaseDate": "",
+    "Title": "Titletest",
+    "Description": "Desctest",
+    "ReleaseDate": "2022",
     "Genre": [
-      "test"
+      "Titletest",
+      "Titletest",
+      "Titletest"
     ],
-    "MinimumAge": 1,
+    "MinimumAge": 13,
     "Kijkwijzer": [
-      "test"
+      null,
+      null,
+      null
     ]
   },
   {
-    "Title": "test",
-    "Description": "",
-    "ReleaseDate": "",
+    "Title": "1",
+    "Description": "1",
+    "ReleaseDate": "1",
     "Genre": [
-      "test"
+      "1",
+      "1"
     ],
-    "MinimumAge": 1,
+    "MinimumAge": 19,
     "Kijkwijzer": [
-      "test"
+      null,
+      null
     ]
   }
 ]

@@ -47,7 +47,6 @@ namespace CinemaApp
             reservationOverviewScreen = new ReservationOverviewScreen(this);
             seatsOverviewScreen = new SeatsOverviewScreen(this);
             subscriptionScreen = new SubscriptionScreen(this);
-
             movieManager = new MovieManager();
             userManager = new UserManager();
         }

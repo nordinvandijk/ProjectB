@@ -15,22 +15,22 @@ namespace CinemaApp.Screens
         //Methods
         public override void run()
         {
-            string titel = @"Titel";
+            string titel = @"Edit movies";
 
-            string[] options = {"Optie 1", "Optie 2", "Optie 3"};
+            string[] options = {"Film toevoegen", "Film verwijderen", "Terug"};
             Menu AddMoviesMenu = new Menu(options, titel, 0);
             int ChosenOption = AddMoviesMenu.Run();
 
             switch(ChosenOption)
             {
                 case 0:
-                    //code
+                    App.movieManager.InputAddmovie();
                     break;
                 case 1:
-                    //code
+                    App.movieManager.InputRemoveMovie();
                     break;
                 case 2:
-                    //code
+                    App.homeScreen.run();
                     break;      
             }
 

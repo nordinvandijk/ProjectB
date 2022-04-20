@@ -3,6 +3,7 @@ using System.IO;
 using Newtonsoft.Json;
 using System.Linq;
 using static System.Console;
+using System;
 
 namespace CinemaApp
 {
@@ -38,17 +39,66 @@ namespace CinemaApp
             UpdateJson();
         }
 
+
+        public void InputAddmovie(){
+            Clear();
+            Write("Enter title: ");
+            string title = ReadLine();
+            Write("Enter desc: ");
+            string desc = ReadLine();
+            Write("Enter releaseDate: ");
+            string releaseDate = ReadLine();
+            Write("How many genres does the movie have?");
+            string stringlenGenre = ReadLine();
+            int lenGenre= Int32.Parse(stringlenGenre);
+            string[] genre = new string[lenGenre];
+            string inputGenre = "";
+            for(int i = 0; i<lenGenre; i++){
+                Write($"What is genre number {i+1}");
+                inputGenre = ReadLine();
+                genre[i] = title;
+            }
+            Write("What is the minimum age of the movie?");
+            string stringMinAge = ReadLine();
+            int MinAge= Int32.Parse(stringMinAge); 
+            Write("Hoeveel kijkwijzers wil je toevoegen?");
+            string stringlenKijkwijzer = ReadLine();
+            int lenkijkwijzer= Int32.Parse(stringlenKijkwijzer);
+            string[] kijkwijzer = new string[lenGenre];           
+            string inputKijkwijzer = "";
+            for(int i = 0; i<lenkijkwijzer; i++){
+                Write($"What is kijkwijzer number {i+1}");
+                inputKijkwijzer = ReadLine();
+                genre[i] = title;
+            }
+            AddMovie(title,desc,releaseDate,genre,MinAge,kijkwijzer);
+        }
+        public void InputRemoveMovie(){
+            Clear();
+            Write("Enter title: ");
+            string TitleToUpdate = ReadLine(); 
+            if(RemoveMovie(TitleToUpdate)){
+                RemoveMovie(TitleToUpdate);
+            }
+            else{
+                WriteLine("Cannot remove a movie that is not in the system");
+            }          
+        }
+ 
         /// <summary>
         /// Removes a movie based on title from the List<Movie> called "movies".
         /// </summary>
         /// <param name="title">The title of the movie you want to delete.</param>
-        public void RemoveMovie(string title) {
+        public bool RemoveMovie(string title) {
+            bool stringInList = false;
             foreach (Movie mov in movies.ToList()) { // Mischien handig om hier een reverse for loop te gebruiken ipv de list tijdelijk te kopieeren met ToList().
                 if (mov.Title == title) {
                     movies.Remove(mov);
+                    stringInList = true;
                 }
             }
             UpdateJson();
+            return stringInList;
         }
 
         /// <summary>
