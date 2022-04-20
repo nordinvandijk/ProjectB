@@ -24,7 +24,7 @@ namespace CinemaApp.Screens
 ╚═╝░░╚═╝╚══════╝░░░╚═╝░░░  ╚═╝░░░░░╚═╝╚══════╝╚═╝░░░░░╚═╝╚═╝░░╚═╝░╚═════╝░╚═╝╚═════╝░";
 
             if(App.userManager.currentUser != null){
-                string[] optionsLoggedIn = {"Films", "Evenementen", "Bioscopen", "Log-in met ander account", "Mijn Reserveringen", "Abonnement", "Afsluiten"};
+                string[] optionsLoggedIn = {"Films", "Evenementen", "Bioscopen", "Log-in met ander account", "Mijn Reserveringen", "Abonnement", "Uitloggen", "Afsluiten"};
                 Menu HomeScreenMenu = new Menu(optionsLoggedIn, titel, 0);
                 int ChosenOption = HomeScreenMenu.Run();
                 switch(ChosenOption)
@@ -49,12 +49,15 @@ namespace CinemaApp.Screens
                         //code
                         break;
                     case 6:
+                        App.userManager.currentUser = null;
+                        break;
+                    case 7:
                         Environment.Exit(0);
                         break;
                 }
             }
             else{
-                string[] options = {"Films", "Evenementen", "Bioscopen", "Log-in", "Afsluiten"};
+                string[] options = {"Films", "Evenementen", "Bioscopen", "Log-in", "Afsluiten", "Test"};
                 Menu HomeScreenMenu = new Menu(options, titel, 0);
                 int ChosenOption = HomeScreenMenu.Run();
                 switch(ChosenOption)
@@ -73,6 +76,9 @@ namespace CinemaApp.Screens
                         break;
                     case 4:
                         Environment.Exit(0);
+                        break;
+                    case 5:
+                        App.adminPanelScreen.run();
                         break;
                 }
             }

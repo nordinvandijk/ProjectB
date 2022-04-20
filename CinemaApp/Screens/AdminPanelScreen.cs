@@ -15,22 +15,23 @@ namespace CinemaApp.Screens
         //Methods
         public override void run()
         {
-            string titel = @"Titel";
+            string titel = @"Admin Panel";
 
-            string[] options = {"Optie 1", "Optie 2", "Optie 3"};
+            string[] options = {"Film toevoegen", "Film-agenda", "Uitloggen"};
             Menu AdminPanelMenu = new Menu(options, titel, 0);
             int ChosenOption = AdminPanelMenu.Run();
 
             switch(ChosenOption)
             {
                 case 0:
-                    //code
+                    App.addMoviesScreen.run();
                     break;
                 case 1:
-                    //code
+                    App.movieAgendaScreen.run();
                     break;
                 case 2:
-                    //code
+                    App.userManager.currentUser = null;
+                    App.homeScreen.run();
                     break;      
             }
 
