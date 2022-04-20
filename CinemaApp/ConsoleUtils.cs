@@ -9,7 +9,7 @@ namespace CinemaApp
 
         public static void WaitForKeyPress()
         {
-            WriteLine("Press any key to continue...");
+            WriteLine("Druk op een willekeurige toets om door te gaan...");
             ReadKey(true);
         }
     }
