@@ -25,16 +25,16 @@ namespace CinemaApp.Screens
             {
                 case 0:
                     App.movieManager.InputAddmovie();
+                    ConsoleUtils.WaitForKeyPress();
                     break;
                 case 1:
                     App.movieManager.InputRemoveMovie();
+                    ConsoleUtils.WaitForKeyPress();
                     break;
                 case 2:
                     App.homeScreen.run();
                     break;      
             }
-
-            ConsoleUtils.WaitForKeyPress();
         }
     }   
 }

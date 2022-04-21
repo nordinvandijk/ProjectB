@@ -37,10 +37,10 @@ namespace CinemaApp
             };
             movies.Add(mov);
             UpdateJson();
+            WriteLine("Film toegevoegd");
         }
 
-
-        public void InputAddmovie(){
+        public void InputAddmovie(){ // Maybe beter om deze method weg te halen en in de screen code te zetten, kan wrs ook nog wat worden veranderd aan opmaak van de input zinnen.
             Clear();
             Write("Enter title: ");
             string title = ReadLine();
@@ -73,33 +73,29 @@ namespace CinemaApp
             }
             AddMovie(title,desc,releaseDate,genre,MinAge,kijkwijzer);
         }
-        public void InputRemoveMovie(){
+        public void InputRemoveMovie(){ // Maybe beter om deze method weg te halen en in de screen code te zetten
             Clear();
+            CursorVisible = true;
             Write("Enter title: ");
-            string TitleToUpdate = ReadLine(); 
-            if(RemoveMovie(TitleToUpdate)){
-                RemoveMovie(TitleToUpdate);
-            }
-            else{
-                WriteLine("Cannot remove a movie that is not in the system");
-            }          
+            string title = ReadLine(); 
+            CursorVisible = false;
+            RemoveMovie(title);  
         }
  
         /// <summary>
         /// Removes a movie based on title from the List<Movie> called "movies".
         /// </summary>
         /// <param name="title">The title of the movie you want to delete.</param>
-        public bool RemoveMovie(string title) {
-            bool stringInList = false;
+        public void RemoveMovie(string title) {
             foreach (Movie mov in movies.ToList()) { // Mischien handig om hier een reverse for loop te gebruiken ipv de list tijdelijk te kopieeren met ToList().
                 if (mov.Title == title) {
                     movies.Remove(mov);
-                    stringInList = true;
+                    UpdateJson();
+                    return;   
                 }
             }
-            UpdateJson();
-            return stringInList;
-        }
+            WriteLine("Film staat niet in het systeem");
+        } 
 
         /// <summary>
         /// Loads all json objects from "movieList.json" in. Converts the json objects to Movie.cs objects and those Movie objects get stored in the List<Movie> called "movies".
