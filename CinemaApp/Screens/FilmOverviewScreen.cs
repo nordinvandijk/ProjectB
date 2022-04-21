@@ -23,6 +23,8 @@ namespace CinemaApp.Screens
                 optionsList.Add(mov.Title);
             }
             
+            optionsList.Add("\nSorteer op kijkwijzer");
+            optionsList.Add("Sorteer op genre");
             optionsList.Add("\nTerug");
 
             string[] options = optionsList.ToArray();
@@ -33,6 +35,14 @@ namespace CinemaApp.Screens
             // Checkt of de terug button is geklikt, zo wel dan gaat het programma terug naar het Hoofd Scherm, anders gaat het programma door naar het Film Info Scherm.
             if (ChosenOption == options.GetLength(0)-1) {
                 App.homeScreen.run();
+            }
+            else if (ChosenOption == options.GetLength(0)-2)
+            {
+                App.filteredFilmScreen.run();
+            }
+            else if (ChosenOption == options.GetLength(0)-3)
+            {
+                App.kijkwijzerFilmFilter.run();
             }
             else {
                 App.filmInfoScreen.run();

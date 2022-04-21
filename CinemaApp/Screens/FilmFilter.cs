@@ -3,13 +3,13 @@ using static System.Console;
 
 namespace CinemaApp.Screens
 {
-    class FilmInfoScreen : Screen
+    class FilmFilter : Screen
     {
         //Fields
         Movie movie;
 
         //Constructor
-        public FilmInfoScreen(Application app) : base(app) //Neemt appliaction van de parent class
+        public FilmFilter(Application app) : base(app) //Neemt appliaction van de parent class
         {
         }
 
@@ -17,7 +17,7 @@ namespace CinemaApp.Screens
         public override void run()
         {
             foreach (Movie mov in App.movieManager.movies) {
-                if (mov.Title == App.filmOverviewScreen.ChosenMovie) {
+                if (mov.Title == App.filteredFilmScreen.ChosenFilter) {
                     movie = mov;
                     break;
                 }
@@ -26,7 +26,7 @@ namespace CinemaApp.Screens
                            "\nGenre: " + string.Join(", ", movie.Genre) + "\nKijkwijzer: " + movie.MinimumAge + 
                            (movie.Kijkwijzer.Length != 0 ? ", " : "") + string.Join(", ", movie.Kijkwijzer);
 
-            string[] options = {"Filmoverzicht"};
+            string[] options = {"Terug"};
             Menu FilmInfoMenu = new Menu(options, titel, 0);
             int ChosenOption = FilmInfoMenu.Run();
             //t
