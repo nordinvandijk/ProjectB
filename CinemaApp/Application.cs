@@ -26,6 +26,11 @@ namespace CinemaApp
 
         public MovieManager movieManager;
         public UserManager userManager;
+        public FilteredFilmScreen filteredFilmScreen;
+        public FilmFilter FilmFilter;
+        public KijkwijzerFilmFilter kijkwijzerFilmFilter;
+        public KijkwijzerFilter kijkwijzerFilter;
+
 
 
         //Constructor
@@ -47,8 +52,13 @@ namespace CinemaApp
             reservationOverviewScreen = new ReservationOverviewScreen(this);
             seatsOverviewScreen = new SeatsOverviewScreen(this);
             subscriptionScreen = new SubscriptionScreen(this);
+            filteredFilmScreen = new FilteredFilmScreen(this);
+            FilmFilter = new FilmFilter(this);
             movieManager = new MovieManager();
             userManager = new UserManager();
+            kijkwijzerFilmFilter = new KijkwijzerFilmFilter(this);
+            kijkwijzerFilter = new KijkwijzerFilter(this);
+
         }
 
         //Methods
