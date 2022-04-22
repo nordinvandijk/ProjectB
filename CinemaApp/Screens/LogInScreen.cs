@@ -47,6 +47,7 @@ namespace CinemaApp.Screens
                         App.accountCreationScreen.run();
                         break;
                     case 3:
+                        Clear();
                         if(gebruikersnaam == "admin" && wachtwoord == "admin123"){
                             App.adminPanelScreen.run();
                             break;
