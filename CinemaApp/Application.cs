@@ -29,6 +29,7 @@ namespace CinemaApp
         public FilteredFilmScreen filteredFilmScreen;
         public FilmFilter FilmFilter;
         public KijkwijzerFilmFilter kijkwijzerFilmFilter;
+        public KijkwijzerFilter kijkwijzerFilter;
 
 
 
@@ -56,6 +57,7 @@ namespace CinemaApp
             movieManager = new MovieManager();
             userManager = new UserManager();
             kijkwijzerFilmFilter = new KijkwijzerFilmFilter(this);
+            kijkwijzerFilter = new KijkwijzerFilter(this);
 
         }
 

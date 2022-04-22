@@ -78,13 +78,12 @@ namespace CinemaApp.Screens
                         if (ChosenOption == options.GetLength(0)-1)
                         {
                             FilterList.Clear();
-                            App.kijkwijzerFilmFilter.run();
+                            App.filmOverviewScreen.run();
 
                         }
                         else 
                         {
-                            FinalList.Clear();
-                            App.FilmFilter.run();
+                            App.kijkwijzerFilter.run();
                         }
                     }
                     else //option ja
