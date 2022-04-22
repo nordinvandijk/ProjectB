@@ -30,6 +30,7 @@ namespace CinemaApp
         public FilmFilter FilmFilter;
         public KijkwijzerFilmFilter kijkwijzerFilmFilter;
         public KijkwijzerFilter kijkwijzerFilter;
+        public Time time;
 
 
 
@@ -58,16 +59,25 @@ namespace CinemaApp
             userManager = new UserManager();
             kijkwijzerFilmFilter = new KijkwijzerFilmFilter(this);
             kijkwijzerFilter = new KijkwijzerFilter(this);
+            time = new Time(this);
 
         }
 
         //Methods
         public void Start()
         {
-            homeScreen.run();
-            Clear();
-            userManager.Test();
-            ConsoleUtils.WaitForKeyPress();
+            DateTime startMovie1 = new DateTime(2000,1,1,12,0,0);
+            DateTime endMovie1 = new DateTime(2000,1,1,14,0,0);
+
+            DateTime startMovie2 = new DateTime(2000,1,1,13,0,0);
+            DateTime endMovie2 = new DateTime(2000,1,1,14,0,0);
+
+            WriteLine(time.CheckTimeOverlap(startMovie1,endMovie1,startMovie2,endMovie2));
+            
+            // homeScreen.run();
+            // Clear();
+            // userManager.Test();
+            // ConsoleUtils.WaitForKeyPress();
         }
     }
 }
