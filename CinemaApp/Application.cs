@@ -56,7 +56,6 @@ namespace CinemaApp
         {
             homeScreen.run();
             Clear();
-            userManager.Test();
             ConsoleUtils.WaitForKeyPress();
         }
     }

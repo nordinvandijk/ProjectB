@@ -47,6 +47,7 @@ namespace CinemaApp.Screens
                         App.accountCreationScreen.run();
                         break;
                     case 3:
+                        Clear();
                         App.userManager.Login(gebruikersnaam, wachtwoord);
                         if (App.userManager.currentUser != null){
                             ConsoleUtils.WaitForKeyPress();

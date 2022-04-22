@@ -22,10 +22,13 @@ namespace CinemaApp
             if(!UsernameAlreadyExist(username)){
                 users.Add(user);
                 UpdateJson();
+                WriteLine("Account is succesvol aangemaakt.");
                 return true;
             }
-            UpdateJson();
-            return false;
+            else {
+                WriteLine("Account bestaat al");
+                return false;
+            }
         }
         
         public void RemoveUser() {
@@ -40,11 +43,9 @@ namespace CinemaApp
                     correctUsername = true;
                     if (user.Password == password) {
                         currentUser = user;
-                        Clear();
                         WriteLine("Ingelogd");
                         break;
                     }
-                    Clear();
                     WriteLine("Verkeerd wachtwoord");
                     break;
                 }
@@ -56,7 +57,6 @@ namespace CinemaApp
 
             users = new List<User>(); // maakt de users weer leeg voor veiligheid
         }
-
 
         public void LoadJson() {
             using (StreamReader sr = new StreamReader(jsonFile))
@@ -75,38 +75,14 @@ namespace CinemaApp
             } 
         }
 
-        public void Test() {
-            LoadJson();
-            foreach (User user in users) {
-                WriteLine(user.Username);
-            }
-            Login("hans","willem");
-            Login("hans","fout");
-        }
-
         public bool UsernameAlreadyExist(string username){
             LoadJson();
-            bool correctUsername = false;
-            foreach (User user in users.ToList()) {
+            foreach (User user in users) {
                 if (user.Username == username) {
-                    correctUsername = true;
+                    return true;
                 }
             }
-            return correctUsername;
+            return false;
         }
-        // public void CreateUserAccount(string username, string password, string mail){
-        //     Clear();
-        //     LoadJson();
-        //     if(!UsernameAlreadyExist(username)){
-        //         users.Add(CreateUser(username,password,mail));
-        //         //WriteLine("Account is gemaakt");
-        //     }
-        //     else{
-        //        // WriteLine("Account kan niet worden aangemaakt omdat de username al wordt gebruikt.");
-        //     }
-        //     UpdateJson();
-        //     Login(username, password);
-        // }
-
     }
 }
