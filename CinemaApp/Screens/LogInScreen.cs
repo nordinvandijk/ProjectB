@@ -47,13 +47,19 @@ namespace CinemaApp.Screens
                         App.accountCreationScreen.run();
                         break;
                     case 3:
-                        App.userManager.Login(gebruikersnaam, wachtwoord);
-                        if (App.userManager.currentUser != null){
-                            ConsoleUtils.WaitForKeyPress();
-                            App.homeScreen.run();
+                        if(gebruikersnaam == "admin" && wachtwoord == "admin123"){
+                            App.adminPanelScreen.run();
+                            break;
                         }
-                        ConsoleUtils.WaitForKeyPress();
-                        break;
+                        else{
+                            App.userManager.Login(gebruikersnaam, wachtwoord);
+                            if (App.userManager.currentUser != null){
+                                ConsoleUtils.WaitForKeyPress();
+                                App.homeScreen.run();
+                            }
+                            ConsoleUtils.WaitForKeyPress();
+                            break;
+                        }
                     case 4:
                         MenuBool = false;
                         App.homeScreen.run();

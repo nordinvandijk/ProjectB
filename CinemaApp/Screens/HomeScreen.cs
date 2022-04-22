@@ -57,7 +57,7 @@ namespace CinemaApp.Screens
                 }
             }
             else{
-                string[] options = {"Films", "Evenementen", "Bioscopen", "Log-in", "Afsluiten", "Test"};
+                string[] options = {"Films", "Evenementen", "Bioscopen", "Log-in", "Afsluiten"};
                 Menu HomeScreenMenu = new Menu(options, titel, 0);
                 int ChosenOption = HomeScreenMenu.Run();
                 switch(ChosenOption)
@@ -76,9 +76,6 @@ namespace CinemaApp.Screens
                         break;
                     case 4:
                         Environment.Exit(0);
-                        break;
-                    case 5:
-                        App.adminPanelScreen.run();
                         break;
                 }
             }
