@@ -12,13 +12,20 @@ namespace CinemaApp
         private string jsonFile = "userList.json";
         private List<User> users = new List<User>();
 
-        public void CreateUser(string username, string password, string email) 
+        public bool CreateUser(string username, string password, string email) 
         {
             User user = new User() {
                 Username = username,
                 Password = password,
                 Email = email,
             };
+            if(!UsernameAlreadyExist(username)){
+                users.Add(user);
+                UpdateJson();
+                return true;
+            }
+            UpdateJson();
+            return false;
         }
         
         public void RemoveUser() {
@@ -76,6 +83,30 @@ namespace CinemaApp
             Login("hans","willem");
             Login("hans","fout");
         }
+
+        public bool UsernameAlreadyExist(string username){
+            LoadJson();
+            bool correctUsername = false;
+            foreach (User user in users.ToList()) {
+                if (user.Username == username) {
+                    correctUsername = true;
+                }
+            }
+            return correctUsername;
+        }
+        // public void CreateUserAccount(string username, string password, string mail){
+        //     Clear();
+        //     LoadJson();
+        //     if(!UsernameAlreadyExist(username)){
+        //         users.Add(CreateUser(username,password,mail));
+        //         //WriteLine("Account is gemaakt");
+        //     }
+        //     else{
+        //        // WriteLine("Account kan niet worden aangemaakt omdat de username al wordt gebruikt.");
+        //     }
+        //     UpdateJson();
+        //     Login(username, password);
+        // }
 
     }
 }
