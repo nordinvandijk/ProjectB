@@ -39,48 +39,6 @@ namespace CinemaApp
             UpdateJson();
             WriteLine("Film toegevoegd");
         }
-
-        public void InputAddmovie(){ // Maybe beter om deze method weg te halen en in de screen code te zetten, kan wrs ook nog wat worden veranderd aan opmaak van de input zinnen.
-            Clear();
-            Write("Enter title: ");
-            string title = ReadLine();
-            Write("Enter desc: ");
-            string desc = ReadLine();
-            Write("Enter releaseDate: ");
-            string releaseDate = ReadLine();
-            Write("How many genres does the movie have?");
-            string stringlenGenre = ReadLine();
-            int lenGenre= Int32.Parse(stringlenGenre);
-            string[] genre = new string[lenGenre];
-            string inputGenre = "";
-            for(int i = 0; i<lenGenre; i++){
-                Write($"What is genre number {i+1}");
-                inputGenre = ReadLine();
-                genre[i] = title;
-            }
-            Write("What is the minimum age of the movie?");
-            string stringMinAge = ReadLine();
-            int MinAge= Int32.Parse(stringMinAge); 
-            Write("Hoeveel kijkwijzers wil je toevoegen?");
-            string stringlenKijkwijzer = ReadLine();
-            int lenkijkwijzer= Int32.Parse(stringlenKijkwijzer);
-            string[] kijkwijzer = new string[lenGenre];           
-            string inputKijkwijzer = "";
-            for(int i = 0; i<lenkijkwijzer; i++){
-                Write($"What is kijkwijzer number {i+1}");
-                inputKijkwijzer = ReadLine();
-                genre[i] = title;
-            }
-            AddMovie(title,desc,releaseDate,genre,MinAge,kijkwijzer);
-        }
-        public void InputRemoveMovie(){ // Maybe beter om deze method weg te halen en in de screen code te zetten
-            Clear();
-            CursorVisible = true;
-            Write("Enter title: ");
-            string title = ReadLine(); 
-            CursorVisible = false;
-            RemoveMovie(title);  
-        }
  
         /// <summary>
         /// Removes a movie based on title from the List<Movie> called "movies".
@@ -91,6 +49,7 @@ namespace CinemaApp
                 if (mov.Title == title) {
                     movies.Remove(mov);
                     UpdateJson();
+                    WriteLine("Film bestaat in het systeem en is verwijderd");
                     return;   
                 }
             }
