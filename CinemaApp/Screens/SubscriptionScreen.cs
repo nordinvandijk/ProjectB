@@ -15,9 +15,9 @@ namespace CinemaApp.Screens
         //Methods
         public override void run()
         {
-            string titel = @"Titel";
+            string titel = @"Het Filmhuis-abonnement";
 
-            string[] options = {"Optie 1", "Optie 2", "Optie 3"};
+            string[] options = {"Kopen", "Terug"};
             Menu SubscriptionMenu = new Menu(options, titel, 0);
             int ChosenOption = SubscriptionMenu.Run();
 
@@ -27,10 +27,7 @@ namespace CinemaApp.Screens
                     //code
                     break;
                 case 1:
-                    //code
-                    break;
-                case 2:
-                    //code
+                    App.homeScreen.run();
                     break;      
             }
 

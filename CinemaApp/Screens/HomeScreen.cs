@@ -42,7 +42,7 @@ namespace CinemaApp.Screens
                         //code
                         break;
                     case 4:
-                        //code
+                        App.subscriptionScreen.run();
                         break;
                     case 5:
                         App.userManager.currentUser = null;
