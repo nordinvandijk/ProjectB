@@ -1,5 +1,6 @@
 using System;
 using static System.Console;
+using CinemaApp;
 
 namespace CinemaApp.Screens
 {
@@ -15,7 +16,22 @@ namespace CinemaApp.Screens
         //Methods
         public override void run()
         {
-            string titel = @"Titel";
+            string chosenLocation = null;
+            string chosenDate = null;
+
+            while (chosenLocation == null){
+                Clear();
+                foreach(Location location in App.filmAgenda.locations){
+                    
+                }
+            }
+            while (chosenDate == null){
+                Clear();
+                WriteLine("Voer een datum in volgens het formaat: 00/00/0000");
+                chosenDate = ReadLine();
+            }
+
+            string titel = @"";
 
             string[] options = {"Optie 1", "Optie 2", "Optie 3"};
             Menu MovieAgendaMenu = new Menu(options, titel, 0);

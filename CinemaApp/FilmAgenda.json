@@ -1,0 +1,137 @@
+[
+    {
+        "CinemaLocation": "Rotterdam",
+        "Days": [
+            {
+                "Date": "1 Mei",
+                "AvailableHalls": [
+                    {
+                        "HallName": "Zaal 1",
+                        "MovieItemlist": [
+                            {
+                                "Title": "Pulp Fiction",
+        	                    "Description": "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+                                "ReleaseDate": "01-12-1994",
+                                "Genre": [
+                                "Misdaad",
+                                "Drama"
+                                ],
+                                "MinimumAge": 16,
+                                "Kijkwijzer": [
+                                "Geweld",
+                                "Grof taalgebruik"
+                                ],
+                                "StartTime": "20:00",
+                                "EndTime": "21:00",
+                                "Format": "3D"
+                                
+                            }
+                        ]
+                    },
+                    {
+                        "HallName": "Zaal 2",
+                        "MovieItemlist": [
+
+                        ]
+                    },
+                    {
+                        "HallName": "Zaal 3",
+                        "MovieItemlist": [
+
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CinemaLocation": "Utrecht",
+        "Days": [
+            {
+                "Date": "1 Mei",
+                "AvailableHalls": [
+                    {
+                        "HallName": "Zaal 1",
+                        "MovieItemlist": [
+                            {
+                                "Title": "Pulp Fiction",
+        	                    "Description": "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+                                "ReleaseDate": "01-12-1994",
+                                "Genre": [
+                                "Misdaad",
+                                "Drama"
+                                ],
+                                "MinimumAge": 16,
+                                "Kijkwijzer": [
+                                "Geweld",
+                                "Grof taalgebruik"
+                                ],
+                                "StartTime": "20:00",
+                                "EndTime": "21:00",
+                                "Format": "3D"
+                                
+                            }
+                        ]
+                    },
+                    {
+                        "HallName": "Zaal 2",
+                        "MovieItemlist": [
+
+                        ]
+                    },
+                    {
+                        "HallName": "Zaal 3",
+                        "MovieItemlist": [
+
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "CinemaLocation": "Amsterdam",
+        "Days": [
+            {
+                "Date": "1 Mei",
+                "AvailableHalls": [
+                    {
+                        "HallName": "Zaal 1",
+                        "MovieItemlist": [
+                            {
+                                "Title": "Pulp Fiction",
+        	                    "Description": "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+                                "ReleaseDate": "01-12-1994",
+                                "Genre": [
+                                "Misdaad",
+                                "Drama"
+                                ],
+                                "MinimumAge": 16,
+                                "Kijkwijzer": [
+                                "Geweld",
+                                "Grof taalgebruik"
+                                ],
+                                "StartTime": "20:00",
+                                "EndTime": "21:00",
+                                "Format": "3D"
+                                
+                            }
+                        ]
+                    },
+                    {
+                        "HallName": "Zaal 2",
+                        "MovieItemlist": [
+
+                        ]
+                    },
+                    {
+                        "HallName": "Zaal 3",
+                        "MovieItemlist": [
+
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]
