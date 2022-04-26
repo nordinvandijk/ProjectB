@@ -15,7 +15,11 @@ namespace CinemaApp.Screens
         //Methods
         public override void run()
         {
-            string titel = @"Het Filmhuis-abonnement";
+            string titel = @"Het Filmhuis-abonnement
+In dit scherm kan je het Filmhuis-abonnement kopen.
+Het Filmhuis-abonnement heeft de volgende voordelen:
+    - Korting op films, eten en drinken en accessoires
+    - Je kan naar het abonnementenevenement.";
 
             string[] options = {"Kopen", "Terug"};
             Menu SubscriptionMenu = new Menu(options, titel, 0);
