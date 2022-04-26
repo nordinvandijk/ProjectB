@@ -21,34 +21,30 @@ namespace CinemaApp.Screens
 
             while (chosenLocation == null){
                 Clear();
+                int i = 0;
                 foreach(Location location in App.filmAgenda.locations){
-                    
+                    i++;
                 }
+                string[] options = new string[i];
+                i = 0;
+                foreach(Location location in App.filmAgenda.locations){
+                    options[i] = location.CinemaLocation;
+                    i++;
+                }
+                string titel = @"Kies een locatie";
+                Menu ChooseCinema = new Menu(options, titel, 0);
+                chosenLocation = App.filmAgenda.locations[ChooseCinema.Run()].CinemaLocation;
             }
+
             while (chosenDate == null){
                 Clear();
+                CursorVisible = true;
                 WriteLine("Voer een datum in volgens het formaat: 00/00/0000");
                 chosenDate = ReadLine();
+                CursorVisible = false;
             }
 
-            string titel = @"";
-
-            string[] options = {"Optie 1", "Optie 2", "Optie 3"};
-            Menu MovieAgendaMenu = new Menu(options, titel, 0);
-            int ChosenOption = MovieAgendaMenu.Run();
-
-            switch(ChosenOption)
-            {
-                case 0:
-                    //code
-                    break;
-                case 1:
-                    //code
-                    break;
-                case 2:
-                    //code
-                    break;      
-            }
+            
 
             ConsoleUtils.WaitForKeyPress();
         }
