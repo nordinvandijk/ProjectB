@@ -34,19 +34,25 @@ namespace CinemaApp.Screens
                 case 0:
                     Clear();
                     WriteLine("Wat is de titel van de film?");
+                    CursorVisible = true;
                     title = ReadLine();
+                    CursorVisible = false;
                     run();
                     break;
                 case 1:
                     Clear();
                     WriteLine("Wat is de desc van de film?");
+                    CursorVisible = true;
                     desc = ReadLine();
+                    CursorVisible = false;
                     run();
                     break;
                 case 2:
                     Clear();
                     WriteLine("Wat is de releaseDate van de film?");
+                    CursorVisible = true;
                     releaseDate = ReadLine();
+                    CursorVisible = false;
                     run();
                     break;  
                 case 3:
@@ -56,7 +62,9 @@ namespace CinemaApp.Screens
                         string stringlenGenre;
                         try{
                             WriteLine("Hoeveel genres heeft de film?");
+                            CursorVisible = true;
                             stringlenGenre = ReadLine();
+                            CursorVisible = false;
                             lenGenre= Int32.Parse(stringlenGenre);
                             if (lenGenre<=0) WriteLine("Je kan geen negatieve getal of 0 kiezen");
                             if (lenGenre<=0) ConsoleUtils.WaitForKeyPress();
@@ -71,7 +79,9 @@ namespace CinemaApp.Screens
                     for(int i = 0; i<genre.Length; i++){
                         Clear();
                         WriteLine($"Wat is genre nummer {i+1} van de film?");
+                        CursorVisible = true;
                         genre[i] = ReadLine();
+                        CursorVisible = false;
 
                     }
                     genreLeegOfvol = "genre is toegevoegd";
@@ -80,7 +90,9 @@ namespace CinemaApp.Screens
                 case 4:
                     Clear();
                     WriteLine("Wat is de minimale leeftijd van de film?");
+                    CursorVisible = true;
                     minAge = ReadLine();
+                    CursorVisible = false;
                     run();
                     break;                
                 case 5:
@@ -90,7 +102,9 @@ namespace CinemaApp.Screens
                         string stringLenKijkwijzers;
                         try{
                             WriteLine("Hoeveel kijkswijzers heeft de film?");
+                            CursorVisible = true;
                             stringLenKijkwijzers = ReadLine();
+                            CursorVisible = false;
                             LenKijkwijzers= Int32.Parse(stringLenKijkwijzers);
                             if (LenKijkwijzers<=0) WriteLine("Je kan geen negatieve getal of 0 kiezen");
                             if (LenKijkwijzers<=0) ConsoleUtils.WaitForKeyPress();
@@ -105,7 +119,9 @@ namespace CinemaApp.Screens
                     for(int i = 0; i<kijkwijzer.Length; i++){
                         Clear();
                         WriteLine($"Wat is kijkwijzer nummer {i+1} van de film?");
+                        CursorVisible = true;
                         kijkwijzer[i] = ReadLine();
+                        CursorVisible = false;
 
                     }
                     kijkwijzerLeegOfVol = "kijkwijzer is toegevoegd";
@@ -114,7 +130,7 @@ namespace CinemaApp.Screens
                 case 6:
                     Clear();
                     WriteLine("Bevestig");
-                    if (title != "<Leeg>" && desc != "<Leeg>" && releaseDate != "<Leeg>" && genreLeegOfvol != "<Leeg>" && minAge != "<Leeg>" && kijkwijzerLeegOfVol != "<Leeg>" && kijkwijzer != null && genre != null){             
+                    if (title != "<Leeg>" && desc != "<Leeg>" && releaseDate != "<Leeg>" && genreLeegOfvol != "<Leeg>" && minAge != "<Leeg>" && kijkwijzerLeegOfVol != "<Leeg>" && kijkwijzer != null && genre != null && title != "" && desc != "" && releaseDate != "" && genreLeegOfvol != "" && minAge != "" ){             
                         try{
                             App.movieManager.AddMovie(title,desc,releaseDate,genre,Int32.Parse(minAge),kijkwijzer);
                             ConsoleUtils.WaitForKeyPress();
