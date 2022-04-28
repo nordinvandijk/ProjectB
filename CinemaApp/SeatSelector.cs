@@ -7,18 +7,19 @@ namespace CinemaApp
     {
         public int currentX;
         public int currentY;
-        public Tuple<string,double>[][] seats = new Tuple<string,double>[2][];
+        public Tuple<string,double>[][] seats;
 
 
         public SeatSelector() {
             currentX = 0;
             currentY = 0;
+            seats = new Tuple<string,double>[2][];
             seats[0] = new Tuple<string,double>[3];
             seats[0][1] = new Tuple<string,double>("test", 1.00);
             seats[0][2] = new Tuple<string,double>("test", 1.00);
             seats[0][0] = new Tuple<string,double>("test", 1.00);
             seats[1] = new Tuple<string,double>[3];
-            seats[1][1] = new Tuple<string,double>("test", 1.00);
+            seats[1][1] = new Tuple<string,double>("test", 1.20);
             seats[1][2] = new Tuple<string,double>("test", 1.00);
             seats[1][0] = new Tuple<string,double>("test", 1.00);
         }
@@ -38,6 +39,8 @@ namespace CinemaApp
                 }
                 Write(Environment.NewLine + Environment.NewLine);
             }
+            ResetColor();
+            Write("Prijs: " + String.Format("{0:0.00}", seats[currentY][currentX].Item2));
         }
 
         public Tuple<int,int> Run()
