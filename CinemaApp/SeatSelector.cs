@@ -64,10 +64,16 @@ namespace CinemaApp
                 if (keyPressed == ConsoleKey.DownArrow || keyPressed == ConsoleKey.S)
                 {
                     currentY++;
+                    if (currentY >= seats.Length) {
+                        currentY = seats.Length-1;
+                    }
                 }
                 if (keyPressed == ConsoleKey.RightArrow || keyPressed == ConsoleKey.D)
                 {
                     currentX++;
+                    if (currentX >= seats[currentY].Length) {
+                        currentX = seats[currentY].Length-1;
+                    }
                 }
                 if (keyPressed == ConsoleKey.LeftArrow || keyPressed == ConsoleKey.A)
                 {
@@ -80,6 +86,5 @@ namespace CinemaApp
             
             return new Tuple<int, int>(currentX,currentY);
         }
-
-    }  
+    }
 }
