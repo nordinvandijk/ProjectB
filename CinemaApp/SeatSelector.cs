@@ -8,7 +8,6 @@ namespace CinemaApp
         public int currentX;
         public int currentY;
         public Tuple<string,double>[][] seats = new Tuple<string,double>[2][];
-        int SelectedOption;
 
 
         public SeatSelector() {
@@ -41,7 +40,7 @@ namespace CinemaApp
             }
         }
 
-        public int Run()
+        public Tuple<int,int> Run()
         {
             ConsoleKey keyPressed;
             do
@@ -76,7 +75,7 @@ namespace CinemaApp
                 }
             } while(keyPressed != ConsoleKey.Enter);
             
-            return SelectedOption; //returnt de geselecteerde optie als enter wordt gekilkt
+            return Tuple<int,int> = new Tuple<int, int>(currentX,currentY);
         }
 
     }  
