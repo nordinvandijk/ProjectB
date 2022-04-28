@@ -75,7 +75,7 @@ namespace CinemaApp
                 }
             } while(keyPressed != ConsoleKey.Enter);
             
-            return Tuple<int,int> = new Tuple<int, int>(currentX,currentY);
+            return new Tuple<int, int>(currentX,currentY);
         }
 
     }  
