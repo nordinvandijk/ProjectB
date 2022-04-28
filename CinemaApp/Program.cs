@@ -9,7 +9,6 @@ namespace CinemaApp
         {
             SeatSelector test = new SeatSelector();
             test.Run();
-            ConsoleUtils.WaitForKeyPress();
             Console.CursorVisible = false;
             Application App = new Application();
             App.Start();

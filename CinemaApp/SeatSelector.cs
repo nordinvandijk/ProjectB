@@ -82,6 +82,7 @@ namespace CinemaApp
             ResetColor();
         }
 
+        // Return value van deze method moet waarschijlijnk worden aangepast
         public Tuple<int,int> Run()
         {
             ConsoleKey keyPressed;
@@ -90,10 +91,10 @@ namespace CinemaApp
                 Clear();
                 Display();
                 
-                ConsoleKeyInfo keyInfo = ReadKey(true); //ReadKey geeft ConsoleKeyInfo, onder andere welke key ingedrukt is
-                keyPressed = keyInfo.Key; //keyInfo.Key pakt uit de keyInfo welke key er ingedrukt is
+                ConsoleKeyInfo keyInfo = ReadKey(true);
+                keyPressed = keyInfo.Key;
                 
-                if (keyPressed == ConsoleKey.UpArrow || keyPressed == ConsoleKey.W) //checkt of up arrow geklikt wordt
+                if (keyPressed == ConsoleKey.UpArrow || keyPressed == ConsoleKey.W)
                 {
                     int tempY = currentY;
                     currentY--;
@@ -124,8 +125,8 @@ namespace CinemaApp
                 }
             } while(keyPressed != ConsoleKey.Enter);
 
+            // Als de huidge positie niet op bevistigen is, dan checkt ie de status van de stoel waar je op zit om die te veranderen.
             if (currentY != seats.Length) {
-                // Stoel check wanneer er op enter wordt geklikt.
                 if (seats[currentY][currentX].Item1 == "available") {
                     totalPrice += seats[currentY][currentX].Item2;
                     seats[currentY][currentX] = new Tuple<string,double>("selected", seats[currentY][currentX].Item2);
@@ -138,9 +139,9 @@ namespace CinemaApp
                     WriteLine("Deze stoel is bezet");
                 }
 
-                Run();
+                Run(); // Waarschijnlijk handig om dit te veranderen, want nu opent ie denk ik een nieuwe run en sluit hem niet dus voor ram geheugen niet zo fijn
             }
-            
+
             return new Tuple<int, int>(currentX,currentY);
         }
     }
