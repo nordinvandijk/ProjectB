@@ -1,6 +1,7 @@
 using System;
 using static System.Console;
 using CinemaApp.Screens; // Using namespace folder Screens
+using System.Globalization;
 
 namespace CinemaApp
 {
@@ -61,7 +62,7 @@ namespace CinemaApp
             kijkwijzerFilmFilter = new KijkwijzerFilmFilter(this);
             kijkwijzerFilter = new KijkwijzerFilter(this);
             time = new Time(this);
-            filmAgenda = new FilmAgenda();
+            filmAgenda = new FilmAgenda(this);
 
         }
 
@@ -80,6 +81,14 @@ namespace CinemaApp
             Clear();
             userManager.Test();
             ConsoleUtils.WaitForKeyPress();
+
+            // var cultureInfo = new CultureInfo("nl-NL");
+            // string date = "20-02-2022 22:00";
+            // WriteLine(date);
+            // DateTime dateTime = DateTime.Parse(date, cultureInfo);
+            // WriteLine(dateTime);
+            // string dateString = dateTime.ToString("g",cultureInfo);
+            // WriteLine(dateString);
         }
     }
 }

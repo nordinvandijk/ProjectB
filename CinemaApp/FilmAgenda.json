@@ -3,7 +3,7 @@
         "CinemaLocation": "Rotterdam",
         "Days": [
             {
-                "Date": "01/03/2022",
+                "Date": "01-03-2022",
                 "AvailableHalls": [
                     {
                         "HallName": "Zaal 1",
@@ -21,8 +21,8 @@
                                 "Geweld",
                                 "Grof taalgebruik"
                                 ],
-                                "StartTime": "20:00",
-                                "EndTime": "21:00",
+                                "StartTimeString": "01-03-2022 20:00",
+                                "EndTimeString": "01-03-2022 21:00",
                                 "Format": "3D"
                                 
                             }
@@ -48,7 +48,7 @@
         "CinemaLocation": "Utrecht",
         "Days": [
             {
-                "Date": "1 Mei",
+                "Date": "20-05-2022",
                 "AvailableHalls": [
                     {
                         "HallName": "Zaal 1",
@@ -66,8 +66,8 @@
                                 "Geweld",
                                 "Grof taalgebruik"
                                 ],
-                                "StartTime": "20:00",
-                                "EndTime": "21:00",
+                                "StartTimeString": "20-05-2022 20:00",
+                                "EndTimeString": "20-05-2022 21:00",
                                 "Format": "3D"
                                 
                             }
@@ -93,7 +93,7 @@
         "CinemaLocation": "Amsterdam",
         "Days": [
             {
-                "Date": "1 Mei",
+                "Date": "20-05-2022",
                 "AvailableHalls": [
                     {
                         "HallName": "Zaal 1",
@@ -111,8 +111,8 @@
                                 "Geweld",
                                 "Grof taalgebruik"
                                 ],
-                                "StartTime": "20:00",
-                                "EndTime": "21:00",
+                                "StartTimeString": "20-05-2022 20:00",
+                                "EndTimeString": "20-05-2022 21:00",
                                 "Format": "3D"
                                 
                             }

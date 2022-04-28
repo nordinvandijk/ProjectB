@@ -5,8 +5,8 @@ namespace CinemaApp
 {
     class MovieItem : Movie
     {
-        public string StartTime {get; set;}
-        public string BeginTime {get; set;}
+        public string StartTimeString {get; set;}
+        public string EndTimeString {get; set;}
         public string Format {get; set;}
     }
 }
