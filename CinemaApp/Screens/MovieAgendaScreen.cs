@@ -45,7 +45,7 @@ namespace CinemaApp.Screens
                 while (chosenDate == -1 && chosenLocation != -1){ //code voor het kiezen van datum zolang er geen datum gekozen is en er wel een locatie gekozen is
                     Clear();
                     CursorVisible = true;
-                    WriteLine("Voer een datum in volgens het formaat: 00-00-0000");
+                    WriteLine("Voer een datum in volgens het formaat: 00-00-0000\nVoer 'back' in om terug te gaan");
                     string input = ReadLine();
                     CursorVisible = false;
                     int ii = 0;
@@ -74,10 +74,12 @@ namespace CinemaApp.Screens
                         string[] optionsHall = new string[iii+1];
                         string table = "";
                         iii = 0;
-                        foreach(AvailableHall hall in App.filmAgenda.locations[chosenLocation].Days[chosenDate].AvailableHalls){ //2 foreeach loops, 1) vult de array met beschikbare hallen en voegt de naam van de hallen toe aan de table string 2) voegt de films die worden gespeeld in een hal toe aan de table string
-                            optionsHall[iii] = hall.HallName;
+                        foreach(AvailableHall hall in App.filmAgenda.locations[chosenLocation].Days[chosenDate].AvailableHalls){ // vult de array met beschikbare hallen en voegt de naam van de hallen toe aan de table string
+                            hall.OrderMovieItems(); //ordert de movieItems in een hall op begintijd
+                            App.filmAgenda.UpdateJson(); //update json
+                            optionsHall[iii] = $"Voeg film toe in: {hall.HallName}";
                             table += $"{hall.HallName}:\n";
-                            foreach(MovieItem movieItem in hall.MovieItemlist){
+                            foreach(MovieItem movieItem in hall.MovieItemlist){ // voegt de films die worden gespeeld in een hal toe aan de table string
                                 table += $"-{movieItem.Title} {movieItem.StartTimeString.Substring(11)} - {movieItem.EndTimeString.Substring(11)}\n";
                             }
                             iii++;

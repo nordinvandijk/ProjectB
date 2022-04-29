@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using System;
 using static System.Console;
 using System.Globalization;
+using System.Linq;
 
 namespace CinemaApp
 {
@@ -11,6 +12,11 @@ namespace CinemaApp
     {
         public string HallName { get; set; }
         public List<MovieItem> MovieItemlist { get; set; }
+
+        public void OrderMovieItems(){
+            var cultureInfo = new CultureInfo("nl-NL");
+            MovieItemlist = MovieItemlist.OrderBy(x => DateTime.Parse(x.StartTimeString, cultureInfo)).ToList();
+        }
     }
 
     class Day

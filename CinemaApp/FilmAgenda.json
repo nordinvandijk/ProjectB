@@ -1,136 +1,156 @@
 [
-    {
-        "CinemaLocation": "Rotterdam",
-        "Days": [
-            {
-                "Date": "01-03-2022",
-                "AvailableHalls": [
-                    {
-                        "HallName": "Zaal 1",
-                        "MovieItemlist": [
-                            {
-                                "Title": "Pulp Fiction",
-        	                    "Description": "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
-                                "ReleaseDate": "01-12-1994",
-                                "Genre": [
-                                "Misdaad",
-                                "Drama"
-                                ],
-                                "MinimumAge": 16,
-                                "Kijkwijzer": [
-                                "Geweld",
-                                "Grof taalgebruik"
-                                ],
-                                "StartTimeString": "01-03-2022 20:00",
-                                "EndTimeString": "01-03-2022 21:00",
-                                "Format": "3D"
-                            }
-                        ]
-                    },
-                    {
-                        "HallName": "Zaal 2",
-                        "MovieItemlist": [
-
-                        ]
-                    },
-                    {
-                        "HallName": "Zaal 3",
-                        "MovieItemlist": [
-
-                        ]
-                    }
+  {
+    "CinemaLocation": "Rotterdam",
+    "Days": [
+      {
+        "Date": "01-03-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Zaal 1",
+            "MovieItemlist": [
+              {
+                "StartTimeString": "01-03-2022 10:00",
+                "EndTimeString": "01-03-2022 14:00",
+                "Format": "3D",
+                "Title": "Pulp Fiction",
+                "Description": "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+                "ReleaseDate": "01-12-1994",
+                "Genre": [
+                  "Misdaad",
+                  "Drama"
+                ],
+                "MinimumAge": 16,
+                "Kijkwijzer": [
+                  "Geweld",
+                  "Grof taalgebruik"
                 ]
-            }
-        ]
-    },
-    {
-        "CinemaLocation": "Utrecht",
-        "Days": [
-            {
-                "Date": "20-05-2022",
-                "AvailableHalls": [
-                    {
-                        "HallName": "Zaal 1",
-                        "MovieItemlist": [
-                            {
-                                "Title": "Pulp Fiction",
-        	                    "Description": "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
-                                "ReleaseDate": "01-12-1994",
-                                "Genre": [
-                                "Misdaad",
-                                "Drama"
-                                ],
-                                "MinimumAge": 16,
-                                "Kijkwijzer": [
-                                "Geweld",
-                                "Grof taalgebruik"
-                                ],
-                                "StartTimeString": "20-05-2022 20:00",
-                                "EndTimeString": "20-05-2022 21:00",
-                                "Format": "3D"
-                                
-                            }
-                        ]
-                    },
-                    {
-                        "HallName": "Zaal 2",
-                        "MovieItemlist": [
-
-                        ]
-                    },
-                    {
-                        "HallName": "Zaal 3",
-                        "MovieItemlist": [
-
-                        ]
-                    }
+              },
+              {
+                "StartTimeString": "01-03-2022 16:00",
+                "EndTimeString": "01-03-2022 18:00",
+                "Format": "3D",
+                "Title": "Pulp Fiction",
+                "Description": "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+                "ReleaseDate": "01-12-1994",
+                "Genre": [
+                  "Misdaad",
+                  "Drama"
+                ],
+                "MinimumAge": 16,
+                "Kijkwijzer": [
+                  "Geweld",
+                  "Grof taalgebruik"
                 ]
-            }
-        ]
-    },
-    {
-        "CinemaLocation": "Amsterdam",
-        "Days": [
-            {
-                "Date": "20-05-2022",
-                "AvailableHalls": [
-                    {
-                        "HallName": "Zaal 1",
-                        "MovieItemlist": [
-                            {
-                                "Title": "Pulp Fiction",
-        	                    "Description": "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
-                                "ReleaseDate": "01-12-1994",
-                                "Genre": [
-                                "Misdaad",
-                                "Drama"
-                                ],
-                                "MinimumAge": 16,
-                                "Kijkwijzer": [
-                                "Geweld",
-                                "Grof taalgebruik"
-                                ],
-                                "StartTimeString": "20-05-2022 20:00",
-                                "EndTimeString": "20-05-2022 21:00",
-                                "Format": "3D"
-                                
-                            }
-                        ]
-                    },
-                    {
-                        "HallName": "Zaal 2",
-                        "MovieItemlist": [
-
-                        ]
-                    },
-                    {
-                        "HallName": "Zaal 3",
-                        "MovieItemlist": [
-
-                        ]
-                    }
+              },
+              {
+                "StartTimeString": "01-03-2022 20:00",
+                "EndTimeString": "01-03-2022 21:00",
+                "Format": "3D",
+                "Title": "Pulp Fiction",
+                "Description": "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+                "ReleaseDate": "01-12-1994",
+                "Genre": [
+                  "Misdaad",
+                  "Drama"
+                ],
+                "MinimumAge": 16,
+                "Kijkwijzer": [
+                  "Geweld",
+                  "Grof taalgebruik"
                 ]
-            }
+              }
+            ]
+          },
+          {
+            "HallName": "Zaal 2",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 3",
+            "MovieItemlist": []
+          }
         ]
-    }
+      }
+    ]
+  },
+  {
+    "CinemaLocation": "Utrecht",
+    "Days": [
+      {
+        "Date": "20-05-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Zaal 1",
+            "MovieItemlist": [
+              {
+                "StartTimeString": "20-05-2022 20:00",
+                "EndTimeString": "20-05-2022 21:00",
+                "Format": "3D",
+                "Title": "Pulp Fiction",
+                "Description": "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+                "ReleaseDate": "01-12-1994",
+                "Genre": [
+                  "Misdaad",
+                  "Drama"
+                ],
+                "MinimumAge": 16,
+                "Kijkwijzer": [
+                  "Geweld",
+                  "Grof taalgebruik"
+                ]
+              }
+            ]
+          },
+          {
+            "HallName": "Zaal 2",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 3",
+            "MovieItemlist": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CinemaLocation": "Amsterdam",
+    "Days": [
+      {
+        "Date": "20-05-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Zaal 1",
+            "MovieItemlist": [
+              {
+                "StartTimeString": "20-05-2022 20:00",
+                "EndTimeString": "20-05-2022 21:00",
+                "Format": "3D",
+                "Title": "Pulp Fiction",
+                "Description": "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+                "ReleaseDate": "01-12-1994",
+                "Genre": [
+                  "Misdaad",
+                  "Drama"
+                ],
+                "MinimumAge": 16,
+                "Kijkwijzer": [
+                  "Geweld",
+                  "Grof taalgebruik"
+                ]
+              }
+            ]
+          },
+          {
+            "HallName": "Zaal 2",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 3",
+            "MovieItemlist": []
+          }
+        ]
+      }
+    ]
+  }
 ]
