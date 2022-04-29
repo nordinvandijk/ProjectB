@@ -20,62 +20,85 @@ namespace CinemaApp.Screens
             int chosenDate = -1;
             int chosenHall = -1;
 
-            while (chosenLocation == -1){
+            while (chosenLocation == -1){ //code voor het kiezen van een bioscoop, zolang er geen bioscoop gekozen is
                 Clear();
                 int i = 0;
                 foreach(Location location in App.filmAgenda.locations){
                     i++;
                 }
-                string[] options = new string[i];
+                string[] options = new string[i+1]; //plus 1 voor extra optie menu, back knop
                 i = 0;
                 foreach(Location location in App.filmAgenda.locations){
                     options[i] = location.CinemaLocation;
                     i++;
                 }
+                options[i] = "Back";
                 string titel = @"Kies een locatie";
                 Menu ChooseCinema = new Menu(options, titel, 0);
                 chosenLocation = ChooseCinema.Run();
-            }
-
-            while (chosenDate == -1){
-                Clear();
-                CursorVisible = true;
-                WriteLine("Voer een datum in volgens het formaat: 00-00-0000");
-                string input = ReadLine();
-                CursorVisible = false;
-                int i = 0;
-                foreach(Day day in App.filmAgenda.locations[chosenLocation].Days){
-                    if(day.Date == input){
-                        chosenDate = i;
-                    }
-                    i++;
+                
+                if(chosenLocation == i){ //back knop
+                    chosenLocation = -1;
+                    App.adminPanelScreen.run();
                 }
-                if(chosenDate == -1){
+
+                while (chosenDate == -1 && chosenLocation != -1){ //code voor het kiezen van datum zolang er geen datum gekozen is en er wel een locatie gekozen is
                     Clear();
-                    WriteLine("Deze datum bestaat niet in het systeem");
+                    CursorVisible = true;
+                    WriteLine("Voer een datum in volgens het formaat: 00-00-0000");
+                    string input = ReadLine();
+                    CursorVisible = false;
+                    int ii = 0;
+                    if(input == "back"){
+                        chosenDate = -1;
+                        chosenLocation = -1;
+                        break;
+                    }
+                    foreach(Day day in App.filmAgenda.locations[chosenLocation].Days){
+                        if(day.Date == input){
+                            chosenDate = ii;
+                        }
+                        ii++;
+                    }
+                    if(chosenDate == -1){
+                        Clear();
+                        WriteLine("Deze datum bestaat niet in het systeem");
+                        ConsoleUtils.WaitForKeyPress();
+                    }
+
+                    while (chosenHall == -1 && chosenDate != -1 && chosenLocation != -1){ //kiezen van een hal, zolang er geen hal gekozen is en er wel een datum en loactie gekozen is
+                        int iii = 0;
+                        foreach(AvailableHall hall in App.filmAgenda.locations[chosenLocation].Days[chosenDate].AvailableHalls){ //deze foreach loop kijkt hoeveel beschikbare hallen er zijn zodat er een array met de beschikbare hallen aangemaakt kan worden.
+                            iii++;
+                        }
+                        string[] optionsHall = new string[iii+1];
+                        string table = "";
+                        iii = 0;
+                        foreach(AvailableHall hall in App.filmAgenda.locations[chosenLocation].Days[chosenDate].AvailableHalls){ //2 foreeach loops, 1) vult de array met beschikbare hallen en voegt de naam van de hallen toe aan de table string 2) voegt de films die worden gespeeld in een hal toe aan de table string
+                            optionsHall[iii] = hall.HallName;
+                            table += $"{hall.HallName}:\n";
+                            foreach(MovieItem movieItem in hall.MovieItemlist){
+                                table += $"-{movieItem.Title} {movieItem.StartTimeString.Substring(11)} - {movieItem.EndTimeString.Substring(11)}\n";
+                            }
+                            iii++;
+                        }
+                        optionsHall[iii] = "Back";
+                        Clear();
+                        Menu ChooseHall = new Menu(optionsHall, table, 0);
+                        chosenHall = ChooseHall.Run();
+
+                        if(chosenHall == iii){
+                            chosenHall = -1;
+                            chosenDate = -1;
+                            break;
+                        }
+                    }
+
+                    WriteLine($"{chosenLocation},{chosenDate},{chosenHall}");
+
                     ConsoleUtils.WaitForKeyPress();
                 }
             }
-
-            while (chosenHall == -1){
-                int i = 0;
-                foreach(AvailableHall hall in App.filmAgenda.locations[chosenLocation].Days[chosenDate].AvailableHalls){
-                    i++;
-                }
-                string[] options = new string[i];
-                i = 0;
-                foreach(AvailableHall hall in App.filmAgenda.locations[chosenLocation].Days[chosenDate].AvailableHalls){
-                    options[i] = hall.HallName;
-                    i++;
-                }
-                string titel = "Kies een zaal";
-                Menu ChooseHall = new Menu(options, titel, 0);
-                chosenHall = ChooseHall.Run();
-            }
-
-            WriteLine($"{chosenLocation},{chosenDate},{chosenHall}");
-
-            ConsoleUtils.WaitForKeyPress();
         }
     }   
 }
