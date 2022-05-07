@@ -16,87 +16,127 @@ namespace CinemaApp.Screens
         //Methods
         public override void run()
         {
+            // Zolang er geen locatie/datum/hall gekozen is de index waarde -1
             int chosenLocation = -1;
             int chosenDate = -1;
             int chosenHall = -1;
+            
+            //
+            // Code voor het kiezen van een locatie zolang die nog niet gekozen is
+            //
 
-            while (chosenLocation == -1){ //code voor het kiezen van een bioscoop, zolang er geen bioscoop gekozen is
+            while (chosenLocation == -1){
                 Clear();
+                int amountOfLocations = App.filmAgenda.locations.Count;
+                string[] optionsLocationMenu = new string[amountOfLocations + 1]; // Plus 1 voor extra optie in het menu, namelijk de 'back' optie
+                
+                // Namen van locaties worden toegevoegd aan 'optionsLocationMenu' array
                 int i = 0;
                 foreach(Location location in App.filmAgenda.locations){
+                    optionsLocationMenu[i] = location.CinemaLocation;
                     i++;
                 }
-                string[] options = new string[i+1]; //plus 1 voor extra optie menu, back knop
-                i = 0;
-                foreach(Location location in App.filmAgenda.locations){
-                    options[i] = location.CinemaLocation;
-                    i++;
-                }
-                options[i] = "Back";
+                // De back optie wordt toegevoegd aan 'optionsLocationMenu' array
+                optionsLocationMenu[i] = "Back";
+
+                // Aanmaken en runnen van LocationMenu
                 string titel = @"Kies een locatie";
-                Menu ChooseCinema = new Menu(options, titel, 0);
-                chosenLocation = ChooseCinema.Run();
+                Menu locationMenu = new Menu(optionsLocationMenu, titel, 0);
+                chosenLocation = locationMenu.Run();
                 
-                if(chosenLocation == i){ //back knop
+                // Als de gekozen locatie gelijk is aan 'i' wordt er gekozen voor de 'back' optie in het 'locationMenu'
+                if(chosenLocation == i){
                     chosenLocation = -1;
                     App.adminPanelScreen.run();
                 }
 
-                while (chosenDate == -1 && chosenLocation != -1){ //code voor het kiezen van datum zolang er geen datum gekozen is en er wel een locatie gekozen is
+                //
+                // Code voor het kiezen van een datum zolang er nog geen datum gekozen is maar wel een locatie
+                //
+
+                while (chosenDate == -1 && chosenLocation != -1){
+                    
+                    // Hier wordt een user input gevraagd in de vorm "00-00-0000"
                     Clear();
                     CursorVisible = true;
                     WriteLine("Voer een datum in volgens het formaat: 00-00-0000\nVoer 'back' in om terug te gaan");
-                    string input = ReadLine();
+                    string userInputDate = ReadLine();
                     CursorVisible = false;
-                    int ii = 0;
-                    if(input == "back"){
+
+                    // Als de user input "back" is gaat het programma terug naar het 'locationMenu'
+                    if(userInputDate == "back"){
                         chosenDate = -1;
                         chosenLocation = -1;
                         break;
                     }
-                    foreach(Day day in App.filmAgenda.locations[chosenLocation].Days){
-                        if(day.Date == input){
-                            chosenDate = ii;
+                    
+                    // Deze for loop checkt of de ingevulde datum in het het systeem staat
+                    int j = 0;
+                    foreach (Day day in App.filmAgenda.locations[chosenLocation].Days){
+                        if(day.Date == userInputDate){
+                            chosenDate = j;
                         }
-                        ii++;
+                        j++;
                     }
+                    
+                    // Als de datum niet in het systeem staat krijgt de user een bericht en kan hij een nieuwe datum invullen
                     if(chosenDate == -1){
                         Clear();
                         WriteLine("Deze datum bestaat niet in het systeem");
                         ConsoleUtils.WaitForKeyPress();
                     }
 
-                    while (chosenHall == -1 && chosenDate != -1 && chosenLocation != -1){ //kiezen van een hal, zolang er geen hal gekozen is en er wel een datum en loactie gekozen is
-                        int iii = 0;
-                        foreach(AvailableHall hall in App.filmAgenda.locations[chosenLocation].Days[chosenDate].AvailableHalls){ //deze foreach loop kijkt hoeveel beschikbare hallen er zijn zodat er een array met de beschikbare hallen aangemaakt kan worden.
-                            iii++;
-                        }
-                        string[] optionsHall = new string[iii+1];
+                    //
+                    // Code voor het kiezen van een bioscoopzaal zolang er geen bioscoopzaal gekozen is maar wel een locatie en datum
+                    //
+
+                    while (chosenHall == -1 && chosenDate != -1 && chosenLocation != -1){
+                        
+                        int amountOfHalls = App.filmAgenda.locations[chosenLocation].Days[chosenDate].AvailableHalls.Count;
+                        string[] optionsHallMenu = new string[amountOfHalls+1];
+
+                        // In de string 'table' wordt een overzicht gegeven van alle 'movie items' per bioscoopzaal voor een gekozen locatie en datum
                         string table = "";
-                        iii = 0;
-                        foreach(AvailableHall hall in App.filmAgenda.locations[chosenLocation].Days[chosenDate].AvailableHalls){ // vult de array met beschikbare hallen en voegt de naam van de hallen toe aan de table string
-                            hall.OrderMovieItems(); //ordert de movieItems in een hall op begintijd
-                            App.filmAgenda.UpdateJson(); //update json
-                            optionsHall[iii] = $"Voeg film toe in: {hall.HallName}";
+                        
+                        // In deze foreach loop worden de namen van alle bioscoopzalen toegvoegd aan de 'optionsHall' array
+                        // De namen van de bioscoopzalen worden ook toegevoegd aan de 'table' string
+                        int k = 0;
+                        foreach(AvailableHall hall in App.filmAgenda.locations[chosenLocation].Days[chosenDate].AvailableHalls){
+                            
+                            // Hier worden de 'movieItems' in een bioscoopzaal op starttijd gesorteerd en daarna wordt de json geupdate
+                            hall.OrderMovieItems();
+                            App.filmAgenda.UpdateJson();
+
+                            optionsHallMenu[k] = $"Voeg film toe in: {hall.HallName}";
                             table += $"{hall.HallName}:\n";
-                            foreach(MovieItem movieItem in hall.MovieItemlist){ // voegt de films die worden gespeeld in een hal toe aan de table string
+
+                            // In deze foreach loop worden de 'movieItems' van elke bioscoop zaal toegevoegd aan de 'table' string
+                            foreach(MovieItem movieItem in hall.MovieItemlist){
                                 table += $"-{movieItem.Title} {movieItem.StartTimeString.Substring(11)} - {movieItem.EndTimeString.Substring(11)}\n";
                             }
-                            iii++;
+                            k++;
                         }
-                        optionsHall[iii] = "Back";
+                        
+                        // Hier wordt de optie 'Back' toegevoegd aan de 'optionsHallmenu' array
+                        optionsHallMenu[k] = "Back";
+                        
+                        // Aanmaken en runnen 'hallMenu'
                         Clear();
-                        Menu ChooseHall = new Menu(optionsHall, table, 0);
-                        chosenHall = ChooseHall.Run();
+                        Menu hallMenu = new Menu(optionsHallMenu, table, 0);
+                        chosenHall = hallMenu.Run();
 
-                        if(chosenHall == iii){
+                        // Als de gekozen hall gelijk is aan 'k' wordt er gekozen voor de 'back' optie in het 'hallMenu'
+                        if (chosenHall == k){
                             chosenHall = -1;
                             chosenDate = -1;
                             break;
                         }
+
+                        App.filmAgenda.AddMovieItem(chosenLocation, chosenDate, chosenHall);
                     }
 
-                    WriteLine($"{chosenLocation},{chosenDate},{chosenHall}");
+
+                    //WriteLine($"{chosenLocation},{chosenDate},{chosenHall}");
 
                     ConsoleUtils.WaitForKeyPress();
                 }
