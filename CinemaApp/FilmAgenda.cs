@@ -127,6 +127,7 @@ namespace CinemaApp
                         {
                             if (movie.Title == App.movieManager.movies[chosenMovie].Title)
                             {
+                                // Aanmaken
                                 MovieItem movieItem = new MovieItem()
                                 {
                                     Title = movie.Title,
@@ -135,12 +136,16 @@ namespace CinemaApp
                                     Genre = movie.Genre,
                                     MinimumAge = movie.MinimumAge,
                                     Kijkwijzer = movie.Kijkwijzer,
-                                    StartTimeString = startTimeString,
-                                    EndTimeString = endTime.ToString(),
+                                    Duration = movie.Duration,
+                                    StartTimeString = startTime.ToString(cultureInfo),
+                                    EndTimeString = endTime.ToString(cultureInfo),
                                     Format = format
                                 };
+                                // Toevoegen
+                                locations[locationIndex].Days[dayIndex].AvailableHalls[hallIndex].MovieItemlist.Add(movieItem);
                             }
                         }
+                        UpdateJson();
                     }
                 }
                 else

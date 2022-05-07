@@ -133,11 +133,8 @@ namespace CinemaApp.Screens
                         }
 
                         App.filmAgenda.AddMovieItem(chosenLocation, chosenDate, chosenHall);
+                        chosenHall = -1;
                     }
-
-
-                    //WriteLine($"{chosenLocation},{chosenDate},{chosenHall}");
-
                     ConsoleUtils.WaitForKeyPress();
                 }
             }
