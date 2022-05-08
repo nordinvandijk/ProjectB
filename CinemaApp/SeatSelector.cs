@@ -10,7 +10,10 @@ namespace CinemaApp
         private double totalPrice = 0;
         public Tuple<string,double>[][] seats;
 
-
+        /*  
+        Tuples vervangen naar array met Class "Seat".
+        Vierkantjes voor de stoelen.
+        */
         public SeatSelector() {
             currentX = 0;
             currentY = 0;
@@ -38,8 +41,8 @@ namespace CinemaApp
                 ResetColor();
                 Write("Rij " + y + " ");
                 for (int x = 0; x < seats[y].Length; x++) {
+                    // Begin van huidig geselcteerde stoel kleur.
                     if (currentX == x && currentY == y) {
-                        ConsoleColor cursorColor;
                         if (seats[y][x].Item1 == "selected") {
                             BackgroundColor = ConsoleColor.Yellow;
                         }
@@ -51,6 +54,8 @@ namespace CinemaApp
                         }
                         Write(seats[y][x].ToString());
                     }
+                    // Einde van huidig geselcteerde stoel kleur.
+                    // Begin van andere stoelen kleur.
                     else if (seats[y][x].Item1 == "selected") {
                         Write(seats[y][x].ToString(), BackgroundColor = ConsoleColor.DarkYellow);
                     }
@@ -61,17 +66,21 @@ namespace CinemaApp
                         ResetColor();
                         Write(seats[y][x].ToString());
                     }
+                    // Einde van andere stoelen kleur.
                 }
                 Write(Environment.NewLine + Environment.NewLine);
             }
             ResetColor();
+            // Code om de stoel prijs te laten zien
             try {
                 WriteLine("Stoel prijs: " + String.Format("{0:0.00}", seats[currentY][currentX].Item2));
             }
             catch {
                 WriteLine("Stoel prijs: 0.00");
             }
+            // Code om de totaal prijs te laten zien.
             WriteLine("Totaal prijs: " + String.Format("{0:0.00}", totalPrice));
+            // Code om te laten zien of je op de bevestig knop bent.
             if (currentY == seats.Length) {
                 WriteLine("\nBevestigen", BackgroundColor = ConsoleColor.White);
             }
@@ -94,6 +103,7 @@ namespace CinemaApp
                 ConsoleKeyInfo keyInfo = ReadKey(true);
                 keyPressed = keyInfo.Key;
                 
+                // Code om te navigeren met user input
                 if (keyPressed == ConsoleKey.UpArrow || keyPressed == ConsoleKey.W)
                 {
                     int tempY = currentY;
