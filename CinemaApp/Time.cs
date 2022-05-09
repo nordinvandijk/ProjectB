@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 using static System.Console;
 
 namespace CinemaApp
@@ -13,6 +14,22 @@ namespace CinemaApp
             App = app;
         }
 
+        public void UpdateAgenda()
+        {
+            // Huidige dag in 'this day'
+            var cultureInfo = new CultureInfo("nl-NL");
+            DateTime thisDay = DateTime.Today;
+
+            for (int i = 0; i < App.filmAgenda.locations.Count; i++)
+            {
+                Location location = App.filmAgenda.locations[i];
+                
+            }
+
+            string test = thisDay.ToString(cultureInfo);
+            test = test.Substring(0, 8);
+            Console.WriteLine(test);
+        }
         public bool CheckTimeOverlap(DateTime start1, DateTime end1, DateTime start2, DateTime end2){
             if (start1 >= start2 && start1 <= end2){
                 return true;

@@ -84,7 +84,44 @@
           },
           {
             "HallName": "Zaal 2",
-            "MovieItemlist": []
+            "MovieItemlist": [
+              {
+                "StartTimeString": "01-03-2022 12:00:00",
+                "EndTimeString": "01-03-2022 13:30:00",
+                "Format": "IMAX",
+                "Title": "Pulp Fiction",
+                "Description": "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+                "ReleaseDate": "01-12-1994",
+                "Genre": [
+                  "Misdaad",
+                  "Drama"
+                ],
+                "MinimumAge": 16,
+                "Kijkwijzer": [
+                  "Geweld",
+                  "Grof taalgebruik"
+                ],
+                "Duration": "01:30:00"
+              },
+              {
+                "StartTimeString": "01-03-2022 14:00:00",
+                "EndTimeString": "01-03-2022 15:30:00",
+                "Format": "IMAX",
+                "Title": "Pulp Fiction",
+                "Description": "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+                "ReleaseDate": "01-12-1994",
+                "Genre": [
+                  "Misdaad",
+                  "Drama"
+                ],
+                "MinimumAge": 16,
+                "Kijkwijzer": [
+                  "Geweld",
+                  "Grof taalgebruik"
+                ],
+                "Duration": "01:30:00"
+              }
+            ]
           },
           {
             "HallName": "Zaal 3",
