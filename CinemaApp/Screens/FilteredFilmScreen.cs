@@ -18,11 +18,16 @@ namespace CinemaApp.Screens
             List<string> optionsList = new List<string>();
             List<string> FilterList = new List<string>();
 
-            optionsList.Add("Drama");
-            optionsList.Add("Actie");
-            optionsList.Add("Misdaad");
-            optionsList.Add("Science Fiction");
-            optionsList.Add("Avontuur");
+            foreach (Movie mov in App.movieManager.movies)
+            {
+                for (int i = 0; i < mov.Genre.Length; i++)
+                {
+                    if (!optionsList.Contains(mov.Genre[i]))
+                    {
+                        optionsList.Add(mov.Genre[i]);
+                    }
+                }
+            }
             optionsList.Add("\nTerug");
             string[] options = optionsList.ToArray();
             Menu FilterOverviewMenu = new Menu(options, titel, 0);
