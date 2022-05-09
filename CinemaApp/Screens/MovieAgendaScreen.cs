@@ -37,7 +37,7 @@ namespace CinemaApp.Screens
                     i++;
                 }
                 // De back optie wordt toegevoegd aan 'optionsLocationMenu' array
-                optionsLocationMenu[i] = "Back";
+                optionsLocationMenu[i] = "\nTerug";
 
                 // Aanmaken en runnen van LocationMenu
                 string titel = @"Kies een locatie";
@@ -59,12 +59,12 @@ namespace CinemaApp.Screens
                     // Hier wordt een user input gevraagd in de vorm "00-00-0000"
                     Clear();
                     CursorVisible = true;
-                    WriteLine("Voer een datum in volgens het formaat: 00-00-0000\nVoer 'back' in om terug te gaan");
+                    WriteLine("Voer een datum in volgens het formaat: 00-00-0000\nVoer 'terug' in om terug te gaan");
                     string userInputDate = ReadLine();
                     CursorVisible = false;
 
-                    // Als de user input "back" is gaat het programma terug naar het 'locationMenu'
-                    if(userInputDate == "back"){
+                    // Als de user input "terug" is gaat het programma terug naar het 'locationMenu'
+                    if(userInputDate == "terug"){
                         chosenDate = -1;
                         chosenLocation = -1;
                         break;
@@ -96,33 +96,32 @@ namespace CinemaApp.Screens
                         string[] optionsHallMenu = new string[amountOfHalls+1];
 
                         // In de string 'table' wordt een overzicht gegeven van alle 'movie items' per bioscoopzaal voor een gekozen locatie en datum
-                        string table = "";
+                        //string table = "";
                         
                         // In deze foreach loop worden de namen van alle bioscoopzalen toegvoegd aan de 'optionsHall' array
                         // De namen van de bioscoopzalen worden ook toegevoegd aan de 'table' string
                         int k = 0;
                         foreach(AvailableHall hall in App.filmAgenda.locations[chosenLocation].Days[chosenDate].AvailableHalls){
-                            
+                            string table = "";
                             // Hier worden de 'movieItems' in een bioscoopzaal op starttijd gesorteerd en daarna wordt de json geupdate
                             hall.OrderMovieItems();
                             App.filmAgenda.UpdateJson();
 
-                            optionsHallMenu[k] = $"Voeg film toe in: {hall.HallName}";
                             table += $"{hall.HallName}:\n";
 
                             // In deze foreach loop worden de 'movieItems' van elke bioscoop zaal toegevoegd aan de 'table' string
                             foreach(MovieItem movieItem in hall.MovieItemlist){
                                 table += $"-{movieItem.Title} {movieItem.StartTimeString.Substring(11)} - {movieItem.EndTimeString.Substring(11)}\n";
                             }
+                            optionsHallMenu[k] = table;
                             k++;
                         }
                         
-                        // Hier wordt de optie 'Back' toegevoegd aan de 'optionsHallmenu' array
-                        optionsHallMenu[k] = "Back";
-                        
+                        optionsHallMenu[k] = "Terug";
+
                         // Aanmaken en runnen 'hallMenu'
                         Clear();
-                        Menu hallMenu = new Menu(optionsHallMenu, table, 0);
+                        Menu hallMenu = new Menu(optionsHallMenu, "Klik op een zaal om een film toe te voegen", 0);
                         chosenHall = hallMenu.Run();
 
                         // Als de gekozen hall gelijk is aan 'k' wordt er gekozen voor de 'back' optie in het 'hallMenu'
