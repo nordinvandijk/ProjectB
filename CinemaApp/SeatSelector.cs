@@ -158,7 +158,8 @@ namespace CinemaApp
                         seats[currentY][currentX].Availability = "available";
                     }
                     else if (seats[currentY][currentX].Availability == "occupied") {
-                        WriteLine("Deze stoel is bezet");
+                        WriteLine("\nDeze stoel is bezet");
+                        ConsoleUtils.WaitForKeyPress();
                     }
                     totalPrice = Math.Abs(totalPrice); // Zodat totalPrice niet -0.00 wordt
                 }
