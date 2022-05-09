@@ -123,34 +123,24 @@ namespace CinemaApp
                     // Voegt movieItem toe zodra deze niet overlapt met andere movieItems
                     if (startAndEndTimeFound)
                     {
-                        foreach (Movie movie in App.movieManager.movies)
+                        // Aanmaken
+                        MovieItem movieItem = new MovieItem()
                         {
-                            if (movie.Title == App.movieManager.movies[chosenMovie].Title)
-                            {
-                                // Aanmaken
-                                MovieItem movieItem = new MovieItem()
-                                {
-                                    Title = movie.Title,
-                                    Description = movie.Description,
-                                    ReleaseDate = movie.ReleaseDate,
-                                    Genre = movie.Genre,
-                                    MinimumAge = movie.MinimumAge,
-                                    Kijkwijzer = movie.Kijkwijzer,
-                                    Duration = movie.Duration,
-                                    StartTimeString = startTime.ToString(cultureInfo),
-                                    EndTimeString = endTime.ToString(cultureInfo),
-                                    Format = format
-                                };
-                                // Toevoegen
-                                locations[locationIndex].Days[dayIndex].AvailableHalls[hallIndex].MovieItemlist.Add(movieItem);
-                            }
-                        }
+                            Title = App.movieManager.movies[chosenMovie].Title,
+                            Duration = App.movieManager.movies[chosenMovie].Duration,
+                            StartTimeString = startTime.ToString(cultureInfo),
+                            EndTimeString = endTime.ToString(cultureInfo),
+                            Format = format
+                        };
+                        // Toevoegen
+                        locations[locationIndex].Days[dayIndex].AvailableHalls[hallIndex].MovieItemlist.Add(movieItem);
+                         
                         UpdateJson();
                     }
                 }
                 else
                 {
-                    Console.WriteLine("This is not a correct time!");
+                    Console.WriteLine("Dit is geen juist tijd!");
                     ConsoleUtils.WaitForKeyPress();
                 }
             }
