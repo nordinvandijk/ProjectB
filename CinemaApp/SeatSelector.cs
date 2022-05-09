@@ -131,7 +131,7 @@ namespace CinemaApp
                             currentY = seats.Length;
                         }
                     }
-                    if (keyPressed == ConsoleKey.RightArrow || keyPressed == ConsoleKey.D)
+                    if (keyPressed == ConsoleKey.RightArrow || keyPressed == ConsoleKey.D && currentY <= seats[0].Length) // currentY <= seats[0].Length zodat je niet out of bounds kan gaan als je op bevestigen knop zit
                     {
                         currentX++;
                         if (currentX >= seats[currentY].Length) {
@@ -160,6 +160,7 @@ namespace CinemaApp
                     else if (seats[currentY][currentX].Availability == "occupied") {
                         WriteLine("Deze stoel is bezet");
                     }
+                    totalPrice = Math.Abs(totalPrice); // Zodat totalPrice niet -0.00 wordt
                 }
                 // Anders sta je wel op bevestigen en gaat ie uit de while loop
                 else {
