@@ -5,35 +5,32 @@ namespace CinemaApp
 {
     class SeatSelector
     {
-        private int currentX;
-        private int currentY;
-        private double totalPrice = 0;
+        private int currentX = 0;
+        private int currentY = 0;
+        private float totalPrice = 0;
         public Seat[][] seats;
 
-        /*  
-        Tuples vervangen naar array met Class "Seat".
-        Vierkantjes voor de stoelen.
-        */
         public SeatSelector() { // in plaats van tuples heb ik objects gebruik 
-            currentX = 0;
-            currentY = 0;
             seats = new Seat[4][];
             seats[0] = new Seat[3]; 
-            seats[0][1] = new Seat("occupied", 1.00,0,1); //  availability, price, row, seat
-            seats[0][2] = new Seat("available", 1.00,0,2);
-            seats[0][0] = new Seat("available", 1.00,0,0);
+            seats[0][1] = new Seat("occupied", 1.00f,0,1); //  availability, price, row, seat
+            seats[0][2] = new Seat("available", 1.00f,0,2);
+            seats[0][0] = new Seat("available", 1.00f,0,0);
             seats[1] = new Seat[3];
-            seats[1][1] = new Seat("occupied", 1.20,1,1);
-            seats[1][2] = new Seat("available", 1.00,1,2);
-            seats[1][0] = new Seat("available", 1.00,1,0);
+            seats[1][1] = new Seat("occupied", 1.20f,1,1);
+            seats[1][2] = new Seat("available", 1.00f,1,2);
+            seats[1][0] = new Seat("available", 1.00f,1,0);
             seats[2] = new Seat[3];
-            seats[2][1] = new Seat("available", 1.20,2,1);
-            seats[2][2] = new Seat("available", 1.00,2,2);
-            seats[2][0] = new Seat("available", 1.00,2,0); 
+            seats[2][1] = new Seat("available", 1.20f,2,1);
+            seats[2][2] = new Seat("available", 1.00f,2,2);
+            seats[2][0] = new Seat("available", 1.00f,2,0); 
             seats[3] = new Seat[3];
-            seats[3][1] = new Seat("available", 1.20,3,1);
-            seats[3][2] = new Seat("occupied", 1.00,3,2);
-            seats[3][0] = new Seat("available", 1.00,3,0);
+            seats[3][1] = new Seat("available", 1.20f,3,1);
+            seats[3][2] = new Seat("occupied", 1.00f,3,2);
+            seats[3][0] = new Seat("available", 1.00f,3,0);
+        }
+        public SeatSelector(Seat[][] seats) {
+            this.seats = seats;
         }
 
         public void Display() {
@@ -90,65 +87,68 @@ namespace CinemaApp
             ResetColor();
         }
 
-        // Return value van deze method moet waarschijlijnk worden aangepast
         public void Run()
         {
-            ConsoleKey keyPressed;
-            do
-            {
-                Clear();
-                Display();
-                
-                ConsoleKeyInfo keyInfo = ReadKey(true);
-                keyPressed = keyInfo.Key;
-                
-                // Code om te navigeren met user input
-                if (keyPressed == ConsoleKey.UpArrow || keyPressed == ConsoleKey.W)
+            while (true) { // Deze while loop zorgt ervoor dat je meerdere stoelen kan selecteren en dus niet stopt nadat je 1 stoel hebt geselecteerd
+                ConsoleKey keyPressed;
+                do
                 {
-                    int tempY = currentY;
-                    currentY--;
-                    if (currentY < 0) {
-                        currentY = 0;
+                    Clear();
+                    Display();
+                    
+                    ConsoleKeyInfo keyInfo = ReadKey(true);
+                    keyPressed = keyInfo.Key;
+                    
+                    // Code om te navigeren met user input
+                    if (keyPressed == ConsoleKey.UpArrow || keyPressed == ConsoleKey.W)
+                    {
+                        int tempY = currentY;
+                        currentY--;
+                        if (currentY < 0) {
+                            currentY = 0;
+                        }
                     }
-                }
-                if (keyPressed == ConsoleKey.DownArrow || keyPressed == ConsoleKey.S)
-                {
-                    currentY++;
-                    if (currentY > seats.Length) {
-                        currentY = seats.Length;
+                    if (keyPressed == ConsoleKey.DownArrow || keyPressed == ConsoleKey.S)
+                    {
+                        currentY++;
+                        if (currentY > seats.Length) {
+                            currentY = seats.Length;
+                        }
                     }
-                }
-                if (keyPressed == ConsoleKey.RightArrow || keyPressed == ConsoleKey.D)
-                {
-                    currentX++;
-                    if (currentX >= seats[currentY].Length) {
-                        currentX = seats[currentY].Length-1;
+                    if (keyPressed == ConsoleKey.RightArrow || keyPressed == ConsoleKey.D)
+                    {
+                        currentX++;
+                        if (currentX >= seats[currentY].Length) {
+                            currentX = seats[currentY].Length-1;
+                        }
                     }
-                }
-                if (keyPressed == ConsoleKey.LeftArrow || keyPressed == ConsoleKey.A)
-                {
-                    currentX--;
-                    if (currentX < 0) {
-                        currentX = 0;
+                    if (keyPressed == ConsoleKey.LeftArrow || keyPressed == ConsoleKey.A)
+                    {
+                        currentX--;
+                        if (currentX < 0) {
+                            currentX = 0;
+                        }
                     }
-                }
-            } while(keyPressed != ConsoleKey.Enter);
+                } while(keyPressed != ConsoleKey.Enter);
 
-            // Als de huidge positie niet op bevistigen is, dan checkt ie de status van de stoel waar je op zit om die te veranderen.
-            if (currentY != seats.Length) {
-                if (seats[currentY][currentX].Availability == "available") {
-                    totalPrice += seats[currentY][currentX].Price;
-                    seats[currentY][currentX].Availability = "selected";
+                // Als de huidge positie niet op bevistigen is, dan checkt ie de status van de stoel waar je op zit om die te veranderen.
+                if (currentY != seats.Length) {
+                    if (seats[currentY][currentX].Availability == "available") {
+                        totalPrice += seats[currentY][currentX].Price;
+                        seats[currentY][currentX].Availability = "selected";
+                    }
+                    else if (seats[currentY][currentX].Availability == "selected") {
+                        totalPrice -= seats[currentY][currentX].Price;
+                        seats[currentY][currentX].Availability = "available";
+                    }
+                    else if (seats[currentY][currentX].Availability == "occupied") {
+                        WriteLine("Deze stoel is bezet");
+                    }
                 }
-                else if (seats[currentY][currentX].Availability == "selected") {
-                    totalPrice -= seats[currentY][currentX].Price;
-                    seats[currentY][currentX].Availability = "available";
+                // Anders sta je wel op bevestigen en gaat ie uit de while loop
+                else {
+                    break;
                 }
-                else if (seats[currentY][currentX].Availability == "occupied") {
-                    WriteLine("Deze stoel is bezet");
-                }
-
-                Run(); // Waarschijnlijk handig om dit te veranderen, want nu opent ie denk ik een nieuwe run en sluit hem niet dus voor ram geheugen niet zo fijn
             }
         }
 

@@ -4,15 +4,21 @@ namespace CinemaApp
 {
     class Seat
     {
-        public string Availability;
-        public double Price;
+        public string Availability { get; set; }
+        public float Price { get; set; }
+        public int Row { get; set; }
+        public int SeatNumber { get; set; }
 
-        public Tuple<int,int> CurrentPosition;
+        public Seat(){
+            this.Availability = "available";
+            this.Price = 10.00f;
+        }
 
-        public Seat(string availability,double price, int row, int seat){
+        public Seat(string availability,float price, int row, int seat){
             this.Availability = availability;
             this.Price = price;
-            this.CurrentPosition = Tuple.Create(row,seat);
+            this.Row = row;
+            this.SeatNumber = seat;
         }
     }  
 }
