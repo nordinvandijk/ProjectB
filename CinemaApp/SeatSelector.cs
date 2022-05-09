@@ -154,6 +154,7 @@ namespace CinemaApp
 
         public void Square_color(string Color){ //dit is een functie dat een vierkant print met de kleur die je wilt
             if (Color == "Green") Console.BackgroundColor = ConsoleColor.Green;
+            if (Color == "Blue") Console.BackgroundColor = ConsoleColor.Blue;
             if (Color == "White") Console.BackgroundColor = ConsoleColor.White;
             if (Color == "Red") Console.BackgroundColor = ConsoleColor.Red;
             if (Color == "Gray") Console.BackgroundColor = ConsoleColor.Gray;
