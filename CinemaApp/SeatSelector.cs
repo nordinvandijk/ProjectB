@@ -85,6 +85,22 @@ namespace CinemaApp
                 WriteLine("\nBevestigen");
             }
             ResetColor();
+
+            Write("\n╒═══════════════════╕\n");
+            Write("│ Legenda stoelen   │\n");
+            Write("│ Beschikbaar    ");
+            Square_color("Green");
+            Write(" │\n");
+            Write("│                   │\n");
+            Write("│ Bezet          ");
+            Square_color("DarkRed");
+            Write(" │\n");
+            Write("│                   │\n");
+            Write("│ Geselecteerd   ");
+            Square_color("DarkYellow");
+            Write(" │\n");
+            Write("╘═══════════════════╛");
+
         }
 
         public void Run()
