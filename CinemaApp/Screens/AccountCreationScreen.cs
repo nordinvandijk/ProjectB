@@ -23,6 +23,7 @@ namespace CinemaApp.Screens
             string wachtwoordHerhaal = "<leeg>";
             string email = "<leeg>";
             string telefoon = "<leeg>";
+            string abonnement = "<leeg>";
 
             while (MenuBool) {
 
@@ -39,6 +40,7 @@ namespace CinemaApp.Screens
                         WriteLine("Voer je gebruikersnaam in: ");
                         CursorVisible = true;
                         gebruikersnaam = ReadLine();
+                        abonnement = null;
                         CursorVisible = false;
                         break;
                     case 1:
@@ -74,7 +76,7 @@ namespace CinemaApp.Screens
                         if (wachtwoord != wachtwoordHerhaal) {
                             WriteLine("Het herhaalde wachtwoord komt niet overeen met je wachtwoord");
                         }
-                        else if (App.userManager.CreateUser(gebruikersnaam,wachtwoord,email)){
+                        else if (App.userManager.CreateUser(gebruikersnaam,wachtwoord,email,abonnement)){
                             App.userManager.Login(gebruikersnaam,wachtwoord);
                             ConsoleUtils.WaitForKeyPress();
                             App.homeScreen.run();

@@ -30,6 +30,7 @@ namespace CinemaApp
         public FilmFilter FilmFilter;
         public KijkwijzerFilmFilter kijkwijzerFilmFilter;
         public KijkwijzerFilter kijkwijzerFilter;
+        public Subscriptions subscriptions;
 
 
 
@@ -58,6 +59,7 @@ namespace CinemaApp
             userManager = new UserManager();
             kijkwijzerFilmFilter = new KijkwijzerFilmFilter(this);
             kijkwijzerFilter = new KijkwijzerFilter(this);
+            subscriptions = new Subscriptions(this);
 
         }
 

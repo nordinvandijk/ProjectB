@@ -24,7 +24,7 @@ namespace CinemaApp.Screens
             switch(ChosenOption)
             {
                 case 0:
-                    //code
+                    App.subscriptions.run();
                     break;
                 case 1:
                     //code
