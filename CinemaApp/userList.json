@@ -2,76 +2,91 @@
   {
     "Username": "hans",
     "Password": "willem",
-    "Email": "123"
+    "Email": "123",
+    "Abonnement": "Abonnement 2"
   },
   {
     "Username": "nathan",
     "Password": "nathan123",
-    "Email": "nathan@gmail.com"
+    "Email": "nathan@gmail.com",
+    "Abonnement": "Kopen"
   },
   {
     "Username": "Wie",
     "Password": "wat",
-    "Email": "wanneer"
+    "Email": "wanneer",
+    "Abonnement": null
   },
   {
     "Username": "Hans",
     "Password": "willem wie",
-    "Email": "wat"
+    "Email": "wat",
+    "Abonnement": null
   },
   {
     "Username": "Salaheddine",
     "Password": "S123",
-    "Email": "2022#gmail.com"
+    "Email": "2022#gmail.com",
+    "Abonnement": null
   },
   {
     "Username": "qwerty",
     "Password": "qwerty",
-    "Email": "qwerty"
+    "Email": "qwerty",
+    "Abonnement": null
   },
   {
     "Username": "Bruh",
     "Password": "Bruh",
-    "Email": "Bruh"
+    "Email": "Bruh",
+    "Abonnement": null
   },
   {
     "Username": "bruh",
     "Password": "bruh",
-    "Email": "bruh"
+    "Email": "bruh",
+    "Abonnement": null
   },
   {
     "Username": "rewq",
     "Password": "grfds",
-    "Email": "gfdc"
+    "Email": "gfdc",
+    "Abonnement": null
   },
   {
     "Username": "htrgfds",
     "Password": "grfds",
-    "Email": "gfds"
+    "Email": "gfds",
+    "Abonnement": null
   },
   {
     "Username": "treijfgb",
     "Password": "gfbjvcxk",
-    "Email": "gfdjgfb"
+    "Email": "gfdjgfb",
+    "Abonnement": null
   },
   {
     "Username": "thrgewfj",
     "Password": "rtgfds",
-    "Email": "gfd"
+    "Email": "gfd",
+    "Abonnement": null
   },
   {
     "Username": "Salahedd",
     "Password": "Wachtwoord",
-    "Email": "sz@123.nl"
+    "Email": "sz@123.nl",
+    "Abonnement": null
   },
   {
     "Username": "SZSZ",
     "Password": "SSZSZSZ",
-    "Email": "SSZSZSZ"
+    "Email": "SSZSZSZ",
+    "Abonnement": null
   },
   {
     "Username": "O",
     "Password": "O",
-    "Email": "O"
+    "Email": "O",
+    "Abonnement": null
   }
 ]
