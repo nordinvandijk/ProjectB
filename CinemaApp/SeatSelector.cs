@@ -86,20 +86,26 @@ namespace CinemaApp
             }
             ResetColor();
 
-            Write("\n╒═══════════════════╕\n");
-            Write("│ Legenda stoelen   │\n");
-            Write("│ Beschikbaar    ");
+            Write("\n╒══════════════════════════════╕\n");
+            Write("│ Legenda stoelen              │\n");
+            Write("│ Om een stoel te selecteren   │\n");
+            Write("│ toets ENTER                  │\n");
+            Write("│                              │\n");
+            Write("│ Om een stoel te deselecteren │\n");
+            Write("│ toets nog een keer ENTER     │\n");
+            Write("│                              │\n");
+            Write("│ Beschikbaar               ");
             Square_color("Green");
             Write(" │\n");
-            Write("│                   │\n");
-            Write("│ Bezet          ");
+            Write("│                              │\n");
+            Write("│ Bezet                     ");
             Square_color("DarkRed");
             Write(" │\n");
-            Write("│                   │\n");
-            Write("│ Geselecteerd   ");
+            Write("│                              │\n");
+            Write("│ Geselecteerd              ");
             Square_color("DarkYellow");
             Write(" │\n");
-            Write("╘═══════════════════╛");
+            Write("╘══════════════════════════════╛");
 
         }
 
