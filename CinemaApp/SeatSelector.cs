@@ -11,43 +11,66 @@ namespace CinemaApp
         public Seat[][] seats;
 
         public SeatSelector() { // in plaats van tuples heb ik objects gebruik 
-            seats = new Seat[4][];
-            seats[0] = new Seat[3]; 
-            seats[0][1] = new Seat("occupied", 1.00f,0,1); //  availability, price, row, seat
-            seats[0][2] = new Seat("available", 1.00f,0,2);
-            seats[0][0] = new Seat("available", 1.00f,0,0);
-            seats[1] = new Seat[3];
-            seats[1][1] = new Seat("occupied", 1.20f,1,1);
-            seats[1][2] = new Seat("available", 1.00f,1,2);
-            seats[1][0] = new Seat("available", 1.00f,1,0);
-            seats[2] = new Seat[3];
-            seats[2][1] = new Seat("available", 1.20f,2,1);
-            seats[2][2] = new Seat("available", 1.00f,2,2);
-            seats[2][0] = new Seat("available", 1.00f,2,0); 
-            seats[3] = new Seat[3];
-            seats[3][1] = new Seat("available", 1.20f,3,1);
-            seats[3][2] = new Seat("occupied", 1.00f,3,2);
-            seats[3][0] = new Seat("available", 1.00f,3,0);
+            seats = new Seat[5][];
+            seats[0] = new Seat[5]; 
+            seats[0][0] = new Seat("occupied", 1.00f,1,1); //  availability, price, row, seat
+            seats[0][1] = new Seat("available", 1.00f,1,2);
+            seats[0][2] = new Seat("available", 1.00f,1,3);
+            seats[0][3] = new Seat("available", 1.00f,1,4);
+            seats[0][4] = new Seat("available", 1.00f,1,5);
+            seats[1] = new Seat[5];
+            seats[1][0] = new Seat("occupied", 1.20f,2,1);
+            seats[1][1] = new Seat("available", 1.00f,2,2);
+            seats[1][2] = new Seat("available", 1.00f,2,3);
+            seats[1][3] = new Seat("available", 1.00f,2,4);
+            seats[1][4] = new Seat("available", 1.00f,2,5);
+            seats[2] = new Seat[5];
+            seats[2][0] = new Seat("available", 1.20f,3,1);
+            seats[2][1] = new Seat("available", 1.00f,3,2);
+            seats[2][2] = new Seat("available", 1.00f,3,3); 
+            seats[2][3] = new Seat("available", 1.00f,3,4);
+            seats[2][4] = new Seat("available", 1.00f,3,5);
+            seats[3] = new Seat[5];
+            seats[3][0] = new Seat("available", 1.20f,4,1);
+            seats[3][1] = new Seat("occupied", 1.00f,4,2);
+            seats[3][2] = new Seat("available", 1.00f,4,3);
+            seats[3][3] = new Seat("available", 1.00f,4,4);
+            seats[3][4] = new Seat("available", 1.00f,4,5);
+            seats[4] = new Seat[5];
+            seats[4][0] = new Seat("available", 1.20f,5,1);
+            seats[4][1] = new Seat("occupied", 1.00f,5,2);
+            seats[4][2] = new Seat("available", 1.00f,5,3);
+            seats[4][3] = new Seat("available", 1.00f,5,4);
+            seats[4][4] = new Seat("available", 1.00f,5,5);
         }
         public SeatSelector(Seat[][] seats) {
             this.seats = seats;
         }
 
         public void Display() {
+            WriteLine("╒════════════════════════════════════════════════════════════╕");
+            WriteLine("│ Gebruik de pijltes toetsen of 'WASD' om te navigeren.      │");
+            WriteLine("│ Toets ENTER om te selecteren en deselecteren.              │");
+            WriteLine("│ Navigeer helemaal naar beneden om naar bevestigen te gaan. │");
+            WriteLine("╘════════════════════════════════════════════════════════════╛");
+            WriteLine("");
+    
+            WriteLine("       " + new string(' ', ((seats[0].Length*3)+(seats[0].Length)-1)/2-4) + "Filmdoek.");
+            WriteLine("");        
             for (int y = 0; y < seats.Length; y++) {
                 ResetColor();
-                Write("Rij " + (y+1) + " ");
+                Write("Rij {0:00} ", y+1);
                 for (int x = 0; x < seats[y].Length; x++) {
                     // Begin van huidig geselcteerde stoel kleur.
                     if (currentX == x && currentY == y) {
                         if (seats[y][x].Availability == "selected") {
-                            Square_color("Yellow"); // print een gele vierkant
+                            Square_color("Yellow", true); // print een gele vierkant
                         }
                         else if (seats[y][x].Availability == "occupied") {
-                            Square_color("Red"); // print een rode vierkant
+                            Square_color("Red", true); // print een rode vierkant
                         }
                         else {
-                            Square_color("White"); // print een witte vierkant
+                            Square_color("Green", true); // print een witte vierkant
                         }
                     }
                     // Einde van huidig geselcteerde stoel kleur.
@@ -60,7 +83,7 @@ namespace CinemaApp
                     }
                     else {
                         ResetColor();
-                        Square_color("Green"); // ik heb hier groen gebruikt in plaats van zwart omdat het er beter uitzag
+                        Square_color("DarkGreen"); // ik heb hier groen gebruikt in plaats van zwart omdat het er beter uitzag
                     }
                     // Einde van andere stoelen kleur.
                 }
@@ -88,23 +111,20 @@ namespace CinemaApp
 
             Write("\n╒══════════════════════════════╕\n");
             Write("│ Legenda stoelen              │\n");
-            Write("│ Om een stoel te selecteren   │\n");
-            Write("│ toets ENTER                  │\n");
             Write("│                              │\n");
-            Write("│ Om een stoel te deselecteren │\n");
-            Write("│ toets nog een keer ENTER     │\n");
+            Write("│ Huidige positie           X  │\n");
             Write("│                              │\n");
-            Write("│ Beschikbaar               ");
-            Square_color("Green");
-            Write(" │\n");
+            Write("│ Beschikbaar              ");
+            Square_color("DarkGreen");
+            Write("│\n");
             Write("│                              │\n");
-            Write("│ Bezet                     ");
+            Write("│ Bezet                    ");
             Square_color("DarkRed");
-            Write(" │\n");
+            Write("│\n");
             Write("│                              │\n");
-            Write("│ Geselecteerd              ");
+            Write("│ Geselecteerd             ");
             Square_color("DarkYellow");
-            Write(" │\n");
+            Write("│\n");
             Write("╘══════════════════════════════╛");
 
         }
@@ -176,18 +196,24 @@ namespace CinemaApp
             }
         }
 
-        public void Square_color(string Color){ //dit is een functie dat een vierkant print met de kleur die je wilt
-            if (Color == "Green") Console.BackgroundColor = ConsoleColor.Green;
+        public void Square_color(string Color, bool selected = false){ //dit is een functie dat een vierkant print met de kleur die je wilt
+            if (Color == "DarkGreen") Console.BackgroundColor = ConsoleColor.DarkGreen;
             if (Color == "Blue") Console.BackgroundColor = ConsoleColor.Blue;
-            if (Color == "White") Console.BackgroundColor = ConsoleColor.White;
+            if (Color == "Green") Console.BackgroundColor = ConsoleColor.Green;
             if (Color == "Red") Console.BackgroundColor = ConsoleColor.Red;
             if (Color == "Gray") Console.BackgroundColor = ConsoleColor.Gray;
-            if (Color == "Yellow") Console.BackgroundColor = ConsoleColor.Yellow;
+            if (Color == "Yellow") Console.BackgroundColor = ConsoleColor.Magenta;
             if (Color == "Black") Console.BackgroundColor = ConsoleColor.Black;
-            if (Color == "DarkYellow") Console.BackgroundColor = ConsoleColor.DarkYellow;
+            if (Color == "DarkYellow") Console.BackgroundColor = ConsoleColor.DarkMagenta;
             if (Color == "DarkRed") Console.BackgroundColor = ConsoleColor.DarkRed;
-            Console.Write("".PadRight(2));
+            if (selected) {
+                Console.Write("".PadLeft(1) + "X".PadRight(2));
+            }
+            else {
+                Console.Write("".PadRight(3));
+            }
             Console.ResetColor();
+            Write(" ");
         }
     }
     
