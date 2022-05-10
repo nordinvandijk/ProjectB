@@ -48,6 +48,7 @@ namespace CinemaApp
         }
 
         public void Display() {
+            CursorVisible = false;
             WriteLine("╒════════════════════════════════════════════════════════════╕");
             WriteLine("│ Gebruik de pijltes toetsen of 'WASD' om te navigeren.      │");
             WriteLine("│ Toets ENTER om te selecteren en deselecteren.              │");
