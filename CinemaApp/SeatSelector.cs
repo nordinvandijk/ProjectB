@@ -110,7 +110,7 @@ namespace CinemaApp
             ResetColor();
 
             Write("\n╒══════════════════════════════╕\n");
-            Write("│ Legenda stoelen              │\n");
+            Write("│ Legenda                      │\n");
             Write("│                              │\n");
             Write("│ Huidige positie           X  │\n");
             Write("│                              │\n");
