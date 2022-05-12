@@ -128,8 +128,8 @@ namespace CinemaApp
                         {
                             Title = App.movieManager.movies[chosenMovie].Title,
                             Duration = App.movieManager.movies[chosenMovie].Duration,
-                            StartTimeString = startTime.ToString(cultureInfo),
-                            EndTimeString = endTime.ToString(cultureInfo),
+                            StartTimeString = startTime.ToString("dd-MM-yyyy", cultureInfo),
+                            EndTimeString = endTime.ToString("dd-MM-yyyy", cultureInfo),
                             Format = format
                         };
                         // Toevoegen
