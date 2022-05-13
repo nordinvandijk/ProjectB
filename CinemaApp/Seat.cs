@@ -20,5 +20,6 @@ namespace CinemaApp
             this.Row = row;
             this.SeatNumber = seat;
         }
+        
     }  
 }

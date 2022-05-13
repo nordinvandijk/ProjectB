@@ -49,7 +49,7 @@ namespace CinemaApp
 
         public void Display() {
             CursorVisible = false;
-            WriteLine("╒════════════════════════════════════════════════════════════╕");
+            WriteLine("╒════════════════════════════════════════════════════════════╕"); //uitleg
             WriteLine("│ Gebruik de pijltes toetsen of 'WASD' om te navigeren.      │");
             WriteLine("│ Toets ENTER om te selecteren en deselecteren.              │");
             WriteLine("│ Navigeer helemaal naar beneden om naar bevestigen te gaan. │");
@@ -65,22 +65,22 @@ namespace CinemaApp
                     // Begin van huidig geselcteerde stoel kleur.
                     if (currentX == x && currentY == y) {
                         if (seats[y][x].Availability == "selected") {
-                            Square_color("Yellow", true); // print een gele vierkant
+                            Square_color("Yellow", "X"); // print een gele vierkant
                         }
                         else if (seats[y][x].Availability == "occupied") {
-                            Square_color("Red", true); // print een rode vierkant
+                            Square_color("Red", "X"); // print een rode vierkant
                         }
                         else {
-                            Square_color("Green", true); // print een witte vierkant
+                            Square_color("Green", "X"); // print een witte vierkant
                         }
                     }
                     // Einde van huidig geselcteerde stoel kleur.
                     // Begin van andere stoelen kleur.
                     else if (seats[y][x].Availability == "selected") {
-                       Square_color("DarkYellow"); // het is beter om deze kleur te veranderen met iets anders aangezien je het verschil vrijwel niet ziet
+                       Square_color("DarkMagenta","+"); // het is beter om deze kleur te veranderen met iets anders aangezien je het verschil vrijwel niet ziet
                     }
                     else if (seats[y][x].Availability == "occupied") {
-                       Square_color("DarkRed"); // het is beter om deze kleur te veranderen met iets anders aangezien je het verschil vrijwel niet ziet
+                       Square_color("DarkRed", "O"); // het is beter om deze kleur te veranderen met iets anders aangezien je het verschil vrijwel niet ziet
                     }
                     else {
                         ResetColor();
@@ -110,7 +110,7 @@ namespace CinemaApp
             }
             ResetColor();
 
-            Write("\n╒══════════════════════════════╕\n");
+            Write("\n╒══════════════════════════════╕\n"); // legenda
             Write("│ Legenda                      │\n");
             Write("│                              │\n");
             Write("│ Huidige positie           X  │\n");
@@ -120,11 +120,11 @@ namespace CinemaApp
             Write("│\n");
             Write("│                              │\n");
             Write("│ Bezet                    ");
-            Square_color("DarkRed");
+            Square_color("DarkRed","O");
             Write("│\n");
             Write("│                              │\n");
             Write("│ Geselecteerd             ");
-            Square_color("DarkYellow");
+            Square_color("DarkMagenta","+");
             Write("│\n");
             Write("╘══════════════════════════════╛");
 
@@ -197,7 +197,7 @@ namespace CinemaApp
             }
         }
 
-        public void Square_color(string Color, bool selected = false){ //dit is een functie dat een vierkant print met de kleur die je wilt
+        public void Square_color(string Color, string selected = ""){ //dit is een functie dat een vierkant print met de kleur die je wilt 
             if (Color == "DarkGreen") Console.BackgroundColor = ConsoleColor.DarkGreen;
             if (Color == "Blue") Console.BackgroundColor = ConsoleColor.Blue;
             if (Color == "Green") Console.BackgroundColor = ConsoleColor.Green;
@@ -205,16 +205,31 @@ namespace CinemaApp
             if (Color == "Gray") Console.BackgroundColor = ConsoleColor.Gray;
             if (Color == "Yellow") Console.BackgroundColor = ConsoleColor.Magenta;
             if (Color == "Black") Console.BackgroundColor = ConsoleColor.Black;
-            if (Color == "DarkYellow") Console.BackgroundColor = ConsoleColor.DarkMagenta;
+            if (Color == "DarkMagenta") Console.BackgroundColor = ConsoleColor.DarkMagenta;
             if (Color == "DarkRed") Console.BackgroundColor = ConsoleColor.DarkRed;
-            if (selected) {
-                Console.Write("".PadLeft(1) + "X".PadRight(2));
+            if (selected == "X") { 
+                Console.Write("".PadLeft(1) + "X".PadRight(2)); 
+            } // ik heb ervoor verzorgt dat je een X, O, + en - kan toevoegen aan de vierkanten zodat het duidelijker is voor iemand die kleurenblind is
+            else if(selected == "O"){
+                Console.Write("".PadLeft(1) + "O".PadRight(2));
+            }
+            else if(selected == "+"){
+                Console.Write("".PadLeft(1) + "+".PadRight(2));
             }
             else {
-                Console.Write("".PadRight(3));
+                Console.Write(" -".PadRight(3));
             }
             Console.ResetColor();
             Write(" ");
+        }
+        public void filter(){ // verzorgt ervoor dat selected veranderd naar available want je wilt geen selected in je json  
+            foreach(var rows in seats){
+                foreach(var chairs in rows){
+                    if (chairs.Availability == "selected"){
+                        chairs.Availability = "available";
+                    }
+                }
+            }
         }
     }
     
