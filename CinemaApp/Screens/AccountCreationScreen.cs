@@ -67,6 +67,12 @@ namespace CinemaApp.Screens
                         WriteLine("Voer je telefoon nummer in: ");
                         CursorVisible = true;
                         telefoon = ReadLine();
+                        int inttelefoon = -1;
+                        while(!Int32.TryParse(telefoon,out inttelefoon) || inttelefoon<=0){
+                            Clear();
+                            WriteLine("Voer een goede telefoon nummer in: ");
+                            telefoon = ReadLine();
+                        }
                         CursorVisible = false;
                         break;
                     case 5:
@@ -74,7 +80,10 @@ namespace CinemaApp.Screens
                         if (wachtwoord != wachtwoordHerhaal) {
                             WriteLine("Het herhaalde wachtwoord komt niet overeen met je wachtwoord");
                         }
-                        else if (App.userManager.CreateUser(gebruikersnaam,wachtwoord,email)){
+                        else if(gebruikersnaam == "<leeg>" || wachtwoord == "<leeg>"|| wachtwoordHerhaal == "<leeg>"|| email == "<leeg>" || telefoon == "<leeg>" || gebruikersnaam == "" || wachtwoord == ""|| wachtwoordHerhaal == ""|| email == "" || telefoon == ""){
+                            WriteLine("Niet alle gegevens zijn doorgegeven");
+                        }
+                        else if (App.userManager.CreateUser(gebruikersnaam,wachtwoord,email,telefoon)){
                             App.userManager.Login(gebruikersnaam,wachtwoord);
                             ConsoleUtils.WaitForKeyPress();
                             App.homeScreen.run();

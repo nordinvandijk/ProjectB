@@ -49,9 +49,15 @@ namespace CinemaApp.Screens
                     break;
                 case 2:
                     Clear();
-                    WriteLine("Wat is de releaseDate van de film?");
+                    WriteLine("Wat is de releaseDate van de film? schrijf het zoals deze voorbeeld 09/09/2022"); 
                     CursorVisible = true;
+                    DateTime dateReleaseDate;
                     releaseDate = ReadLine();
+                    while(!(DateTime.TryParse(releaseDate, out dateReleaseDate))){
+                        Clear();
+                        WriteLine("Probeer the datum opnieuw in te vullen, schrijf het zoals deze voorbeeld 09/09/2022");
+                        releaseDate = ReadLine();
+                    } //public string Remove (int startIndex, int count);
                     CursorVisible = false;
                     run();
                     break;  
@@ -92,6 +98,12 @@ namespace CinemaApp.Screens
                     WriteLine("Wat is de minimale leeftijd van de film?");
                     CursorVisible = true;
                     minAge = ReadLine();
+                    int intMinAge = -1;
+                        while(!Int32.TryParse(minAge,out intMinAge) || intMinAge<=0){
+                            Clear();
+                            WriteLine("Voer een goede telefoon nummer in: ");
+                            minAge = ReadLine();
+                        }
                     CursorVisible = false;
                     run();
                     break;                
@@ -157,17 +169,6 @@ namespace CinemaApp.Screens
                         run();
                     }
                     break; 
-                // case 7:
-                //     Clear();
-                //     string deleteTitle = null;
-                //     while(deleteTitle == "" || deleteTitle == null){
-                //        Clear();
-                //        WriteLine("De titel naam is nog niet toegevoegd.");
-                //        deleteTitle = ReadLine();
-                //     }
-                //     App.movieManager.RemoveMovie(deleteTitle); 
-                //     App.adminPanelScreen.run(); 
-                //     break; 
                 case 7:
                     App.adminPanelScreen.run();
                     break;    

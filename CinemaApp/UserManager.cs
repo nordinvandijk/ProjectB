@@ -12,12 +12,13 @@ namespace CinemaApp
         private string jsonFile = "userList.json";
         private List<User> users = new List<User>();
 
-        public bool CreateUser(string username, string password, string email) 
+        public bool CreateUser(string username, string password, string email, string telefoonNumber) 
         {
             User user = new User() {
                 Username = username,
                 Password = password,
                 Email = email,
+                TelefoonNummber = telefoonNumber
             };
             if(!UsernameAlreadyExist(username)){
                 users.Add(user);
