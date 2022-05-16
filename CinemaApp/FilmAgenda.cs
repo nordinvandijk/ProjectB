@@ -130,7 +130,50 @@ namespace CinemaApp
                             Duration = App.movieManager.movies[chosenMovie].Duration,
                             StartTimeString = startTime.ToString("dd-MM-yyyy HH:mm", cultureInfo),
                             EndTimeString = endTime.ToString("dd-MM-yyyy HH:mm", cultureInfo),
-                            Format = format
+                            Format = format,
+                            Seats = new Seat[5][]
+                            {
+                                new Seat[5]
+                                {
+                                    new Seat(15.00f,0,0),
+                                    new Seat(15.00f,0,1),
+                                    new Seat(15.00f,0,2),
+                                    new Seat(15.00f,0,3),
+                                    new Seat(15.00f,0,4),
+                                },
+                                new Seat[5]
+                                {
+                                    new Seat(15.00f,1,0),
+                                    new Seat(15.00f,1,1),
+                                    new Seat(15.00f,1,2),
+                                    new Seat(15.00f,1,3),
+                                    new Seat(15.00f,1,4),
+                                },
+                                new Seat[5]
+                                {
+                                    new Seat(15.00f,2,0),
+                                    new Seat(15.00f,2,1),
+                                    new Seat(15.00f,2,2),
+                                    new Seat(15.00f,2,3),
+                                    new Seat(15.00f,2,4),
+                                },
+                                new Seat[5]
+                                {
+                                    new Seat(15.00f,3,0),
+                                    new Seat(15.00f,3,1),
+                                    new Seat(15.00f,3,2),
+                                    new Seat(15.00f,3,3),
+                                    new Seat(15.00f,3,4),
+                                },
+                                new Seat[5]
+                                {
+                                    new Seat(15.00f,4,0),
+                                    new Seat(15.00f,4,1),
+                                    new Seat(15.00f,4,2),
+                                    new Seat(15.00f,4,3),
+                                    new Seat(15.00f,4,4),
+                                },
+                            }
                         };
                         // Toevoegen
                         locations[locationIndex].Days[dayIndex].AvailableHalls[hallIndex].MovieItemlist.Add(movieItem);
@@ -144,12 +187,6 @@ namespace CinemaApp
                     ConsoleUtils.WaitForKeyPress();
                 }
             }
-
-
-
-            
-
-            
         }
 
         public void LoadJson() 

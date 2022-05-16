@@ -10,5 +10,6 @@ namespace CinemaApp
         public string Format {get; set;}
         public string Duration {get; set;}
         public string Title {get; set;}
+        public Seat[][] Seats {get; set;}
     }
 }
