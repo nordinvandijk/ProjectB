@@ -1,5 +1,6 @@
 using System;
 using static System.Console;
+using System.Globalization;
 
 namespace CinemaApp.Screens
 {
@@ -49,13 +50,15 @@ namespace CinemaApp.Screens
                     break;
                 case 2:
                     Clear();
-                    WriteLine("Wat is de releaseDate van de film? schrijf het zoals deze voorbeeld 09/09/2022"); 
+                    WriteLine("Wat is de releaseDate van de film? schrijf het zoals deze voorbeeld 09-05-2022"); 
                     CursorVisible = true;
                     DateTime dateReleaseDate;
                     releaseDate = ReadLine();
-                    while(!(DateTime.TryParse(releaseDate, out dateReleaseDate))){
+                    var cultureInfo = new CultureInfo("nl-NL");
+                    DateTimeStyles styles = DateTimeStyles.None;
+                    while (!(DateTime.TryParse(releaseDate,cultureInfo,styles, out dateReleaseDate))){
                         Clear();
-                        WriteLine("Probeer the datum opnieuw in te vullen, schrijf het zoals deze voorbeeld 09/09/2022");
+                        WriteLine("Probeer the datum opnieuw in te vullen, schrijf het zoals deze voorbeeld 09-05-2022");
                         releaseDate = ReadLine();
                     } //public string Remove (int startIndex, int count);
                     CursorVisible = false;
