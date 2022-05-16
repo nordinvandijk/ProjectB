@@ -132,9 +132,7 @@ namespace CinemaApp
 
         }
 
-        // float = totalPrice
-        // List<Seat> = selectedSeats
-        public Tuple<float, List<Seat>> Run()
+        public void Run()
         {
             while (true) { // Deze while loop zorgt ervoor dat je meerdere stoelen kan selecteren en dus niet stopt nadat je 1 stoel hebt geselecteerd
                 ConsoleKey keyPressed;
@@ -201,7 +199,6 @@ namespace CinemaApp
                     break;
                 }
             }
-            return new Tuple<float,List<Seat>>(totalPrice, selectedSeats);
         }
 
         public void Square_color(string Color, string selected = ""){ //dit is een functie dat een vierkant print met de kleur die je wilt 
