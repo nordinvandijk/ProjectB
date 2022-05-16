@@ -40,6 +40,20 @@ namespace CinemaApp
             App = app;
             LoadJson();
         }
+        public void ClearMovieItems()
+        {
+            for (int i = 0; i < locations.Count; i++)
+            {
+                for (int j = 0; j < locations[i].Days.Count; j++)
+                {
+                    for (int k = 0; k < locations[i].Days[j].AvailableHalls.Count; k++)
+                    {
+                        locations[i].Days[j].AvailableHalls[k].MovieItemlist.Clear();
+                    }
+                }
+            }
+        }
+
         /// <summary>
         /// Deze functie maakt een 'movieItem' aan en voegt die toe aan een locatie -> datum -> bioscoopzaal volgens de meegegeven parameters
         /// </summary>
@@ -99,15 +113,16 @@ namespace CinemaApp
                 if (startTimeParse)
                 {
                     endTime = startTime + durationMovie;
+                    DateTime endTimeWithCleaning = endTime + new TimeSpan(0,30,0);
 
                     //Checkt of de gekozen startTime en endTime niet overlappen met andere movieItems in dezelfde location->date->hall
                     bool overlapping = false;
                     foreach (MovieItem movieItem in locations[locationIndex].Days[dayIndex].AvailableHalls[hallIndex].MovieItemlist)
                     {
                         var compareStartTime = DateTime.Parse(movieItem.StartTimeString, cultureInfo);
-                        var compateEndTime = DateTime.Parse(movieItem.EndTimeString, cultureInfo);
+                        var compareEndTimeWithCleaning = DateTime.Parse(movieItem.EndTimeWithCleaning, cultureInfo);
 
-                        if (App.time.CheckTimeOverlap(startTime, endTime, compareStartTime, compateEndTime))
+                        if (App.time.CheckTimeOverlap(startTime, endTimeWithCleaning, compareStartTime, compareEndTimeWithCleaning))
                         {
                             overlapping = true;
                             WriteLine("Tijdens de ingvulde tijd speelt er al een film in deze zaal");
@@ -144,6 +159,7 @@ namespace CinemaApp
                             Duration = App.movieManager.movies[chosenMovie].Duration,
                             StartTimeString = startTime.ToString("dd-MM-yyyy HH:mm", cultureInfo),
                             EndTimeString = endTime.ToString("dd-MM-yyyy HH:mm", cultureInfo),
+                            EndTimeWithCleaning = endTimeWithCleaning.ToString("dd-MM-yyyy HH:mm", cultureInfo),
                             Format = format,
                             Seats = new Seat[5][]
                             {
