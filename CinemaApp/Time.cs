@@ -1,6 +1,7 @@
 using System;
 using System.Globalization;
 using static System.Console;
+using System.Collections.Generic;
 
 namespace CinemaApp
 {
@@ -20,15 +21,31 @@ namespace CinemaApp
             var cultureInfo = new CultureInfo("nl-NL");
             DateTime thisDay = DateTime.Today;
 
-            for (int i = 0; i < App.filmAgenda.locations.Count; i++)
+            //Deze for loop loopt 7 keer en veranderd steeds de dayToAdd, hierdoor kunnen de komende 7 dagen toegevoegd worden aan de filmAgenda
+            DateTime dayToAdd = thisDay + new TimeSpan(24, 0, 0);
+            for (int i = 0; i < 7; i++)
             {
-                Location location = App.filmAgenda.locations[i];
-                
+                //Loopt door alle locaties om de dayToAdd toe te voegen als die nog niet bestaat
+                for (int j = 0; j < App.filmAgenda.locations.Count; j++)
+                {
+                    //Als de dayToAdd nog niet bestaat in de Days list van een bepaalde loactie wordt die day aangemaakt
+                    if (!App.filmAgenda.locations[j].Days.Exists(x => DateTime.Parse(x.Date, cultureInfo) == dayToAdd))
+                    {
+                        App.filmAgenda.locations[j].Days.Add(new Day()
+                        {
+                            Date = dayToAdd.ToString("dd-MM-yyyy",cultureInfo),
+                            AvailableHalls = new List<AvailableHall>()
+                        {
+                        new AvailableHall(){HallName = "Zaal 1", MovieItemlist = new List<MovieItem>()},
+                        new AvailableHall(){HallName = "Zaal 2", MovieItemlist = new List<MovieItem>()},
+                        new AvailableHall(){HallName = "Zaal 3", MovieItemlist = new List<MovieItem>()}
+                        }
+                        });
+                    }
+                }
+                dayToAdd += new TimeSpan(24, 0, 0);
             }
-
-            string test = thisDay.ToString(cultureInfo);
-            test = test.Substring(0, 8);
-            Console.WriteLine(test);
+        App.filmAgenda.UpdateJson();
         }
         public bool CheckTimeOverlap(DateTime start1, DateTime end1, DateTime start2, DateTime end2){
             if (start1 >= start2 && start1 <= end2){
