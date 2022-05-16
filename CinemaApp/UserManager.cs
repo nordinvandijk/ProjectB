@@ -6,7 +6,7 @@ using static System.Console;
 
 namespace CinemaApp
 {
-    class UserManager
+    public class UserManager
     {
         public User currentUser = null;
         private string jsonFile = "userList.json";

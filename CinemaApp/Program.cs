@@ -7,6 +7,8 @@ namespace CinemaApp
     {
         static void Main(string[] args)
         {
+            SeatSelector test = new SeatSelector();
+            test.Run();
             Console.CursorVisible = false;
             Application App = new Application();
             App.Start();

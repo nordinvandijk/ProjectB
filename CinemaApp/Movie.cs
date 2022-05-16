@@ -11,5 +11,6 @@ namespace CinemaApp
         public string[] Genre {get; set; }
         public int MinimumAge { get; set; }
         public string[] Kijkwijzer { get; set; }
+        public string Duration { get; set; }
     }
 }

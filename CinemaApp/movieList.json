@@ -11,7 +11,8 @@
     "Kijkwijzer": [
       "Geweld",
       "Grof taalgebruik"
-    ]
+    ],
+    "Duration": "01:30:00"
   },
   {
     "Title": "Inception",
@@ -26,7 +27,8 @@
     "Kijkwijzer": [
       "Geweld",
       "Angst"
-    ]
+    ],
+    "Duration": "01:30:00"
   },
   {
     "Title": "The Matrix",
@@ -40,7 +42,8 @@
     "Kijkwijzer": [
       "Geweld",
       "Angst"
-    ]
+    ],
+    "Duration": "01:30:00"
   },
   {
     "Title": "The Color Purple",
@@ -54,7 +57,7 @@
       "Geweld",
       "Angst",
       "Discriminatie"
-    ]
+    ],
+    "Duration": "01:30:00"
   }
 ]
-
