@@ -115,7 +115,21 @@ namespace CinemaApp
                             break;
                         }
                     }
-                    if (!overlapping)
+
+                    //Checkt of de gekozen start- en endTime tijdens de openingstijd van de bios vallen, 09:00 tot 02:00, elke film dient voor 12 uur s'nachts te starten
+                    bool betweenOpeningAnaClosingTime = false;
+                    if (startTime >= DateTime.Parse($"{dayString} 09:00") && startTime <= DateTime.Parse($"{dayString} 02:00") + new TimeSpan(24,00,00) && endTime >= DateTime.Parse($"{dayString} 09:00") && endTime <= DateTime.Parse($"{dayString} 02:00") + new TimeSpan(24,00,00))
+                    {
+                        betweenOpeningAnaClosingTime = true;
+                    }
+
+                    if (!betweenOpeningAnaClosingTime)
+                    {
+                        WriteLine("De bioscoop opent om 9:00 en sluit om 02:00, en er kunnen geen films starten na 12 uur s'nachts\n Vul een startTijd in die voldoet aan deze eisen!");
+                        ConsoleUtils.WaitForKeyPress();
+                    }
+
+                    if (!overlapping && betweenOpeningAnaClosingTime)
                     {
                         startAndEndTimeFound = true;
                     }
