@@ -1,5 +1,6 @@
 using System;
 using static System.Console;
+using System.Collections.Generic;
 
 namespace CinemaApp
 {
@@ -8,6 +9,7 @@ namespace CinemaApp
         private int currentX = 0;
         private int currentY = 0;
         private float totalPrice = 0;
+        List<Seat> selectedSeats = new List<Seat>();
         public Seat[][] seats;
 
         public SeatSelector() { // in plaats van tuples heb ik objects gebruik 
@@ -130,7 +132,9 @@ namespace CinemaApp
 
         }
 
-        public void Run()
+        // float = totalPrice
+        // List<Seat> = selectedSeats
+        public Tuple<float, List<Seat>> Run()
         {
             while (true) { // Deze while loop zorgt ervoor dat je meerdere stoelen kan selecteren en dus niet stopt nadat je 1 stoel hebt geselecteerd
                 ConsoleKey keyPressed;
@@ -178,10 +182,12 @@ namespace CinemaApp
                 if (currentY != seats.Length) {
                     if (seats[currentY][currentX].Availability == "available") {
                         totalPrice += seats[currentY][currentX].Price;
+                        selectedSeats.Add(seats[currentY][currentX]);
                         seats[currentY][currentX].Availability = "selected";
                     }
                     else if (seats[currentY][currentX].Availability == "selected") {
                         totalPrice -= seats[currentY][currentX].Price;
+                        selectedSeats.Remove(seats[currentY][currentX]);
                         seats[currentY][currentX].Availability = "available";
                     }
                     else if (seats[currentY][currentX].Availability == "occupied") {
@@ -195,6 +201,7 @@ namespace CinemaApp
                     break;
                 }
             }
+            return new Tuple<float,List<Seat>>(totalPrice, selectedSeats);
         }
 
         public void Square_color(string Color, string selected = ""){ //dit is een functie dat een vierkant print met de kleur die je wilt 
@@ -222,11 +229,12 @@ namespace CinemaApp
             Console.ResetColor();
             Write(" ");
         }
-        public void filter(){ // verzorgt ervoor dat selected veranderd naar available want je wilt geen selected in je json  
-            foreach(var rows in seats){
-                foreach(var chairs in rows){
-                    if (chairs.Availability == "selected"){
-                        chairs.Availability = "available";
+
+        public void filter(){ // zorgt ervoor dat selected veranderd naar available want je wilt geen selected in je json  
+            foreach(Seat[] rows in seats){
+                foreach(Seat chair in rows){
+                    if (chair.Availability == "selected"){
+                        chair.Availability = "available";
                     }
                 }
             }
