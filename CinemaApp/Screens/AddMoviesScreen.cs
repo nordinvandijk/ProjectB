@@ -26,6 +26,9 @@ namespace CinemaApp.Screens
         //Methods
         public override void run()
         {
+            var cultureInfo = new CultureInfo("nl-NL");
+            DateTimeStyles styles = DateTimeStyles.None;
+
             string titel = @"Titel";
             string[] options = {$"Titel : {title}", $"desc : {desc}", $"releaseDate : {releaseDate}", 
             $"genre : {genreLeegOfvol}", $"Minimale leeftijd : {minAge}", $"kijkwijzer : {kijkwijzerLeegOfVol}" , $"Duur film : {duurFilm}", "Bevestig", "Terug"};
@@ -57,8 +60,6 @@ namespace CinemaApp.Screens
                     CursorVisible = true;
                     DateTime dateReleaseDate;
                     releaseDate = ReadLine();
-                    var cultureInfo = new CultureInfo("nl-NL");
-                    DateTimeStyles styles = DateTimeStyles.None;
                     while (!(DateTime.TryParse(releaseDate,cultureInfo,styles, out dateReleaseDate))){
                         Clear();
                         WriteLine("Probeer the datum opnieuw in te vullen, Schrijf het zoals dit voorbeeld op: 09-05-2022");
@@ -163,7 +164,7 @@ namespace CinemaApp.Screens
                         
                         //Als de user input geparsed kan worden naar een TimeSpan is er een geldige film duur ingevuld
                         TimeSpan durationTimeSpan;
-                        durationInputCorrect = TimeSpan.TryParse(durationInputString, out durationTimeSpan);
+                        durationInputCorrect = TimeSpan.TryParse(durationInputString, cultureInfo, out durationTimeSpan);
                         
                         //Error message als er een verkeerde input is gegeven door de user
                         if (!durationInputCorrect)
@@ -171,7 +172,11 @@ namespace CinemaApp.Screens
                             Clear();
                             WriteLine("Dit is geen juist formaat voor het invoeren van de film duur");
                             ConsoleUtils.WaitForKeyPress();
-                        };
+                        }
+                        else
+                        {
+                            duurFilm = durationTimeSpan.ToString();
+                        }
                     }
                     run();
                     break;
