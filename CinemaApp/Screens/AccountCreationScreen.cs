@@ -1,6 +1,6 @@
 using System;
 using static System.Console;
-
+using System.Net.Mail;
 namespace CinemaApp.Screens
 {
     class AccountCreationScreen : Screen
@@ -60,13 +60,31 @@ namespace CinemaApp.Screens
                         WriteLine("Voer je email in: ");
                         CursorVisible = true;
                         email = ReadLine();
+                        while(true){
+                            try{
+                                MailAddress test = new MailAddress(email);
+                                break;
+                            }
+                            catch{
+                               Clear();
+                               WriteLine("Voer een goede email in: ");
+                               email = ReadLine();             
+                            }
+                        }
                         CursorVisible = false;
                         break;
                     case 4:
                         Clear();
-                        WriteLine("Voer je telefoon nummer in: ");
+                        WriteLine("Voer je Nederlandse telefoon nummer in: ");
                         CursorVisible = true;
                         telefoon = ReadLine();
+                        int inttelefoon = -1;
+                        while(!Int32.TryParse(telefoon,out inttelefoon) || inttelefoon<=0 || telefoon[0] != '0' || telefoon[1] != '6' || telefoon.Length != 10){
+                            Clear();
+                            WriteLine("Voorbeeld: 0612345678");
+                            WriteLine("Voer een goede Nederlandse telefoon nummer in: ");
+                            telefoon = ReadLine();
+                        }
                         CursorVisible = false;
                         break;
                     case 5:
@@ -74,7 +92,10 @@ namespace CinemaApp.Screens
                         if (wachtwoord != wachtwoordHerhaal) {
                             WriteLine("Het herhaalde wachtwoord komt niet overeen met je wachtwoord");
                         }
-                        else if (App.userManager.CreateUser(gebruikersnaam,wachtwoord,email)){
+                        else if(gebruikersnaam == "<leeg>" || wachtwoord == "<leeg>"|| wachtwoordHerhaal == "<leeg>"|| email == "<leeg>" || telefoon == "<leeg>" || gebruikersnaam == "" || wachtwoord == ""|| wachtwoordHerhaal == ""|| email == "" || telefoon == ""){
+                            WriteLine("Niet alle gegevens zijn doorgegeven");
+                        }
+                        else if (App.userManager.CreateUser(gebruikersnaam,wachtwoord,email,telefoon)){
                             App.userManager.Login(gebruikersnaam,wachtwoord);
                             ConsoleUtils.WaitForKeyPress();
                             App.homeScreen.run();
