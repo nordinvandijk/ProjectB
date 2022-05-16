@@ -69,6 +69,7 @@ namespace CinemaApp
         //Methods
         public void Start()
         {
+            time.UpdateAgenda();
             homeScreen.run();
             Clear();
             ConsoleUtils.WaitForKeyPress();
