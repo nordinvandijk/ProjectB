@@ -46,6 +46,20 @@ namespace CinemaApp
             App = app;
             LoadJson();
         }
+        public void ClearMovieItems()
+        {
+            for (int i = 0; i < locations.Count; i++)
+            {
+                for (int j = 0; j < locations[i].Days.Count; j++)
+                {
+                    for (int k = 0; k < locations[i].Days[j].AvailableHalls.Count; k++)
+                    {
+                        locations[i].Days[j].AvailableHalls[k].MovieItemlist.Clear();
+                    }
+                }
+            }
+        }
+
         /// <summary>
         /// Deze functie maakt een 'movieItem' aan en voegt die toe aan een locatie -> datum -> bioscoopzaal volgens de meegegeven parameters
         /// </summary>
@@ -105,15 +119,16 @@ namespace CinemaApp
                 if (startTimeParse)
                 {
                     endTime = startTime + durationMovie;
+                    DateTime endTimeWithCleaning = endTime + new TimeSpan(0,30,0);
 
                     //Checkt of de gekozen startTime en endTime niet overlappen met andere movieItems in dezelfde location->date->hall
                     bool overlapping = false;
                     foreach (MovieItem movieItem in locations[locationIndex].Days[dayIndex].AvailableHalls[hallIndex].MovieItemlist)
                     {
                         var compareStartTime = DateTime.Parse(movieItem.StartTimeString, cultureInfo);
-                        var compateEndTime = DateTime.Parse(movieItem.EndTimeString, cultureInfo);
+                        var compareEndTimeWithCleaning = DateTime.Parse(movieItem.EndTimeWithCleaning, cultureInfo);
 
-                        if (App.time.CheckTimeOverlap(startTime, endTime, compareStartTime, compateEndTime))
+                        if (App.time.CheckTimeOverlap(startTime, endTimeWithCleaning, compareStartTime, compareEndTimeWithCleaning))
                         {
                             overlapping = true;
                             WriteLine("Tijdens de ingvulde tijd speelt er al een film in deze zaal");
@@ -121,7 +136,21 @@ namespace CinemaApp
                             break;
                         }
                     }
-                    if (!overlapping)
+
+                    //Checkt of de gekozen start- en endTime tijdens de openingstijd van de bios vallen, 09:00 tot 02:00, elke film dient voor 12 uur s'nachts te starten
+                    bool betweenOpeningAndClosingTime = false;
+                    if (startTime >= DateTime.Parse($"{dayString} 09:00") && startTime <= DateTime.Parse($"{dayString} 02:00") + new TimeSpan(24,00,00) && endTime >= DateTime.Parse($"{dayString} 09:00") && endTime <= DateTime.Parse($"{dayString} 02:00") + new TimeSpan(24,00,00))
+                    {
+                        betweenOpeningAndClosingTime = true;
+                    }
+
+                    if (!betweenOpeningAndClosingTime)
+                    {
+                        WriteLine("De bioscoop opent om 9:00 en sluit om 02:00, en er kunnen geen films starten na 12 uur s'nachts\n Vul een startTijd in die voldoet aan deze eisen!");
+                        ConsoleUtils.WaitForKeyPress();
+                    }
+
+                    if (!overlapping && betweenOpeningAndClosingTime)
                     {
                         startAndEndTimeFound = true;
                     }
@@ -136,7 +165,51 @@ namespace CinemaApp
                             Duration = App.movieManager.movies[chosenMovie].Duration,
                             StartTimeString = startTime.ToString("dd-MM-yyyy HH:mm", cultureInfo),
                             EndTimeString = endTime.ToString("dd-MM-yyyy HH:mm", cultureInfo),
-                            Format = format
+                            EndTimeWithCleaning = endTimeWithCleaning.ToString("dd-MM-yyyy HH:mm", cultureInfo),
+                            Format = format,
+                            Seats = new Seat[5][]
+                            {
+                                new Seat[5]
+                                {
+                                    new Seat(15.00f,1,0),
+                                    new Seat(15.00f,1,1),
+                                    new Seat(15.00f,1,2),
+                                    new Seat(15.00f,1,3),
+                                    new Seat(15.00f,1,4),
+                                },
+                                new Seat[5]
+                                {
+                                    new Seat(15.00f,2,0),
+                                    new Seat(15.00f,2,1),
+                                    new Seat(15.00f,2,2),
+                                    new Seat(15.00f,2,3),
+                                    new Seat(15.00f,2,4),
+                                },
+                                new Seat[5]
+                                {
+                                    new Seat(15.00f,3,0),
+                                    new Seat(15.00f,3,1),
+                                    new Seat(15.00f,3,2),
+                                    new Seat(15.00f,3,3),
+                                    new Seat(15.00f,3,4),
+                                },
+                                new Seat[5]
+                                {
+                                    new Seat(15.00f,4,0),
+                                    new Seat(15.00f,4,1),
+                                    new Seat(15.00f,4,2),
+                                    new Seat(15.00f,4,3),
+                                    new Seat(15.00f,4,4),
+                                },
+                                new Seat[5]
+                                {
+                                    new Seat(15.00f,5,0),
+                                    new Seat(15.00f,5,1),
+                                    new Seat(15.00f,5,2),
+                                    new Seat(15.00f,5,3),
+                                    new Seat(15.00f,5,4),
+                                },
+                            }
                         };
                         // Toevoegen
                         locations[locationIndex].Days[dayIndex].AvailableHalls[hallIndex].MovieItemlist.Add(movieItem);
@@ -150,12 +223,6 @@ namespace CinemaApp
                     ConsoleUtils.WaitForKeyPress();
                 }
             }
-
-
-
-            
-
-            
         }
 
         public void LoadJson() 
