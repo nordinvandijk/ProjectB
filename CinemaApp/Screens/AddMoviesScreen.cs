@@ -13,6 +13,7 @@ namespace CinemaApp.Screens
         public string genreLeegOfvol = "<Leeg>";
         public string minAge = "<Leeg>";
         public string kijkwijzerLeegOfVol = "<Leeg>";
+        public string duurFilm = "<Leeg>";
         public string[] kijkwijzer;
         public string[] genre;
 
@@ -27,7 +28,7 @@ namespace CinemaApp.Screens
         {
             string titel = @"Titel";
             string[] options = {$"Titel : {title}", $"desc : {desc}", $"releaseDate : {releaseDate}", 
-            $"genre : {genreLeegOfvol}", $"Minimale leeftijd : {minAge}", $"kijkwijzer : {kijkwijzerLeegOfVol}" ,"Bevestig", "Terug"};
+            $"genre : {genreLeegOfvol}", $"Minimale leeftijd : {minAge}", $"kijkwijzer : {kijkwijzerLeegOfVol}" , $"Duur film : {duurFilm}", "Bevestig", "Terug"};
             Menu OrderConfirmationMenu = new Menu(options, titel, 0);
             int ChosenOption = OrderConfirmationMenu.Run();
             switch(ChosenOption)
@@ -40,6 +41,7 @@ namespace CinemaApp.Screens
                     CursorVisible = false;
                     run();
                     break;
+                
                 case 1:
                     Clear();
                     WriteLine("Wat is de desc van de film?");
@@ -48,6 +50,7 @@ namespace CinemaApp.Screens
                     CursorVisible = false;
                     run();
                     break;
+                
                 case 2:
                     Clear();
                     WriteLine("Wat is de releaseDate van de film? Schrijf het zoals dit voorbeeld op: 09-05-2022"); 
@@ -64,6 +67,7 @@ namespace CinemaApp.Screens
                     CursorVisible = false;
                     run();
                     break;  
+                
                 case 3:
                     int lenGenre = 0;
                     while(lenGenre <= 0){
@@ -96,6 +100,7 @@ namespace CinemaApp.Screens
                     genreLeegOfvol = "genre is toegevoegd";
                     run();
                     break;                
+                
                 case 4:
                     Clear();
                     WriteLine("Wat is de minimale leeftijd van de film?");
@@ -110,6 +115,7 @@ namespace CinemaApp.Screens
                     CursorVisible = false;
                     run();
                     break;                
+                
                 case 5:
                     int LenKijkwijzers = 0;
                     while(LenKijkwijzers <= 0){
@@ -141,13 +147,42 @@ namespace CinemaApp.Screens
                     }
                     kijkwijzerLeegOfVol = "kijkwijzer is toegevoegd";
                     run();
-                    break;      
+                    break;
+                
                 case 6:
+                    //Deze while loop blijft true zolang er geen geldige film duur is ingevuld
+                    bool durationInputCorrect = false;
+                    while (!durationInputCorrect)
+                    {
+                        //Hier wordt de gebruiker gevraagd om een film duur in te vullen
+                        Clear();
+                        WriteLine($"Hoe lang duurt deze film? Voer een tijd in volgens het formaat : '00:00:00'");
+                        CursorVisible = true;
+                        string durationInputString = ReadLine();
+                        CursorVisible = false;
+                        
+                        //Als de user input geparsed kan worden naar een TimeSpan is er een geldige film duur ingevuld
+                        TimeSpan durationTimeSpan;
+                        durationInputCorrect = TimeSpan.TryParse(durationInputString, out durationTimeSpan);
+                        
+                        //Error message als er een verkeerde input is gegeven door de user
+                        if (!durationInputCorrect)
+                        {
+                            Clear();
+                            WriteLine("Dit is geen juist formaat voor het invoeren van de film duur");
+                            ConsoleUtils.WaitForKeyPress();
+                        };
+                    }
+                    run();
+                    break;
+                
+                case 7:
                     Clear();
                     WriteLine("Bevestig");
-                    if (title != "<Leeg>" && desc != "<Leeg>" && releaseDate != "<Leeg>" && genreLeegOfvol != "<Leeg>" && minAge != "<Leeg>" && kijkwijzerLeegOfVol != "<Leeg>" && kijkwijzer != null && genre != null && title != "" && desc != "" && releaseDate != "" && genreLeegOfvol != "" && minAge != "" ){             
+                    if (title != "<Leeg>" && desc != "<Leeg>" && releaseDate != "<Leeg>" && genreLeegOfvol != "<Leeg>" && minAge != "<Leeg>" && kijkwijzerLeegOfVol != "<Leeg>" && duurFilm != "<Leeg>" && kijkwijzer != null && genre != null && title != "" && desc != "" && releaseDate != "" && genreLeegOfvol != "" && minAge != "" && duurFilm != "")
+                    {             
                         try{
-                            App.movieManager.AddMovie(title,desc,releaseDate,genre,Int32.Parse(minAge),kijkwijzer);
+                            App.movieManager.AddMovie(title,desc,releaseDate,genre,Int32.Parse(minAge),kijkwijzer,duurFilm);
                             ConsoleUtils.WaitForKeyPress();
                              // reset alles terug nadat de film is toegevoegd
                             title = "<Leeg>";
@@ -155,7 +190,8 @@ namespace CinemaApp.Screens
                             releaseDate = "<Leeg>";
                             genreLeegOfvol = "<Leeg>";
                             minAge = "<Leeg>";
-                            kijkwijzerLeegOfVol = "<Leeg>"; 
+                            kijkwijzerLeegOfVol = "<Leeg>";
+                            duurFilm = "<Leeg>";
                             kijkwijzer = null; 
                             genre = null;
                             App.adminPanelScreen.run();
@@ -171,8 +207,9 @@ namespace CinemaApp.Screens
                         ConsoleUtils.WaitForKeyPress();
                         run();
                     }
-                    break; 
-                case 7:
+                    break;
+                    
+                case 8:
                     App.adminPanelScreen.run();
                     break;    
             }

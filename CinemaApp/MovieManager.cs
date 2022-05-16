@@ -25,7 +25,7 @@ namespace CinemaApp
         /// <param name="genre">Genre of the movie you want to add.</param>
         /// <param name="minAge">Minimum age of the movie you want to add.</param>
         /// <param name="kijkwijzer">The dutch "kijkwijzer" of the movie you want to add.</param>
-        public void AddMovie(string title, string desc, string releaseDate, string[] genre, int minAge, string[] kijkwijzer) 
+        public void AddMovie(string title, string desc, string releaseDate, string[] genre, int minAge, string[] kijkwijzer, string duration) 
         {
             Movie mov = new Movie() {
                 Title = title,
@@ -33,7 +33,8 @@ namespace CinemaApp
                 ReleaseDate = releaseDate,
                 Genre = genre,
                 MinimumAge = minAge,
-                Kijkwijzer = kijkwijzer
+                Kijkwijzer = kijkwijzer,
+                Duration = duration
             };
             movies.Add(mov);
             UpdateJson();
@@ -78,6 +79,20 @@ namespace CinemaApp
                 string json = JsonConvert.SerializeObject(movies,Formatting.Indented);
                 sw.WriteLine(json);
             } 
+        }
+
+        /// <summary>
+        /// Deze functie is om dingen te testen
+        /// </summary>
+        public void UpdateAllMovies()
+        {
+            foreach(Movie movie in this.movies)
+            {
+                WriteLine(movie.Duration);
+                movie.Duration = "pipi";
+            }
+            UpdateJson();
+            ConsoleUtils.WaitForKeyPress();
         }
     }
 }

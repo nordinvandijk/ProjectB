@@ -1,6 +1,7 @@
 using System;
 using static System.Console;
 using CinemaApp.Screens; // Using namespace folder Screens
+using System.Globalization;
 
 namespace CinemaApp
 {
@@ -30,6 +31,8 @@ namespace CinemaApp
         public FilmFilter FilmFilter;
         public KijkwijzerFilmFilter kijkwijzerFilmFilter;
         public KijkwijzerFilter kijkwijzerFilter;
+        public Time time;
+        public FilmAgenda filmAgenda;
 
 
 
@@ -58,12 +61,15 @@ namespace CinemaApp
             userManager = new UserManager();
             kijkwijzerFilmFilter = new KijkwijzerFilmFilter(this);
             kijkwijzerFilter = new KijkwijzerFilter(this);
+            time = new Time(this);
+            filmAgenda = new FilmAgenda(this);
 
         }
 
         //Methods
         public void Start()
         {
+            time.UpdateAgenda();
             homeScreen.run();
             Clear();
             ConsoleUtils.WaitForKeyPress();
