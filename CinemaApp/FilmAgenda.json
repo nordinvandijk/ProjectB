@@ -70,6 +70,125 @@
             ]
           }
         ]
+      },
+      {
+        "Date": "17-05-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Zaal 1",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 2",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 3",
+            "MovieItemlist": []
+          }
+        ]
+      },
+      {
+        "Date": "18-05-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Zaal 1",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 2",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 3",
+            "MovieItemlist": []
+          }
+        ]
+      },
+      {
+        "Date": "19-05-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Zaal 1",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 2",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 3",
+            "MovieItemlist": []
+          }
+        ]
+      },
+      {
+        "Date": "20-05-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Zaal 1",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 2",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 3",
+            "MovieItemlist": []
+          }
+        ]
+      },
+      {
+        "Date": "21-05-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Zaal 1",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 2",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 3",
+            "MovieItemlist": []
+          }
+        ]
+      },
+      {
+        "Date": "22-05-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Zaal 1",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 2",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 3",
+            "MovieItemlist": []
+          }
+        ]
+      },
+      {
+        "Date": "23-05-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Zaal 1",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 2",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 3",
+            "MovieItemlist": []
+          }
+        ]
       }
     ]
   },
@@ -100,6 +219,108 @@
             "MovieItemlist": []
           }
         ]
+      },
+      {
+        "Date": "17-05-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Zaal 1",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 2",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 3",
+            "MovieItemlist": []
+          }
+        ]
+      },
+      {
+        "Date": "18-05-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Zaal 1",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 2",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 3",
+            "MovieItemlist": []
+          }
+        ]
+      },
+      {
+        "Date": "19-05-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Zaal 1",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 2",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 3",
+            "MovieItemlist": []
+          }
+        ]
+      },
+      {
+        "Date": "21-05-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Zaal 1",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 2",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 3",
+            "MovieItemlist": []
+          }
+        ]
+      },
+      {
+        "Date": "22-05-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Zaal 1",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 2",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 3",
+            "MovieItemlist": []
+          }
+        ]
+      },
+      {
+        "Date": "23-05-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Zaal 1",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 2",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 3",
+            "MovieItemlist": []
+          }
+        ]
       }
     ]
   },
@@ -120,6 +341,108 @@
                 "Title": "Pulp Fiction"
               }
             ]
+          },
+          {
+            "HallName": "Zaal 2",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 3",
+            "MovieItemlist": []
+          }
+        ]
+      },
+      {
+        "Date": "17-05-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Zaal 1",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 2",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 3",
+            "MovieItemlist": []
+          }
+        ]
+      },
+      {
+        "Date": "18-05-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Zaal 1",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 2",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 3",
+            "MovieItemlist": []
+          }
+        ]
+      },
+      {
+        "Date": "19-05-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Zaal 1",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 2",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 3",
+            "MovieItemlist": []
+          }
+        ]
+      },
+      {
+        "Date": "21-05-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Zaal 1",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 2",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 3",
+            "MovieItemlist": []
+          }
+        ]
+      },
+      {
+        "Date": "22-05-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Zaal 1",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 2",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 3",
+            "MovieItemlist": []
+          }
+        ]
+      },
+      {
+        "Date": "23-05-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Zaal 1",
+            "MovieItemlist": []
           },
           {
             "HallName": "Zaal 2",

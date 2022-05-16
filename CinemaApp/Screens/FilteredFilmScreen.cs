@@ -39,7 +39,7 @@ namespace CinemaApp.Screens
             }
             else
             {
-                titel = optionsList[ChosenOption] + @" films:";
+                titel = "Selecteer film en bevestig met ENTER om meer informatie te krijgen\n" + optionsList[ChosenOption] + " films:";
                 foreach (Movie mov in App.movieManager.movies) 
                 {
                     if (mov.Genre.Contains(optionsList[ChosenOption]))
@@ -47,7 +47,7 @@ namespace CinemaApp.Screens
                         FilterList.Add(mov.Title);
                     }
                 }
-                FilterList.Add("\nTerug");
+                FilterList.Add("\nTerug naar filmoverzicht");
                 options = FilterList.ToArray();
                 Menu FilteredDrama = new Menu(options, titel, 0);
                 ChosenOption = FilteredDrama.Run();
