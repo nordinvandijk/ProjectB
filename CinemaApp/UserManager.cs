@@ -6,19 +6,29 @@ using static System.Console;
 
 namespace CinemaApp
 {
-    class UserManager
+    public class UserManager
     {
         public User currentUser = null;
         private string jsonFile = "userList.json";
         private List<User> users = new List<User>();
 
-        public void CreateUser(string username, string password, string email) 
+        public bool CreateUser(string username, string password, string email) 
         {
             User user = new User() {
                 Username = username,
                 Password = password,
                 Email = email,
             };
+            if(!UsernameAlreadyExist(username)){
+                users.Add(user);
+                UpdateJson();
+                WriteLine("Account is succesvol aangemaakt.");
+                return true;
+            }
+            else {
+                WriteLine("Account bestaat al");
+                return false;
+            }
         }
         
         public void RemoveUser() {
@@ -33,11 +43,9 @@ namespace CinemaApp
                     correctUsername = true;
                     if (user.Password == password) {
                         currentUser = user;
-                        Clear();
                         WriteLine("Ingelogd");
                         break;
                     }
-                    Clear();
                     WriteLine("Verkeerd wachtwoord");
                     break;
                 }
@@ -49,7 +57,6 @@ namespace CinemaApp
 
             users = new List<User>(); // maakt de users weer leeg voor veiligheid
         }
-
 
         public void LoadJson() {
             using (StreamReader sr = new StreamReader(jsonFile))
@@ -68,14 +75,14 @@ namespace CinemaApp
             } 
         }
 
-        public void Test() {
+        public bool UsernameAlreadyExist(string username){
             LoadJson();
             foreach (User user in users) {
-                WriteLine(user.Username);
+                if (user.Username == username) {
+                    return true;
+                }
             }
-            Login("hans","willem");
-            Login("hans","fout");
+            return false;
         }
-
     }
 }
