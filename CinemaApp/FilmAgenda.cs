@@ -29,6 +29,12 @@ namespace CinemaApp
     {
         public string CinemaLocation { get; set; }
         public List<Day> Days { get; set; }
+
+        public void OrderDays()
+        { // sorteert movie items in een hall op begintijd
+            var cultureInfo = new CultureInfo("nl-NL");
+            Days = Days.OrderBy(x => DateTime.Parse(x.Date, cultureInfo)).ToList();
+        }
     }
 
     class FilmAgenda

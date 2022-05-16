@@ -157,7 +157,6 @@ namespace CinemaApp.Screens
                             WriteLine("Dit is geen juist formaat voor het invoeren van de film duur");
                             ConsoleUtils.WaitForKeyPress();
                         };
-                        
                     }
                     run();
                     break;
