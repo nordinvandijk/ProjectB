@@ -22,14 +22,15 @@ namespace CinemaApp.Screens
 In dit scherm kan je het Filmhuis-abonnement kopen.
 Het Filmhuis-abonnement heeft de volgende voordelen:
     - Korting op films, eten en drinken en accessoires
-    - Je kan naar het abonnementenevenement.";
+    - Je kan naar het abonnementevenement.";
 
-            string[] options = {"Kopen", "Terug"};
+            string[] options = {"Overzicht van beschikbare abonnementen", "Terug"};
             Menu SubscriptionMenu = new Menu(options, titel, 0);
             int ChosenOption = SubscriptionMenu.Run();
-            string titel2 = @"Hier krijg je alle abonnementen te zien";
+            string titel2 = " Silveren Filmhuis abonnement: \n   -15% korting op alle films\n   -Automatisch gereserveerd plek op verschillende evenementen\n   -Kleine cola gratis bij jouw reservatie\n   Prijs: 30 euro per maand.\n Gouden Filmhuis abonnement:\n   -25% korting op alle films\n   -Automatisch gereserveerd plek op verschillende evenementen met een optie om als eerste stoel te reserveren\n   -Medium cola en medium popcorn gratis bij jouw reservatie\n   Prijs: 35 euro per maand.";
+            
 
-            string[] options2 = {"Abonnement 1", "Abonnement 2", "Abonnement 3", "Terug"};
+            string[] options2 = {"Gouden Filmhuis abonnement kopen","Zilveren Filmhuis abonnement kopen", "Terug"};
             Menu OrderOverviewMenu = new Menu(options2, titel2, 0);
 
             switch(ChosenOption)
