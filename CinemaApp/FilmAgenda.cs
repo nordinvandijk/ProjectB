@@ -132,19 +132,19 @@ namespace CinemaApp
                     }
 
                     //Checkt of de gekozen start- en endTime tijdens de openingstijd van de bios vallen, 09:00 tot 02:00, elke film dient voor 12 uur s'nachts te starten
-                    bool betweenOpeningAnaClosingTime = false;
+                    bool betweenOpeningAndClosingTime = false;
                     if (startTime >= DateTime.Parse($"{dayString} 09:00") && startTime <= DateTime.Parse($"{dayString} 02:00") + new TimeSpan(24,00,00) && endTime >= DateTime.Parse($"{dayString} 09:00") && endTime <= DateTime.Parse($"{dayString} 02:00") + new TimeSpan(24,00,00))
                     {
-                        betweenOpeningAnaClosingTime = true;
+                        betweenOpeningAndClosingTime = true;
                     }
 
-                    if (!betweenOpeningAnaClosingTime)
+                    if (!betweenOpeningAndClosingTime)
                     {
                         WriteLine("De bioscoop opent om 9:00 en sluit om 02:00, en er kunnen geen films starten na 12 uur s'nachts\n Vul een startTijd in die voldoet aan deze eisen!");
                         ConsoleUtils.WaitForKeyPress();
                     }
 
-                    if (!overlapping && betweenOpeningAnaClosingTime)
+                    if (!overlapping && betweenOpeningAndClosingTime)
                     {
                         startAndEndTimeFound = true;
                     }
@@ -163,14 +163,6 @@ namespace CinemaApp
                             Format = format,
                             Seats = new Seat[5][]
                             {
-                                new Seat[5]
-                                {
-                                    new Seat(15.00f,0,0),
-                                    new Seat(15.00f,0,1),
-                                    new Seat(15.00f,0,2),
-                                    new Seat(15.00f,0,3),
-                                    new Seat(15.00f,0,4),
-                                },
                                 new Seat[5]
                                 {
                                     new Seat(15.00f,1,0),
@@ -202,6 +194,14 @@ namespace CinemaApp
                                     new Seat(15.00f,4,2),
                                     new Seat(15.00f,4,3),
                                     new Seat(15.00f,4,4),
+                                },
+                                new Seat[5]
+                                {
+                                    new Seat(15.00f,5,0),
+                                    new Seat(15.00f,5,1),
+                                    new Seat(15.00f,5,2),
+                                    new Seat(15.00f,5,3),
+                                    new Seat(15.00f,5,4),
                                 },
                             }
                         };
