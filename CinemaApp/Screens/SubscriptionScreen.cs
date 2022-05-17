@@ -27,7 +27,7 @@ Het Filmhuis-abonnement heeft de volgende voordelen:
             string[] options = {"Overzicht van beschikbare abonnementen", "Terug"};
             Menu SubscriptionMenu = new Menu(options, titel, 0);
             int ChosenOption = SubscriptionMenu.Run();
-            string titel2 = " Silveren Filmhuis abonnement: \n   -15% korting op alle films\n   -Automatisch gereserveerd plek op verschillende evenementen\n   -Kleine cola gratis bij jouw reservatie\n   Prijs: 30 euro per maand.\n Gouden Filmhuis abonnement:\n   -25% korting op alle films\n   -Automatisch gereserveerd plek op verschillende evenementen met een optie om als eerste stoel te reserveren\n   -Medium cola en medium popcorn gratis bij jouw reservatie\n   Prijs: 35 euro per maand.";
+            string titel2 = " Silveren Filmhuis abonnement: \n   -15% korting op alle films\n   -Kleine cola gratis bij jouw reservatie\n   Prijs: 30 euro per maand.\n Gouden Filmhuis abonnement:\n   -25% korting op alle films\n   -Medium cola en medium popcorn gratis bij jouw reservatie\n   Prijs: 35 euro per maand.";
             
 
             string[] options2 = {"Gouden Filmhuis abonnement kopen","Zilveren Filmhuis abonnement kopen", "Terug"};
