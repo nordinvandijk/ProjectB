@@ -38,7 +38,7 @@ namespace CinemaApp
             };
             events.Add(Event);
             UpdateJson();
-            WriteLine("Evenement toegevoegd");
+            WriteLine("Evenement toegevoegd!");
         }
 
         public void LoadJson() 

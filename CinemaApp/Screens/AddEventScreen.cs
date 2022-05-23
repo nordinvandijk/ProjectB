@@ -143,7 +143,9 @@ namespace CinemaApp.Screens
                       minAge = "<leeg>";
                       duration = "<leeg>";
                       ticketprice = "<leeg>";
+                      ConsoleUtils.WaitForKeyPress();
                       run();
+                      App.adminPanelScreen.run();
                       }
                       catch {
                         WriteLine("De inputs waren verkeerd probeer het nog een keer.");

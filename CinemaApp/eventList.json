@@ -22,5 +22,13 @@
     "MinimumAge": "12",
     "Duration": "01:30:00",
     "TicketPrice": "9"
+  },
+  {
+    "Name": "Spiderman Marathon",
+    "Description": "Alle 3 Marvel Spiderman films op 1 avond!",
+    "EventDate": "23-06-2022",
+    "MinimumAge": "5",
+    "Duration": "06:12:00",
+    "TicketPrice": "24"
   }
 ]
