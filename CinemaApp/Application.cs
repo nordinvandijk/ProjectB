@@ -33,6 +33,8 @@ namespace CinemaApp
         public KijkwijzerFilter kijkwijzerFilter;
         public Time time;
         public FilmAgenda filmAgenda;
+        public AddEventScreen addEventScreen;
+        public EventManager eventManager;
 
 
 
@@ -63,6 +65,8 @@ namespace CinemaApp
             kijkwijzerFilter = new KijkwijzerFilter(this);
             time = new Time(this);
             filmAgenda = new FilmAgenda(this);
+            addEventScreen = new AddEventScreen(this);
+            eventScreen = new EventScreen(this);
 
         }
 
