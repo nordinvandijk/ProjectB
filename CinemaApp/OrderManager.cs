@@ -52,7 +52,8 @@ namespace CinemaApp
                 orderID = findOrderId,
                 username = username,
                 seats = new List<Seat>(selectedSeats),
-                snacks = new List<string>()
+                snacks = new List<string>(),
+                accesoires = new List<string>()
             };
             
             orders.Add(newOrder);
@@ -89,7 +90,8 @@ namespace CinemaApp
                 orderID = findOrderId,
                 username = null,
                 seats = new List<Seat>(selectedSeats),
-                snacks = new List<string>()
+                snacks = new List<string>(),
+                accesoires = new List<string>()
             };
 
             orders.Add(newOrder);

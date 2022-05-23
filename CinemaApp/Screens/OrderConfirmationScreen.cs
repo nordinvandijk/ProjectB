@@ -46,11 +46,11 @@ namespace CinemaApp.Screens
                 App.seatsOverviewScreen.currentOrder.username = App.userManager.currentUser.Username;
             }
 
-            // Als er iemand is ingelogd hoeft hij alleen maar op bevestiggen te klikken
+            // Als er iemand is ingelogd hoeft hij alleen maar op bevestigen te klikken
             if (App.seatsOverviewScreen.currentOrder.username != null)
             {
                 string text = CreateOverview();
-                string[] options = { "Bevestiggen", "Terug" };
+                string[] options = { "Bevestigen", "Terug" };
                 orderConfirmationMenu = new Menu(options,text,0);
                 int chosenOption = orderConfirmationMenu.Run();
 
@@ -84,7 +84,7 @@ namespace CinemaApp.Screens
             // Als er niemand is ingelogd moet er nu een account aangemaakt worden of worden ingelogd
             else
             {
-                string text = CreateOverview() + "\nOm uw order te kunnen bevestiggen moet u inloggen of een account aanmaken";
+                string text = CreateOverview() + "\nOm uw order te kunnen bevestigen moet u inloggen of een account aanmaken";
                 string[] options = { "Inloggen", "Aanmelden", "Terug" };
                 orderConfirmationMenu = new Menu(options, text, 0);
                 int chosenOption = orderConfirmationMenu.Run();
