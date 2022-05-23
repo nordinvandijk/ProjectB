@@ -37,14 +37,6 @@ Het Filmhuis-abonnement heeft de volgende voordelen:
             {
                 case 0:
                     App.userManager.LoadJson();
-                    string jsonFile = "userList.Json";
-                    List<User> users = new List<User>();
-                    
-                    using (StreamReader sr = new StreamReader(jsonFile))
-                    {
-                        string json = sr.ReadToEnd();
-                        users = JsonConvert.DeserializeObject<List<User>>(json);
-                    }
 
                     int ChosenOption2 = OrderOverviewMenu.Run();
 
@@ -52,27 +44,19 @@ Het Filmhuis-abonnement heeft de volgende voordelen:
                     {   
                         App.subscriptionScreen.run();
                     }
+
                     else
                     {
                         string chosenabonnement = options2.GetValue(ChosenOption2).ToString();
-                        foreach (User user in users) 
-                        {
-                            if (user.Username == App.userManager.currentUser.Username) 
-                            {
-                                user.Abonnement = chosenabonnement;
-                            }
-                        }
-                        using (StreamWriter sw = new StreamWriter(jsonFile))
-                        {   
-                            string json = JsonConvert.SerializeObject(users,Formatting.Indented);
-                            sw.WriteLine(json);
-                        } 
+                        App.userManager.currentUser.Abonnement = chosenabonnement;
+                        App.userManager.UpdateJson();
                         Clear();
                         WriteLine(chosenabonnement + " is gekocht.");
                         ConsoleUtils.WaitForKeyPress();
                         App.homeScreen.run();
                     }
                     break;
+
                 case 1:
                     App.homeScreen.run();
                     break;     
