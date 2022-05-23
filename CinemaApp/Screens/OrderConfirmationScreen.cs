@@ -1,5 +1,6 @@
 using System;
 using static System.Console;
+using static CinemaApp.ConsoleUtils;
 
 namespace CinemaApp.Screens
 {
@@ -15,26 +16,11 @@ namespace CinemaApp.Screens
         //Methods
         public override void run()
         {
-            string titel = @"Titel";
+            Clear();
+            Console.WriteLine("Confirm order");
+            WaitForKeyPress();
+            App.orderOverviewScreen.run();
 
-            string[] options = {"Optie 1", "Optie 2", "Optie 3"};
-            Menu OrderConfirmationMenu = new Menu(options, titel, 0);
-            int ChosenOption = OrderConfirmationMenu.Run();
-
-            switch(ChosenOption)
-            {
-                case 0:
-                    //code
-                    break;
-                case 1:
-                    //code
-                    break;
-                case 2:
-                    //code
-                    break;      
-            }
-
-            ConsoleUtils.WaitForKeyPress();
         }
     }   
 }
