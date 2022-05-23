@@ -31,7 +31,10 @@ namespace CinemaApp
                 return false;
             }
         }
-        
+        public List<User> GetUserList()
+        {
+            return users;
+        }
         public void RemoveUser() {
 
         }
