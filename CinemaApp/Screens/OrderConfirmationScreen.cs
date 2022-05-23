@@ -16,23 +16,35 @@ namespace CinemaApp.Screens
         //Methods
         public string CreateOverview()
         {
-            string overviewTable = new String('-', 30) + "\n";
-            
+            float totalPrice = 0;
+            string overviewTable = new String('=', 50) + "\n";
+
             // Displaying all seats and their cost
+            overviewTable += "|Stoelen|\n";
             foreach(Seat seat in App.seatsOverviewScreen.currentOrder.seats)
             {
-                overviewTable += $"Row: {seat.Row} SeatNumber: {seat.SeatNumber} Price: {seat.Price}\n";
+                overviewTable += $"   Stoel (Rij: {seat.Row} Stoel Nummer: {seat.SeatNumber}) Prijs: {seat.Price} Euro\n";
+                totalPrice += seat.Price;
             }
 
-            //displaying all snacks and their cost
-            foreach(string snack in App.seatsOverviewScreen.currentOrder.snacks)
+            //displaying all accessoires and their cost
+            overviewTable += "\n|Accessoires|\n";
+            foreach(string snack in App.seatsOverviewScreen.currentOrder.accessoires)
             {
                 overviewTable += "Hier komen snacks\n";
             }
 
-            // Total price
+            //displaying all snacks and thier cost
+            overviewTable += "\n|Snacks|\n";
+            foreach (string accesoire in App.seatsOverviewScreen.currentOrder.snacks)
+            {
+                overviewTable += "Hier komen accessoires\n";
+            }
 
-            overviewTable += new String('-', 30) + "\n";
+            // Total price
+            overviewTable += new String('=', 50) + "\n";
+            overviewTable += $"Totale prijs: {totalPrice} euro\n";
+            overviewTable += new String('=', 50) + "\n";
 
             return overviewTable;
         }

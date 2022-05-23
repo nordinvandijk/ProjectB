@@ -12,6 +12,6 @@ namespace CinemaApp
         public string username { get; set; }
         public List<Seat> seats { get; set; }
         public List<string> snacks { get; set; }
-        public List<string> accesoires { get; set; }
+        public List<string> accessoires { get; set; }
     }
 }

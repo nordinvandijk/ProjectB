@@ -13,28 +13,65 @@ namespace CinemaApp.Screens
         }
 
         //Methods
-        public override void run()
+        public string CreateOverview(Order order)
         {
-            string titel = @"Titel";
+            float totalPrice = 0;
+            string overviewTable = new String('=', 50) + "\n";
 
-            string[] options = {"Optie 1", "Optie 2", "Optie 3"};
-            Menu ReservationOverviewMenu = new Menu(options, titel, 0);
-            int ChosenOption = ReservationOverviewMenu.Run();
+            // Displaying orderNumber and username
+            overviewTable += $"|Info|\n   Ordernummer: {order.orderID}\n   Op naam van: {order.username}\n";
 
-            switch(ChosenOption)
+            // Displaying all seats and their cost
+            overviewTable += "|Stoelen|\n";
+            foreach (Seat seat in order.seats)
             {
-                case 0:
-                    //code
-                    break;
-                case 1:
-                    //code
-                    break;
-                case 2:
-                    //code
-                    break;      
+                overviewTable += $"   Stoel (Rij: {seat.Row} Stoel Nummer: {seat.SeatNumber}) Prijs: {seat.Price} Euro\n";
+                totalPrice += seat.Price;
             }
 
-            ConsoleUtils.WaitForKeyPress();
+            //displaying all accessoires and their cost
+            overviewTable += "\n|Accessoires|\n";
+            foreach (string snack in order.accessoires)
+            {
+                overviewTable += "Hier komen snacks\n";
+            }
+
+            //displaying all snacks and thier cost
+            overviewTable += "\n|Snacks|\n";
+            foreach (string accesoire in order.snacks)
+            {
+                overviewTable += "Hier komen accessoires\n";
+            }
+
+            // Total price
+            overviewTable += new String('=', 50) + "\n";
+            overviewTable += $"Totale prijs: {totalPrice} euro\n";
+            overviewTable += new String('=', 50) + "\n";
+
+            return overviewTable;
+        }
+        public override void run()
+        {
+            string textToDisplay = "";
+            string[] options = { "Terug" };
+
+            foreach(Order order in App.orderManager.orders)
+            {
+                if(order.username == App.userManager.currentUser.Username)
+                {
+                    textToDisplay += CreateOverview(order) + "\n";
+                }
+            }
+
+            Menu reservationOverviewMenu = new Menu(options, textToDisplay, 0);
+            int chosenOption = reservationOverviewMenu.Run();
+
+            switch (chosenOption)
+            {
+                case 0:
+                    App.homeScreen.run();
+                    break;
+            }
         }
     }   
 }

@@ -12,7 +12,7 @@ namespace CinemaApp
     {
         // Fields
         public Application App;
-        List<Order> orders;
+        public List<Order> orders;
         
         // Constructor
         public OrderManager(Application app)
@@ -53,7 +53,7 @@ namespace CinemaApp
                 username = username,
                 seats = new List<Seat>(selectedSeats),
                 snacks = new List<string>(),
-                accesoires = new List<string>()
+                accessoires = new List<string>()
             };
             
             orders.Add(newOrder);
@@ -91,7 +91,7 @@ namespace CinemaApp
                 username = null,
                 seats = new List<Seat>(selectedSeats),
                 snacks = new List<string>(),
-                accesoires = new List<string>()
+                accessoires = new List<string>()
             };
 
             orders.Add(newOrder);
