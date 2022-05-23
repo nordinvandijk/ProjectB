@@ -37,7 +37,7 @@ namespace CinemaApp.Screens
                 case 2:
                     App.movieAgendaScreen.run();
                     break;
-                case 3:
+                case 3: //evenementen toevoegen pagina
                     App.addEventScreen.run();
                     break;
                 case 4:

@@ -1,0 +1,26 @@
+[
+  {
+    "Name": "Ladies Night",
+    "Description": "Een gezellige avond voor alleen vrouwen onder elkaar.",
+    "EventDate": "28-06-2022",
+    "MinimumAge": "18",
+    "Duration": "01:30:00",
+    "TicketPrice": "10"
+  },
+  {
+    "Name": "Kids' morning",
+    "Description": "Een zaterdagochtend voor de kleinsten!",
+    "EventDate": "28-05-2022",
+    "MinimumAge": "3",
+    "Duration": "01:20:00",
+    "TicketPrice": "5"
+  },
+  {
+    "Name": "test",
+    "Description": "is een test",
+    "EventDate": "30-05-2022",
+    "MinimumAge": "12",
+    "Duration": "01:30:00",
+    "TicketPrice": "9"
+  }
+]

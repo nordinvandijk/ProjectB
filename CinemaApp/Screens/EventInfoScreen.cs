@@ -17,6 +17,7 @@ namespace CinemaApp.Screens
 
         public override void run()
         {
+            //gaat door events om de event te vinden die is gekozen bij eventscreen
             foreach (Event ev in App.eventManager.events) {
                 if (ev.Name == App.eventScreen.ChosenEvent) {
                     Event = ev;
@@ -24,7 +25,21 @@ namespace CinemaApp.Screens
                 }
             }
 
-            string naam = Event.Name + "\nBeschrijving: " + Event.Description +  
+            //displayt alle details in een string
+            string titel = Event.Name + "\nBeschrijving: " + Event.Description +
+                        "\nDatum: " + Event.EventDate + "\nMinimale leeftijd: " + Event.MinimumAge +
+                         "\nTijdsduur: " + Event.Duration + "\nTicket prijs: " + Event.TicketPrice;
+
+            string[] options = {"Evenementen overzicht"};
+            Menu EventInfoMenu = new Menu(options, titel, 0);
+            int ChosenOption = EventInfoMenu.Run();
+
+            switch(ChosenOption)
+            {
+                case 0: //terug naar eventscreen
+                    App.eventScreen.run();
+                    break;
+            }  
         }
     }
 }

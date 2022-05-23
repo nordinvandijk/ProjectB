@@ -24,9 +24,12 @@ namespace CinemaApp.Screens
         //Methods
         public override void run()
         {
+           
+           //wordt gebruikt voor de Event datum
            DateTimeStyles styles = DateTimeStyles.None;
            var cultureInfo = new CultureInfo("nl-NL");
            
+           //keuzes voor keuzemenu
            string titel = @"Events toevoegen";
            string[] options = {$"Naam event : {name}", $"Beschrijving : {description}", $"Event datum : {eventdate}", 
             $"Minimale leeftijd : {minAge}", $"Duur evenement : {duration}", $"Ticket prijs: {ticketprice}", "Bevestig", "Terug"}; 
@@ -35,7 +38,7 @@ namespace CinemaApp.Screens
             int ChosenOption = AddEventMenu.Run();
             switch(ChosenOption)
             {
-                case 0:
+                case 0: //Name
                     Clear();
                     WriteLine("Wat is de naam van het evenement?");
                     CursorVisible = true;
@@ -45,6 +48,7 @@ namespace CinemaApp.Screens
                     break;
                 
                 case 1:
+                    //Description
                     Clear();
                     WriteLine("Wat is de beschrijving van het evenement?");
                     CursorVisible = true;
@@ -53,7 +57,7 @@ namespace CinemaApp.Screens
                     run();
                     break;
                 
-                case 2:
+                case 2: //EventDate
                     Clear();
                     WriteLine("Wat is de datum van het evenement?");
                     CursorVisible = true;
@@ -68,7 +72,7 @@ namespace CinemaApp.Screens
                     run();
                     break;
                 
-                case 3:
+                case 3: //MinAge
                     Clear();
                     WriteLine("Wat is de minimale leeftijd voor het evenement?");
                     CursorVisible = true;
@@ -83,7 +87,7 @@ namespace CinemaApp.Screens
                     run();
                     break;
                 
-                case 4:
+                case 4: //Duration
                     bool durationInputCorrect = false;
                     while (!durationInputCorrect) {
                     Clear();
@@ -109,7 +113,7 @@ namespace CinemaApp.Screens
                     run();
                     break;
 
-                case 5:
+                case 5: //TicketPrice
                     Clear();
                     WriteLine("Wat is de prijs voor een ticket?");
                     CursorVisible = true;
@@ -131,7 +135,7 @@ namespace CinemaApp.Screens
                     if (name != "<leeg>" && description != "<leeg>" && eventdate != "<leeg>" && minAge != "<leeg>" && duration != "<leeg>")
                     {
                       try {
-                      //zet in eventList
+                      //zet in eventList, kan alleen bevestigen als er geen error is
                       App.eventManager.AddEvent(name, description, eventdate, minAge, duration, ticketprice);
                       name = "<leeg>";
                       description = "<leeg>";
@@ -155,7 +159,7 @@ namespace CinemaApp.Screens
                     }
                     break;
                 
-                case 7:
+                case 7: // terug naar Admin panel
                     App.adminPanelScreen.run();
                     break;
 

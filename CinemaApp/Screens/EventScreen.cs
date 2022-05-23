@@ -17,20 +17,24 @@ namespace CinemaApp.Screens
         {
             string titel = @"Evenementen";
 
-            List<string> optionsList = new List<string>();
+            //bepaalt de lengte van de eventList plus een om terug te gaan.
+            int length = App.eventManager.events.Count + 1;
+            string[] options = new string[length];
+            int i=0;
+            //gaat door alle events om deze te displayen
             foreach(Event ev in App.eventManager.events) {
-                optionsList.Add(ev.Name);
+                options[i] = ev.Name;
+                i++;
             }
 
-            optionsList.Add("\nTerug")
+            options[length-1] = "\nTerug";
             
-            string[] options = optionsList.ToArray();
             Menu EventMenu = new Menu(options, titel, 0);
             int ChosenOption = EventMenu.Run();
             ChosenEvent = options.GetValue(ChosenOption).ToString();
 
-            if (ChosenOption == options.Length-1) {
-                App.homeScreen.run();
+            if (ChosenOption == options.GetLength(0)-1) {
+                App.homeScreen.run(); //terug gaan naar homescreen
             }
             else{
                 App.eventInfoScreen.run();

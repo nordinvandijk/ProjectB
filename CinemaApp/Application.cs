@@ -36,6 +36,8 @@ namespace CinemaApp
         public AddEventScreen addEventScreen;
         public EventManager eventManager;
 
+        public EventInfoScreen eventInfoScreen;
+
 
 
         //Constructor
@@ -67,6 +69,9 @@ namespace CinemaApp
             filmAgenda = new FilmAgenda(this);
             addEventScreen = new AddEventScreen(this);
             eventScreen = new EventScreen(this);
+            eventInfoScreen = new EventInfoScreen(this);
+            eventManager = new EventManager();
+
 
         }
 
