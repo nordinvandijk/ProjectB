@@ -16,7 +16,7 @@ namespace CinemaApp.Screens
         //Methods
         public override void run()
         {
-            App.seatsOverviewScreen.currentOrder.snacks.Add("Test");
+            //App.seatsOverviewScreen.currentOrder.snacks.Add("Test");
             Clear();
             Console.WriteLine("Hier moet eten gekocht kunnen worden");
             WaitForKeyPress();
