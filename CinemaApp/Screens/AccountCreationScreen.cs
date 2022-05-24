@@ -79,11 +79,31 @@ namespace CinemaApp.Screens
                         CursorVisible = true;
                         telefoon = ReadLine();
                         int inttelefoon = -1;
-                        while(!Int32.TryParse(telefoon,out inttelefoon) || inttelefoon<=0 || telefoon[0] != '0' || telefoon[1] != '6' || telefoon.Length != 10){
-                            Clear();
-                            WriteLine("Voorbeeld: 0612345678");
-                            WriteLine("Voer een goede Nederlandse telefoon nummer in: ");
-                            telefoon = ReadLine();
+                        while(inttelefoon < 0)
+                        {
+                            if(telefoon[0] == '+' && telefoon[1] == '3' && telefoon[2] == '1' && telefoon.Length == 12)
+                            {
+                                inttelefoon++;
+                            }
+                            else if(Int32.TryParse(telefoon,out inttelefoon) && telefoon[0] == '0' && telefoon[1] == '6' && telefoon.Length == 10)
+                            {
+                                inttelefoon++;
+                            }
+                            else if(Int32.TryParse(telefoon,out inttelefoon) && telefoon[0] == '0' && telefoon[1] == '1' && telefoon[2] == '0' && telefoon.Length == 10)
+                            {
+                                inttelefoon++;
+                            }
+                            else if(Int32.TryParse(telefoon,out inttelefoon) && telefoon[0] == '0' && telefoon[1] == '2' && telefoon[2] == '0' && telefoon.Length == 10)
+                            {
+                                inttelefoon++;
+                            }
+                            else
+                            {
+                                Clear();
+                                WriteLine("Voorbeeld: 0612345678, +31 6123345678 of 0101234567");
+                                WriteLine("Voer een goede Nederlandse telefoon nummer in: ");
+                                telefoon = ReadLine();
+                            }
                         }
                         CursorVisible = false;
                         break;
