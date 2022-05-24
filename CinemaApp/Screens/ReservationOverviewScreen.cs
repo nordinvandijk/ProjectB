@@ -65,25 +65,47 @@ namespace CinemaApp.Screens
         }
         public override void run()
         {
-            string textToDisplay = "";
-            string[] options = { "Terug" };
+            // OrderNames worden gebruikt voor het maken van een menu
+            List<string> orderNames = new List<string>();
+            
+            // Orders van ingelogde klant worden opgeslagen in deze list
+            List<Order> orders = new List<Order>();
 
             foreach(Order order in App.orderManager.orders)
             {
                 if(order.Username == App.userManager.currentUser.Username)
                 {
-                    textToDisplay += CreateOverview(order) + "\n";
+                    orderNames.Add($"Film: {order.FilmTitle} Datum: {order.StartTimeString.Substring(0,8)}");
+                    orders.Add(order);
                 }
             }
+            orderNames.Add("Terug");
 
-            Menu reservationOverviewMenu = new Menu(options, textToDisplay, 0);
+            string title = "Dit zijn al uw orders:";
+            string[] options = orderNames.ToArray();
+            Menu reservationOverviewMenu = new Menu(options, title, 0);
             int chosenOption = reservationOverviewMenu.Run();
 
-            switch (chosenOption)
+            // Terug knop op scherm overzicht reserveringen
+            if (chosenOption == options.Length - 1)
             {
-                case 0:
-                    App.homeScreen.run();
-                    break;
+                App.homeScreen.run();
+            }
+
+            // Gekozen order bekijken met terug knop
+            else
+            {
+                string displayOrder = CreateOverview(orders[chosenOption]);
+                string[] optionsDisplayOrder = { "Terug" };
+                Menu displayOrderMenu = new Menu(optionsDisplayOrder, displayOrder, 0);
+                int chosenOptionDisplayOrder = displayOrderMenu.Run();
+
+                switch (chosenOptionDisplayOrder)
+                {
+                    case 0:
+                        run();
+                        break;
+                }
             }
         }
     }   
