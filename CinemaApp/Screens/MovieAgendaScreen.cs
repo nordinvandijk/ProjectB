@@ -111,7 +111,7 @@ namespace CinemaApp.Screens
 
                             // In deze foreach loop worden de 'movieItems' van elke bioscoop zaal toegevoegd aan de 'table' string
                             foreach(MovieItem movieItem in hall.MovieItemlist){
-                                table += $"-{movieItem.Title} {movieItem.StartTimeString.Substring(11)} - {movieItem.EndTimeString.Substring(11)}\n";
+                                table += $"-{movieItem.Title} {movieItem.StartTimeString.Substring(11)} - {movieItem.EndTimeString.Substring(11)} (Schoonmaak tot: {movieItem.EndTimeWithCleaning.Substring(11)})\n";
                             }
                             optionsHallMenu[k] = table;
                             k++;

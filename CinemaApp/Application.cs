@@ -69,6 +69,7 @@ namespace CinemaApp
         //Methods
         public void Start()
         {
+            //filmAgenda.ClearMovieItems();
             time.UpdateAgenda();
             homeScreen.run();
             Clear();
