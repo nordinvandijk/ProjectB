@@ -104,13 +104,13 @@ namespace CinemaApp.Screens
                 
                 case 4:
                     Clear();
-                    WriteLine("Wat is de minimale leeftijd van de film?");
+                    WriteLine("Wat is de minimale leeftijd voor deze film?");
                     CursorVisible = true;
                     minAge = ReadLine();
                     int intMinAge = -1;
                         while(!Int32.TryParse(minAge,out intMinAge) || intMinAge<=0){
                             Clear();
-                            WriteLine("Voer een goede telefoon nummer in: ");
+                            WriteLine("Voer een leeftijd in: ");
                             minAge = ReadLine();
                         }
                     CursorVisible = false;
