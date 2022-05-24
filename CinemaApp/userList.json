@@ -3,14 +3,14 @@
     "Username": "hans",
     "Password": "willem",
     "Email": "123",
-    "Abonnement": "Gouden Filmhuis abonnement
-    "TelefoonNummber": "0"
+    "Abonnement": "Zilveren Filmhuis abonnement",
+    "PhoneNumber": null
   },
   {
     "Username": "nathan",
     "Password": "nathan123",
-    "Email": "nathan@gmail.com"
-    "Abonnement": null
-    "TelefoonNummber": "0"
+    "Email": "nathan@gmail.com",
+    "Abonnement": "Zilveren Filmhuis abonnement",
+    "PhoneNumber": null
   }
 ]
