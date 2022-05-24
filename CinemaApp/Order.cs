@@ -16,5 +16,6 @@ namespace CinemaApp
         public string Format { get; set; }
         public string StartTimeString { get; set; }
         public string EndTimeString { get; set; }
+        public string LocationName { get; set; }
     }
 }

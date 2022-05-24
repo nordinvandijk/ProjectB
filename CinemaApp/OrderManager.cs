@@ -56,7 +56,8 @@ namespace CinemaApp
                 StartTimeString = chosenMovieItem.StartTimeString,
                 EndTimeString = chosenMovieItem.EndTimeString,
                 FilmTitle = chosenMovieItem.Title,
-                Format = chosenMovieItem.Format
+                Format = chosenMovieItem.Format,
+                LocationName = chosenMovieItem.LocationName
             };
 
             return newOrder;
@@ -96,7 +97,8 @@ namespace CinemaApp
                 StartTimeString = chosenMovieItem.StartTimeString,
                 EndTimeString = chosenMovieItem.EndTimeString,
                 FilmTitle = chosenMovieItem.Title,
-                Format = chosenMovieItem.Format
+                Format = chosenMovieItem.Format,
+                LocationName = chosenMovieItem.LocationName
             };
 
             return newOrder;
