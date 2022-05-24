@@ -3,84 +3,14 @@
     "Username": "hans",
     "Password": "willem",
     "Email": "123",
-    "Abonnement": "Gouden Filmhuis abonnement kopen"
+    "Abonnement": "Gouden Filmhuis abonnement
+    "TelefoonNummber": "0"
   },
   {
     "Username": "nathan",
     "Password": "nathan123",
-    "Email": "nathan@gmail.com",
-    "Abonnement": "Kopen"
-  },
-  {
-    "Username": "Wie",
-    "Password": "wat",
-    "Email": "wanneer",
+    "Email": "nathan@gmail.com"
     "Abonnement": null
-  },
-  {
-    "Username": "Hans",
-    "Password": "willem wie",
-    "Email": "wat",
-    "Abonnement": null
-  },
-  {
-    "Username": "Salaheddine",
-    "Password": "S123",
-    "Email": "2022#gmail.com",
-    "Abonnement": null
-  },
-  {
-    "Username": "qwerty",
-    "Password": "qwerty",
-    "Email": "qwerty",
-    "Abonnement": null
-  },
-  {
-    "Username": "Bruh",
-    "Password": "Bruh",
-    "Email": "Bruh",
-    "Abonnement": null
-  },
-  {
-    "Username": "bruh",
-    "Password": "bruh",
-    "Email": "bruh",
-    "Abonnement": null
-  },
-  {
-    "Username": "rewq",
-    "Password": "grfds",
-    "Email": "gfdc",
-    "Abonnement": null
-  },
-  {
-    "Username": "htrgfds",
-    "Password": "grfds",
-    "Email": "gfds",
-    "Abonnement": null
-  },
-  {
-    "Username": "treijfgb",
-    "Password": "gfbjvcxk",
-    "Email": "gfdjgfb",
-    "Abonnement": null
-  },
-  {
-    "Username": "thrgewfj",
-    "Password": "rtgfds",
-    "Email": "gfd",
-    "Abonnement": null
-  },
-  {
-    "Username": "Salahedd",
-    "Password": "Wachtwoord",
-    "Email": "sz@123.nl",
-    "Abonnement": null
-  },
-  {
-    "Username": "SZSZ",
-    "Password": "SSZSZSZ",
-    "Email": "SSZSZSZ",
-    "Abonnement": null
+    "TelefoonNummber": "0"
   }
 ]

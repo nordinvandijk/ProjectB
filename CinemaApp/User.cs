@@ -8,5 +8,6 @@ namespace CinemaApp
       public string Password {get;set;}
       public string Email {get;set;}
       public string Abonnement {get;set;}
+      public string PhoneNumber {get;set;}
     }  
 }
