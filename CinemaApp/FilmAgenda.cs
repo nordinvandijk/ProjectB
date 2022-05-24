@@ -105,7 +105,7 @@ namespace CinemaApp
                 // User input starttijd
                 Console.Clear();
                 CursorVisible = true;
-                Console.WriteLine("Voer een startTijd in volgende het notatie: '00:00'");
+                Console.WriteLine("Voer een startTijd in volgens de volgende notatie: '00:00'");
                 string startTimeString = Console.ReadLine();
                 CursorVisible = false;
 
