@@ -47,8 +47,18 @@ Het Filmhuis-abonnement heeft de volgende voordelen:
 
                     else
                     {
-                        string chosenabonnement = options2.GetValue(ChosenOption2).ToString();
-                        App.userManager.currentUser.Abonnement = chosenabonnement;
+                        string chosenabonnement = "";
+                        if (ChosenOption2 == 0)
+                        {
+                            chosenabonnement = "Gouden Filmhuis abonnement";
+                            App.userManager.currentUser.Abonnement = "Gouden Filmhuis abonnement";
+                        }
+                        else if (ChosenOption2 == 1)
+                        {
+                            chosenabonnement = "Zilveren Filmhuis abonnement";
+                            App.userManager.currentUser.Abonnement = "Zilveren Filmhuis abonnement";
+                        }
+
                         App.userManager.UpdateJson();
                         Clear();
                         WriteLine(chosenabonnement + " is gekocht.");
