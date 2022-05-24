@@ -22,7 +22,7 @@ namespace CinemaApp
         }
         
         // Methods
-        public Order CreateOrder(string username, List<Seat> selectedSeats)
+        public Order CreateOrder(string username, List<Seat> selectedSeats, MovieItem chosenMovieItem)
         {
             int findOrderId = 0;
             bool orderIdFound = false;
@@ -53,12 +53,16 @@ namespace CinemaApp
                 Username = username,
                 Seats = new List<Seat>(selectedSeats),
                 AddableItems = new List<string>(),
+                StartTimeString = chosenMovieItem.StartTimeString,
+                EndTimeString = chosenMovieItem.EndTimeString,
+                FilmTitle = chosenMovieItem.Title,
+                Format = chosenMovieItem.Format
             };
 
             return newOrder;
         }
 
-        public Order CreateOrder(List<Seat> selectedSeats)
+        public Order CreateOrder(List<Seat> selectedSeats, MovieItem chosenMovieItem)
         {
             int findOrderId = 0;
             bool orderIdFound = false;
@@ -89,6 +93,10 @@ namespace CinemaApp
                 Username = null,
                 Seats = new List<Seat>(selectedSeats),
                 AddableItems = new List<string>(),
+                StartTimeString = chosenMovieItem.StartTimeString,
+                EndTimeString = chosenMovieItem.EndTimeString,
+                FilmTitle = chosenMovieItem.Title,
+                Format = chosenMovieItem.Format
             };
 
             return newOrder;

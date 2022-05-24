@@ -12,5 +12,9 @@ namespace CinemaApp
         public string Username { get; set; }
         public List<Seat> Seats { get; set; }
         public List<string> AddableItems { get; set; }
+        public string FilmTitle { get; set; }
+        public string Format { get; set; }
+        public string StartTimeString { get; set; }
+        public string EndTimeString { get; set; }
     }
 }

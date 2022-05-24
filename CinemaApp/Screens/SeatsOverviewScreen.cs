@@ -19,8 +19,10 @@ namespace CinemaApp.Screens
         //Methods
         public override void run()
         {
+            User currentUser = App.userManager.currentUser;
+            MovieItem chosenMovieItem = App.filmInfoScreen.chosenMovieItem;
             // Reset alle geselecteerde seats. Dit moet gebeuren als iemand op terug klikt in het addToOrderScreen
-            foreach(Seat[] seatArray in App.filmInfoScreen.chosenMovieItem.Seats)
+            foreach (Seat[] seatArray in chosenMovieItem.Seats)
             {
                 foreach(Seat seat in seatArray)
                 {
@@ -31,7 +33,7 @@ namespace CinemaApp.Screens
                 }
             }
             // Runt seat selector
-            seatSelector = new SeatSelector(App.filmInfoScreen.chosenMovieItem.Seats);
+            seatSelector = new SeatSelector(chosenMovieItem.Seats);
             seatSelector.Run();
 
             // Als er meer als 0 stoelen zijn gekozen en er op bevestigd is geklikt
@@ -40,13 +42,13 @@ namespace CinemaApp.Screens
                 // Als er een user is ingelogd is wordt er een order aangemaakt met username en de geselecteerde stoelen in string vorm
                 if (App.userManager.currentUser != null)
                 {
-                    currentOrder = App.orderManager.CreateOrder(App.userManager.currentUser.Username, seatSelector.selectedSeats);
+                    currentOrder = App.orderManager.CreateOrder(currentUser.Username, seatSelector.selectedSeats, chosenMovieItem);
                 }
                 
                 // Als er geen user ingelogd is wordt er een order aangemaakt met alleen de geselecteerde stoelen
                 else
                 {
-                    currentOrder = App.orderManager.CreateOrder(seatSelector.selectedSeats);
+                    currentOrder = App.orderManager.CreateOrder(seatSelector.selectedSeats, chosenMovieItem);
                 }
                 
                 // Order is aangemaakt dus de volgende pagina wordt gerunt
