@@ -19,28 +19,21 @@ namespace CinemaApp.Screens
             string overviewTable = new String('=', 50) + "\n";
 
             // Displaying orderNumber and username
-            overviewTable += $"|Info|\n   Ordernummer: {order.orderID}\n   Op naam van: {order.username}\n";
+            overviewTable += $"|Info|\n   Ordernummer: {order.OrderID}\n   Op naam van: {order.Username}\n";
 
             // Displaying all seats and their cost
             overviewTable += "|Stoelen|\n";
-            foreach (Seat seat in order.seats)
+            foreach (Seat seat in order.Seats)
             {
                 overviewTable += $"   Stoel (Rij: {seat.Row} Stoel Nummer: {seat.SeatNumber}) Prijs: {seat.Price} Euro\n";
                 totalPrice += seat.Price;
             }
 
-            //displaying all accessoires and their cost
+            //displaying all addableItems and their cost
             overviewTable += "\n|Accessoires|\n";
-            foreach (string snack in order.accessoires)
+            foreach (string snack in order.AddableItems)
             {
                 overviewTable += "Hier komen snacks\n";
-            }
-
-            //displaying all snacks and thier cost
-            overviewTable += "\n|Snacks|\n";
-            foreach (string accesoire in order.snacks)
-            {
-                overviewTable += "Hier komen accessoires\n";
             }
 
             // Total price
@@ -57,7 +50,7 @@ namespace CinemaApp.Screens
 
             foreach(Order order in App.orderManager.orders)
             {
-                if(order.username == App.userManager.currentUser.Username)
+                if(order.Username == App.userManager.currentUser.Username)
                 {
                     textToDisplay += CreateOverview(order) + "\n";
                 }

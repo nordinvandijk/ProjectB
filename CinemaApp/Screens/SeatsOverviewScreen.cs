@@ -19,6 +19,17 @@ namespace CinemaApp.Screens
         //Methods
         public override void run()
         {
+            // Reset alle geselecteerde seats. Dit moet gebeuren als iemand op terug klikt in het addToOrderScreen
+            foreach(Seat[] seatArray in App.filmInfoScreen.chosenMovieItem.Seats)
+            {
+                foreach(Seat seat in seatArray)
+                {
+                    if(seat.Availability == "selected")
+                    {
+                        seat.Availability = "available";
+                    }
+                }
+            }
             // Runt seat selector
             seatSelector = new SeatSelector(App.filmInfoScreen.chosenMovieItem.Seats);
             seatSelector.Run();
@@ -43,6 +54,7 @@ namespace CinemaApp.Screens
             }
             else
             {
+                Clear();
                 Console.WriteLine("Kies tenminste 1 stoel!");
                 WaitForKeyPress();
                 run();

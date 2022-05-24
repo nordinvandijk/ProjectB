@@ -36,7 +36,7 @@ namespace CinemaApp
                 bool orderIdAlreadyExist = false;
                 foreach (Order order in orders)
                 {
-                    if (findOrderId == order.orderID)
+                    if (findOrderId == order.OrderID)
                     {
                         orderIdAlreadyExist = true;
                     }
@@ -49,14 +49,12 @@ namespace CinemaApp
             
             Order newOrder = new Order()
             {
-                orderID = findOrderId,
-                username = username,
-                seats = new List<Seat>(selectedSeats),
-                snacks = new List<string>(),
-                accessoires = new List<string>()
+                OrderID = findOrderId,
+                Username = username,
+                Seats = new List<Seat>(selectedSeats),
+                AddableItems = new List<string>(),
             };
-            
-            orders.Add(newOrder);
+
             return newOrder;
         }
 
@@ -74,7 +72,7 @@ namespace CinemaApp
                 bool orderIdAlreadyExist = false;
                 foreach (Order order in orders)
                 {
-                    if (findOrderId == order.orderID)
+                    if (findOrderId == order.OrderID)
                     {
                         orderIdAlreadyExist = true;
                     }
@@ -87,14 +85,12 @@ namespace CinemaApp
 
             Order newOrder = new Order()
             {
-                orderID = findOrderId,
-                username = null,
-                seats = new List<Seat>(selectedSeats),
-                snacks = new List<string>(),
-                accessoires = new List<string>()
+                OrderID = findOrderId,
+                Username = null,
+                Seats = new List<Seat>(selectedSeats),
+                AddableItems = new List<string>(),
             };
 
-            orders.Add(newOrder);
             return newOrder;
         }
         public void LoadJson()

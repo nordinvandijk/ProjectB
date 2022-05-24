@@ -20,28 +20,21 @@ namespace CinemaApp.Screens
             string overviewTable = new String('=', 50) + "\n";
 
             // Displaying orderNumber and username
-            overviewTable += $"|Info|\n   Ordernummer: {App.seatsOverviewScreen.currentOrder.orderID}\n   Op naam van: {App.seatsOverviewScreen.currentOrder.username}\n";
+            overviewTable += $"|Info|\n   Ordernummer: {App.seatsOverviewScreen.currentOrder.OrderID}\n   Op naam van: {App.seatsOverviewScreen.currentOrder.Username}\n";
             
             // Displaying all seats and their cost
             overviewTable += "|Stoelen|\n";
-            foreach (Seat seat in App.seatsOverviewScreen.currentOrder.seats)
+            foreach (Seat seat in App.seatsOverviewScreen.currentOrder.Seats)
             {
                 overviewTable += $"   Stoel (Rij: {seat.Row} Stoel Nummer: {seat.SeatNumber}) Prijs: {seat.Price} Euro\n";
                 totalPrice += seat.Price;
             }
 
-            //displaying all accessoires and their cost
+            //displaying all addableItems and their cost
             overviewTable += "\n|Accessoires|\n";
-            foreach (string snack in App.seatsOverviewScreen.currentOrder.accessoires)
+            foreach (string snack in App.seatsOverviewScreen.currentOrder.AddableItems)
             {
                 overviewTable += "Hier komen snacks\n";
-            }
-
-            //displaying all snacks and thier cost
-            overviewTable += "\n|Snacks|\n";
-            foreach (string accesoire in App.seatsOverviewScreen.currentOrder.snacks)
-            {
-                overviewTable += "Hier komen accessoires\n";
             }
 
             // Total price

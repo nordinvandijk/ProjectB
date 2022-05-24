@@ -21,24 +21,17 @@ namespace CinemaApp.Screens
 
             // Displaying all seats and their cost
             overviewTable += "|Stoelen|\n";
-            foreach(Seat seat in App.seatsOverviewScreen.currentOrder.seats)
+            foreach(Seat seat in App.seatsOverviewScreen.currentOrder.Seats)
             {
                 overviewTable += $"   Stoel (Rij: {seat.Row} Stoel Nummer: {seat.SeatNumber}) Prijs: {seat.Price} Euro\n";
                 totalPrice += seat.Price;
             }
 
-            //displaying all accessoires and their cost
+            //displaying all addableItems and their cost
             overviewTable += "\n|Accessoires|\n";
-            foreach(string snack in App.seatsOverviewScreen.currentOrder.accessoires)
+            foreach(string snack in App.seatsOverviewScreen.currentOrder.AddableItems)
             {
                 overviewTable += "Hier komen snacks\n";
-            }
-
-            //displaying all snacks and thier cost
-            overviewTable += "\n|Snacks|\n";
-            foreach (string accesoire in App.seatsOverviewScreen.currentOrder.snacks)
-            {
-                overviewTable += "Hier komen accessoires\n";
             }
 
             // Total price
@@ -51,15 +44,17 @@ namespace CinemaApp.Screens
         public override void run()
         {
             Menu orderConfirmationMenu;
-            
+            Order currentOrder = App.seatsOverviewScreen.currentOrder;
+            User currentUser = App.userManager.currentUser;
+
             // Als iemand vanuit de order confirmation inlogd wordt de username toegevoegd aan de currentOrder
-            if (App.userManager.currentUser != null)
+            if (currentUser != null)
             {
-                App.seatsOverviewScreen.currentOrder.username = App.userManager.currentUser.Username;
+                currentOrder.Username = currentUser.Username;
             }
 
             // Als er iemand is ingelogd hoeft hij alleen maar op bevestigen te klikken
-            if (App.seatsOverviewScreen.currentOrder.username != null)
+            if (currentOrder.Username != null)
             {
                 string text = CreateOverview();
                 string[] options = { "Bevestigen", "Terug" };
@@ -70,10 +65,13 @@ namespace CinemaApp.Screens
                 {
                     case 0:
                         // Order wordt opgeslagen in json
-                        foreach (Seat seat in App.seatsOverviewScreen.currentOrder.seats)
+                        foreach (Seat seat in currentOrder.Seats)
                         {
                             seat.Availability = "occupied";
                         }
+
+                        // Order wordt toegevoegd aan json
+                        App.orderManager.orders.Add(currentOrder);
                         App.orderManager.UpdateJson();
 
                         // Geselecteerde stoelen worden op occupied gezet

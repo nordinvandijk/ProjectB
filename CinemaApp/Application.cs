@@ -34,6 +34,7 @@ namespace CinemaApp
         public Time time;
         public FilmAgenda filmAgenda;
         public OrderManager orderManager;
+        public AddableItemsManager addableItemsManager;
 
 
 
@@ -65,6 +66,7 @@ namespace CinemaApp
             time = new Time(this);
             filmAgenda = new FilmAgenda(this);
             orderManager = new OrderManager(this);
+            addableItemsManager = new AddableItemsManager();
 
         }
 
