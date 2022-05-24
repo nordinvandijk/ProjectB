@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using static System.Console;
 
 namespace CinemaApp.Screens
@@ -19,10 +21,15 @@ namespace CinemaApp.Screens
             string overviewTable = new String('=', 50) + "\n";
 
             // Displaying orderNumber and username
-            overviewTable += $"|Info|\n   Ordernummer: {order.OrderID}\n   Op naam van: {order.Username}\n";
+            overviewTable += $"|Algemene Informatie|\n   Ordernummer: {order.OrderID}\n   Op naam van: {order.Username}\n";
+
+            // Displaying movie info
+            overviewTable += $"\n|Informatie Film|\n";
+            overviewTable += $"   Titel: {order.FilmTitle}\n   Uitvoering: {order.Format}\n";
+            overviewTable += $"   Datum: {order.StartTimeString.Substring(0, 8)}\n   Tijd: {order.StartTimeString.Substring(11)} - {order.EndTimeString.Substring(11)}\n";
 
             // Displaying all seats and their cost
-            overviewTable += "|Stoelen|\n";
+            overviewTable += "\n|Stoelen|\n";
             foreach (Seat seat in order.Seats)
             {
                 overviewTable += $"   Stoel (Rij: {seat.Row} Stoel Nummer: {seat.SeatNumber}) Prijs: {seat.Price} Euro\n";
@@ -30,10 +37,22 @@ namespace CinemaApp.Screens
             }
 
             //displaying all addableItems and their cost
-            overviewTable += "\n|Accessoires|\n";
-            foreach (string snack in order.AddableItems)
+            overviewTable += "\n|Extra's|\n";
+            List<string> alreadyFound = new List<string>();
+            foreach (string addableItemName in order.AddableItems)
             {
-                overviewTable += "Hier komen snacks\n";
+                // Als 'addableItemName' niet in de lijst alreadyFound staat
+                if (!(alreadyFound.Exists(x => x == addableItemName)))
+                {
+                    // Hoevaak 'addableItemName' aanwezig in de current order wordt opgeslagen in een int
+                    int amountOfItem = order.AddableItems.Where(x => x == addableItemName).Count();
+                    // 'addableItemName' de hoeveelheid en de prijs wordt gedisplayt
+                    overviewTable += $"   {addableItemName} (Hoeveelheid: {amountOfItem}) Prijs: {App.addableItemsManager.addableItems.Find(x => x.Name == addableItemName).Price * amountOfItem}\n";
+                    // 'addableItemName' wordt toegevoegd aan already found
+                    alreadyFound.Add(addableItemName);
+                }
+                // Voor elke 'addableItemName' in current order wordt de prijs toegevoegd aan totalPrice
+                totalPrice += App.addableItemsManager.addableItems.Find(x => x.Name == addableItemName).Price;
             }
 
             // Total price

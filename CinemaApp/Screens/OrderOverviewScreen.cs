@@ -24,7 +24,7 @@ namespace CinemaApp.Screens
             Order currentOrder = App.seatsOverviewScreen.currentOrder;
 
             // Displaying orderNumber and username
-            overviewTable += $"|Algemene Informatie|\n   Ordernummer: {App.seatsOverviewScreen.currentOrder.OrderID}\n   Op naam van: {App.seatsOverviewScreen.currentOrder.Username}\n";
+            overviewTable += $"|Algemene Informatie|\n   Ordernummer: {currentOrder.OrderID}\n   Op naam van: {currentOrder.Username}\n";
 
             // Displaying movie info
             overviewTable += $"\n|Informatie Film|\n";
