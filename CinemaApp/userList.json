@@ -3,120 +3,14 @@
     "Username": "hans",
     "Password": "willem",
     "Email": "123",
+    "Abonnement": "Gouden Filmhuis abonnement
     "TelefoonNummber": "0"
   },
   {
     "Username": "nathan",
     "Password": "nathan123",
-    "Email": "nathan@gmail.com",
+    "Email": "nathan@gmail.com"
+    "Abonnement": null
     "TelefoonNummber": "0"
-  },
-  {
-    "Username": "Wie",
-    "Password": "wat",
-    "Email": "wanneer",
-    "TelefoonNummber": "0"
-  },
-  {
-    "Username": "Hans",
-    "Password": "willem wie",
-    "Email": "wat",
-    "TelefoonNummber": "0"
-  },
-  {
-    "Username": "Salaheddine",
-    "Password": "S123",
-    "Email": "2022#gmail.com",
-    "TelefoonNummber": "0"
-  },
-  {
-    "Username": "qwerty",
-    "Password": "qwerty",
-    "Email": "qwerty",
-    "TelefoonNummber": "0"
-  },
-  {
-    "Username": "Bruh",
-    "Password": "Bruh",
-    "Email": "Bruh",
-    "TelefoonNummber": "0"
-  },
-  {
-    "Username": "bruh",
-    "Password": "bruh",
-    "Email": "bruh",
-    "TelefoonNummber": "0"
-  },
-  {
-    "Username": "rewq",
-    "Password": "grfds",
-    "Email": "gfdc",
-    "TelefoonNummber": "0"
-  },
-  {
-    "Username": "htrgfds",
-    "Password": "grfds",
-    "Email": "gfds",
-    "TelefoonNummber": "0"
-  },
-  {
-    "Username": "treijfgb",
-    "Password": "gfbjvcxk",
-    "Email": "gfdjgfb",
-    "TelefoonNummber": "0"
-  },
-  {
-    "Username": "thrgewfj",
-    "Password": "rtgfds",
-    "Email": "gfd",
-    "TelefoonNummber": "0"
-  },
-  {
-    "Username": "Salahedd",
-    "Password": "Wachtwoord",
-    "Email": "sz@123.nl",
-    "TelefoonNummber": "0"
-  },
-  {
-    "Username": "SZSZ",
-    "Password": "SSZSZSZ",
-    "Email": "SSZSZSZ",
-    "TelefoonNummber": "0"
-  },
-  {
-    "Username": "O",
-    "Password": "O",
-    "Email": "O",
-    "TelefoonNummber": "0"
-  },
-  {
-    "Username": "123",
-    "Password": "123",
-    "Email": "123",
-    "TelefoonNummber": "0"
-  },
-  {
-    "Username": "poep",
-    "Password": "poep",
-    "Email": "poep",
-    "TelefoonNummber": "612345678"
-  },
-  {
-    "Username": "who?",
-    "Password": "bruh",
-    "Email": "@123",
-    "TelefoonNummber": "612345678"
-  },
-  {
-    "Username": "test",
-    "Password": "ding",
-    "Email": "wqedsfvb",
-    "TelefoonNummber": "612345678"
-  },
-  {
-    "Username": "1234Hans",
-    "Password": "bruh",
-    "Email": "@123",
-    "TelefoonNummber": "0612345678"
   }
 ]
