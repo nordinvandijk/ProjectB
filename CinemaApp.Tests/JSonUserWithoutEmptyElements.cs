@@ -12,9 +12,7 @@ namespace CinemaApp.Tests
 
         public void UserJson_shouldNotbeEmpty()
         {
-            UserManager iets  = new UserManager();
-            iets.LoadJson();
-            List<User> userList = iets.GetUserList();
+            List<User> userList = JsonConvert.DeserializeObject<List<User>>(File.ReadAllText("userList.json"));
             bool JsonUserWithEmptyElements = false;
             for (int i = 0; i < userList.Count; i++)
             {
