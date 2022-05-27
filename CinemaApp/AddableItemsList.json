@@ -1,6 +1,102 @@
 [
   {
-    "Name": "Popcorn",
-    "Price": 5.0
+    "Name": "Popcorn (zoet)",
+    "Price": 2.50
+  }
+  {
+    "Name": "Popcorn (zout)",
+    "Price": 2.50
+  }
+  {
+    "Name": "Nacho's",
+    "Price": 3.00
+  }
+  {
+    "Name": "Hotdog",
+    "Price": 4.00
+  }
+  {
+    "Name": "M&M's",
+    "Price": 2.00
+  }
+  {
+    "Name": "Mars",
+    "Price": 1.50
+  }
+  {
+    "Name": "Twix",
+    "Price": 1.50
+  }
+  {
+    "Name": "Snickers",
+    "Price": 1.50
+  }
+  {
+    "Name": "Kit-Kat",
+    "Price": 1.50
+  }
+  {
+    "Name": "Chips (naturel)",
+    "Price": 2.25
+  }
+  {
+    "Name": "Chips (paprika)",
+    "Price": 2.25
+  }
+  {
+    "Name": "Zakje snoep",
+    "Price": 1.75
+  }
+  {
+    "Name": "Ben & Jerry",
+    "Price": 3.25
+  }
+  {
+    "Name": "Magnum",
+    "Price": 3.50
+  }
+  {
+    "Name": "Cornetto",
+    "Price": 3.00
+  }
+  {
+    "Name": "SevenUp",
+    "Price": 1.75
+  }
+  {
+    "Name": "Sprite",
+    "Price": 1.75
+  }
+  {
+    "Name": "Cola",
+    "Price": 2.00
+  }
+  {
+    "Name": "Fanta",
+    "Price": 2.00
+  }
+  {
+    "Name": "Ice Tea",
+    "Price": 1.50
+  }
+  {
+    "Name": "Fristi",
+    "Price": 1.25
+  }
+  {
+    "Name": "Grolsch",
+    "Price": 3.00
+  }
+  {
+    "Name": "Kordaat",
+    "Price": 3.00
+  }
+  {
+    "Name": "3D-Bril",
+    "Price": 3.00
+  }
+  {
+    "Name": "IMAX 3D-Bril",
+    "Price": 5.00
   }
 ]
