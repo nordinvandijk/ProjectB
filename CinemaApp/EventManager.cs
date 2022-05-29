@@ -26,12 +26,11 @@ namespace CinemaApp
         /// <param name="minAge">Minimum age of the event you want to add.</param>
         /// <param name="duration">Duration of the event you want to add.</param>
         /// <param name="ticketprice">The ticketprice of the event you want to add.</param>
-        public void AddEvent(string name, string desc, string eventDate, string minAge, string duration, string ticketprice) 
+        public void AddEvent(string name, string desc, string minAge, string duration, string ticketprice) 
         {
             Event Event = new Event() {
                 Name = name,
                 Description = desc,
-                EventDate = eventDate,
                 MinimumAge = minAge,
                 Duration = duration,
                 TicketPrice = ticketprice

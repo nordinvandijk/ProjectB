@@ -2,41 +2,15 @@
   {
     "Name": "Ladies Night",
     "Description": "Een gezellige avond voor alleen vrouwen onder elkaar.",
-    "EventDate": "28-06-2022",
     "MinimumAge": "18",
     "Duration": "01:30:00",
     "TicketPrice": "10"
   },
   {
-    "Name": "Kids' morning",
-    "Description": "Een zaterdagochtend voor de kleinsten!",
-    "EventDate": "28-05-2022",
-    "MinimumAge": "3",
-    "Duration": "01:20:00",
-    "TicketPrice": "5"
-  },
-  {
     "Name": "test",
-    "Description": "is een test",
-    "EventDate": "30-05-2022",
+    "Description": "tes123",
     "MinimumAge": "12",
     "Duration": "01:30:00",
-    "TicketPrice": "9"
-  },
-  {
-    "Name": "Spiderman Marathon",
-    "Description": "Alle 3 Marvel Spiderman films op 1 avond!",
-    "EventDate": "23-06-2022",
-    "MinimumAge": "5",
-    "Duration": "06:12:00",
-    "TicketPrice": "24"
-  },
-  {
-    "Name": "<Leeg>",
-    "Description": "<Leeg>",
-    "EventDate": "<Leeg>",
-    "MinimumAge": "<Leeg>",
-    "Duration": "<Leeg>",
-    "TicketPrice": "<Leeg>"
+    "TicketPrice": "15"
   }
 ]

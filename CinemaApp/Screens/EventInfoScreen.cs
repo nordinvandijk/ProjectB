@@ -27,7 +27,7 @@ namespace CinemaApp.Screens
 
             //displayt alle details in een string
             string titel = Event.Name + "\nBeschrijving: " + Event.Description +
-                        "\nDatum: " + Event.EventDate + "\nMinimale leeftijd: " + Event.MinimumAge +
+                        "\nMinimale leeftijd: " + Event.MinimumAge +
                          "\nTijdsduur: " + Event.Duration + "\nTicket prijs: " + Event.TicketPrice;
 
             string[] options = {"Evenementen overzicht"};

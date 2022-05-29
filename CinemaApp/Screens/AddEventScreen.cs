@@ -10,7 +10,6 @@ namespace CinemaApp.Screens
         public string name = "<Leeg>";
         public string description = "<Leeg>";
 
-        public string eventdate = "<Leeg>";
         public string minAge = "<Leeg>";
         public string duration = "<Leeg>";
         public string ticketprice = "<Leeg>";
@@ -31,8 +30,7 @@ namespace CinemaApp.Screens
            
            //keuzes voor keuzemenu
            string titel = @"Events toevoegen";
-           string[] options = {$"Naam event : {name}", $"Beschrijving : {description}", $"Event datum : {eventdate}", 
-            $"Minimale leeftijd : {minAge}", $"Duur evenement : {duration}", $"Ticket prijs: {ticketprice}", "Bevestig", "Terug"}; 
+           string[] options = {$"Naam event : {name}", $"Beschrijving : {description}", $"Minimale leeftijd : {minAge}", $"Duur evenement : {duration}", $"Ticket prijs: {ticketprice}", "Bevestig", "Terug"}; 
 
             Menu AddEventMenu = new Menu(options, titel, 0);
             int ChosenOption = AddEventMenu.Run();
@@ -57,22 +55,7 @@ namespace CinemaApp.Screens
                     run();
                     break;
                 
-                case 2: //EventDate
-                    Clear();
-                    WriteLine("Wat is de datum van het evenement?");
-                    CursorVisible = true;
-                    DateTime dateEventDate;
-                    eventdate = ReadLine();
-                    while (!(DateTime.TryParse(eventdate,cultureInfo,styles, out dateEventDate))){
-                        Clear();
-                        WriteLine("Probeer the datum opnieuw in te vullen, Schrijf het zoals dit voorbeeld op: 09-05-2022");
-                        eventdate = ReadLine();
-                    }
-                    CursorVisible = false;
-                    run();
-                    break;
-                
-                case 3: //MinAge
+                case 2: //MinAge
                     Clear();
                     WriteLine("Wat is de minimale leeftijd voor het evenement?");
                     CursorVisible = true;
@@ -87,7 +70,7 @@ namespace CinemaApp.Screens
                     run();
                     break;
                 
-                case 4: //Duration
+                case 3: //Duration
                     bool durationInputCorrect = false;
                     while (!durationInputCorrect) {
                     Clear();
@@ -113,7 +96,7 @@ namespace CinemaApp.Screens
                     run();
                     break;
 
-                case 5: //TicketPrice
+                case 4: //TicketPrice
                     Clear();
                     WriteLine("Wat is de prijs voor een ticket?");
                     CursorVisible = true;
@@ -129,17 +112,16 @@ namespace CinemaApp.Screens
                     run();
                     break;
                 
-                case 6:
+                case 5:
                     Clear();
                     WriteLine("Bevestig");
-                    if (name != "<Leeg>" && description != "<Leeg>" && eventdate != "<Leeg>" && minAge != "<Leeg>" && duration != "<Leeg>" && ticketprice != "<Leeg>")
+                    if (name != "<Leeg>" && description != "<Leeg>" && minAge != "<Leeg>" && duration != "<Leeg>" && ticketprice != "<Leeg>")
                     {
                       try {
                       //zet in eventList, kan alleen bevestigen als er geen error is
-                      App.eventManager.AddEvent(name, description, eventdate, minAge, duration, ticketprice);
+                      App.eventManager.AddEvent(name, description, minAge, duration, ticketprice);
                       name = "<leeg>";
                       description = "<leeg>";
-                      eventdate = "<leeg>";
                       minAge = "<leeg>";
                       duration = "<leeg>";
                       ticketprice = "<leeg>";
@@ -161,7 +143,7 @@ namespace CinemaApp.Screens
                     }
                     break;
                 
-                case 7: // terug naar Admin panel
+                case 6: // terug naar Admin panel
                     App.adminPanelScreen.run();
                     break;
 
