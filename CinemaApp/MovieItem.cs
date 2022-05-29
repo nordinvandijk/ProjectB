@@ -12,5 +12,6 @@ namespace CinemaApp
         public string Duration {get; set;}
         public string Title {get; set;}
         public Seat[][] Seats {get; set;}
+        public bool IsEvent {get; set;}
     }
 }
