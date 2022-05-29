@@ -30,5 +30,13 @@
     "MinimumAge": "5",
     "Duration": "06:12:00",
     "TicketPrice": "24"
+  },
+  {
+    "Name": "<Leeg>",
+    "Description": "<Leeg>",
+    "EventDate": "<Leeg>",
+    "MinimumAge": "<Leeg>",
+    "Duration": "<Leeg>",
+    "TicketPrice": "<Leeg>"
   }
 ]

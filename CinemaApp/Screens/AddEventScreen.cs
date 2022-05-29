@@ -132,7 +132,7 @@ namespace CinemaApp.Screens
                 case 6:
                     Clear();
                     WriteLine("Bevestig");
-                    if (name != "<leeg>" && description != "<leeg>" && eventdate != "<leeg>" && minAge != "<leeg>" && duration != "<leeg>")
+                    if (name != "<Leeg>" && description != "<Leeg>" && eventdate != "<Leeg>" && minAge != "<Leeg>" && duration != "<Leeg>" && ticketprice != "<Leeg>")
                     {
                       try {
                       //zet in eventList, kan alleen bevestigen als er geen error is
