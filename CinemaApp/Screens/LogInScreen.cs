@@ -21,7 +21,7 @@ namespace CinemaApp.Screens
             while (MenuBool){
 
                 string titel = @"Log-in";
-                string[] options = {$"Gebruikersnaam : {gebruikersnaam}", $"Wachtwoord : {wachtwoord}", "Geen account?\n Aanmelden", "Bevestiggen", "Terug"};
+                string[] options = {$"Gebruikersnaam : {gebruikersnaam}", $"Wachtwoord : {wachtwoord}", "Geen account?\n Aanmelden", "Bevestigen", "Terug"};
                 Menu LogInMenu = new Menu(options, titel, 0);
                 int ChosenOption = LogInMenu.Run();
 
@@ -29,7 +29,7 @@ namespace CinemaApp.Screens
                 {
                     case 0:
                         Clear();
-                        WriteLine("Voer je gebruikersnaam in: ");
+                        WriteLine("Voer je gebruikersnaam in en bevestig met ENTER: ");
                         CursorVisible = true;
                         gebruikersnaam = ReadLine();
                         CursorVisible = false;
@@ -37,7 +37,7 @@ namespace CinemaApp.Screens
                         break;
                     case 1:
                         Clear();
-                        WriteLine("Voer je wachwoord in: ");
+                        WriteLine("Voer je wachwoord in en bevestig met ENTER: ");
                         CursorVisible = true;
                         wachtwoord = ReadLine();
                         CursorVisible = false;
