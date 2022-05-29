@@ -26,6 +26,7 @@ namespace CinemaApp.Screens
             {
                 // Displayt de naam van een item en hoevaak hij op dit moment in de current order zit
                 options[i] = $"{item.Name} | Huidige hoeveelheid: {App.seatsOverviewScreen.currentOrder.AddableItems.Where(x => x == item.Name).Count()}";
+                i++;
             }
 
             // Extra opties toevoegen aan menu
