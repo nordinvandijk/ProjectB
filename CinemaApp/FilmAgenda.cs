@@ -89,7 +89,7 @@ namespace CinemaApp
             int chosenMovie = chooseMovieMenu.Run();
 
             // Kiezen format
-            string titleChooseFormat = @"Kies een formar";
+            string titleChooseFormat = @"Kies een uitvoering";
             string[] formatOptions = { "2D", "3D", "IMAX", "IMAX-3D", "4D" };
             Menu chooseFormatMenu = new Menu(formatOptions, titleChooseFormat, 0);
             string format = formatOptions[chooseFormatMenu.Run()];
