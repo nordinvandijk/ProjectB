@@ -68,9 +68,9 @@ namespace CinemaApp.Screens
                             }
                             
                         }
-                        titel = "Films zonder aangegeven kijkwijzers: ";
+                        titel = "Selecteer film en bevestig met ENTER om meer informatie te krijgen\nFilms zonder aangegeven kijkwijzers: ";
 
-                        FinalList.Add("\nTerug");
+                        FinalList.Add("\nTerug naar filmoverzicht");
                         options = FinalList.ToArray();
                         Menu FilteredFinal = new Menu(options, titel, 0);
                         ChosenOption = FilteredFinal.Run(); //print final list of films

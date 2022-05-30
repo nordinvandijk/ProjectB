@@ -13,5 +13,6 @@ namespace CinemaApp
         public string Title {get; set;}
         public string LocationName { get; set;}
         public Seat[][] Seats {get; set;}
+        public bool IsEvent {get; set;}
     }
 }
