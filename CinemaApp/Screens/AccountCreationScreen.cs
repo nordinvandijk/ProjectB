@@ -79,24 +79,12 @@ namespace CinemaApp.Screens
                         WriteLine("Voer je Nederlandse telefoon nummer in: ");
                         CursorVisible = true;
                         telefoon = ReadLine();
-                        int inttelefoon = -1;
-                        while(inttelefoon < 0)
+                        while(Regex.IsMatch(telefoon, @"^([+]{1}[\d]{1})?([\d]{10})$") == false)
                         {
-                            if(telefoon.Length == 10 && (Regex.IsMatch(telefoon, @"^\d+$")))
-                            {
-                                inttelefoon++;
-                            }
-                            else if(telefoon.Length == 12 && (Regex.IsMatch(telefoon, @"^[+]\d+$")))
-                            {
-                                inttelefoon++;
-                            }
-                            else
-                            {
-                                Clear();
-                                WriteLine("Voorbeeld: 0612345678 of +31 6123345678");
-                                WriteLine("Voer een goede Nederlandse telefoon nummer in: ");
-                                telefoon = ReadLine();
-                            }
+                            Clear();
+                            WriteLine("Voorbeeld: 0612345678 of +31 6 123345678");
+                            WriteLine("Voer een goede Nederlandse telefoon nummer in: ");
+                            telefoon = ReadLine();
                         }
                         CursorVisible = false;
                         break;
