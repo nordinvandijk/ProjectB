@@ -33,7 +33,7 @@ namespace CinemaApp.Screens
                         App.filmOverviewScreen.run(); // run object filmOverviewScreen uit App object
                         break;
                     case 1:
-                        //code
+                        App.eventScreen.run();
                         break;
                     case 2:
                         App.overviewCinemaScreen.run();
@@ -66,7 +66,7 @@ namespace CinemaApp.Screens
                         App.filmOverviewScreen.run(); // run object filmOverviewScreen uit App object
                         break;
                     case 1:
-                        //code
+                        App.eventScreen.run();
                         break;
                     case 2:
                         App.overviewCinemaScreen.run();
