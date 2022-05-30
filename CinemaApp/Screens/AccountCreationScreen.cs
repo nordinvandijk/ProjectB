@@ -82,7 +82,7 @@ namespace CinemaApp.Screens
                         while(Regex.IsMatch(telefoon, @"^([+]{1}[\d]{1})?([\d]{10})$") == false)
                         {
                             Clear();
-                            WriteLine("Voorbeeld: 0612345678 of +31 6 123345678");
+                            WriteLine("Voorbeeld: 0612345678 of +316123345678");
                             WriteLine("Voer een goede Nederlandse telefoon nummer in: ");
                             telefoon = ReadLine();
                         }
