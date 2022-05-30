@@ -1,6 +1,7 @@
 using System;
 using static System.Console;
 using System.Net.Mail;
+using System.Text.RegularExpressions;
 namespace CinemaApp.Screens
 {
     class AccountCreationScreen : Screen
@@ -81,26 +82,18 @@ namespace CinemaApp.Screens
                         int inttelefoon = -1;
                         while(inttelefoon < 0)
                         {
-                            if(telefoon[0] == '+' && telefoon[1] == '3' && telefoon[2] == '1' && telefoon.Length == 12)
+                            if(telefoon.Length == 10 && (Regex.IsMatch(telefoon, @"^\d+$")))
                             {
                                 inttelefoon++;
                             }
-                            else if(Int32.TryParse(telefoon,out inttelefoon) && telefoon[0] == '0' && telefoon[1] == '6' && telefoon.Length == 10)
-                            {
-                                inttelefoon++;
-                            }
-                            else if(Int32.TryParse(telefoon,out inttelefoon) && telefoon[0] == '0' && telefoon[1] == '1' && telefoon[2] == '0' && telefoon.Length == 10)
-                            {
-                                inttelefoon++;
-                            }
-                            else if(Int32.TryParse(telefoon,out inttelefoon) && telefoon[0] == '0' && telefoon[1] == '2' && telefoon[2] == '0' && telefoon.Length == 10)
+                            else if(telefoon.Length == 12 && (Regex.IsMatch(telefoon, @"^[+]\d+$")))
                             {
                                 inttelefoon++;
                             }
                             else
                             {
                                 Clear();
-                                WriteLine("Voorbeeld: 0612345678, +31 6123345678 of 0101234567");
+                                WriteLine("Voorbeeld: 0612345678 of +31 6123345678");
                                 WriteLine("Voer een goede Nederlandse telefoon nummer in: ");
                                 telefoon = ReadLine();
                             }
