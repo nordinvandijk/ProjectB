@@ -102,13 +102,21 @@ namespace CinemaApp
             }
             // Code om de totaal prijs te laten zien.
             WriteLine("Totaal prijs: " + String.Format("{0:0.00}", totalPrice));
-            // Code om te laten zien of je op de bevestig knop bent.
+            // Code om te laten zien of je op de bevestig of terug knop bent.
             if (currentY == seats.Length) {
                 WriteLine("\nBevestigen", BackgroundColor = ConsoleColor.White);
+                ResetColor();
+                WriteLine("Terug");
+            }
+            else if (currentY > seats.Length) {
+                WriteLine("\nBevestigen");
+                WriteLine("Terug", BackgroundColor = ConsoleColor.White);
+                ResetColor();
             }
             else {
                 ResetColor();
                 WriteLine("\nBevestigen");
+                WriteLine("Terug");
             }
             ResetColor();
 
@@ -132,7 +140,8 @@ namespace CinemaApp
 
         }
 
-        public void Run()
+        // Bool = (true) als er op bevestigen is geklikt, (false) als er op terug is geklikt.
+        public bool Run()
         {
             while (true) { // Deze while loop zorgt ervoor dat je meerdere stoelen kan selecteren en dus niet stopt nadat je 1 stoel hebt geselecteerd
                 ConsoleKey keyPressed;
@@ -147,7 +156,6 @@ namespace CinemaApp
                     // Code om te navigeren met user input
                     if (keyPressed == ConsoleKey.UpArrow || keyPressed == ConsoleKey.W)
                     {
-                        int tempY = currentY;
                         currentY--;
                         if (currentY < 0) {
                             currentY = 0;
@@ -156,11 +164,11 @@ namespace CinemaApp
                     if (keyPressed == ConsoleKey.DownArrow || keyPressed == ConsoleKey.S)
                     {
                         currentY++;
-                        if (currentY > seats.Length) {
-                            currentY = seats.Length;
+                        if (currentY > seats.Length + 1) {
+                            currentY = seats.Length + 1;
                         }
                     }
-                    if (keyPressed == ConsoleKey.RightArrow || keyPressed == ConsoleKey.D && currentY <= seats[0].Length) // currentY <= seats[0].Length zodat je niet out of bounds kan gaan als je op bevestigen knop zit
+                    if (keyPressed == ConsoleKey.RightArrow || keyPressed == ConsoleKey.D && currentY < seats[0].Length) // currentY < seats[0].Length zodat je niet out of bounds kan gaan als je op bevestigen knop zit
                     {
                         currentX++;
                         if (currentX >= seats[currentY].Length) {
@@ -177,7 +185,7 @@ namespace CinemaApp
                 } while(keyPressed != ConsoleKey.Enter);
 
                 // Als de huidge positie niet op bevistigen is, dan checkt ie de status van de stoel waar je op zit om die te veranderen.
-                if (currentY != seats.Length) {
+                if (currentY < seats.Length) {
                     if (seats[currentY][currentX].Availability == "available") {
                         totalPrice += seats[currentY][currentX].Price;
                         selectedSeats.Add(seats[currentY][currentX]);
@@ -194,11 +202,15 @@ namespace CinemaApp
                     }
                     totalPrice = Math.Abs(totalPrice); // Zodat totalPrice niet -0.00 wordt
                 }
-                // Anders sta je wel op bevestigen en gaat ie uit de while loop
+                // Anders sta je wel op bevestigen of terug
+                else if (currentY == seats.Length){
+                    return true; // Op bevestigen geklikt
+                }    
                 else {
-                    break;
+                    return false; // Op terug geklikt
                 }
             }
+             
         }
 
         public void Square_color(string Color, string selected = ""){ //dit is een functie dat een vierkant print met de kleur die je wilt 
