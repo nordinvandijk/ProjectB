@@ -56,7 +56,7 @@ namespace CinemaApp
                 WriteLine("Dit is geen geldige gebruikersnaam");
             }
 
-            users = new List<User>(); // maakt de users weer leeg voor veiligheid
+            users.Clear(); // maakt de users weer leeg voor veiligheid
         }
 
         public void LoadJson() {
@@ -64,6 +64,17 @@ namespace CinemaApp
             {
                 string json = sr.ReadToEnd();
                 users = JsonConvert.DeserializeObject<List<User>>(json);
+            }
+
+            // Zorgt ervoor dat als de json nog een keer wordt ingeladen dat de currentUser naar de juiste user in users point.
+            if (currentUser != null) {
+                for (int i = 0; i < users.Count; i++) {
+                    if (users[i].Username == currentUser.Username) {
+                        users[i] = currentUser;
+                        return;
+                    }
+                }
+                WriteLine(currentUser + " wordt/is niet goed opgeslagen");
             }
         }
 

@@ -1,0 +1,16 @@
+[
+  {
+    "Name": "Ladies Night",
+    "Description": "Een gezellige avond voor alleen vrouwen onder elkaar.",
+    "MinimumAge": "18",
+    "Duration": "01:30:00",
+    "TicketPrice": "10"
+  },
+  {
+    "Name": "test",
+    "Description": "tes123",
+    "MinimumAge": "12",
+    "Duration": "01:30:00",
+    "TicketPrice": "15"
+  }
+]

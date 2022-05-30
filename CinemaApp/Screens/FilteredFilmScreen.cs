@@ -40,15 +40,16 @@ namespace CinemaApp.Screens
             }
             else
             {
-                titel = optionsList[ChosenOption] + @" films:";
+                titel = "Selecteer film en bevestig met ENTER om meer informatie te krijgen\n" + optionsList[ChosenOption] + " films:";
                 foreach (Movie mov in App.movieManager.movies) //checkt per film in json bestand
+
                 {
                     if (mov.Genre.Contains(optionsList[ChosenOption])) //als film in json bestand wel gekozen optie bevat, wordt het aan filterlist toegevoegd om later als optie te worden gebruikt
                     {
                         FilterList.Add(mov.Title);
                     }
                 }
-                FilterList.Add("\nTerug");
+                FilterList.Add("\nTerug naar filmoverzicht");
                 options = FilterList.ToArray();
                 Menu FilteredDrama = new Menu(options, titel, 0);
                 ChosenOption = FilteredDrama.Run();

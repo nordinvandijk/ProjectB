@@ -3,6 +3,23 @@
     "CinemaLocation": "Rotterdam",
     "Days": [
       {
+        "Date": "23-05-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Zaal 1",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 2",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 3",
+            "MovieItemlist": []
+          }
+        ]
+      },
+      {
         "Date": "24-05-2022",
         "AvailableHalls": [
           {
@@ -208,23 +225,6 @@
       },
       {
         "Date": "05-06-2022",
-        "AvailableHalls": [
-          {
-            "HallName": "Zaal 1",
-            "MovieItemlist": []
-          },
-          {
-            "HallName": "Zaal 2",
-            "MovieItemlist": []
-          },
-          {
-            "HallName": "Zaal 3",
-            "MovieItemlist": []
-          }
-        ]
-      },
-      {
-        "Date": "06-06-2022",
         "AvailableHalls": [
           {
             "HallName": "Zaal 1",
@@ -246,6 +246,23 @@
     "CinemaLocation": "Utrecht",
     "Days": [
       {
+        "Date": "23-05-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Zaal 1",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 2",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 3",
+            "MovieItemlist": []
+          }
+        ]
+      },
+      {
         "Date": "24-05-2022",
         "AvailableHalls": [
           {
@@ -451,23 +468,6 @@
       },
       {
         "Date": "05-06-2022",
-        "AvailableHalls": [
-          {
-            "HallName": "Zaal 1",
-            "MovieItemlist": []
-          },
-          {
-            "HallName": "Zaal 2",
-            "MovieItemlist": []
-          },
-          {
-            "HallName": "Zaal 3",
-            "MovieItemlist": []
-          }
-        ]
-      },
-      {
-        "Date": "06-06-2022",
         "AvailableHalls": [
           {
             "HallName": "Zaal 1",
@@ -489,6 +489,23 @@
     "CinemaLocation": "Amsterdam",
     "Days": [
       {
+        "Date": "23-05-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Zaal 1",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 2",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 3",
+            "MovieItemlist": []
+          }
+        ]
+      },
+      {
         "Date": "24-05-2022",
         "AvailableHalls": [
           {
@@ -694,23 +711,6 @@
       },
       {
         "Date": "05-06-2022",
-        "AvailableHalls": [
-          {
-            "HallName": "Zaal 1",
-            "MovieItemlist": []
-          },
-          {
-            "HallName": "Zaal 2",
-            "MovieItemlist": []
-          },
-          {
-            "HallName": "Zaal 3",
-            "MovieItemlist": []
-          }
-        ]
-      },
-      {
-        "Date": "06-06-2022",
         "AvailableHalls": [
           {
             "HallName": "Zaal 1",

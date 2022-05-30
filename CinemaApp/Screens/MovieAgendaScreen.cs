@@ -16,6 +16,24 @@ namespace CinemaApp.Screens
         //Methods
         public override void run()
         {
+            // Hier wordt de keuze gemaakt of er een film of event aan de filmAgenda wordt toegevoegd
+            bool isEvent = false;
+            Menu isEventMenu = new Menu(new string[]{"Evenement", "Film", "\nTerug"}, "Wat wil je inplannen?", 0);
+            int chosenOptionEventMenu = isEventMenu.Run();
+
+            switch (chosenOptionEventMenu)
+            {
+                case 0:
+                    isEvent = true;
+                    break;
+                case 1:
+                    isEvent = false;
+                    break;
+                case 2:
+                    App.adminPanelScreen.run();
+                    break;
+            }
+
             // Zolang er geen locatie/datum/hall gekozen is de index waarde -1
             int chosenLocation = -1;
             int chosenDate = -1;
@@ -47,7 +65,7 @@ namespace CinemaApp.Screens
                 // Als de gekozen locatie gelijk is aan 'i' wordt er gekozen voor de 'back' optie in het 'locationMenu'
                 if(chosenLocation == i){
                     chosenLocation = -1;
-                    App.adminPanelScreen.run();
+                    run();
                 }
 
                 //
@@ -131,7 +149,14 @@ namespace CinemaApp.Screens
                             break;
                         }
 
-                        App.filmAgenda.AddMovieItem(chosenLocation, chosenDate, chosenHall);
+                        if (isEvent)
+                        {
+                            App.filmAgenda.AddMovieItem(chosenLocation, chosenDate, chosenHall, isEvent);
+                        }
+                        else
+                        {
+                            App.filmAgenda.AddMovieItem(chosenLocation, chosenDate, chosenHall);
+                        }
                         chosenHall = -1;
                     }
                     ConsoleUtils.WaitForKeyPress();

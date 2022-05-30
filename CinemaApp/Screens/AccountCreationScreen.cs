@@ -27,7 +27,7 @@ namespace CinemaApp.Screens
 
             while (MenuBool) {
 
-                string titel = @"Account aanmaken?";
+                string titel = @"Account aanmaken";
                 string[] options = {$"Gebruikersnaam : {gebruikersnaam}", $"Wachtwoord : {wachtwoord}", $"Herhaal je wachtwoord : {wachtwoordHerhaal}", 
                 $"Email : {email}", $"Telefoon nummer : {telefoon}", "Bevestigen", "Terug"};
                 Menu AccountCreationMenu = new Menu(options, titel, 0);
@@ -37,28 +37,28 @@ namespace CinemaApp.Screens
                 {  
                     case 0:
                         Clear();
-                        WriteLine("Voer je gebruikersnaam in: ");
+                        WriteLine("Voer je gebruikersnaam in en bevestig met ENTER: ");
                         CursorVisible = true;
                         gebruikersnaam = ReadLine();
                         CursorVisible = false;
                         break;
                     case 1:
                         Clear();
-                        WriteLine("Voer je wachtwoord in: ");
+                        WriteLine("Voer je wachtwoord in en bevestig met ENTER: ");
                         CursorVisible = true;
                         wachtwoord = ReadLine();
                         CursorVisible = false;
                         break;
                     case 2:
                         Clear();
-                        WriteLine("Herhaal je wachtwoord: ");
+                        WriteLine("Herhaal je wachtwoord en bevestig met ENTER: ");
                         CursorVisible = true;
                         wachtwoordHerhaal = ReadLine();
                         CursorVisible = false;
                         break;
                     case 3:
                         Clear();
-                        WriteLine("Voer je email in: ");
+                        WriteLine("Voer je email in en bevestig met ENTER: ");
                         CursorVisible = true;
                         email = ReadLine();
                         while(true){
@@ -76,7 +76,8 @@ namespace CinemaApp.Screens
                         break;
                     case 4:
                         Clear();
-                        WriteLine("Voer je Nederlandse telefoon nummer in: ");
+                        WriteLine("Voer je Nederlandse telefoon nummer in en bevestig met ENTER: ");
+
                         CursorVisible = true;
                         telefoon = ReadLine();
                         while(Regex.IsMatch(telefoon, @"^([+]{1}[\d]{1})?([\d]{10})$") == false)

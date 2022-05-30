@@ -17,7 +17,7 @@ namespace CinemaApp.Screens
         {
             string titel = @"Admin Panel";
 
-            string[] options = {"Film toevoegen", "Film verwijderen" ,"Film-agenda", "Uitloggen"};
+            string[] options = {"Film toevoegen", "Film verwijderen" ,"Film-agenda", "Evenement toevoegen", "Uitloggen"};
             Menu AdminPanelMenu = new Menu(options, titel, 0);
             int ChosenOption = AdminPanelMenu.Run();
 
@@ -37,7 +37,10 @@ namespace CinemaApp.Screens
                 case 2:
                     App.movieAgendaScreen.run();
                     break;
-                case 3:
+                case 3: //evenementen toevoegen pagina
+                    App.addEventScreen.run();
+                    break;
+                case 4:
                     App.userManager.currentUser = null;
                     App.homeScreen.run();
                     break;      

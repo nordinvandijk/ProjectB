@@ -6,7 +6,7 @@ namespace CinemaApp.Screens
     class EventScreen : Screen
     {
         //Fields
-
+        public string ChosenEvent;
         //Constructor
         public EventScreen(Application app) : base(app) //Neemt appliaction van de parent class
         {
@@ -15,23 +15,29 @@ namespace CinemaApp.Screens
         //Methods
         public override void run()
         {
-            string titel = @"Titel";
+            string titel = @"Evenementen";
 
-            string[] options = {"Optie 1", "Optie 2", "Optie 3"};
+            //bepaalt de lengte van de eventList plus een om terug te gaan.
+            int length = App.eventManager.events.Count + 1;
+            string[] options = new string[length];
+            int i=0;
+            //gaat door alle events om deze te displayen
+            foreach(Event ev in App.eventManager.events) {
+                options[i] = ev.Name;
+                i++;
+            }
+
+            options[length-1] = "\nTerug";
+            
             Menu EventMenu = new Menu(options, titel, 0);
             int ChosenOption = EventMenu.Run();
+            ChosenEvent = options.GetValue(ChosenOption).ToString();
 
-            switch(ChosenOption)
-            {
-                case 0:
-                    //code
-                    break;
-                case 1:
-                    //code
-                    break;
-                case 2:
-                    //code
-                    break;      
+            if (ChosenOption == options.GetLength(0)-1) {
+                App.homeScreen.run(); //terug gaan naar homescreen
+            }
+            else{
+                App.eventInfoScreen.run();
             }
 
             ConsoleUtils.WaitForKeyPress();
