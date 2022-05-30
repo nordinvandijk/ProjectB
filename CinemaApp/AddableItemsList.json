@@ -52,6 +52,26 @@
     "Price": 3.25
   },
   {
+    "Name": "Thee",
+    "Price": 1.00
+  },
+  {
+    "Name": "Cappuccino",
+    "Price": 1.50
+  },
+  {
+    "Name": "Latte Macchiato",
+    "Price": 1.50
+  },
+  {
+    "Name": "Warme Chocolademelk",
+    "Price": 1.25
+  },
+  {
+    "Name": "Portie slagroom",
+    "Price": 0.25
+  },
+  {
     "Name": "Magnum",
     "Price": 3.50
   },
