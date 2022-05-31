@@ -98,7 +98,7 @@ namespace CinemaApp
 
             // Kiezen format
             string titleChooseFormat = @"Kies een uitvoering";
-            string[] formatOptions = { "2D | 12 euro per ticket", "3D | 15 euro per ticket", "IMAX | 15 euro per ticket", "IMAX-3D | 18 euro per ticket", "4D | 22 euro per ticket" };
+            string[] formatOptions = { "2D", "3D", "IMAX", "IMAX-3D", "4D" };
             Menu chooseFormatMenu = new Menu(formatOptions, titleChooseFormat, 0);
             string format = formatOptions[chooseFormatMenu.Run()];
 
@@ -185,11 +185,11 @@ namespace CinemaApp
                         }
 
                         //Prijs van de stoelen bepalen
-                        if (format == "2D | 12 euro per ticket") { price = 12.0f; }
-                        if (format == "3D | 15 euro per ticket") { price = 15.0f; }
-                        if (format == "IMAX | 15 euro per ticket") { price = 15.0f; }
-                        if (format == "IMAX-3D | 18 euro per ticket") { price = 18.0f; }
-                        if (format == "4D | 22 euro per ticket") { price = 22.0f; }
+                        if (format == "2D") { price = 12.0f; }
+                        if (format == "3D") { price = 15.0f; }
+                        if (format == "IMAX") { price = 15.0f; }
+                        if (format == "IMAX-3D") { price = 18.0f; }
+                        if (format == "4D") { price = 22.0f; }
 
                         // Seat jagged array aanmaken
                         Seat[][] seatJarr = new Seat[sizeHall][];
@@ -254,7 +254,7 @@ namespace CinemaApp
 
             // Kiezen format
             string titleChooseFormat = @"Kies een uitvoering";
-            string[] formatOptions = { "2D | 12 euro per ticket", "3D | 15 euro per ticket", "IMAX | 15 euro per ticket", "IMAX-3D | 18 euro per ticket", "4D | 22 euro per ticket" };
+            string[] formatOptions = { "2D", "3D", "IMAX", "IMAX-3D", "4D" };
             Menu chooseFormatMenu = new Menu(formatOptions, titleChooseFormat, 0);
             string format = formatOptions[chooseFormatMenu.Run()];
 
@@ -341,11 +341,11 @@ namespace CinemaApp
                         }
 
                         //Prijs van de stoelen bepalen
-                        if (format == "2D | 12 euro per ticket") { price = 12.0f; }
-                        if (format == "3D | 15 euro per ticket") { price = 15.0f; }
-                        if (format == "IMAX | 15 euro per ticket") { price = 15.0f; }
-                        if (format == "IMAX-3D | 18 euro per ticket") { price = 18.0f; }
-                        if (format == "4D | 22 euro per ticket") { price = 22.0f; }
+                        if (format == "2D") { price = 12.0f; }
+                        if (format == "3D") { price = 15.0f; }
+                        if (format == "IMAX") { price = 15.0f; }
+                        if (format == "IMAX-3D") { price = 18.0f; }
+                        if (format == "4D") { price = 22.0f; }
 
                         // Seat jagged array aanmaken
                         Seat[][] seatJarr = new Seat[sizeHall][];
