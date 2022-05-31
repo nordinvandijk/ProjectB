@@ -39,7 +39,7 @@ namespace CinemaApp.Screens
                         App.overviewCinemaScreen.run();
                         break;
                     case 3:
-                        App.reservationOverviewScreen.run();
+                        //code
                         break;
                     case 4:
                         App.subscriptionScreen.run();

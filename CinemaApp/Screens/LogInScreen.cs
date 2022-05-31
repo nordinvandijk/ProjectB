@@ -68,54 +68,6 @@ namespace CinemaApp.Screens
                 }
             }
         }
-        public void RunFromOrderConfirmation()
-        {
-            bool MenuBool = true;
-            string gebruikersnaam = "<leeg>";
-            string wachtwoord = "<leeg>";
-
-            while (MenuBool)
-            {
-
-                string titel = @"Log-in";
-                string[] options = { $"Gebruikersnaam : {gebruikersnaam}", $"Wachtwoord : {wachtwoord}", "Bevestigen", "Terug" };
-                Menu LogInMenu = new Menu(options, titel, 0);
-                int ChosenOption = LogInMenu.Run();
-
-                switch (ChosenOption)
-                {
-                    case 0:
-                        Clear();
-                        WriteLine("Voer je gebruikersnaam in: ");
-                        CursorVisible = true;
-                        gebruikersnaam = ReadLine();
-                        CursorVisible = false;
-
-                        break;
-                    case 1:
-                        Clear();
-                        WriteLine("Voer je wachwoord in: ");
-                        CursorVisible = true;
-                        wachtwoord = ReadLine();
-                        CursorVisible = false;
-                        break;
-                    case 2:
-                        Clear();
-                        App.userManager.Login(gebruikersnaam, wachtwoord);
-                        if (App.userManager.currentUser != null)
-                        {
-                            ConsoleUtils.WaitForKeyPress();
-                            App.orderConfirmationScreen.run();
-                        }
-                        ConsoleUtils.WaitForKeyPress();
-                        break;
-                    case 3:
-                        MenuBool = false;
-                        App.orderConfirmationScreen.run();
-                        break;
-                }
-            }
-        }
     }
 }
 
