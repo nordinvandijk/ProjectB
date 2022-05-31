@@ -66,7 +66,15 @@ namespace CinemaApp.Screens
             // Als er niet op bevestigen maar op terug wordt gekilkt
             else if (!isConfirmed)
             {
-                App.filmInfoScreen.run();
+                if (App.filmInfoScreen.chosenMovieItem.IsEvent == false)
+                {
+                    App.filmInfoScreen.run();
+                }
+                else
+                {
+                    App.eventInfoScreen.run();
+                }
+                
             }
         }
     }   

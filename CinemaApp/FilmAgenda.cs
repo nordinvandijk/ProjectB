@@ -324,7 +324,9 @@ namespace CinemaApp
                     {
                         //Maken van juiste grootte Seat jagged array
                         int sizeHall = 5;
-                        float price = 15.0f;
+
+                        //De prijs van een event is vastgesteld bij het aanmaken van een event
+                        float price = float.Parse(App.eventManager.events[chosenEvent].TicketPrice);
 
                         // Bepalen hoeveel stoelen aan de hand van zaal grote
                         if (locations[locationIndex].Days[dayIndex].AvailableHalls[hallIndex].HallName == "Grote Zaal")
@@ -339,13 +341,6 @@ namespace CinemaApp
                         {
                             sizeHall = 10;
                         }
-
-                        //Prijs van de stoelen bepalen
-                        if (format == "2D") { price = 12.0f; }
-                        if (format == "3D") { price = 15.0f; }
-                        if (format == "IMAX") { price = 15.0f; }
-                        if (format == "IMAX-3D") { price = 18.0f; }
-                        if (format == "4D") { price = 22.0f; }
 
                         // Seat jagged array aanmaken
                         Seat[][] seatJarr = new Seat[sizeHall][];
@@ -367,6 +362,7 @@ namespace CinemaApp
                             EndTimeString = endTime.ToString("dd-MM-yyyy HH:mm", cultureInfo),
                             EndTimeWithCleaning = endTimeWithCleaning.ToString("dd-MM-yyyy HH:mm", cultureInfo),
                             Format = format,
+                            LocationName = App.filmAgenda.locations[locationIndex].CinemaLocation,
                             IsEvent = true,
                             Seats = seatJarr
                         };
