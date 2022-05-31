@@ -80,6 +80,7 @@ namespace CinemaApp
         public void Start()
         {
             //filmAgenda.ClearMovieItems();
+            orderManager.DeleteOldOrders();
             time.UpdateAgenda();
             homeScreen.run();
             Clear();
