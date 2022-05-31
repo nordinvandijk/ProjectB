@@ -16,6 +16,8 @@
 
   <ItemGroup>
     <Content Include="AddableItemsList.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="eventList.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
