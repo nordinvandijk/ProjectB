@@ -11,7 +11,6 @@ namespace CinemaApp
         public string Format {get; set;}
         public string Duration {get; set;}
         public string Title {get; set;}
-        public string LocationName { get; set;}
         public Seat[][] Seats {get; set;}
         public bool IsEvent {get; set;}
     }
