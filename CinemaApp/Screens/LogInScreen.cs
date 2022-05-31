@@ -37,7 +37,7 @@ namespace CinemaApp.Screens
                         break;
                     case 1:
                         Clear();
-                        WriteLine("Voer je wachwoord in en bevestig met ENTER: ");
+                        WriteLine("Voer je wachtwoord in en bevestig met ENTER: ");
                         CursorVisible = true;
                         wachtwoord = ReadLine();
                         CursorVisible = false;
@@ -94,7 +94,7 @@ namespace CinemaApp.Screens
                         break;
                     case 1:
                         Clear();
-                        WriteLine("Voer je wachwoord in: ");
+                        WriteLine("Voer je wachtwoord in: ");
                         CursorVisible = true;
                         wachtwoord = ReadLine();
                         CursorVisible = false;
