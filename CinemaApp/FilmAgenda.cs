@@ -167,6 +167,7 @@ namespace CinemaApp
                             EndTimeString = endTime.ToString("dd-MM-yyyy HH:mm", cultureInfo),
                             EndTimeWithCleaning = endTimeWithCleaning.ToString("dd-MM-yyyy HH:mm", cultureInfo),
                             Format = format,
+                            LocationName = App.filmAgenda.locations[locationIndex].CinemaLocation,
                             IsEvent = false,
                             Seats = new Seat[5][]
                             {
@@ -328,7 +329,7 @@ namespace CinemaApp
                             EndTimeString = endTime.ToString("dd-MM-yyyy HH:mm", cultureInfo),
                             EndTimeWithCleaning = endTimeWithCleaning.ToString("dd-MM-yyyy HH:mm", cultureInfo),
                             Format = format,
-                            IsEvent = false,
+                            IsEvent = true,
                             Seats = new Seat[5][]
                             {
                                 new Seat[5]
