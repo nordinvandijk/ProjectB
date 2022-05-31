@@ -8,8 +8,8 @@ namespace CinemaApp
     {
         private int currentX = 0;
         private int currentY = 0;
-        private float totalPrice = 0;
-        List<Seat> selectedSeats = new List<Seat>();
+        public float totalPrice = 0;
+        public List<Seat> selectedSeats = new List<Seat>();
         public Seat[][] seats;
 
         public SeatSelector() { // in plaats van tuples heb ik objects gebruik 
