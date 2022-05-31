@@ -26,7 +26,7 @@ namespace CinemaApp.Screens
             overviewTable += $"|Informatie Film|\n";
             overviewTable += $"   Titel: {currentOrder.FilmTitle}\n   Uitvoering: {currentOrder.Format}\n";
             overviewTable += $"   Locatie: {currentOrder.LocationName}\n";
-            overviewTable += $"   Datum: {currentOrder.StartTimeString.Substring(0, 8)}\n   Tijd: {currentOrder.StartTimeString.Substring(11)} - {currentOrder.EndTimeString.Substring(11)}\n";
+            overviewTable += $"   Datum: {currentOrder.StartTimeString.Substring(0, 10)}\n   Tijd: {currentOrder.StartTimeString.Substring(11)} - {currentOrder.EndTimeString.Substring(11)}\n";
 
             // Displaying all seats and their cost
             overviewTable += "\n|Stoelen|\n";
