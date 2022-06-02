@@ -83,9 +83,9 @@ namespace CinemaApp.Screens
                     }
                     Clear();
                     WriteLine($"De omzet van week {Week(Omzetdate).Item1} - {Week(Omzetdate).Item2}"); //print geselecteerde week
-                    WriteLine($"De totale omzet is: {TotaleOmzet}"); //print totale omzet
-                    WriteLine($"De omzet van de toegevoegede spullen/eten is: {addableItems}"); // print spullen/eten winst
-                    WriteLine($"De omzet van de stoelen is: {seatOmzet}"); // print winst van stoelen 
+                    WriteLine($"De totale omzet is: {TotaleOmzet} euro"); //print totale omzet
+                    WriteLine($"De omzet van de toegevoegede spullen/eten is: {addableItems} euro"); // print spullen/eten winst
+                    WriteLine($"De omzet van de stoelen is: {seatOmzet} euro"); // print winst van stoelen 
                     ConsoleUtils.WaitForKeyPress();
                     run();
                     break;
