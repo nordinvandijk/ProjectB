@@ -38,6 +38,7 @@ namespace CinemaApp
         public AddEventScreen addEventScreen;
         public EventManager eventManager;
         public EventInfoScreen eventInfoScreen;
+        public OmzetManager omzetManager; 
 
 
 
@@ -74,6 +75,7 @@ namespace CinemaApp
             eventScreen = new EventScreen(this);
             eventInfoScreen = new EventInfoScreen(this);
             eventManager = new EventManager();
+            omzetManager = new OmzetManager();
         }
 
         //Methods
