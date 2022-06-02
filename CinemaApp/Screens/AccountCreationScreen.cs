@@ -1,6 +1,7 @@
 using System;
 using static System.Console;
 using System.Net.Mail;
+using System.Text.RegularExpressions;
 namespace CinemaApp.Screens
 {
     class AccountCreationScreen : Screen
@@ -82,11 +83,10 @@ namespace CinemaApp.Screens
 
                         CursorVisible = true;
                         telefoon = ReadLine();
-                        int inttelefoon = -1;
-                        while (!Int32.TryParse(telefoon, out inttelefoon) || inttelefoon <= 0 || telefoon[0] != '0' || telefoon[1] != '6' || telefoon.Length != 10)
+                        while(Regex.IsMatch(telefoon, @"^([+]{1}[\d]{1})?([\d]{10})$") == false)
                         {
                             Clear();
-                            WriteLine("Voorbeeld: 0612345678");
+                            WriteLine("Voorbeeld: 0612345678 of +316123345678");
                             WriteLine("Voer een goede Nederlandse telefoon nummer in: ");
                             telefoon = ReadLine();
                         }
