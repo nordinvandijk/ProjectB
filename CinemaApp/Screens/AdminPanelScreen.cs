@@ -74,7 +74,7 @@ namespace CinemaApp.Screens
                         }
                         for(int i = 0; i<omzets.AddableItems.Count; i++){ //loop door AddableItems van een object in omzet.json
                             for(int j = 0; j<App.addableItemsManager.addableItems.Count; j++){ //zoekt naar de prijs van de AddableItems 
-                                if(omzets.AddableItems[i] == App.addableItemsManager.addableItems[j].Name){ 
+                                if(omzets.AddableItems[i].Name == App.addableItemsManager.addableItems[j].Name){ 
                                     TotaleOmzet += App.addableItemsManager.addableItems[j].Price; //voegt prijs toe
                                     addableItems += App.addableItemsManager.addableItems[j].Price; //voegt prijs toe                                  
                                 }

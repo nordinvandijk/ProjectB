@@ -20,12 +20,12 @@ namespace CinemaApp
         }
         
         // Methods
-        public Omzet CreateOmzet(List<Seat> selectedSeats,List<string> AddableItems)
+        public Omzet CreateOmzet(List<Seat> selectedSeats,List<AddableItem> AddableItems)
         {
             Omzet newOmzet = new Omzet()
             {
                 Seats = new List<Seat>(selectedSeats),
-                AddableItems = new List<string>(),
+                AddableItems = new List<AddableItem>(),
                 CurrentDate = (DateTime.Now.Date).ToString()
             };
             return newOmzet;

@@ -42,21 +42,21 @@ namespace CinemaApp.Screens
 
             //displaying all addableItems and their cost
             overviewTable += "\n|Extra's|\n";
-            List<string> alreadyFound = new List<string>();
-            foreach (string addableItemName in currentOrder.AddableItems)
+            List<AddableItem> alreadyFound = new List<AddableItem>();
+            foreach (AddableItem addableItem in currentOrder.AddableItems)
             {
                 // Als 'addableItemName' niet in de lijst alreadyFound staat
-                if (!(alreadyFound.Exists(x => x == addableItemName)))
+                if (!(alreadyFound.Exists(x => x.Name == addableItem.Name)))
                 {
                     // Hoevaak 'addableItemName' aanwezig in de current order wordt opgeslagen in een int
-                    int amountOfItem = currentOrder.AddableItems.Where(x => x == addableItemName).Count();
+                    int amountOfItem = currentOrder.AddableItems.Where(x => x.Name == addableItem.Name).Count();
                     // 'addableItemName' de hoeveelheid en de prijs wordt gedisplayt
-                    overviewTable += $"   {addableItemName} (Hoeveelheid: {amountOfItem}) Prijs: {App.addableItemsManager.addableItems.Find(x => x.Name == addableItemName).Price * amountOfItem}\n";
+                    overviewTable += $"   {addableItem.Name} (Hoeveelheid: {amountOfItem}) Prijs: {addableItem.Price * amountOfItem}\n";
                     // 'addableItemName' wordt toegevoegd aan already found
-                    alreadyFound.Add(addableItemName);
+                    alreadyFound.Add(addableItem);
                 }
                 // Voor elke 'addableItemName' in current order wordt de prijs toegevoegd aan totalPrice
-                totalPrice += App.addableItemsManager.addableItems.Find(x => x.Name == addableItemName).Price;
+                totalPrice += addableItem.Price;
             }
 
             // Total price
