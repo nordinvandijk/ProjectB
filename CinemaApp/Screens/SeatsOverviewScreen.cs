@@ -10,6 +10,7 @@ namespace CinemaApp.Screens
         //Fields
         public SeatSelector seatSelector;
         public Order currentOrder;
+        public Omzet currentOmzet;
 
         //Constructor
         public SeatsOverviewScreen(Application app) : base(app) //Neemt appliaction van de parent class
@@ -44,12 +45,14 @@ namespace CinemaApp.Screens
                 if (App.userManager.currentUser != null)
                 {
                     currentOrder = App.orderManager.CreateOrder(currentUser.Username, seatSelector.selectedSeats, chosenMovieItem);
+                    currentOmzet = App.omzetManager.CreateOmzet(seatSelector.selectedSeats,currentOrder.AddableItems);
                 }
                 
                 // Als er geen user ingelogd is wordt er een order aangemaakt met alleen de geselecteerde stoelen
                 else
                 {
                     currentOrder = App.orderManager.CreateOrder(seatSelector.selectedSeats, chosenMovieItem);
+                    currentOmzet = App.omzetManager.CreateOmzet(seatSelector.selectedSeats,currentOrder.AddableItems);
                 }
                 
                 // Order is aangemaakt dus de volgende pagina wordt gerunt

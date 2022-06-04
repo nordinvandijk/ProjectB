@@ -21,6 +21,7 @@ namespace CinemaApp.Screens
             float totalPrice = 0;
             string overviewTable = new String('=', 50) + "\n";
             Order currentOrder = App.seatsOverviewScreen.currentOrder;
+            Omzet currentOmzet = App.seatsOverviewScreen.currentOmzet;
 
             // Displaying movie info
             overviewTable += $"|Informatie Film|\n";
@@ -67,6 +68,7 @@ namespace CinemaApp.Screens
             Menu orderConfirmationMenu;
             Order currentOrder = App.seatsOverviewScreen.currentOrder;
             User currentUser = App.userManager.currentUser;
+            Omzet currentOmzet = App.seatsOverviewScreen.currentOmzet;
 
             // Als iemand vanuit de order confirmation inlogd wordt de username toegevoegd aan de currentOrder
             if (currentUser != null)
@@ -92,8 +94,11 @@ namespace CinemaApp.Screens
                         }
 
                         // Order wordt toegevoegd aan json
-                        App.orderManager.orders.Add(currentOrder);
+                        currentOmzet.AddableItems = currentOrder.AddableItems;
+                        App.orderManager.orders.Add(currentOrder); 
+                        App.omzetManager.totaalOmzet.Add(currentOmzet);
                         App.orderManager.UpdateJson();
+                        App.omzetManager.UpdateJson();
 
                         // Geselecteerde stoelen worden op occupied gezet
                         foreach(Seat seat in App.seatsOverviewScreen.seatSelector.selectedSeats)
