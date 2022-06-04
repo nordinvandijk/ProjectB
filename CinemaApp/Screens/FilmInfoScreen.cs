@@ -84,10 +84,25 @@ namespace CinemaApp.Screens
                     }
                 }
             }
+            
+            // Display 'terug' button
+            if (selectedMovieItem == numberMovieItem)
+            {
+                ForegroundColor = ConsoleColor.Black;
+                BackgroundColor = ConsoleColor.White;
+            }
+            else
+            {
+                ForegroundColor = ConsoleColor.White;
+                BackgroundColor = ConsoleColor.Black;
+            }
+            Console.WriteLine("\nTerug");
+            ResetColor();
         }
         public override void run()
         {
             int amountOfMovieItems = 0;
+            selectedMovieItem = 0;
 
             // Finds the amount of moviesItems from the chosen movie that play the upcoming 7 days
             foreach (Location location in App.filmAgenda.locations)
@@ -126,21 +141,29 @@ namespace CinemaApp.Screens
                     selectedMovieItem--;
                     if (selectedMovieItem < 0)
                     {
-                        selectedMovieItem = amountOfMovieItems - 1;
+                        selectedMovieItem = amountOfMovieItems;
                     }
                 }
                 if (keyPressed == ConsoleKey.DownArrow || keyPressed == ConsoleKey.S)
                 {
                     selectedMovieItem++;
-                    if (selectedMovieItem >= amountOfMovieItems)
+                    if (selectedMovieItem >= amountOfMovieItems + 1)
                     {
                         selectedMovieItem = 0;
                     }
                 }
             } while (keyPressed != ConsoleKey.Enter);
 
-            chosenMovieItem = options[selectedMovieItem];
-            App.seatsOverviewScreen.run();
+            // If the 'Terug' button is clicked
+            if (selectedMovieItem == amountOfMovieItems)
+            {
+                App.filmOverviewScreen.run();
+            }
+            else
+            {
+                chosenMovieItem = options[selectedMovieItem];
+                App.seatsOverviewScreen.run();
+            }
         }
     }   
 }

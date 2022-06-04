@@ -1,122 +1,172 @@
 [
   {
     "Name": "Popcorn (zoet)",
-    "Price": 2.50
+    "Price": 2.50,
+    "Category": "Snacks (zoet)"
   },
   {
     "Name": "Popcorn (zout)",
-    "Price": 2.50
+    "Price": 2.50,
+    "Category": "Snacks (hartig)"
   },
   {
     "Name": "Nacho's",
-    "Price": 3.00
+    "Price": 3.00,
+    "Category": "Snacks (hartig)"
   },
   {
     "Name": "Hotdog",
-    "Price": 4.00
+    "Price": 4.00,
+    "Category": "Snacks (hartig)"
   },
   {
     "Name": "M&M's",
-    "Price": 2.00
+    "Price": 2.00,
+    "Category": "Snacks (zoet)"
   },
   {
     "Name": "Mars",
-    "Price": 1.50
+    "Price": 1.50,
+    "Category": "Snacks (zoet)"
   },
   {
     "Name": "Twix",
-    "Price": 1.50
+    "Price": 1.50,
+    "Category": "Snacks (zoet)"
   },
   {
     "Name": "Snickers",
-    "Price": 1.50
+    "Price": 1.50,
+    "Category": "Snacks (zoet)"
   },
   {
     "Name": "Kit-Kat",
-    "Price": 1.50
+    "Price": 1.50,
+    "Category": "Snacks (zoet)"
   },
   {
     "Name": "Chips (naturel)",
-    "Price": 2.25
+    "Price": 2.25,
+    "Category": "Snacks (hartig)"
   },
   {
     "Name": "Chips (paprika)",
-    "Price": 2.25
+    "Price": 2.25,
+    "Category": "Snacks (hartig)"
   },
   {
     "Name": "Zakje snoep",
-    "Price": 1.75
+    "Price": 1.75,
+    "Category": "Snacks (zoet)"
   },
   {
     "Name": "Ben & Jerry",
-    "Price": 3.25
+    "Price": 3.25,
+    "Category": "Ijs"
   },
   {
     "Name": "Thee",
-    "Price": 1.00
+    "Price": 1.00,
+    "Category": "Warme dranken"
   },
   {
     "Name": "Cappuccino",
-    "Price": 1.50
+    "Price": 1.50,
+    "Category": "Warme dranken"
   },
   {
     "Name": "Latte Macchiato",
-    "Price": 1.50
+    "Price": 1.50,
+    "Category": "Warme dranken"
   },
   {
     "Name": "Warme Chocolademelk",
-    "Price": 1.25
+    "Price": 1.25,
+    "Category": "Warme dranken"
   },
   {
     "Name": "Portie slagroom",
-    "Price": 0.25
+    "Price": 0.25,
+    "Category": "Warme dranken"
   },
   {
     "Name": "Magnum",
-    "Price": 3.50
+    "Price": 3.50,
+    "Category": "Ijs"
   },
   {
     "Name": "Cornetto",
-    "Price": 3.00
+    "Price": 3.00,
+    "Category": "Ijs"
   },
   {
     "Name": "SevenUp",
-    "Price": 1.75
+    "Price": 1.75,
+    "Category": "Frisdranken"
   },
   {
     "Name": "Sprite",
-    "Price": 1.75
+    "Price": 1.75,
+    "Category": "Frisdranken"
   },
   {
     "Name": "Cola",
-    "Price": 2.00
+    "Price": 2.00,
+    "Category": "Frisdranken"
   },
   {
     "Name": "Fanta",
-    "Price": 2.00
+    "Price": 2.00,
+    "Category": "Frisdranken"
   },
   {
     "Name": "Ice Tea",
-    "Price": 1.50
+    "Price": 1.50,
+    "Category": "Frisdranken"
   },
   {
     "Name": "Fristi",
-    "Price": 1.25
+    "Price": 1.25,
+    "Category": "Frisdranken"
+  },
+  {
+    "Name": "Heineken",
+    "Price": 3.00,
+    "Category": "Alcoholische dranken"
+  },
+  {
+    "Name": "Hertog Jan",
+    "Price": 3.00,
+    "Category": "Alcoholische dranken"
+  },
+  {
+    "Name": "Amstel",
+    "Price": 3.00,
+    "Category": "Alcoholische dranken"
   },
   {
     "Name": "Grolsch",
-    "Price": 3.00
+    "Price": 3.00,
+    "Category": "Alcoholische dranken"
   },
   {
     "Name": "Kordaat",
-    "Price": 3.00
+    "Price": 3.00,
+    "Category": "Alcoholische dranken"
+  },
+  {
+    "Name": "La Chouffe",
+    "Price": 3.00,
+    "Category": "Alcoholische dranken"
   },
   {
     "Name": "3D-Bril",
-    "Price": 3.00
+    "Price": 3.00,
+    "Category": "3D brillen"
   },
   {
     "Name": "IMAX 3D-Bril",
-    "Price": 5.00
+    "Price": 5.00,
+    "Category": "3D brillen"
   }
 ]

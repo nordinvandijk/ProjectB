@@ -36,9 +36,9 @@ namespace CinemaApp
                             Date = dayToAdd.ToString("dd-MM-yyyy",cultureInfo),
                             AvailableHalls = new List<AvailableHall>()
                         {
-                        new AvailableHall(){HallName = "Zaal 1", MovieItemlist = new List<MovieItem>()},
-                        new AvailableHall(){HallName = "Zaal 2", MovieItemlist = new List<MovieItem>()},
-                        new AvailableHall(){HallName = "Zaal 3", MovieItemlist = new List<MovieItem>()}
+                        new AvailableHall(){HallName = "Grote Zaal", MovieItemlist = new List<MovieItem>()},
+                        new AvailableHall(){HallName = "Gemiddelde Grote Zaal", MovieItemlist = new List<MovieItem>()},
+                        new AvailableHall(){HallName = "Kleine Zaal", MovieItemlist = new List<MovieItem>()}
                         }
                         });
                     }

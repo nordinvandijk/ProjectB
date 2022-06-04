@@ -22,6 +22,17 @@ namespace CinemaApp
         }
         
         // Methods
+        public void DeleteOldOrders()
+        {
+            for (int i = 0; i < orders.Count; i++)
+            {
+                if (DateTime.Parse(orders[i].StartTimeString) < DateTime.Today - new TimeSpan(7, 0, 0, 0))
+                {
+                    orders.RemoveAt(i);
+                }
+            }
+            UpdateJson();
+        }
         public Order CreateOrder(string username, List<Seat> selectedSeats, MovieItem chosenMovieItem)
         {
             int findOrderId = 0;

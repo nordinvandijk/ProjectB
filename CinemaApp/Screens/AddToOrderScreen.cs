@@ -2,6 +2,7 @@ using System;
 using static System.Console;
 using static CinemaApp.ConsoleUtils;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace CinemaApp.Screens
 {
@@ -18,64 +19,104 @@ namespace CinemaApp.Screens
         public override void run()
         {
             Clear();
-            string title = "Voeg iets toe aan uw order:";
-            string[] options = new string[App.addableItemsManager.addableItems.Count + 2];
+            Order currentOrder = App.seatsOverviewScreen.currentOrder;
 
-            int i = 0;
-            foreach(AddableItem item in App.addableItemsManager.addableItems)
+            // String maken voor het weergeven huidige items order
+            string currentItems = "";
+            List<string> alreadyFountItems = new List<string>();
+
+            foreach (string item in App.seatsOverviewScreen.currentOrder.AddableItems)
             {
-                // Displayt de naam van een item en hoevaak hij op dit moment in de current order zit
-                options[i] = $"{item.Name} | Huidige hoeveelheid: {App.seatsOverviewScreen.currentOrder.AddableItems.Where(x => x == item.Name).Count()}";
-                i++;
+                int amountOfItem = currentOrder.AddableItems.Where(x => x == item).Count();
+                if (!alreadyFountItems.Contains(item))
+                {
+                    currentItems += $"{item} | Huidige hoeveelheid: {App.seatsOverviewScreen.currentOrder.AddableItems.Where(x => x == item).Count()} | Prijs {App.addableItemsManager.addableItems.Find(x => x.Name == item).Price * amountOfItem}\n";
+                    alreadyFountItems.Add(item);
+                }
             }
 
-            // Extra opties toevoegen aan menu
-            options[options.Length - 1] = "Terug";
-            options[options.Length - 2] = "Bevestigen";
+            // Alle categorien vinden
+            List<string> categories = new List<string>();
 
-            // Menu aanmaken en runnen
-            Menu addToOrderMenu = new Menu(options, title, 0);
-            int chosenOption = addToOrderMenu.Run();
-            
-            // Optie bevestigen
-            if (chosenOption == options.Length - 2)
+            foreach(AddableItem item in App.addableItemsManager.addableItems)
+            {
+                if (!categories.Contains(item.Category))
+                {
+                    categories.Add(item.Category);
+                }
+            }
+
+            // Categorien menu
+            categories.Add("\nBevestigen");
+            categories.Add("Terug");
+            string[] categoryArr= categories.ToArray();
+            Menu categoryMenu = new Menu(categoryArr, $"Snacks in uw order:\n--------------------\n{currentItems}--------------------\n\nKies een categorie waarvan u snacks wilt toevoegen:\n(Als u een snack wilt verwijderen voert u de hoeveelheid 0 in)", 0);
+            string chosenCategorie = categories[categoryMenu.Run()];
+
+            if (chosenCategorie == "\nBevestigen")
             {
                 App.orderConfirmationScreen.run();
             }
 
-            // Optie terug
-            else if (chosenOption == options.Length - 1)
+            else if (chosenCategorie == "Terug")
             {
                 App.seatsOverviewScreen.run();
             }
 
-            // Als er een addableItem geselecteerd is door de user
             else
             {
-                string chosenItem = App.addableItemsManager.addableItems[chosenOption].Name;
-                Clear();
-                Console.WriteLine($"Hoe vaak wilt u '{chosenItem}' toevoegen aan uw bestelling?");
-                // TryParse om te controleren of de gebruiker een integer invult
-                string amountChosenItemString = ReadLine();
-                int amountChosenItem = 0;
-                while (!(int.TryParse(amountChosenItemString, out amountChosenItem)))
+                // Alle snacks vinden in categorie
+                List<string> snacksChosenCategorie = new List<string>();
+                foreach (AddableItem item in App.addableItemsManager.addableItems)
                 {
-                    Clear();
-                    Console.WriteLine("Voer een getal in");
-                    amountChosenItemString = ReadLine();
+                    if (item.Category == chosenCategorie)
+                    {
+                        snacksChosenCategorie.Add($"{item.Name}");
+                    }
                 }
 
-                // Verwijdert de huidige heoeveelheid van het gekozen item
-                App.seatsOverviewScreen.currentOrder.AddableItems.RemoveAll(x => x == chosenItem);
-                // Voegt nieuwe hoeveelheid toe van het gekozen item
-                for (int j = 0; j < amountChosenItem; j++)
+                // Snacks menu
+                snacksChosenCategorie.Add("\nTerug");
+                string[] snackArr = snacksChosenCategorie.ToArray();
+                Menu snackMenu = new Menu(snackArr, "Voeg iets toe aan uw order:", 0);
+                int chosenSnackIndex = snackMenu.Run();
+
+                // Optie terug
+                if (chosenSnackIndex == snackArr.Length - 1)
                 {
-                    App.seatsOverviewScreen.currentOrder.AddableItems.Add(chosenItem);
+                    run();
                 }
-                Clear();
-                Console.WriteLine($"{chosenItem} is {amountChosenItem}x aan uw bestelling toegevoegd");
-                WaitForKeyPress();
-                run();
+
+                // Als er een addableItem geselecteerd is door de user
+                else
+                {
+                    string chosenItem = snacksChosenCategorie[chosenSnackIndex];
+                    Clear();
+                    Console.WriteLine($"Hoe vaak wilt u '{chosenItem}' toevoegen aan uw bestelling?");
+
+                    // TryParse om te controleren of de gebruiker een integer invult
+                    string amountChosenItemString = ReadLine();
+                    int amountChosenItem = 0;
+                    while (!(int.TryParse(amountChosenItemString, out amountChosenItem)))
+                    {
+                        Clear();
+                        Console.WriteLine("Voer een getal in");
+                        amountChosenItemString = ReadLine();
+                    }
+
+                    // Verwijdert de huidige heoeveelheid van het gekozen item
+                    App.seatsOverviewScreen.currentOrder.AddableItems.RemoveAll(x => x == chosenItem);
+
+                    // Voegt nieuwe hoeveelheid toe van het gekozen item
+                    for (int j = 0; j < amountChosenItem; j++)
+                    {
+                        App.seatsOverviewScreen.currentOrder.AddableItems.Add(chosenItem);
+                    }
+                    Clear();
+                    Console.WriteLine($"{chosenItem} is {amountChosenItem}x aan uw bestelling toegevoegd");
+                    WaitForKeyPress();
+                    run();
+                }
             }
         }
     }   
