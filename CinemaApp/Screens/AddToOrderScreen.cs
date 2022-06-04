@@ -19,16 +19,18 @@ namespace CinemaApp.Screens
         public override void run()
         {
             Clear();
+            Order currentOrder = App.seatsOverviewScreen.currentOrder;
 
             // String maken voor het weergeven huidige items order
             string currentItems = "";
             List<string> alreadyFountItems = new List<string>();
-            
-            foreach(string item in App.seatsOverviewScreen.currentOrder.AddableItems)
+
+            foreach (string item in App.seatsOverviewScreen.currentOrder.AddableItems)
             {
+                int amountOfItem = currentOrder.AddableItems.Where(x => x == item).Count();
                 if (!alreadyFountItems.Contains(item))
                 {
-                    currentItems += $"{item} | Huidige hoeveelheid: {App.seatsOverviewScreen.currentOrder.AddableItems.Where(x => x == item).Count()}\n";
+                    currentItems += $"{item} | Huidige hoeveelheid: {App.seatsOverviewScreen.currentOrder.AddableItems.Where(x => x == item).Count()} | Prijs {App.addableItemsManager.addableItems.Find(x => x.Name == item).Price * amountOfItem}\n";
                     alreadyFountItems.Add(item);
                 }
             }
