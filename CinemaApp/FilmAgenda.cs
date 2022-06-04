@@ -90,7 +90,7 @@ namespace CinemaApp
 
             // Kiezen format
             string titleChooseFormat = @"Kies een uitvoering";
-            string[] formatOptions = { "2D", "3D", "IMAX", "IMAX-3D", "4D" };
+            string[] formatOptions = { "2D", "3D", "IMAX", "IMAX-3D", "4DX" };
             Menu chooseFormatMenu = new Menu(formatOptions, titleChooseFormat, 0);
             string format = formatOptions[chooseFormatMenu.Run()];
 
@@ -252,7 +252,7 @@ namespace CinemaApp
 
             // Kiezen format
             string titleChooseFormat = @"Kies een formar";
-            string[] formatOptions = { "2D", "3D", "IMAX", "IMAX-3D", "4D" };
+            string[] formatOptions = { "2D", "3D", "IMAX", "IMAX-3D", "4DX" };
             Menu chooseFormatMenu = new Menu(formatOptions, titleChooseFormat, 0);
             string format = formatOptions[chooseFormatMenu.Run()];
 
