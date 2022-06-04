@@ -102,17 +102,17 @@ namespace CinemaApp
             bool startAndEndTimeFound = false;
             while (!startAndEndTimeFound)
             {
-                // User input starttijd
+                // User input begintijd
                 Console.Clear();
                 CursorVisible = true;
-                Console.WriteLine("Voer een startTijd in volgens de volgende notatie: '00:00'");
+                Console.WriteLine("Voer een begintijd in volgens de volgende notatie: '00:00'");
                 string startTimeString = Console.ReadLine();
                 CursorVisible = false;
 
                 // Pakt de datum in string vorm
                 string dayString = App.filmAgenda.locations[locationIndex].Days[dayIndex].Date;
 
-                // Probeert de datum en de starttijd samen te voegen en te parsen naar een DateTime
+                // Probeert de datum en de begintijd samen te voegen en te parsen naar een DateTime
                 bool startTimeParse = DateTime.TryParse($"{dayString} {startTimeString}", cultureInfo, styles, out startTime);
 
                 // Als er een correcte begintijd is ingevuld word er automatisch een endTime aangemaakt met behulp van de TimeSpan 'durationMovie'
@@ -131,7 +131,7 @@ namespace CinemaApp
                         if (App.time.CheckTimeOverlap(startTime, endTimeWithCleaning, compareStartTime, compareEndTimeWithCleaning))
                         {
                             overlapping = true;
-                            WriteLine("Tijdens de ingvulde tijd speelt er al een film in deze zaal");
+                            WriteLine("Tijdens de ingvulde tijd speelt er al een film of evenement in deze zaal");
                             ConsoleUtils.WaitForKeyPress();
                             break;
                         }
@@ -146,7 +146,7 @@ namespace CinemaApp
 
                     if (!betweenOpeningAndClosingTime)
                     {
-                        WriteLine("De bioscoop opent om 9:00 en sluit om 02:00, en er kunnen geen films starten na 12 uur s'nachts\n Vul een startTijd in die voldoet aan deze eisen!");
+                        WriteLine("De bioscoop opent om 9:00 en sluit om 02:00, en er kunnen geen films starten na 12 uur s'nachts\n Vul een begintijd in die voldoet aan deze eisen!");
                         ConsoleUtils.WaitForKeyPress();
                     }
 
@@ -251,8 +251,8 @@ namespace CinemaApp
             int chosenEvent = chooseEventMenu.Run();
 
             // Kiezen format
-            string titleChooseFormat = @"Kies een formar";
-            string[] formatOptions = { "2D", "3D", "IMAX", "IMAX-3D", "4D" };
+            string titleChooseFormat = @"Kies een uitvoering";
+            string[] formatOptions = { "2D", "3D", "IMAX", "IMAX-3D", "4DX" };
             Menu chooseFormatMenu = new Menu(formatOptions, titleChooseFormat, 0);
             string format = formatOptions[chooseFormatMenu.Run()];
 
@@ -264,17 +264,17 @@ namespace CinemaApp
             bool startAndEndTimeFound = false;
             while (!startAndEndTimeFound)
             {
-                // User input starttijd
+                // User input begintijd
                 Console.Clear();
                 CursorVisible = true;
-                Console.WriteLine("Voer een startTijd in volgende het formaat: '00:00'");
+                Console.WriteLine("Voer een begintijd in volgende het formaat: '00:00'");
                 string startTimeString = Console.ReadLine();
                 CursorVisible = false;
 
                 // Pakt de datum in string vorm
                 string dayString = App.filmAgenda.locations[locationIndex].Days[dayIndex].Date;
 
-                // Probeert de datum en de starttijd samen te voegen en te parsen naar een DateTime
+                // Probeert de datum en de begintijd samen te voegen en te parsen naar een DateTime
                 bool startTimeParse = DateTime.TryParse($"{dayString} {startTimeString}", cultureInfo, styles, out startTime);
 
                 // Als er een correcte begintijd is ingevuld word er automatisch een endTime aangemaakt met behulp van de TimeSpan 'durationMovie'
@@ -283,7 +283,7 @@ namespace CinemaApp
                     endTime = startTime + durationMovie;
                     DateTime endTimeWithCleaning = endTime + new TimeSpan(0, 30, 0);
 
-                    //Checkt of de gekozen startTime en endTime niet overlappen met andere movieItems in dezelfde location->date->hall
+                    //Checkt of de gekozen begin- en eindtijd niet overlappen met andere movieItems in dezelfde location->date->hall
                     bool overlapping = false;
                     foreach (MovieItem movieItem in locations[locationIndex].Days[dayIndex].AvailableHalls[hallIndex].MovieItemlist)
                     {
@@ -293,13 +293,13 @@ namespace CinemaApp
                         if (App.time.CheckTimeOverlap(startTime, endTimeWithCleaning, compareStartTime, compareEndTimeWithCleaning))
                         {
                             overlapping = true;
-                            WriteLine("Tijdens de ingvulde tijd speelt er al een film in deze zaal");
+                            WriteLine("Tijdens de ingvulde tijd speelt er al een film of evenement in deze zaal");
                             ConsoleUtils.WaitForKeyPress();
                             break;
                         }
                     }
 
-                    //Checkt of de gekozen start- en endTime tijdens de openingstijd van de bios vallen, 09:00 tot 02:00, elke film dient voor 12 uur s'nachts te starten
+                    //Checkt of de gekozen begin- en eindtijd tijdens de openingstijd van de bios vallen, 09:00 tot 02:00, elke film dient voor 12 uur s'nachts te starten
                     bool betweenOpeningAndClosingTime = false;
                     if (startTime >= DateTime.Parse($"{dayString} 09:00") && startTime <= DateTime.Parse($"{dayString} 02:00") + new TimeSpan(24, 00, 00) && endTime >= DateTime.Parse($"{dayString} 09:00") && endTime <= DateTime.Parse($"{dayString} 02:00") + new TimeSpan(24, 00, 00))
                     {
@@ -308,7 +308,7 @@ namespace CinemaApp
 
                     if (!betweenOpeningAndClosingTime)
                     {
-                        WriteLine("De bioscoop opent om 9:00 en sluit om 02:00, en er kunnen geen films starten na 12 uur s'nachts\n Vul een startTijd in die voldoet aan deze eisen!");
+                        WriteLine("De bioscoop opent om 9:00 en sluit om 02:00, en er kunnen geen evenementen starten na 12 uur s'nachts\n Vul een begintijd in die voldoet aan deze eisen!");
                         ConsoleUtils.WaitForKeyPress();
                     }
 
