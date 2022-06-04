@@ -130,12 +130,32 @@
     "Category": "Frisdranken"
   },
   {
+    "Name": "Heineken",
+    "Price": 3.00,
+    "Category": "Alcoholische dranken"
+  },
+  {
+    "Name": "Hertog Jan",
+    "Price": 3.00,
+    "Category": "Alcoholische dranken"
+  },
+  {
+    "Name": "Amstel",
+    "Price": 3.00,
+    "Category": "Alcoholische dranken"
+  },
+  {
     "Name": "Grolsch",
     "Price": 3.00,
     "Category": "Alcoholische dranken"
   },
   {
     "Name": "Kordaat",
+    "Price": 3.00,
+    "Category": "Alcoholische dranken"
+  },
+  {
+    "Name": "La Chouffe",
     "Price": 3.00,
     "Category": "Alcoholische dranken"
   },
