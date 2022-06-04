@@ -14,7 +14,6 @@ namespace CinemaApp
         public Time(Application app){
             App = app;
         }
-
         public void UpdateAgenda()
         {
             // Huidige dag in 'this day'

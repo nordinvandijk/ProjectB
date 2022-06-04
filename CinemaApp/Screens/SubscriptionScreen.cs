@@ -2,7 +2,9 @@ using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
 using System.Linq;
-using static System.Console; 
+using static System.Console;
+using System;
+using System.Globalization;
 
 namespace CinemaApp.Screens
 {
@@ -27,7 +29,7 @@ Het Filmhuis-abonnement heeft de volgende voordelen:
             string[] options = {"Overzicht van beschikbare abonnementen", "Terug"};
             Menu SubscriptionMenu = new Menu(options, titel, 0);
             int ChosenOption = SubscriptionMenu.Run();
-            string titel2 = " Silveren Filmhuis abonnement: \n   -15% korting op alle films\n   -Kleine cola gratis bij jouw reservatie\n   Prijs: 30 euro per maand.\n Gouden Filmhuis abonnement:\n   -25% korting op alle films\n   -Medium cola en medium popcorn gratis bij jouw reservatie\n   Prijs: 35 euro per maand.";
+            string titel2 = " Zilveren Filmhuis abonnement: \n   Gratis naar de film!\n   Prijs: 30 euro per maand.\n\n Gouden Filmhuis abonnement:\n   Gratis naar de film!\n   50% korting op eten en drankjes\n   Prijs: 50 euro per maand.";
             
 
             string[] options2 = {"Gouden Filmhuis abonnement kopen","Zilveren Filmhuis abonnement kopen", "Terug"};
@@ -47,16 +49,19 @@ Het Filmhuis-abonnement heeft de volgende voordelen:
 
                     else
                     {
+                        var cultureInfo = new CultureInfo("nl-NL");
                         string chosenabonnement = "";
                         if (ChosenOption2 == 0)
                         {
+                            // Als een abonnement wordt opgeslagen in de user wordt het type abonnement opgeslagen en de datum waarop deze betaald is.
+                            // Deze datum wordt elke maand automatisch aangepast omdat een abonnement automatisch doorloopt
                             chosenabonnement = "Gouden Filmhuis abonnement";
-                            App.userManager.currentUser.Abonnement = "Gouden Filmhuis abonnement";
+                            App.userManager.currentUser.Abonnement = new string[]{ "Gouden Filmhuis abonnement", $"{DateTime.Today.ToString("dd-MM-yyyy", cultureInfo)}" };
                         }
                         else if (ChosenOption2 == 1)
                         {
                             chosenabonnement = "Zilveren Filmhuis abonnement";
-                            App.userManager.currentUser.Abonnement = "Zilveren Filmhuis abonnement";
+                            App.userManager.currentUser.Abonnement = new string[] { "Zilveren Filmhuis abonnement", $"{DateTime.Today.ToString("dd-MM-yyyy", cultureInfo)}" };
                         }
 
                         App.userManager.UpdateJson();
