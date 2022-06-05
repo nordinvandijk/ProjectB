@@ -60,6 +60,14 @@ namespace CinemaApp
             }
         }
 
+        public void ClearDays()
+        {
+            for (int i = 0; i < locations.Count; i++)
+            {
+                locations[i].Days.Clear();
+            }
+        }
+
         /// <summary>
         /// Deze functie maakt een 'movieItem' aan en voegt die toe aan een locatie -> datum -> bioscoopzaal volgens de meegegeven parameters
         /// </summary>
@@ -158,6 +166,42 @@ namespace CinemaApp
                     // Voegt movieItem toe zodra deze niet overlapt met andere movieItems
                     if (startAndEndTimeFound)
                     {
+                        //Maken van juiste grootte Seat jagged array
+                        int sizeHall = 5;
+                        float price = 15.0f;
+
+                        // Bepalen hoeveel stoelen aan de hand van zaal grote
+                        if (locations[locationIndex].Days[dayIndex].AvailableHalls[hallIndex].HallName == "Grote Zaal")
+                        {
+                            sizeHall = 20;
+                        }
+                        else if (locations[locationIndex].Days[dayIndex].AvailableHalls[hallIndex].HallName == "Gemiddelde Grote Zaal")
+                        {
+                            sizeHall = 14;
+                        }
+                        else if (locations[locationIndex].Days[dayIndex].AvailableHalls[hallIndex].HallName == "Kleine Zaal")
+                        {
+                            sizeHall = 10;
+                        }
+
+                        //Prijs van de stoelen bepalen
+                        if (format == "2D") { price = 12.0f; }
+                        if (format == "3D") { price = 15.0f; }
+                        if (format == "IMAX") { price = 15.0f; }
+                        if (format == "IMAX-3D") { price = 18.0f; }
+                        if (format == "4D") { price = 22.0f; }
+
+                        // Seat jagged array aanmaken
+                        Seat[][] seatJarr = new Seat[sizeHall][];
+                        for (int j = 0; j < seatJarr.Length; j++)
+                        {
+                            seatJarr[j] = new Seat[sizeHall];
+                            for (int k = 0; k < seatJarr[j].Length; k++)
+                            {
+                                seatJarr[j][k] = new Seat(price, j, k);
+                            }
+                        }
+
                         // Aanmaken
                         MovieItem movieItem = new MovieItem()
                         {
@@ -169,49 +213,7 @@ namespace CinemaApp
                             Format = format,
                             LocationName = App.filmAgenda.locations[locationIndex].CinemaLocation,
                             IsEvent = false,
-                            Seats = new Seat[5][]
-                            {
-                                new Seat[5]
-                                {
-                                    new Seat(15.00f,1,0),
-                                    new Seat(15.00f,1,1),
-                                    new Seat(15.00f,1,2),
-                                    new Seat(15.00f,1,3),
-                                    new Seat(15.00f,1,4),
-                                },
-                                new Seat[5]
-                                {
-                                    new Seat(15.00f,2,0),
-                                    new Seat(15.00f,2,1),
-                                    new Seat(15.00f,2,2),
-                                    new Seat(15.00f,2,3),
-                                    new Seat(15.00f,2,4),
-                                },
-                                new Seat[5]
-                                {
-                                    new Seat(15.00f,3,0),
-                                    new Seat(15.00f,3,1),
-                                    new Seat(15.00f,3,2),
-                                    new Seat(15.00f,3,3),
-                                    new Seat(15.00f,3,4),
-                                },
-                                new Seat[5]
-                                {
-                                    new Seat(15.00f,4,0),
-                                    new Seat(15.00f,4,1),
-                                    new Seat(15.00f,4,2),
-                                    new Seat(15.00f,4,3),
-                                    new Seat(15.00f,4,4),
-                                },
-                                new Seat[5]
-                                {
-                                    new Seat(15.00f,5,0),
-                                    new Seat(15.00f,5,1),
-                                    new Seat(15.00f,5,2),
-                                    new Seat(15.00f,5,3),
-                                    new Seat(15.00f,5,4),
-                                },
-                            }
+                            Seats = seatJarr
                         };
                         // Toevoegen
                         locations[locationIndex].Days[dayIndex].AvailableHalls[hallIndex].MovieItemlist.Add(movieItem);
@@ -253,6 +255,7 @@ namespace CinemaApp
             // Kiezen format
             string titleChooseFormat = @"Kies een formar";
             string[] formatOptions = { "2D", "3D", "IMAX", "IMAX-3D", "4DX" };
+          
             Menu chooseFormatMenu = new Menu(formatOptions, titleChooseFormat, 0);
             string format = formatOptions[chooseFormatMenu.Run()];
 
@@ -320,6 +323,37 @@ namespace CinemaApp
                     // Voegt movieItem toe zodra deze niet overlapt met andere movieItems
                     if (startAndEndTimeFound)
                     {
+                        //Maken van juiste grootte Seat jagged array
+                        int sizeHall = 5;
+
+                        //De prijs van een event is vastgesteld bij het aanmaken van een event
+                        float price = float.Parse(App.eventManager.events[chosenEvent].TicketPrice);
+
+                        // Bepalen hoeveel stoelen aan de hand van zaal grote
+                        if (locations[locationIndex].Days[dayIndex].AvailableHalls[hallIndex].HallName == "Grote Zaal")
+                        {
+                            sizeHall = 20;
+                        }
+                        else if (locations[locationIndex].Days[dayIndex].AvailableHalls[hallIndex].HallName == "Gemiddelde Grote Zaal")
+                        {
+                            sizeHall = 14;
+                        }
+                        else if (locations[locationIndex].Days[dayIndex].AvailableHalls[hallIndex].HallName == "Kleine Zaal")
+                        {
+                            sizeHall = 10;
+                        }
+
+                        // Seat jagged array aanmaken
+                        Seat[][] seatJarr = new Seat[sizeHall][];
+                        for (int j = 0; j < seatJarr.Length; j++)
+                        {
+                            seatJarr[j] = new Seat[sizeHall];
+                            for (int k = 0; k < seatJarr[j].Length; k++)
+                            {
+                                seatJarr[j][k] = new Seat(price, j, k);
+                            }
+                        }
+
                         // Aanmaken
                         MovieItem movieItem = new MovieItem()
                         {
@@ -329,50 +363,9 @@ namespace CinemaApp
                             EndTimeString = endTime.ToString("dd-MM-yyyy HH:mm", cultureInfo),
                             EndTimeWithCleaning = endTimeWithCleaning.ToString("dd-MM-yyyy HH:mm", cultureInfo),
                             Format = format,
+                            LocationName = App.filmAgenda.locations[locationIndex].CinemaLocation,
                             IsEvent = true,
-                            Seats = new Seat[5][]
-                            {
-                                new Seat[5]
-                                {
-                                    new Seat(15.00f,1,0),
-                                    new Seat(15.00f,1,1),
-                                    new Seat(15.00f,1,2),
-                                    new Seat(15.00f,1,3),
-                                    new Seat(15.00f,1,4),
-                                },
-                                new Seat[5]
-                                {
-                                    new Seat(15.00f,2,0),
-                                    new Seat(15.00f,2,1),
-                                    new Seat(15.00f,2,2),
-                                    new Seat(15.00f,2,3),
-                                    new Seat(15.00f,2,4),
-                                },
-                                new Seat[5]
-                                {
-                                    new Seat(15.00f,3,0),
-                                    new Seat(15.00f,3,1),
-                                    new Seat(15.00f,3,2),
-                                    new Seat(15.00f,3,3),
-                                    new Seat(15.00f,3,4),
-                                },
-                                new Seat[5]
-                                {
-                                    new Seat(15.00f,4,0),
-                                    new Seat(15.00f,4,1),
-                                    new Seat(15.00f,4,2),
-                                    new Seat(15.00f,4,3),
-                                    new Seat(15.00f,4,4),
-                                },
-                                new Seat[5]
-                                {
-                                    new Seat(15.00f,5,0),
-                                    new Seat(15.00f,5,1),
-                                    new Seat(15.00f,5,2),
-                                    new Seat(15.00f,5,3),
-                                    new Seat(15.00f,5,4),
-                                },
-                            }
+                            Seats = seatJarr
                         };
                         // Toevoegen
                         locations[locationIndex].Days[dayIndex].AvailableHalls[hallIndex].MovieItemlist.Add(movieItem);

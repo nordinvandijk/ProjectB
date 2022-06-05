@@ -3,57 +3,6 @@
     "CinemaLocation": "Rotterdam",
     "Days": [
       {
-        "Date": "23-05-2022",
-        "AvailableHalls": [
-          {
-            "HallName": "Zaal 1",
-            "MovieItemlist": []
-          },
-          {
-            "HallName": "Zaal 2",
-            "MovieItemlist": []
-          },
-          {
-            "HallName": "Zaal 3",
-            "MovieItemlist": []
-          }
-        ]
-      },
-      {
-        "Date": "24-05-2022",
-        "AvailableHalls": [
-          {
-            "HallName": "Zaal 1",
-            "MovieItemlist": []
-          },
-          {
-            "HallName": "Zaal 2",
-            "MovieItemlist": []
-          },
-          {
-            "HallName": "Zaal 3",
-            "MovieItemlist": []
-          }
-        ]
-      },
-      {
-        "Date": "25-05-2022",
-        "AvailableHalls": [
-          {
-            "HallName": "Zaal 1",
-            "MovieItemlist": []
-          },
-          {
-            "HallName": "Zaal 2",
-            "MovieItemlist": []
-          },
-          {
-            "HallName": "Zaal 3",
-            "MovieItemlist": []
-          }
-        ]
-      },
-      {
         "Date": "26-05-2022",
         "AvailableHalls": [
           {
@@ -225,6 +174,247 @@
       },
       {
         "Date": "05-06-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Zaal 1",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 2",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 3",
+            "MovieItemlist": []
+          }
+        ]
+      },
+      {
+        "Date": "06-06-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Zaal 1",
+            "MovieItemlist": [
+              {
+                "StartTimeString": "06-06-2022 12:30",
+                "EndTimeString": "06-06-2022 14:00",
+                "EndTimeWithCleaning": "06-06-2022 14:30",
+                "Format": "2D",
+                "Duration": "01:30:00",
+                "Title": "Pulp Fiction",
+                "LocationName": "Rotterdam",
+                "Seats": [
+                  [
+                    {
+                      "Availability": "occupied",
+                      "Price": 15.0,
+                      "Row": 1,
+                      "SeatNumber": 0
+                    },
+                    {
+                      "Availability": "occupied",
+                      "Price": 15.0,
+                      "Row": 1,
+                      "SeatNumber": 1
+                    },
+                    {
+                      "Availability": "occupied",
+                      "Price": 15.0,
+                      "Row": 1,
+                      "SeatNumber": 2
+                    },
+                    {
+                      "Availability": "occupied",
+                      "Price": 15.0,
+                      "Row": 1,
+                      "SeatNumber": 3
+                    },
+                    {
+                      "Availability": "occupied",
+                      "Price": 15.0,
+                      "Row": 1,
+                      "SeatNumber": 4
+                    }
+                  ],
+                  [
+                    {
+                      "Availability": "occupied",
+                      "Price": 15.0,
+                      "Row": 2,
+                      "SeatNumber": 0
+                    },
+                    {
+                      "Availability": "occupied",
+                      "Price": 15.0,
+                      "Row": 2,
+                      "SeatNumber": 1
+                    },
+                    {
+                      "Availability": "occupied",
+                      "Price": 15.0,
+                      "Row": 2,
+                      "SeatNumber": 2
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 15.0,
+                      "Row": 2,
+                      "SeatNumber": 3
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 15.0,
+                      "Row": 2,
+                      "SeatNumber": 4
+                    }
+                  ],
+                  [
+                    {
+                      "Availability": "occupied",
+                      "Price": 15.0,
+                      "Row": 3,
+                      "SeatNumber": 0
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 15.0,
+                      "Row": 3,
+                      "SeatNumber": 1
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 15.0,
+                      "Row": 3,
+                      "SeatNumber": 2
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 15.0,
+                      "Row": 3,
+                      "SeatNumber": 3
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 15.0,
+                      "Row": 3,
+                      "SeatNumber": 4
+                    }
+                  ],
+                  [
+                    {
+                      "Availability": "available",
+                      "Price": 15.0,
+                      "Row": 4,
+                      "SeatNumber": 0
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 15.0,
+                      "Row": 4,
+                      "SeatNumber": 1
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 15.0,
+                      "Row": 4,
+                      "SeatNumber": 2
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 15.0,
+                      "Row": 4,
+                      "SeatNumber": 3
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 15.0,
+                      "Row": 4,
+                      "SeatNumber": 4
+                    }
+                  ],
+                  [
+                    {
+                      "Availability": "available",
+                      "Price": 15.0,
+                      "Row": 5,
+                      "SeatNumber": 0
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 15.0,
+                      "Row": 5,
+                      "SeatNumber": 1
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 15.0,
+                      "Row": 5,
+                      "SeatNumber": 2
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 15.0,
+                      "Row": 5,
+                      "SeatNumber": 3
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 15.0,
+                      "Row": 5,
+                      "SeatNumber": 4
+                    }
+                  ]
+                ],
+                "IsEvent": false
+              }
+            ]
+          },
+          {
+            "HallName": "Zaal 2",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 3",
+            "MovieItemlist": []
+          }
+        ]
+      },
+      {
+        "Date": "07-06-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Zaal 1",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 2",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 3",
+            "MovieItemlist": []
+          }
+        ]
+      },
+      {
+        "Date": "08-06-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Zaal 1",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 2",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 3",
+            "MovieItemlist": []
+          }
+        ]
+      },
+      {
+        "Date": "09-06-2022",
         "AvailableHalls": [
           {
             "HallName": "Zaal 1",
@@ -246,57 +436,6 @@
     "CinemaLocation": "Utrecht",
     "Days": [
       {
-        "Date": "23-05-2022",
-        "AvailableHalls": [
-          {
-            "HallName": "Zaal 1",
-            "MovieItemlist": []
-          },
-          {
-            "HallName": "Zaal 2",
-            "MovieItemlist": []
-          },
-          {
-            "HallName": "Zaal 3",
-            "MovieItemlist": []
-          }
-        ]
-      },
-      {
-        "Date": "24-05-2022",
-        "AvailableHalls": [
-          {
-            "HallName": "Zaal 1",
-            "MovieItemlist": []
-          },
-          {
-            "HallName": "Zaal 2",
-            "MovieItemlist": []
-          },
-          {
-            "HallName": "Zaal 3",
-            "MovieItemlist": []
-          }
-        ]
-      },
-      {
-        "Date": "25-05-2022",
-        "AvailableHalls": [
-          {
-            "HallName": "Zaal 1",
-            "MovieItemlist": []
-          },
-          {
-            "HallName": "Zaal 2",
-            "MovieItemlist": []
-          },
-          {
-            "HallName": "Zaal 3",
-            "MovieItemlist": []
-          }
-        ]
-      },
-      {
         "Date": "26-05-2022",
         "AvailableHalls": [
           {
@@ -468,6 +607,74 @@
       },
       {
         "Date": "05-06-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Zaal 1",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 2",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 3",
+            "MovieItemlist": []
+          }
+        ]
+      },
+      {
+        "Date": "06-06-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Zaal 1",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 2",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 3",
+            "MovieItemlist": []
+          }
+        ]
+      },
+      {
+        "Date": "07-06-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Zaal 1",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 2",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 3",
+            "MovieItemlist": []
+          }
+        ]
+      },
+      {
+        "Date": "08-06-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Zaal 1",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 2",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 3",
+            "MovieItemlist": []
+          }
+        ]
+      },
+      {
+        "Date": "09-06-2022",
         "AvailableHalls": [
           {
             "HallName": "Zaal 1",
@@ -489,57 +696,6 @@
     "CinemaLocation": "Amsterdam",
     "Days": [
       {
-        "Date": "23-05-2022",
-        "AvailableHalls": [
-          {
-            "HallName": "Zaal 1",
-            "MovieItemlist": []
-          },
-          {
-            "HallName": "Zaal 2",
-            "MovieItemlist": []
-          },
-          {
-            "HallName": "Zaal 3",
-            "MovieItemlist": []
-          }
-        ]
-      },
-      {
-        "Date": "24-05-2022",
-        "AvailableHalls": [
-          {
-            "HallName": "Zaal 1",
-            "MovieItemlist": []
-          },
-          {
-            "HallName": "Zaal 2",
-            "MovieItemlist": []
-          },
-          {
-            "HallName": "Zaal 3",
-            "MovieItemlist": []
-          }
-        ]
-      },
-      {
-        "Date": "25-05-2022",
-        "AvailableHalls": [
-          {
-            "HallName": "Zaal 1",
-            "MovieItemlist": []
-          },
-          {
-            "HallName": "Zaal 2",
-            "MovieItemlist": []
-          },
-          {
-            "HallName": "Zaal 3",
-            "MovieItemlist": []
-          }
-        ]
-      },
-      {
         "Date": "26-05-2022",
         "AvailableHalls": [
           {
@@ -711,6 +867,74 @@
       },
       {
         "Date": "05-06-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Zaal 1",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 2",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 3",
+            "MovieItemlist": []
+          }
+        ]
+      },
+      {
+        "Date": "06-06-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Zaal 1",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 2",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 3",
+            "MovieItemlist": []
+          }
+        ]
+      },
+      {
+        "Date": "07-06-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Zaal 1",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 2",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 3",
+            "MovieItemlist": []
+          }
+        ]
+      },
+      {
+        "Date": "08-06-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Zaal 1",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 2",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 3",
+            "MovieItemlist": []
+          }
+        ]
+      },
+      {
+        "Date": "09-06-2022",
         "AvailableHalls": [
           {
             "HallName": "Zaal 1",
