@@ -9,7 +9,7 @@ namespace CinemaApp
     class Omzet
     {
         public List<Seat> Seats { get; set; }
-        public List<string> AddableItems { get; set; }
+        public List<AddableItem> AddableItems { get; set; }
         public string CurrentDate {get; set;}
         
     }

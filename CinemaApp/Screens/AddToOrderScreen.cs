@@ -23,14 +23,14 @@ namespace CinemaApp.Screens
 
             // String maken voor het weergeven huidige items order
             string currentItems = "";
-            List<string> alreadyFountItems = new List<string>();
+            List<AddableItem> alreadyFountItems = new List<AddableItem>();
 
-            foreach (string item in App.seatsOverviewScreen.currentOrder.AddableItems)
+            foreach (AddableItem item in App.seatsOverviewScreen.currentOrder.AddableItems)
             {
-                int amountOfItem = currentOrder.AddableItems.Where(x => x == item).Count();
-                if (!alreadyFountItems.Contains(item))
+                int amountOfItem = currentOrder.AddableItems.Where(x => x.Name == item.Name).Count();
+                if (!alreadyFountItems.Exists(x => x.Name == item.Name))
                 {
-                    currentItems += $"{item} | Huidige hoeveelheid: {App.seatsOverviewScreen.currentOrder.AddableItems.Where(x => x == item).Count()} | Prijs {App.addableItemsManager.addableItems.Find(x => x.Name == item).Price * amountOfItem}\n";
+                    currentItems += $"{item.Name} | Huidige hoeveelheid: {App.seatsOverviewScreen.currentOrder.AddableItems.Where(x => x.Name == item.Name).Count()} | Prijs {item.Price * amountOfItem}\n";
                     alreadyFountItems.Add(item);
                 }
             }
@@ -90,9 +90,15 @@ namespace CinemaApp.Screens
                 // Als er een addableItem geselecteerd is door de user
                 else
                 {
-                    string chosenItem = snacksChosenCategorie[chosenSnackIndex];
+                    AddableItem chosenItem = new AddableItem
+                    {
+                        Name = snacksChosenCategorie[chosenSnackIndex],
+                        Price = App.addableItemsManager.addableItems.Find(x => x.Name == snacksChosenCategorie[chosenSnackIndex]).Price,
+                        Category = App.addableItemsManager.addableItems.Find(x => x.Name == snacksChosenCategorie[chosenSnackIndex]).Category
+                    };
+
                     Clear();
-                    Console.WriteLine($"Hoe vaak wilt u '{chosenItem}' toevoegen aan uw bestelling?");
+                    Console.WriteLine($"Hoe vaak wilt u '{chosenItem.Name}' toevoegen aan uw bestelling?");
 
                     // TryParse om te controleren of de gebruiker een integer invult
                     string amountChosenItemString = ReadLine();
@@ -110,10 +116,10 @@ namespace CinemaApp.Screens
                     // Voegt nieuwe hoeveelheid toe van het gekozen item
                     for (int j = 0; j < amountChosenItem; j++)
                     {
-                        App.seatsOverviewScreen.currentOrder.AddableItems.Add(chosenItem);
+                        App.seatsOverviewScreen.currentOrder.AddableItems.Add(new AddableItem { Name = chosenItem.Name, Price = chosenItem.Price, Category = chosenItem.Category});
                     }
                     Clear();
-                    Console.WriteLine($"{chosenItem} is {amountChosenItem}x aan uw bestelling toegevoegd");
+                    Console.WriteLine($"{chosenItem.Name} is {amountChosenItem}x aan uw bestelling toegevoegd");
                     WaitForKeyPress();
                     run();
                 }

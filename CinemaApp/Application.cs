@@ -85,6 +85,7 @@ namespace CinemaApp
             //filmAgenda.ClearDays();
             //filmAgenda.ClearMovieItems();
 
+            userManager.UpdateSubscriptionLastPayDate();
             orderManager.DeleteOldOrders();
             time.UpdateAgenda();
             homeScreen.run();

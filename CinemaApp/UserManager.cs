@@ -3,6 +3,8 @@ using System.IO;
 using Newtonsoft.Json;
 using System.Linq;
 using static System.Console;
+using System;
+using System.Globalization;
 
 namespace CinemaApp
 {
@@ -12,6 +14,24 @@ namespace CinemaApp
         private string jsonFile = "userList.json";
         private List<User> users = new List<User>();
 
+        /// <summary>
+        /// Met deze functie wordt de betaal datum van abonnement in elke user geupdate, als de betaaldatum is geweest wordt de nieuwe betaaldatum een maand later.
+        /// </summary>
+        public void UpdateSubscriptionLastPayDate()
+        {
+            LoadJson();
+            for (int i = 0; i < users.Count; i++)
+            {
+                if (users[i].Abonnement != null && DateTime.Parse(users[i].Abonnement[1]) < DateTime.Today)
+                {
+                    var cultureInfo = new CultureInfo("nl-NL");
+                    DateTime dateTime = DateTime.Parse(users[i].Abonnement[1]);
+                    dateTime = dateTime.AddMonths(1);
+                    users[i].Abonnement[1] = dateTime.ToString("dd-MM-yyyy", cultureInfo);
+                }
+            }
+            UpdateJson();
+        }
         public bool CreateUser(string username, string password, string email, string telefoonNummer) 
         {
             User user = new User() {

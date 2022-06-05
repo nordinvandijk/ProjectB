@@ -22,6 +22,31 @@ namespace CinemaApp
         }
         
         // Methods
+
+        public void ApplySubscriptionDiscount(User currenUser, Order currentOrder)
+        {
+            if (currentOrder.Seats[0].Price != 0)
+            {
+                if (currenUser.Abonnement[0] == "Zilveren Filmhuis abonnement")
+                {
+                    for (int i = 0; i < currentOrder.Seats.Count; i++)
+                    {
+                        currentOrder.Seats[i].Price = 0;
+                    }
+                }
+                if (currenUser.Abonnement[0] == "Gouden Filmhuis abonnement")
+                {
+                    for (int i = 0; i < currentOrder.Seats.Count; i++)
+                    {
+                        currentOrder.Seats[i].Price = 0;
+                    }
+                    for (int i = 0; i < currentOrder.AddableItems.Count; i++)
+                    {
+                        currentOrder.AddableItems[i].Price = currentOrder.AddableItems[i].Price * 0.5f;
+                    }
+                }
+            }
+        }
         public void DeleteOldOrders()
         {
             for (int i = 0; i < orders.Count; i++)
@@ -63,7 +88,7 @@ namespace CinemaApp
                 OrderID = findOrderId,
                 Username = username,
                 Seats = new List<Seat>(selectedSeats),
-                AddableItems = new List<string>(),
+                AddableItems = new List<AddableItem>(),
                 StartTimeString = chosenMovieItem.StartTimeString,
                 EndTimeString = chosenMovieItem.EndTimeString,
                 FilmTitle = chosenMovieItem.Title,
@@ -104,7 +129,7 @@ namespace CinemaApp
                 OrderID = findOrderId,
                 Username = null,
                 Seats = new List<Seat>(selectedSeats),
-                AddableItems = new List<string>(),
+                AddableItems = new List<AddableItem>(),
                 StartTimeString = chosenMovieItem.StartTimeString,
                 EndTimeString = chosenMovieItem.EndTimeString,
                 FilmTitle = chosenMovieItem.Title,
