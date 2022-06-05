@@ -60,11 +60,6 @@
     "Category": "Snacks (zoet)"
   },
   {
-    "Name": "Ben & Jerry",
-    "Price": 3.25,
-    "Category": "Ijs"
-  },
-  {
     "Name": "Thee",
     "Price": 1.00,
     "Category": "Warme dranken"
@@ -92,12 +87,17 @@
   {
     "Name": "Magnum",
     "Price": 3.50,
-    "Category": "Ijs"
+    "Category": "IJs"
+  },
+  {
+    "Name": "Ben & Jerry",
+    "Price": 3.25,
+    "Category": "IJs"
   },
   {
     "Name": "Cornetto",
     "Price": 3.00,
-    "Category": "Ijs"
+    "Category": "IJs"
   },
   {
     "Name": "SevenUp",
