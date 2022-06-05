@@ -27,7 +27,7 @@ namespace CinemaApp.Screens
             overviewTable += $"\n|Informatie Film|\n";
             overviewTable += $"   Titel: {order.FilmTitle}\n   Uitvoering: {order.Format}\n";
             overviewTable += $"   Locatie: {order.LocationName}\n";
-            overviewTable += $"   Datum: {order.StartTimeString.Substring(0, 8)}\n   Tijd: {order.StartTimeString.Substring(11)} - {order.EndTimeString.Substring(11)}\n";
+            overviewTable += $"   Datum: {order.StartTimeString.Substring(0, 10)}\n   Tijd: {order.StartTimeString.Substring(11)} - {order.EndTimeString.Substring(11)}\n";
 
             // Displaying all seats and their cost
             overviewTable += "\n|Stoelen|\n";
@@ -75,11 +75,11 @@ namespace CinemaApp.Screens
             {
                 if(order.Username == App.userManager.currentUser.Username)
                 {
-                    orderNames.Add($"Film: {order.FilmTitle} Datum: {order.StartTimeString.Substring(0,8)}");
+                    orderNames.Add($"Film: {order.FilmTitle} | Datum: {order.StartTimeString.Substring(0,10)} | Tijd: {order.StartTimeString.Substring(11)} - {order.EndTimeString.Substring(11)} | Locatie: {order.LocationName}");
                     orders.Add(order);
                 }
             }
-            orderNames.Add("Terug");
+            orderNames.Add("\nTerug");
 
             string title = "Dit zijn al uw orders:";
             string[] options = orderNames.ToArray();

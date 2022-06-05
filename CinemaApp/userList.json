@@ -1,16 +1,9 @@
 [
   {
-    "Username": "hans",
-    "Password": "willem",
-    "Email": "123",
+    "Username": "O",
+    "Password": "O",
+    "Email": "O@O.nl",
     "Abonnement": "Zilveren Filmhuis abonnement",
-    "PhoneNumber": null
-  },
-  {
-    "Username": "nathan",
-    "Password": "nathan123",
-    "Email": "nathan@gmail.com",
-    "Abonnement": "Zilveren Filmhuis abonnement",
-    "PhoneNumber": null
+    "PhoneNumber": "0612345678"
   }
 ]

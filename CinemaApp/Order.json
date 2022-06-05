@@ -1,2 +1,173 @@
 [
+  {
+    "OrderID": 677848,
+    "Username": "O",
+    "Seats": [
+      {
+        "Availability": "occupied",
+        "Price": 15.0,
+        "Row": 1,
+        "SeatNumber": 0
+      }
+    ],
+    "AddableItems": [
+      "3D-Bril"
+    ],
+    "FilmTitle": "Pulp Fiction",
+    "Format": "2D",
+    "StartTimeString": "06-06-2022 12:30",
+    "EndTimeString": "06-06-2022 14:00",
+    "LocationName": "Rotterdam"
+  },
+  {
+    "OrderID": 338242,
+    "Username": "O",
+    "Seats": [
+      {
+        "Availability": "occupied",
+        "Price": 15.0,
+        "Row": 1,
+        "SeatNumber": 1
+      }
+    ],
+    "AddableItems": [
+      "Hotdog"
+    ],
+    "FilmTitle": "Pulp Fiction",
+    "Format": "2D",
+    "StartTimeString": "06-06-2022 12:30",
+    "EndTimeString": "06-06-2022 14:00",
+    "LocationName": "Rotterdam"
+  },
+  {
+    "OrderID": 305346,
+    "Username": "O",
+    "Seats": [
+      {
+        "Availability": "occupied",
+        "Price": 15.0,
+        "Row": 1,
+        "SeatNumber": 2
+      }
+    ],
+    "AddableItems": [
+      "Hotdog",
+      "Snickers"
+    ],
+    "FilmTitle": "Pulp Fiction",
+    "Format": "2D",
+    "StartTimeString": "06-06-2022 12:30",
+    "EndTimeString": "06-06-2022 14:00",
+    "LocationName": "Rotterdam"
+  },
+  {
+    "OrderID": 845394,
+    "Username": "O",
+    "Seats": [
+      {
+        "Availability": "occupied",
+        "Price": 15.0,
+        "Row": 1,
+        "SeatNumber": 3
+      }
+    ],
+    "AddableItems": [
+      "Twix",
+      "Twix",
+      "Twix",
+      "SevenUp"
+    ],
+    "FilmTitle": "Pulp Fiction",
+    "Format": "2D",
+    "StartTimeString": "06-06-2022 12:30",
+    "EndTimeString": "06-06-2022 14:00",
+    "LocationName": "Rotterdam"
+  },
+  {
+    "OrderID": 126597,
+    "Username": "O",
+    "Seats": [
+      {
+        "Availability": "occupied",
+        "Price": 15.0,
+        "Row": 2,
+        "SeatNumber": 0
+      }
+    ],
+    "AddableItems": [
+      "Magnum",
+      "Fristi",
+      "Fristi"
+    ],
+    "FilmTitle": "Pulp Fiction",
+    "Format": "2D",
+    "StartTimeString": "06-06-2022 12:30",
+    "EndTimeString": "06-06-2022 14:00",
+    "LocationName": "Rotterdam"
+  },
+  {
+    "OrderID": 270532,
+    "Username": "O",
+    "Seats": [
+      {
+        "Availability": "occupied",
+        "Price": 15.0,
+        "Row": 2,
+        "SeatNumber": 1
+      },
+      {
+        "Availability": "occupied",
+        "Price": 15.0,
+        "Row": 2,
+        "SeatNumber": 2
+      }
+    ],
+    "AddableItems": [
+      "M&M's",
+      "M&M's"
+    ],
+    "FilmTitle": "Pulp Fiction",
+    "Format": "2D",
+    "StartTimeString": "06-06-2022 12:30",
+    "EndTimeString": "06-06-2022 14:00",
+    "LocationName": "Rotterdam"
+  },
+  {
+    "OrderID": 219848,
+    "Username": "O",
+    "Seats": [
+      {
+        "Availability": "occupied",
+        "Price": 15.0,
+        "Row": 1,
+        "SeatNumber": 4
+      }
+    ],
+    "AddableItems": [
+      "Mars"
+    ],
+    "FilmTitle": "Pulp Fiction",
+    "Format": "2D",
+    "StartTimeString": "06-06-2022 12:30",
+    "EndTimeString": "06-06-2022 14:00",
+    "LocationName": "Rotterdam"
+  },
+  {
+    "OrderID": 583911,
+    "Username": "O",
+    "Seats": [
+      {
+        "Availability": "occupied",
+        "Price": 15.0,
+        "Row": 3,
+        "SeatNumber": 0
+      }
+    ],
+    "AddableItems": [],
+    "FilmTitle": "Pulp Fiction",
+    "Format": "2D",
+    "StartTimeString": "06-06-2022 12:30",
+    "EndTimeString": "06-06-2022 14:00",
+    "LocationName": "Rotterdam"
+  }
 ]
