@@ -12,11 +12,14 @@ namespace CinemaApp
     {
         public User currentUser = null;
         private string jsonFile = "userList.json";
-        private List<User> users = new List<User>();
+        public List<User> users = new List<User>();
 
         /// <summary>
         /// Met deze functie wordt de betaal datum van abonnement in elke user geupdate, als de betaaldatum is geweest wordt de nieuwe betaaldatum een maand later.
         /// </summary>
+        public UserManager(){
+            LoadJson();
+        }
         public void UpdateSubscriptionLastPayDate()
         {
             LoadJson();
@@ -76,7 +79,7 @@ namespace CinemaApp
                 WriteLine("Dit is geen geldige gebruikersnaam");
             }
 
-            users.Clear(); // maakt de users weer leeg voor veiligheid
+            //users.Clear(); dit heb ik weggehaald omdat het een bug creeert voor omzet omzet
         }
 
         public void LoadJson() {

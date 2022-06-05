@@ -4,91 +4,47 @@
       {
         "Availability": "occupied",
         "Price": 15.0,
-        "Row": 1,
-        "SeatNumber": 2
-      }
-    ],
-    "AddableItems": [],
-    "CurrentDate": "02/06/2022 00:00:00"
-  },
-  {
-    "Seats": [
-      {
-        "Availability": "occupied",
-        "Price": 15.0,
-        "Row": 1,
-        "SeatNumber": 3
-      }
-    ],
-    "AddableItems": [
-      "Twix",
-      "Twix",
-      "Twix",
-      "SevenUp"
-    ],
-    "CurrentDate": "02/06/2022 00:00:00"
-  },
-  {
-    "Seats": [
-      {
-        "Availability": "occupied",
-        "Price": 15.0,
-        "Row": 2,
+        "Row": 4,
         "SeatNumber": 0
       }
     ],
     "AddableItems": [
-      "Magnum",
-      "Fristi",
-      "Fristi"
-    ],
-    "CurrentDate": "02/06/2022 00:00:00"
-  },
-  {
-    "Seats": [
       {
-        "Availability": "occupied",
-        "Price": 15.0,
-        "Row": 2,
-        "SeatNumber": 1
-      },
-      {
-        "Availability": "occupied",
-        "Price": 15.0,
-        "Row": 2,
-        "SeatNumber": 2
+        "Name": "Popcorn (zoet)",
+        "Price": 2.5,
+        "Category": "Snacks (zoet)"
       }
     ],
-    "AddableItems": [
-      "M&M's",
-      "M&M's"
-    ],
-    "CurrentDate": "02/06/2022 00:00:00"
+    "CurrentDate": "05/06/2022 00:00:00"
   },
   {
     "Seats": [
       {
         "Availability": "occupied",
-        "Price": 15.0,
-        "Row": 1,
-        "SeatNumber": 4
-      }
-    ],
-    "AddableItems": [
-      "Mars"
-    ],
-    "CurrentDate": "02/06/2022 00:00:00"
-  },
-  {
-    "Seats": [
-      {
-        "Availability": "occupied",
-        "Price": 15.0,
-        "Row": 3,
+        "Price": 0.0,
+        "Row": 0,
         "SeatNumber": 0
       }
     ],
     "AddableItems": [],
-    "CurrentDate": "02/06/2022 00:00:00"
+    "CurrentDate": "05/06/2022 00:00:00"
+  },
+  {
+    "Seats": [
+      {
+        "Availability": "occupied",
+        "Price": 0.0,
+        "Row": 5,
+        "SeatNumber": 0
+      }
+    ],
+    "AddableItems": [
+      {
+        "Name": "Popcorn (zoet)",
+        "Price": 1.25,
+        "Category": "Snacks (zoet)"
+      }
+    ],
+    "CurrentDate": "05/06/2022 00:00:00"
   }
 ]
