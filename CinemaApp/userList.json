@@ -1,2 +1,46 @@
 [
+  {
+    "Username": "O",
+    "Password": "O",
+    "Email": "O@O.nl",
+    "Abonnement": [
+      "Gouden Filmhuis abonnement",
+      "05-06-2022"
+    ],
+    "PhoneNumber": "0612345678"
+  },
+  {
+    "Username": "bruh",
+    "Password": "bruh",
+    "Email": "bruh@bruh.nl",
+    "Abonnement": [
+      "Gouden Filmhuis abonnement",
+      "05-06-2022"
+    ],
+    "PhoneNumber": "0612345678"
+  },
+  {
+    "Username": "123",
+    "Password": "123",
+    "Email": "123@123",
+    "Abonnement": null,
+    "PhoneNumber": "0612345678"
+  },
+  {
+    "Username": "1234",
+    "Password": "123",
+    "Email": "123@123.nl",
+    "Abonnement": null,
+    "PhoneNumber": "0612345678"
+  },
+  {
+    "Username": "qwerty",
+    "Password": "qwerty",
+    "Email": "qwerty@qwerty.nl",
+    "Abonnement": [
+      "Zilveren Filmhuis abonnement",
+      "05-06-2022"
+    ],
+    "PhoneNumber": "0612345678"
+  }
 ]

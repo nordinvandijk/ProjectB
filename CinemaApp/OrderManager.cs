@@ -25,7 +25,7 @@ namespace CinemaApp
 
         public void ApplySubscriptionDiscount(User currenUser, Order currentOrder)
         {
-            if (currentOrder.Seats[0].Price != 0)
+            if (currentOrder.Seats[0].Price != 0 && currenUser.Abonnement != null)
             {
                 if (currenUser.Abonnement[0] == "Zilveren Filmhuis abonnement")
                 {

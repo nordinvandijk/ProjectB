@@ -67,6 +67,7 @@ namespace CinemaApp.Screens
                     double TotaleOmzet = 0;
                     double addableItems = 0;
                     double seatOmzet = 0;
+                    double omzetAbonnement = 0;
                     foreach(var omzets in filteredTotaleOmzet){ //loop door Omzet.json
                         for(int i = 0; i<omzets.Seats.Count; i++){ //loop door stoelen in een object in omzet.json
                             TotaleOmzet += omzets.Seats[i].Price; //voegt stoelen toe aan totale omzet
@@ -81,11 +82,29 @@ namespace CinemaApp.Screens
                             }
                         }
                     }
+                    foreach(var User in App.userManager.users){
+                        if (User.Abonnement != null)
+                        {
+                            if ((DateTime.Parse(User.Abonnement[1]).Date >= Week(Omzetdate).Item1 && DateTime.Parse(User.Abonnement[1]).Date <= Week(Omzetdate).Item2))
+                            {
+                                    if (User.Abonnement[0] == "Gouden Filmhuis abonnement")
+                                    {
+                                        omzetAbonnement += 50;
+                                    }
+                                    if (User.Abonnement[0] == "Zilveren Filmhuis abonnement")
+                                    {
+                                        omzetAbonnement += 30;
+                                    }
+                            }
+                        }
+                    }
+                    TotaleOmzet += omzetAbonnement;
                     Clear();
                     WriteLine($"De omzet van week {Week(Omzetdate).Item1} - {Week(Omzetdate).Item2}"); //print geselecteerde week
                     WriteLine($"De totale omzet is: {TotaleOmzet} euro"); //print totale omzet
                     WriteLine($"De omzet van de toegevoegede spullen/eten is: {addableItems} euro"); // print spullen/eten winst
                     WriteLine($"De omzet van de stoelen is: {seatOmzet} euro"); // print winst van stoelen 
+                    WriteLine($"De omzet van de Abonnementen is: {omzetAbonnement} euro"); // print winst van stoelen                     
                     ConsoleUtils.WaitForKeyPress();
                     run();
                     break;
