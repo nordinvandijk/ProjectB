@@ -36,7 +36,7 @@ namespace CinemaApp.Screens
             overviewTable += "\n|Stoelen|\n";
             foreach (Seat seat in currentOrder.Seats)
             {
-                overviewTable += $"   Stoel (Rij: {seat.Row} Stoel Nummer: {seat.SeatNumber}) Prijs: {seat.Price} Euro\n";
+                overviewTable += $"   Stoel (Rij: {seat.Row} Stoel Nummer: {seat.SeatNumber}) Prijs: {@"€"} {String.Format("{0:0.00}",seat.Price)}\n";
                 totalPrice += seat.Price;
             }
 
@@ -51,7 +51,7 @@ namespace CinemaApp.Screens
                     // Hoevaak 'addableItemName' aanwezig in de current order wordt opgeslagen in een int
                     int amountOfItem = currentOrder.AddableItems.Where(x => x.Name == addableItem.Name).Count();
                     // 'addableItemName' de hoeveelheid en de prijs wordt gedisplayt
-                    overviewTable += $"   {addableItem.Name} (Hoeveelheid: {amountOfItem}) Prijs: {addableItem.Price * amountOfItem}\n";
+                    overviewTable += $"   {addableItem.Name} (Hoeveelheid: {amountOfItem}) Prijs: {@"€"} {String.Format("{0:0.00}",addableItem.Price * amountOfItem)}\n";
                     // 'addableItemName' wordt toegevoegd aan already found
                     alreadyFound.Add(addableItem);
                 }
@@ -61,7 +61,7 @@ namespace CinemaApp.Screens
 
             // Total price
             overviewTable += new String('=', 50) + "\n";
-            overviewTable += $"Totale prijs: {totalPrice} euro\n";
+            overviewTable += $"Totale prijs: {@"€"} {String.Format("{0:0.00}",totalPrice)}\n";
             overviewTable += new String('=', 50) + "\n";
 
             return overviewTable;
