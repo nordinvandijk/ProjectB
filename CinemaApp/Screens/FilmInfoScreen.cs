@@ -101,6 +101,7 @@ namespace CinemaApp.Screens
         }
         public override void run()
         {
+            options.Clear();
             int amountOfMovieItems = 0;
             selectedMovieItem = 0;
 
