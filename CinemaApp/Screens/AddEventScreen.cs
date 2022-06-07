@@ -25,7 +25,6 @@ namespace CinemaApp.Screens
         {
            
            //wordt gebruikt voor de Event datum
-           DateTimeStyles styles = DateTimeStyles.None;
            var cultureInfo = new CultureInfo("nl-NL");
            
            //keuzes voor keuzemenu
