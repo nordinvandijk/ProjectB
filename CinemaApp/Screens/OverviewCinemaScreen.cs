@@ -17,8 +17,8 @@ namespace CinemaApp.Screens
         {
             Clear();
             string titel = "";
-            string[] bioscoopnaam = new string[]{"Het Filmhuis Rotterdam", "Het Filmhuis Den Haag", "Het Filmhuis Amsterdam", "Het Filmhuis Utrecht", "Het Filmhuis Eindhoven"};
-            string[] adres = new string[]{"Ahoyweg 12, 3084 BA Rotterdam", "President Kennedylaan 10, 2517 JK Den Haag", "Javakade 30, 1019 SZ Amsterdam", "Van Deventerlaan 20, 3528 AE Utrecht", "Willemstraat 40, 5616 GE Eindhoven"};
+            string[] bioscoopnaam = new string[]{"Het Filmhuis Rotterdam", "Het Filmhuis Amsterdam", "Het Filmhuis Utrecht"};
+            string[] adres = new string[]{"Ahoyweg 12, 3084 BA Rotterdam", "Javakade 30, 1019 SZ Amsterdam", "Van Deventerlaan 20, 3528 AE Utrecht"};
             for(int i = 0; i < bioscoopnaam.Length && i < adres.Length; i++)
             {
                 titel += $"- {bioscoopnaam[i]} \n  {adres[i]} \n";

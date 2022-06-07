@@ -3,6 +3,23 @@
     "CinemaLocation": "Rotterdam",
     "Days": [
       {
+        "Date": "30-05-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Zaal 1",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 2",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Zaal 3",
+            "MovieItemlist": []
+          }
+        ]
+      },
+      {
         "Date": "31-05-2022",
         "AvailableHalls": [
           {
@@ -781,6 +798,28 @@
     "CinemaLocation": "Utrecht",
     "Days": [
       {
+        "Date": "30-05-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Grote Zaal",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Gemiddelde Grote Zaal",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Kleine Zaal",
+            "MovieItemlist": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CinemaLocation": "Utrecht",
+    "Days": [
+      {
         "Date": "31-05-2022",
         "AvailableHalls": [
           {
@@ -1020,6 +1059,28 @@
       },
       {
         "Date": "14-06-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Grote Zaal",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Gemiddelde Grote Zaal",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Kleine Zaal",
+            "MovieItemlist": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CinemaLocation": "Amsterdam",
+    "Days": [
+      {
+        "Date": "30-05-2022",
         "AvailableHalls": [
           {
             "HallName": "Grote Zaal",

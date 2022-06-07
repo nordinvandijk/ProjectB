@@ -25,7 +25,6 @@ namespace CinemaApp.Screens
         {
            
            //wordt gebruikt voor de Event datum
-           DateTimeStyles styles = DateTimeStyles.None;
            var cultureInfo = new CultureInfo("nl-NL");
            
            //keuzes voor keuzemenu
@@ -100,9 +99,9 @@ namespace CinemaApp.Screens
                     Clear();
                     WriteLine("Wat is de prijs voor een ticket?");
                     CursorVisible = true;
-                    int minPrice = -1;
+                    float minPrice = -1;
                     ticketprice = ReadLine();
-                    while(!Int32.TryParse(ticketprice,out minPrice) || minPrice<=0)
+                    while(!float.TryParse(ticketprice,out minPrice) || minPrice<=0)
                     {
                         Clear();
                         WriteLine("Dit is geen geldige prijs, voer een getal van 0 of hoger in: ");
