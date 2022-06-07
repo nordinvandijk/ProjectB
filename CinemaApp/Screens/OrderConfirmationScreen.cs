@@ -24,7 +24,9 @@ namespace CinemaApp.Screens
             Omzet currentOmzet = App.seatsOverviewScreen.currentOmzet;
 
             // Displaying movie info
-            overviewTable += $"|Informatie Film|\n";
+            if (App.filmInfoScreen.chosenMovieItem.IsEvent) { overviewTable += $"|Informatie Evenement|\n"; }
+            else { overviewTable += $"|Informatie Film|\n"; }
+
             overviewTable += $"   Titel: {currentOrder.FilmTitle}\n   Uitvoering: {currentOrder.Format}\n";
             overviewTable += $"   Locatie: {currentOrder.LocationName}\n";
             overviewTable += $"   Datum: {currentOrder.StartTimeString.Substring(0, 10)}\n   Tijd: {currentOrder.StartTimeString.Substring(11)} - {currentOrder.EndTimeString.Substring(11)}\n";

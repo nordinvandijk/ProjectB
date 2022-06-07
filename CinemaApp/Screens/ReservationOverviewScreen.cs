@@ -24,7 +24,22 @@ namespace CinemaApp.Screens
             overviewTable += $"|Algemene Informatie|\n   Ordernummer: {order.OrderID}\n   Op naam van: {order.Username}\n";
 
             // Displaying movie info
-            overviewTable += $"\n|Informatie Film|\n";
+
+            //code om te kijken of order een film of event is
+            List<string> allMovieTitles = new List<string>();
+            foreach(Movie movie in App.movieManager.movies)
+            {
+                allMovieTitles.Add(movie.Title);
+            }
+
+            if (allMovieTitles.Exists(x => x == order.FilmTitle))
+            {
+                overviewTable += $"\n|Informatie Film|\n";
+            }
+            else
+            {
+                overviewTable += $"\n|Informatie Evenement|\n";
+            }
             overviewTable += $"   Titel: {order.FilmTitle}\n   Uitvoering: {order.Format}\n";
             overviewTable += $"   Locatie: {order.LocationName}\n";
             overviewTable += $"   Datum: {order.StartTimeString.Substring(0, 10)}\n   Tijd: {order.StartTimeString.Substring(11)} - {order.EndTimeString.Substring(11)}\n";
@@ -71,11 +86,27 @@ namespace CinemaApp.Screens
             // Orders van ingelogde klant worden opgeslagen in deze list
             List<Order> orders = new List<Order>();
 
+            string filmOrEvent = "";
             foreach(Order order in App.orderManager.orders)
             {
                 if(order.Username == App.userManager.currentUser.Username)
                 {
-                    orderNames.Add($"Film: {order.FilmTitle} | Datum: {order.StartTimeString.Substring(0,10)} | Tijd: {order.StartTimeString.Substring(11)} - {order.EndTimeString.Substring(11)} | Locatie: {order.LocationName}");
+                    // Code om te kijken of order gaat om een film of een evenement
+                    List<string> allMovieTitles = new List<string>();
+                    foreach (Movie movie in App.movieManager.movies)
+                    {
+                        allMovieTitles.Add(movie.Title);
+                    }
+
+                    if (allMovieTitles.Exists(x => x == order.FilmTitle))
+                    {
+                        filmOrEvent = "Film";
+                    }
+                    else
+                    {
+                        filmOrEvent = "Evenement";
+                    }
+                    orderNames.Add($"{filmOrEvent}: {order.FilmTitle} | Datum: {order.StartTimeString.Substring(0,10)} | Tijd: {order.StartTimeString.Substring(11)} - {order.EndTimeString.Substring(11)} | Locatie: {order.LocationName}");
                     orders.Add(order);
                 }
             }

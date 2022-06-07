@@ -101,17 +101,19 @@ namespace CinemaApp.Screens
                     Console.WriteLine($"Hoe vaak wilt u '{chosenItem.Name}' toevoegen aan uw bestelling?");
 
                     // TryParse om te controleren of de gebruiker een integer invult
+                    Console.CursorVisible = true;
                     string amountChosenItemString = ReadLine();
                     int amountChosenItem = 0;
-                    while (!(int.TryParse(amountChosenItemString, out amountChosenItem)))
+                    while (!(int.TryParse(amountChosenItemString, out amountChosenItem)) || amountChosenItem > 10 || amountChosenItem < 0)
                     {
                         Clear();
-                        Console.WriteLine("Voer een getal in");
+                        Console.WriteLine("Voer een geldig getal in tussen de 0 en 10");
                         amountChosenItemString = ReadLine();
                     }
+                    Console.CursorVisible = false;
 
                     // Verwijdert de huidige heoeveelheid van het gekozen item
-                    App.seatsOverviewScreen.currentOrder.AddableItems.RemoveAll(x => x == chosenItem);
+                    App.seatsOverviewScreen.currentOrder.AddableItems.RemoveAll(x => x.Name == chosenItem.Name);
 
                     // Voegt nieuwe hoeveelheid toe van het gekozen item
                     for (int j = 0; j < amountChosenItem; j++)
