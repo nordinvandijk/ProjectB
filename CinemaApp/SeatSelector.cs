@@ -95,13 +95,13 @@ namespace CinemaApp
             ResetColor();
             // Code om de stoel prijs te laten zien
             try {
-                WriteLine($"Stoel prijs: {@"€"} " + String.Format("{0:0.00}", seats[currentY][currentX].Price));
+                WriteLine($"Stoel prijs: " + String.Format("{0:0.00}", seats[currentY][currentX].Price) + " euro");
             }
             catch {
-                WriteLine($"Stoel prijs: {@"€"} 0.00");
+                WriteLine($"Stoel prijs: 0.00 euro");
             }
             // Code om de totaal prijs te laten zien.
-            WriteLine($"Totaal prijs: {@"€"} " + String.Format("{0:0.00}", totalPrice));
+            WriteLine($"Totaal prijs: " + String.Format("{0:0.00}", totalPrice) + " euro");
             // Code om te laten zien of je op de bevestig of terug knop bent.
             if (currentY == seats.Length) {
                 WriteLine("\nBevestigen", BackgroundColor = ConsoleColor.White);
