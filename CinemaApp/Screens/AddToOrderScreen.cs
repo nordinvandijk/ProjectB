@@ -111,7 +111,7 @@ namespace CinemaApp.Screens
                     }
 
                     // Verwijdert de huidige heoeveelheid van het gekozen item
-                    App.seatsOverviewScreen.currentOrder.AddableItems.RemoveAll(x => x == chosenItem);
+                    App.seatsOverviewScreen.currentOrder.AddableItems.RemoveAll(x => x.Name == chosenItem.Name);
 
                     // Voegt nieuwe hoeveelheid toe van het gekozen item
                     for (int j = 0; j < amountChosenItem; j++)
