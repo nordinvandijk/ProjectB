@@ -73,7 +73,7 @@ namespace CinemaApp
                             Square_color("Red", "X"); // print een rode vierkant
                         }
                         else {
-                            Square_color("Green", "X"); // print een witte vierkant
+                            Square_color("White", "X"); // print een witte vierkant
                         }
                     }
                     // Einde van huidig geselcteerde stoel kleur.
@@ -95,13 +95,13 @@ namespace CinemaApp
             ResetColor();
             // Code om de stoel prijs te laten zien
             try {
-                WriteLine("Stoel prijs: " + String.Format("{0:0.00}", seats[currentY][currentX].Price));
+                WriteLine($"Stoel prijs: {@"€"} " + String.Format("{0:0.00}", seats[currentY][currentX].Price));
             }
             catch {
-                WriteLine("Stoel prijs: 0.00");
+                WriteLine($"Stoel prijs: {@"€"} 0.00");
             }
             // Code om de totaal prijs te laten zien.
-            WriteLine("Totaal prijs: " + String.Format("{0:0.00}", totalPrice));
+            WriteLine($"Totaal prijs: {@"€"} " + String.Format("{0:0.00}", totalPrice));
             // Code om te laten zien of je op de bevestig of terug knop bent.
             if (currentY == seats.Length) {
                 WriteLine("\nBevestigen", BackgroundColor = ConsoleColor.White);
@@ -123,7 +123,9 @@ namespace CinemaApp
             Write("\n╒══════════════════════════════╕\n"); // legenda
             Write("│ Legenda                      │\n");
             Write("│                              │\n");
-            Write("│ Huidige positie           X  │\n");
+            Write("│ Huidige positie          ");
+            Square_color("White","X");
+            Write("│\n");
             Write("│                              │\n");
             Write("│ Beschikbaar              ");
             Square_color("DarkGreen");
@@ -217,6 +219,7 @@ namespace CinemaApp
             if (Color == "DarkGreen") Console.BackgroundColor = ConsoleColor.DarkGreen;
             if (Color == "Blue") Console.BackgroundColor = ConsoleColor.Blue;
             if (Color == "Green") Console.BackgroundColor = ConsoleColor.Green;
+            if (Color == "White") Console.BackgroundColor = ConsoleColor.White;
             if (Color == "Red") Console.BackgroundColor = ConsoleColor.Red;
             if (Color == "Gray") Console.BackgroundColor = ConsoleColor.Gray;
             if (Color == "Yellow") Console.BackgroundColor = ConsoleColor.Magenta;

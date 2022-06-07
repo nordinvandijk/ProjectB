@@ -30,7 +30,7 @@ namespace CinemaApp.Screens
                 int amountOfItem = currentOrder.AddableItems.Where(x => x.Name == item.Name).Count();
                 if (!alreadyFountItems.Exists(x => x.Name == item.Name))
                 {
-                    currentItems += $"{item.Name} | Huidige hoeveelheid: {App.seatsOverviewScreen.currentOrder.AddableItems.Where(x => x.Name == item.Name).Count()} | Prijs {item.Price * amountOfItem}\n";
+                    currentItems += $"{item.Name} | Huidige hoeveelheid: {App.seatsOverviewScreen.currentOrder.AddableItems.Where(x => x.Name == item.Name).Count()} | Prijs: {@"€"} { String.Format("{0:0.00}",item.Price * amountOfItem)}\n";
                     alreadyFountItems.Add(item);
                 }
             }
