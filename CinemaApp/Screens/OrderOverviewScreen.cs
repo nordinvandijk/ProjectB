@@ -27,7 +27,9 @@ namespace CinemaApp.Screens
             overviewTable += $"|Algemene Informatie|\n   Ordernummer: {currentOrder.OrderID}\n   Op naam van: {currentOrder.Username}\n";
 
             // Displaying movie info
-            overviewTable += $"\n|Informatie Film|\n";
+            if (App.filmInfoScreen.chosenMovieItem.IsEvent) { overviewTable += $"\n|Informatie Evenement|\n"; }
+            else { overviewTable += $"\n|Informatie Film|\n"; }
+
             overviewTable += $"   Titel: {currentOrder.FilmTitle}\n   Uitvoering: {currentOrder.Format}\n";
             overviewTable += $"   Locatie: {currentOrder.LocationName}\n";
             overviewTable += $"   Datum: {currentOrder.StartTimeString.Substring(0, 10)}\n   Tijd: {currentOrder.StartTimeString.Substring(11)} - {currentOrder.EndTimeString.Substring(11)}\n";
