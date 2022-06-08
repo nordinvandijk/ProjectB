@@ -326,7 +326,9 @@ namespace CinemaApp
                         int sizeHall = 5;
 
                         //De prijs van een event is vastgesteld bij het aanmaken van een event
-                        float price = float.Parse(App.eventManager.events[chosenEvent].TicketPrice);
+                        var ci = (CultureInfo)CultureInfo.CurrentCulture.Clone();
+                        ci.NumberFormat.NumberDecimalSeparator = ",";
+                        float price = (float)Double.Parse(App.eventManager.events[chosenEvent].TicketPrice, ci);
 
                         // Bepalen hoeveel stoelen aan de hand van zaal grote
                         if (locations[locationIndex].Days[dayIndex].AvailableHalls[hallIndex].HallName == "Grote Zaal")

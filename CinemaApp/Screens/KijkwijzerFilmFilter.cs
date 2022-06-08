@@ -83,7 +83,9 @@ namespace CinemaApp.Screens
                         }
                         else 
                         {
-                            App.kijkwijzerFilter.run();
+                            FilterList.Clear();
+                            App.filmOverviewScreen.ChosenMovie = ChosenFilter;
+                            App.filmInfoScreen.run();
                         }
                     }
                     else //option ja

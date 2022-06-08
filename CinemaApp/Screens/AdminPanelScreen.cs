@@ -22,7 +22,7 @@ namespace CinemaApp.Screens
 
             string titel = @"Admin Panel";
 
-            string[] options = {"Film toevoegen", "Film verwijderen" ,"Film-agenda", "Evenement toevoegen","Evenement verwijderen","Omzet Overzicht", "Uitloggen"};
+            string[] options = {"Film toevoegen", "Film verwijderen" ,"Film-agenda", "Evenement toevoegen","Evenement verwijderen","Omzet Overzicht", "\nUitloggen"};
             Menu AdminPanelMenu = new Menu(options, titel, 0);
             int ChosenOption = AdminPanelMenu.Run();
 

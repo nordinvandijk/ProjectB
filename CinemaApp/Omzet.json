@@ -3,74 +3,116 @@
     "Seats": [
       {
         "Availability": "occupied",
-        "Price": 15.0,
-        "Row": 4,
-        "SeatNumber": 0
-      }
-    ],
-    "AddableItems": [
-      {
-        "Name": "Popcorn (zoet)",
-        "Price": 2.5,
-        "Category": "Snacks (zoet)"
-      }
-    ],
-    "CurrentDate": "05/06/2022 00:00:00"
-  },
-  {
-    "Seats": [
-      {
-        "Availability": "occupied",
-        "Price": 0.0,
-        "Row": 0,
-        "SeatNumber": 0
-      }
-    ],
-    "AddableItems": [],
-    "CurrentDate": "05/06/2022 00:00:00"
-  },
-  {
-    "Seats": [
-      {
-        "Availability": "occupied",
-        "Price": 0.0,
-        "Row": 5,
-        "SeatNumber": 0
-      }
-    ],
-    "AddableItems": [
-      {
-        "Name": "Popcorn (zoet)",
-        "Price": 1.25,
-        "Category": "Snacks (zoet)"
-      }
-    ],
-    "CurrentDate": "05/06/2022 00:00:00"
-  },
-  {
-    "Seats": [
-      {
-        "Availability": "occupied",
-        "Price": 0.0,
-        "Row": 2,
-        "SeatNumber": 1
-      }
-    ],
-    "AddableItems": [
-      {
-        "Name": "Fanta",
-        "Price": 1.0,
-        "Category": "Frisdranken"
+        "Price": 12.0,
+        "Row": 7,
+        "SeatNumber": 5
       },
       {
-        "Name": "Ben & Jerry",
-        "Price": 1.625,
-        "Category": "IJs"
+        "Availability": "occupied",
+        "Price": 12.0,
+        "Row": 7,
+        "SeatNumber": 6
+      }
+    ],
+    "AddableItems": [
+      {
+        "Name": "Grolsch",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
       },
       {
-        "Name": "Ben & Jerry",
-        "Price": 1.625,
-        "Category": "IJs"
+        "Name": "Grolsch",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
+      },
+      {
+        "Name": "Grolsch",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
+      },
+      {
+        "Name": "Grolsch",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
+      },
+      {
+        "Name": "Grolsch",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
+      },
+      {
+        "Name": "Grolsch",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
+      },
+      {
+        "Name": "Grolsch",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
+      },
+      {
+        "Name": "Grolsch",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
+      },
+      {
+        "Name": "Grolsch",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
+      },
+      {
+        "Name": "Grolsch",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
+      }
+    ],
+    "CurrentDate": "8-6-2022 00:00:00"
+  },
+  {
+    "Seats": [
+      {
+        "Availability": "occupied",
+        "Price": 18.0,
+        "Row": 8,
+        "SeatNumber": 4
+      },
+      {
+        "Availability": "occupied",
+        "Price": 18.0,
+        "Row": 8,
+        "SeatNumber": 5
+      }
+    ],
+    "AddableItems": [
+      {
+        "Name": "La Chouffe",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
+      },
+      {
+        "Name": "La Chouffe",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
+      },
+      {
+        "Name": "La Chouffe",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
+      },
+      {
+        "Name": "La Chouffe",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
+      },
+      {
+        "Name": "La Chouffe",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
+      },
+      {
+        "Name": "La Chouffe",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
       }
     ],
     "CurrentDate": "8-6-2022 00:00:00"
