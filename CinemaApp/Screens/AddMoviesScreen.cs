@@ -110,7 +110,7 @@ namespace CinemaApp.Screens
                     CursorVisible = true;
                     minAge = ReadLine();
                     int intMinAge = -1;
-                        while(!Int32.TryParse(minAge,out intMinAge) || intMinAge<=0){
+                        while(!Int32.TryParse(minAge,out intMinAge) || intMinAge<0){
                             Clear();
                             WriteLine("Voer een leeftijd in: ");
                             minAge = ReadLine();
