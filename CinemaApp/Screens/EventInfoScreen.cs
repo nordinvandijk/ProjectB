@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using static System.Console;
 
@@ -31,7 +31,39 @@ namespace CinemaApp.Screens
             }
 
             // Displayt informatie over de film
-            Console.WriteLine(Event.Name + "\nBeschrijving: " + Event.Description +
+            Console.WriteLine($"╒═{new string('═', Event.Name.Length)}═╕\n│ {Event.Name} │\n╘═{new string('═', Event.Name.Length)}═╛");
+
+            string descriptionInBox = "";
+            int longestLine = 0;
+            int i = 0;
+            foreach (Char c in Event.Description)
+            {
+                i++;
+                if (c == ' ' && i >= 80)
+                {
+                    if (i > longestLine) { longestLine = i; }
+                    i = 0;
+                }
+            }
+            if (i > longestLine) { longestLine = i; }
+
+            string add = "│ ";
+            i = 0;
+            descriptionInBox += $"╒═{new string('═', longestLine)}═╕\n";
+            foreach (Char c in Event.Description)
+            {
+                add += c;
+                i++;
+                if (c == ' ' && i >= 80)
+                {
+                    descriptionInBox += add + new string(' ', longestLine - i) + " │\n";
+                    add = "│ ";
+                    i = 0;
+                }
+            }
+            descriptionInBox += $"╘═{new string('═', longestLine)}═╛";
+
+            Console.WriteLine("\nBeschrijving:\n" + descriptionInBox +
                         "\nMinimale leeftijd: " + Event.MinimumAge +
                          "\nTijdsduur: " + Event.Duration + "\nTicket prijs: " + Event.TicketPrice);
 
@@ -42,7 +74,7 @@ namespace CinemaApp.Screens
             foreach (Location location in App.filmAgenda.locations)
             {
                 // Displayt alle locaties
-                Console.WriteLine($"--------------------\n{location.CinemaLocation}\n--------------------");
+                Console.WriteLine($"╒═{new string('═', location.CinemaLocation.Length)}═╕\n│ {location.CinemaLocation} │\n╘═{new string('═', location.CinemaLocation.Length)}═╛");
 
                 // Iterate over alle dagen
                 foreach (Day day in location.Days)
