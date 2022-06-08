@@ -3,40 +3,6 @@
     "CinemaLocation": "Rotterdam",
     "Days": [
       {
-        "Date": "30-05-2022",
-        "AvailableHalls": [
-          {
-            "HallName": "Zaal 1",
-            "MovieItemlist": []
-          },
-          {
-            "HallName": "Zaal 2",
-            "MovieItemlist": []
-          },
-          {
-            "HallName": "Zaal 3",
-            "MovieItemlist": []
-          }
-        ]
-      },
-      {
-        "Date": "31-05-2022",
-        "AvailableHalls": [
-          {
-            "HallName": "Zaal 1",
-            "MovieItemlist": []
-          },
-          {
-            "HallName": "Zaal 2",
-            "MovieItemlist": []
-          },
-          {
-            "HallName": "Zaal 3",
-            "MovieItemlist": []
-          }
-        ]
-      },
-      {
         "Date": "01-06-2022",
         "AvailableHalls": [
           {
@@ -695,14 +661,657 @@
         "AvailableHalls": [
           {
             "HallName": "Zaal 1",
-            "MovieItemlist": []
+            "MovieItemlist": [
+              {
+                "StartTimeString": "09-06-2022 13:30",
+                "EndTimeString": "09-06-2022 15:00",
+                "EndTimeWithCleaning": "09-06-2022 15:30",
+                "Format": "2D",
+                "Duration": "01:30:00",
+                "Title": "The Matrix",
+                "LocationName": "Rotterdam",
+                "Seats": [
+                  [
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 0,
+                      "SeatNumber": 0
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 0,
+                      "SeatNumber": 1
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 0,
+                      "SeatNumber": 2
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 0,
+                      "SeatNumber": 3
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 0,
+                      "SeatNumber": 4
+                    }
+                  ],
+                  [
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 1,
+                      "SeatNumber": 0
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 1,
+                      "SeatNumber": 1
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 1,
+                      "SeatNumber": 2
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 1,
+                      "SeatNumber": 3
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 1,
+                      "SeatNumber": 4
+                    }
+                  ],
+                  [
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 2,
+                      "SeatNumber": 0
+                    },
+                    {
+                      "Availability": "occupied",
+                      "Price": 0.0,
+                      "Row": 2,
+                      "SeatNumber": 1
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 2,
+                      "SeatNumber": 2
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 2,
+                      "SeatNumber": 3
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 2,
+                      "SeatNumber": 4
+                    }
+                  ],
+                  [
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 3,
+                      "SeatNumber": 0
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 3,
+                      "SeatNumber": 1
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 3,
+                      "SeatNumber": 2
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 3,
+                      "SeatNumber": 3
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 3,
+                      "SeatNumber": 4
+                    }
+                  ],
+                  [
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 4,
+                      "SeatNumber": 0
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 4,
+                      "SeatNumber": 1
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 4,
+                      "SeatNumber": 2
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 4,
+                      "SeatNumber": 3
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 4,
+                      "SeatNumber": 4
+                    }
+                  ]
+                ],
+                "IsEvent": false
+              }
+            ]
           },
           {
             "HallName": "Zaal 2",
-            "MovieItemlist": []
+            "MovieItemlist": [
+              {
+                "StartTimeString": "09-06-2022 15:50",
+                "EndTimeString": "09-06-2022 17:20",
+                "EndTimeWithCleaning": "09-06-2022 17:50",
+                "Format": "3D",
+                "Duration": "01:30:00",
+                "Title": "The Color Purple",
+                "LocationName": "Rotterdam",
+                "Seats": [
+                  [
+                    {
+                      "Availability": "available",
+                      "Price": 15.0,
+                      "Row": 0,
+                      "SeatNumber": 0
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 15.0,
+                      "Row": 0,
+                      "SeatNumber": 1
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 15.0,
+                      "Row": 0,
+                      "SeatNumber": 2
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 15.0,
+                      "Row": 0,
+                      "SeatNumber": 3
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 15.0,
+                      "Row": 0,
+                      "SeatNumber": 4
+                    }
+                  ],
+                  [
+                    {
+                      "Availability": "available",
+                      "Price": 15.0,
+                      "Row": 1,
+                      "SeatNumber": 0
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 15.0,
+                      "Row": 1,
+                      "SeatNumber": 1
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 15.0,
+                      "Row": 1,
+                      "SeatNumber": 2
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 15.0,
+                      "Row": 1,
+                      "SeatNumber": 3
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 15.0,
+                      "Row": 1,
+                      "SeatNumber": 4
+                    }
+                  ],
+                  [
+                    {
+                      "Availability": "available",
+                      "Price": 15.0,
+                      "Row": 2,
+                      "SeatNumber": 0
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 15.0,
+                      "Row": 2,
+                      "SeatNumber": 1
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 15.0,
+                      "Row": 2,
+                      "SeatNumber": 2
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 15.0,
+                      "Row": 2,
+                      "SeatNumber": 3
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 15.0,
+                      "Row": 2,
+                      "SeatNumber": 4
+                    }
+                  ],
+                  [
+                    {
+                      "Availability": "available",
+                      "Price": 15.0,
+                      "Row": 3,
+                      "SeatNumber": 0
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 15.0,
+                      "Row": 3,
+                      "SeatNumber": 1
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 15.0,
+                      "Row": 3,
+                      "SeatNumber": 2
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 15.0,
+                      "Row": 3,
+                      "SeatNumber": 3
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 15.0,
+                      "Row": 3,
+                      "SeatNumber": 4
+                    }
+                  ],
+                  [
+                    {
+                      "Availability": "available",
+                      "Price": 15.0,
+                      "Row": 4,
+                      "SeatNumber": 0
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 15.0,
+                      "Row": 4,
+                      "SeatNumber": 1
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 15.0,
+                      "Row": 4,
+                      "SeatNumber": 2
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 15.0,
+                      "Row": 4,
+                      "SeatNumber": 3
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 15.0,
+                      "Row": 4,
+                      "SeatNumber": 4
+                    }
+                  ]
+                ],
+                "IsEvent": false
+              }
+            ]
           },
           {
             "HallName": "Zaal 3",
+            "MovieItemlist": [
+              {
+                "StartTimeString": "09-06-2022 18:30",
+                "EndTimeString": "09-06-2022 20:00",
+                "EndTimeWithCleaning": "09-06-2022 20:30",
+                "Format": "4D",
+                "Duration": "01:30:00",
+                "Title": "The Color Purple",
+                "LocationName": "Rotterdam",
+                "Seats": [
+                  [
+                    {
+                      "Availability": "available",
+                      "Price": 22.0,
+                      "Row": 0,
+                      "SeatNumber": 0
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 22.0,
+                      "Row": 0,
+                      "SeatNumber": 1
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 22.0,
+                      "Row": 0,
+                      "SeatNumber": 2
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 22.0,
+                      "Row": 0,
+                      "SeatNumber": 3
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 22.0,
+                      "Row": 0,
+                      "SeatNumber": 4
+                    }
+                  ],
+                  [
+                    {
+                      "Availability": "available",
+                      "Price": 22.0,
+                      "Row": 1,
+                      "SeatNumber": 0
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 22.0,
+                      "Row": 1,
+                      "SeatNumber": 1
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 22.0,
+                      "Row": 1,
+                      "SeatNumber": 2
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 22.0,
+                      "Row": 1,
+                      "SeatNumber": 3
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 22.0,
+                      "Row": 1,
+                      "SeatNumber": 4
+                    }
+                  ],
+                  [
+                    {
+                      "Availability": "available",
+                      "Price": 22.0,
+                      "Row": 2,
+                      "SeatNumber": 0
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 22.0,
+                      "Row": 2,
+                      "SeatNumber": 1
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 22.0,
+                      "Row": 2,
+                      "SeatNumber": 2
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 22.0,
+                      "Row": 2,
+                      "SeatNumber": 3
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 22.0,
+                      "Row": 2,
+                      "SeatNumber": 4
+                    }
+                  ],
+                  [
+                    {
+                      "Availability": "available",
+                      "Price": 22.0,
+                      "Row": 3,
+                      "SeatNumber": 0
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 22.0,
+                      "Row": 3,
+                      "SeatNumber": 1
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 22.0,
+                      "Row": 3,
+                      "SeatNumber": 2
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 22.0,
+                      "Row": 3,
+                      "SeatNumber": 3
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 22.0,
+                      "Row": 3,
+                      "SeatNumber": 4
+                    }
+                  ],
+                  [
+                    {
+                      "Availability": "available",
+                      "Price": 22.0,
+                      "Row": 4,
+                      "SeatNumber": 0
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 22.0,
+                      "Row": 4,
+                      "SeatNumber": 1
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 22.0,
+                      "Row": 4,
+                      "SeatNumber": 2
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 22.0,
+                      "Row": 4,
+                      "SeatNumber": 3
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 22.0,
+                      "Row": 4,
+                      "SeatNumber": 4
+                    }
+                  ]
+                ],
+                "IsEvent": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Date": "10-06-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Grote Zaal",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Gemiddelde Grote Zaal",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Kleine Zaal",
+            "MovieItemlist": []
+          }
+        ]
+      },
+      {
+        "Date": "11-06-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Grote Zaal",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Gemiddelde Grote Zaal",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Kleine Zaal",
+            "MovieItemlist": []
+          }
+        ]
+      },
+      {
+        "Date": "12-06-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Grote Zaal",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Gemiddelde Grote Zaal",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Kleine Zaal",
+            "MovieItemlist": []
+          }
+        ]
+      },
+      {
+        "Date": "13-06-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Grote Zaal",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Gemiddelde Grote Zaal",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Kleine Zaal",
+            "MovieItemlist": []
+          }
+        ]
+      },
+      {
+        "Date": "14-06-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Grote Zaal",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Gemiddelde Grote Zaal",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Kleine Zaal",
+            "MovieItemlist": []
+          }
+        ]
+      },
+      {
+        "Date": "15-06-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Grote Zaal",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Gemiddelde Grote Zaal",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Kleine Zaal",
+            "MovieItemlist": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CinemaLocation": "Utrecht",
+    "Days": [
+      {
+        "Date": "09-06-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Grote Zaal",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Gemiddelde Grote Zaal",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Kleine Zaal",
             "MovieItemlist": []
           }
         ]
@@ -791,14 +1400,9 @@
             "MovieItemlist": []
           }
         ]
-      }
-    ]
-  },
-  {
-    "CinemaLocation": "Utrecht",
-    "Days": [
+      },
       {
-        "Date": "30-05-2022",
+        "Date": "15-06-2022",
         "AvailableHalls": [
           {
             "HallName": "Grote Zaal",
@@ -819,23 +1423,6 @@
   {
     "CinemaLocation": "Utrecht",
     "Days": [
-      {
-        "Date": "31-05-2022",
-        "AvailableHalls": [
-          {
-            "HallName": "Zaal 1",
-            "MovieItemlist": []
-          },
-          {
-            "HallName": "Zaal 2",
-            "MovieItemlist": []
-          },
-          {
-            "HallName": "Zaal 3",
-            "MovieItemlist": []
-          }
-        ]
-      },
       {
         "Date": "01-06-2022",
         "AvailableHalls": [
@@ -1073,14 +1660,9 @@
             "MovieItemlist": []
           }
         ]
-      }
-    ]
-  },
-  {
-    "CinemaLocation": "Amsterdam",
-    "Days": [
+      },
       {
-        "Date": "30-05-2022",
+        "Date": "15-06-2022",
         "AvailableHalls": [
           {
             "HallName": "Grote Zaal",
@@ -1102,22 +1684,129 @@
     "CinemaLocation": "Amsterdam",
     "Days": [
       {
-        "Date": "31-05-2022",
+        "Date": "09-06-2022",
         "AvailableHalls": [
           {
-            "HallName": "Zaal 1",
+            "HallName": "Grote Zaal",
             "MovieItemlist": []
           },
           {
-            "HallName": "Zaal 2",
+            "HallName": "Gemiddelde Grote Zaal",
             "MovieItemlist": []
           },
           {
-            "HallName": "Zaal 3",
+            "HallName": "Kleine Zaal",
             "MovieItemlist": []
           }
         ]
       },
+      {
+        "Date": "10-06-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Grote Zaal",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Gemiddelde Grote Zaal",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Kleine Zaal",
+            "MovieItemlist": []
+          }
+        ]
+      },
+      {
+        "Date": "11-06-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Grote Zaal",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Gemiddelde Grote Zaal",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Kleine Zaal",
+            "MovieItemlist": []
+          }
+        ]
+      },
+      {
+        "Date": "12-06-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Grote Zaal",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Gemiddelde Grote Zaal",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Kleine Zaal",
+            "MovieItemlist": []
+          }
+        ]
+      },
+      {
+        "Date": "13-06-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Grote Zaal",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Gemiddelde Grote Zaal",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Kleine Zaal",
+            "MovieItemlist": []
+          }
+        ]
+      },
+      {
+        "Date": "14-06-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Grote Zaal",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Gemiddelde Grote Zaal",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Kleine Zaal",
+            "MovieItemlist": []
+          }
+        ]
+      },
+      {
+        "Date": "15-06-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Grote Zaal",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Gemiddelde Grote Zaal",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Kleine Zaal",
+            "MovieItemlist": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "CinemaLocation": "Amsterdam",
+    "Days": [
       {
         "Date": "01-06-2022",
         "AvailableHalls": [
@@ -1341,6 +2030,23 @@
       },
       {
         "Date": "14-06-2022",
+        "AvailableHalls": [
+          {
+            "HallName": "Grote Zaal",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Gemiddelde Grote Zaal",
+            "MovieItemlist": []
+          },
+          {
+            "HallName": "Kleine Zaal",
+            "MovieItemlist": []
+          }
+        ]
+      },
+      {
+        "Date": "15-06-2022",
         "AvailableHalls": [
           {
             "HallName": "Grote Zaal",

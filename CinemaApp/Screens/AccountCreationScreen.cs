@@ -29,7 +29,7 @@ namespace CinemaApp.Screens
             {
                 string titel = @"Account aanmaken";
                 string[] options = {$"Gebruikersnaam : {gebruikersnaam}", $"Wachtwoord : {wachtwoord}", $"Herhaal je wachtwoord : {wachtwoordHerhaal}",
-                $"Email : {email}", $"Telefoon nummer : {telefoon}", "Bevestigen", "Terug"};
+                $"Email : {email}", $"Telefoon nummer : {telefoon}", "Bevestigen", "\nTerug"};
                 Menu AccountCreationMenu = new Menu(options, titel, 0);
                 int ChosenOption = AccountCreationMenu.Run();
 

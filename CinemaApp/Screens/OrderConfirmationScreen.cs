@@ -83,7 +83,7 @@ namespace CinemaApp.Screens
             {
                 App.orderManager.ApplySubscriptionDiscount(currentUser,currentOrder);
                 string text = CreateOverview();
-                string[] options = { "Bevestigen", "Terug" };
+                string[] options = { "Bevestigen", "\nTerug" };
                 orderConfirmationMenu = new Menu(options,text,0);
                 int chosenOption = orderConfirmationMenu.Run();
 
@@ -124,7 +124,7 @@ namespace CinemaApp.Screens
             else
             {
                 string text = CreateOverview() + "\nOm uw order te kunnen bevestigen moet u inloggen of een account aanmaken";
-                string[] options = { "Inloggen", "Aanmelden", "Terug" };
+                string[] options = { "Inloggen", "Aanmelden", "\nTerug" };
                 orderConfirmationMenu = new Menu(options, text, 0);
                 int chosenOption = orderConfirmationMenu.Run();
 
