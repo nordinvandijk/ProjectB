@@ -26,13 +26,13 @@ Het Filmhuis-abonnement heeft de volgende voordelen:
     - Korting op films, eten en drinken en accessoires
     - Je kan naar het abonnementevenement.";
 
-            string[] options = {"Overzicht van beschikbare abonnementen", "Terug"};
+            string[] options = {"Overzicht van beschikbare abonnementen", "\nTerug"};
             Menu SubscriptionMenu = new Menu(options, titel, 0);
             int ChosenOption = SubscriptionMenu.Run();
             string titel2 = " Zilveren Filmhuis abonnement: \n   Gratis naar de film!\n   Prijs: 30 euro per maand.\n\n Gouden Filmhuis abonnement:\n   Gratis naar de film!\n   50% korting op eten en drankjes\n   Prijs: 50 euro per maand.";
             
 
-            string[] options2 = {"Gouden Filmhuis abonnement kopen","Zilveren Filmhuis abonnement kopen", "Terug"};
+            string[] options2 = {"Gouden Filmhuis abonnement kopen","Zilveren Filmhuis abonnement kopen", "\nTerug"};
             Menu OrderOverviewMenu = new Menu(options2, titel2, 0);
 
             switch(ChosenOption)

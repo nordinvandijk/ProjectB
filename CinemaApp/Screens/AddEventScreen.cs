@@ -29,7 +29,7 @@ namespace CinemaApp.Screens
            
            //keuzes voor keuzemenu
            string titel = @"Events toevoegen";
-           string[] options = {$"Naam event : {name}", $"Beschrijving : {description}", $"Minimale leeftijd : {minAge}", $"Duur evenement : {duration}", $"Ticket prijs: {ticketprice}", "Bevestig", "Terug"}; 
+           string[] options = {$"Naam event : {name}", $"Beschrijving : {description}", $"Minimale leeftijd : {minAge}", $"Duur evenement : {duration}", $"Ticket prijs: {ticketprice}", "Bevestig", "\nTerug"}; 
 
             Menu AddEventMenu = new Menu(options, titel, 0);
             int ChosenOption = AddEventMenu.Run();
