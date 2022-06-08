@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using static System.Console;
 using static CinemaApp.ConsoleUtils;
@@ -31,7 +31,39 @@ namespace CinemaApp.Screens
                 }
             }
             // Displayt informatie over de film
-            Console.WriteLine("--------------------\n" + movie.Title + "\n--------------------\n" + "\nBeschrijving: " + movie.Description + "\nReleaseDatum: " + movie.ReleaseDate +
+            Console.WriteLine($"╒═{new string('═',movie.Title.Length)}═╕\n│ {movie.Title} │\n╘═{new string('═', movie.Title.Length)}═╛");
+            
+            string descriptionInBox = "";
+            int longestLine = 0;
+            int i = 0;
+            foreach (Char c in movie.Description)
+            {
+                i++;
+                if (c == ' ' && i >= 80)
+                {
+                    if (i > longestLine ) { longestLine = i; }
+                    i = 0;
+                }
+            }
+            if (i > longestLine) { longestLine = i; }
+
+            string add = "│ ";
+            i = 0;
+            descriptionInBox += $"╒═{new string('═', longestLine)}═╕\n";
+            foreach (Char c in movie.Description)
+            {
+                add += c;
+                i++;
+                if (c == ' ' && i >= 80)
+                {
+                    descriptionInBox += add + new string(' ',longestLine - i) +" │\n";
+                    add = "│ ";
+                    i = 0;
+                }
+            }
+            descriptionInBox += $"╘═{new string('═', longestLine)}═╛";
+
+            Console.WriteLine("\nBeschrijving:\n" + descriptionInBox + "\n\nReleaseDatum: " + movie.ReleaseDate +
                            "\nGenre: " + string.Join(", ", movie.Genre) + "\nKijkwijzer: " + movie.MinimumAge +
                            (movie.Kijkwijzer.Length != 0 ? ", " : "") + string.Join(", ", movie.Kijkwijzer) + "\n");
 
@@ -42,7 +74,7 @@ namespace CinemaApp.Screens
             foreach (Location location in App.filmAgenda.locations)
             {
                 // Displayt alle locaties
-                Console.WriteLine($"--------------------\n{location.CinemaLocation}\n--------------------");
+                Console.WriteLine($"╒═{new string('═', location.CinemaLocation.Length)}═╕\n│ {location.CinemaLocation} │\n╘═{new string('═', location.CinemaLocation.Length)}═╛");
 
                 // Iterate over alle dagen
                 foreach (Day day in location.Days)
