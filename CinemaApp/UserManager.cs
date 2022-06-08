@@ -50,7 +50,7 @@ namespace CinemaApp
                 return true;
             }
             else {
-                WriteLine("Account bestaat al");
+                WriteLine("Account bestaat al!");
                 return false;
             }
         }

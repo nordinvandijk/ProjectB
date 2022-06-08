@@ -63,7 +63,7 @@ namespace CinemaApp.Screens
             }
             descriptionInBox += $"╘═{new string('═', longestLine)}═╛";
 
-            Console.WriteLine("\nBeschrijving:\n" + descriptionInBox + "\n\nReleaseDatum: " + movie.ReleaseDate +
+            Console.WriteLine("\nBeschrijving:\n" + descriptionInBox + "\n\nReleasedatum: " + movie.ReleaseDate +
                            "\nGenre: " + string.Join(", ", movie.Genre) + "\nKijkwijzer: " + movie.MinimumAge +
                            (movie.Kijkwijzer.Length != 0 ? ", " : "") + string.Join(", ", movie.Kijkwijzer) + "\n");
 
@@ -106,7 +106,7 @@ namespace CinemaApp.Screens
                                         BackgroundColor = ConsoleColor.Black;
                                     }
                                     
-                                    Console.Write($"<{movieItem.Title} | Formaat: {movieItem.Format} | Tijd: {movieItem.StartTimeString.Substring(11)} - {movieItem.EndTimeString.Substring(11)} >");
+                                    Console.Write($"<{movieItem.Title} | Uitvoering: {movieItem.Format} | Tijd: {movieItem.StartTimeString.Substring(11)} - {movieItem.EndTimeString.Substring(11)} >");
                                     ResetColor();
                                     Console.Write("\n");
                                     numberMovieItem++;

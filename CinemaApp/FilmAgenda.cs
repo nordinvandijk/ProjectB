@@ -98,7 +98,7 @@ namespace CinemaApp
 
             // Kiezen format
             string titleChooseFormat = @"Kies een uitvoering";
-            string[] formatOptions = { "2D", "3D", "IMAX", "IMAX-3D", "4D" };
+            string[] formatOptions = { "2D", "3D", "IMAX", "IMAX-3D", "4DX" };
             Menu chooseFormatMenu = new Menu(formatOptions, titleChooseFormat, 0);
             string format = formatOptions[chooseFormatMenu.Run()];
 
@@ -113,7 +113,7 @@ namespace CinemaApp
                 // User input starttijd
                 Console.Clear();
                 CursorVisible = true;
-                Console.WriteLine("Voer een startTijd in volgens de volgende notatie: '00:00'");
+                Console.WriteLine("Voer een begintijd in volgens de volgende notatie: '00:00'");
                 string startTimeString = Console.ReadLine();
                 CursorVisible = false;
 
@@ -139,7 +139,7 @@ namespace CinemaApp
                         if (App.time.CheckTimeOverlap(startTime, endTimeWithCleaning, compareStartTime, compareEndTimeWithCleaning))
                         {
                             overlapping = true;
-                            WriteLine("Tijdens de ingvulde tijd speelt er al een film in deze zaal");
+                            WriteLine("Tijdens de ingevoerde tijd speelt er al een film of evenement in deze zaal");
                             ConsoleUtils.WaitForKeyPress();
                             break;
                         }
@@ -154,7 +154,7 @@ namespace CinemaApp
 
                     if (!betweenOpeningAndClosingTime)
                     {
-                        WriteLine("De bioscoop opent om 9:00 en sluit om 02:00, en er kunnen geen films starten na 12 uur s'nachts\n Vul een startTijd in die voldoet aan deze eisen!");
+                        WriteLine("De bioscoop opent om 9:00 en sluit om 02:00 en er kunnen geen films starten na 12 uur s'nachts\n Vul een begintijd in die voldoet aan deze eisen!");
                         ConsoleUtils.WaitForKeyPress();
                     }
 
@@ -189,7 +189,7 @@ namespace CinemaApp
                         if (format == "3D") { price = 15.0f; }
                         if (format == "IMAX") { price = 15.0f; }
                         if (format == "IMAX-3D") { price = 18.0f; }
-                        if (format == "4D") { price = 22.0f; }
+                        if (format == "4DX") { price = 22.0f; }
 
                         // Seat jagged array aanmaken
                         Seat[][] seatJarr = new Seat[sizeHall][];
@@ -223,7 +223,7 @@ namespace CinemaApp
                 }
                 else
                 {
-                    Console.WriteLine("Dit is geen juist tijd!");
+                    Console.WriteLine("Dit is geen juiste tijd!");
                     ConsoleUtils.WaitForKeyPress();
                 }
             }
@@ -254,7 +254,7 @@ namespace CinemaApp
 
             // Kiezen format
             string titleChooseFormat = @"Kies een uitvoering";
-            string[] formatOptions = { "2D", "3D", "IMAX", "IMAX-3D", "4D" };
+            string[] formatOptions = { "2D", "3D", "IMAX", "IMAX-3D", "4DX" };
             Menu chooseFormatMenu = new Menu(formatOptions, titleChooseFormat, 0);
             string format = formatOptions[chooseFormatMenu.Run()];
 
@@ -269,7 +269,7 @@ namespace CinemaApp
                 // User input starttijd
                 Console.Clear();
                 CursorVisible = true;
-                Console.WriteLine("Voer een startTijd in volgende het formaat: '00:00'");
+                Console.WriteLine("Voer een begintijd in de volgende notatie: '00:00'");
                 string startTimeString = Console.ReadLine();
                 CursorVisible = false;
 
@@ -295,7 +295,7 @@ namespace CinemaApp
                         if (App.time.CheckTimeOverlap(startTime, endTimeWithCleaning, compareStartTime, compareEndTimeWithCleaning))
                         {
                             overlapping = true;
-                            WriteLine("Tijdens de ingvulde tijd speelt er al een film in deze zaal");
+                            WriteLine("Tijdens de ingevoerde tijd speelt er al een film of evenement in deze zaal");
                             ConsoleUtils.WaitForKeyPress();
                             break;
                         }
@@ -310,7 +310,7 @@ namespace CinemaApp
 
                     if (!betweenOpeningAndClosingTime)
                     {
-                        WriteLine("De bioscoop opent om 9:00 en sluit om 02:00, en er kunnen geen films starten na 12 uur s'nachts\n Vul een startTijd in die voldoet aan deze eisen!");
+                        WriteLine("De bioscoop opent om 9:00 en sluit om 02:00 en er kunnen geen films starten na 12 uur s'nachts\n Vul een begintijd in die voldoet aan deze eisen!");
                         ConsoleUtils.WaitForKeyPress();
                     }
 
@@ -376,7 +376,7 @@ namespace CinemaApp
                 }
                 else
                 {
-                    Console.WriteLine("Dit is geen juist tijd!");
+                    Console.WriteLine("Dit is geen juiste tijd!");
                     ConsoleUtils.WaitForKeyPress();
                 }
             }
