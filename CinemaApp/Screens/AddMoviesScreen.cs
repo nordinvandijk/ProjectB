@@ -31,7 +31,7 @@ namespace CinemaApp.Screens
 
             string titel = @"Film toevoegen";
             string[] options = {$"Titel : {title}", $"description : {desc}", $"releaseDate : {releaseDate}", 
-            $"genre : {genreLeegOfvol}", $"Minimale leeftijd : {minAge}", $"kijkwijzer : {kijkwijzerLeegOfVol}" , $"Duur film : {duurFilm}", "Bevestig", "Terug"};
+            $"genre : {genreLeegOfvol}", $"Minimale leeftijd : {minAge}", $"kijkwijzer : {kijkwijzerLeegOfVol}" , $"Duur film : {duurFilm}", "\nBevestig", "Terug"};
             Menu OrderConfirmationMenu = new Menu(options, titel, 0);
             int ChosenOption = OrderConfirmationMenu.Run();
             switch(ChosenOption)

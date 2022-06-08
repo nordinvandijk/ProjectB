@@ -21,7 +21,7 @@ namespace CinemaApp.Screens
             while (MenuBool){
 
                 string titel = @"Log-in";
-                string[] options = {$"Gebruikersnaam : {gebruikersnaam}", $"Wachtwoord : {wachtwoord}", "Geen account?\n Aanmelden", "Bevestigen", "\nTerug"};
+                string[] options = {$"Gebruikersnaam : {gebruikersnaam}", $"Wachtwoord : {wachtwoord}", "\nGeen account?\nAanmelden", "\nBevestigen", "Terug"};
                 Menu LogInMenu = new Menu(options, titel, 0);
                 int ChosenOption = LogInMenu.Run();
 

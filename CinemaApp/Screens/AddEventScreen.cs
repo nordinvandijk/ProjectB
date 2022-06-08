@@ -29,7 +29,7 @@ namespace CinemaApp.Screens
            
            //keuzes voor keuzemenu
            string titel = @"Events toevoegen";
-           string[] options = {$"Naam event : {name}", $"Beschrijving : {description}", $"Minimale leeftijd : {minAge}", $"Duur evenement : {duration}", $"Ticket prijs: {ticketprice}", "Bevestig", "\nTerug"}; 
+           string[] options = {$"Naam event : {name}", $"Beschrijving : {description}", $"Minimale leeftijd : {minAge}", $"Duur evenement : {duration}", $"Ticket prijs: {ticketprice}", "\nBevestig", "Terug"}; 
 
             Menu AddEventMenu = new Menu(options, titel, 0);
             int ChosenOption = AddEventMenu.Run();
@@ -60,7 +60,7 @@ namespace CinemaApp.Screens
                     CursorVisible = true;
                     minAge = ReadLine();
                     int intMinAge = -1;
-                    while(!Int32.TryParse(minAge,out intMinAge) || intMinAge<=0){
+                    while(!Int32.TryParse(minAge,out intMinAge) || intMinAge<0){
                         Clear();
                         WriteLine("Dit is geen geldige leeftijd, voer een getal van 0 of hoger in: ");
                         minAge = ReadLine();

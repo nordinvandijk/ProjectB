@@ -1,63 +1,62 @@
 [
   {
     "Title": "Pulp Fiction",
-    "Description": "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+    "Description": "Jules en Vincent werken voor de machtige misdadiger Marsellus Wallace. Vincent komt in de problemen als hij Mia, de vrouw van Wallace, een avondje gezelschap moet houden. Ondertussen is Wallace verwikkeld in een deal met de bokser Butch, die Wallace belazert en er met z'n geld vandoor gaat.",
     "ReleaseDate": "01-12-1994",
     "Genre": [
-      "Misdaad",
-      "Drama"
+      "Humor",
+      "Actie",
+      "Thriller",
+      "Misdaad"
     ],
     "MinimumAge": 16,
     "Kijkwijzer": [
       "Geweld",
-      "Grof taalgebruik"
+      "Grof Taalgebruik"
     ],
-    "Duration": "01:30:00"
+    "Duration": "02:34:00"
   },
   {
-    "Title": "Inception",
-    "Description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O., but his tragic past may doom the project and his team to disaster.",
-    "ReleaseDate": "22-07-2010",
+    "Title": "Batman Begins",
+    "Description": "Op jonge leeftijd zag Bruce Wayne zijn ouders voor zijn ogen wreed vermoord worden: een trauma dat hem voor de rest van zijn leven vervult met wraakgevoelens. Het lot laat hem zijn wraak echter niet uitvoeren. Hij vlucht naar het Oosten, waar hij opgevangen wordt door de ninja-leider Ra's Al-Ghul, en als hij terugkeert naar zijn thuisstad Gotham City vindt hij die in de handen van maffiabendes en andere gangsters. Hij besluit een nieuw persoon te worden, één die de harten van misdadigers met vrees vervult: Batman! Met de hulp van politieman Jim Gordon zet Batman zijn eerste stappen in zijn strijd tegen het onrecht. Zijn strijd begint tegen de maffiabaas Don Falcone, de gekke dokter Jonathan 'Scarecrow' Crane en een mysterieuze derde persoon...",
+    "ReleaseDate": "16-06-2005",
     "Genre": [
-      "Actie",
-      "Avontuur",
-      "Science Fiction"
+      "Actie"
     ],
     "MinimumAge": 12,
     "Kijkwijzer": [
       "Geweld",
       "Angst"
     ],
-    "Duration": "01:30:00"
+    "Duration": "02:10:00"
   },
   {
-    "Title": "The Matrix",
-    "Description": "When a beautiful stranger leads computer hacker Neo to a forbidding underworld, he discovers the shocking truth--the life he knows is the elaborate deception of an evil cyber-intelligence.",
-    "ReleaseDate": "17-06-1999",
+    "Title": "Doctor Strange in the Multiverse of Madness",
+    "Description": "Na een reeks van bizarre avonturen meegemaakt te hebben gaat Doctor Strange verder met zijn zoektocht naar de \"Time Stone\". Deze wordt echter weer onderbroken wanneer het multiversum wordt geopend, waarin verschillende parallelle universums huishouden. Het multiversum blijkt al snel levensgevaarlijk wanneer kwaadaardige versies van de helden samen met monsters tevoorschijn komen en voor onrust zorgen. Dr. Stephen Strange besluit daarom de hulp in te roepen van Scarlet Witch om de dreiging te stoppen.",
+    "ReleaseDate": "04-05-2022",
     "Genre": [
       "Actie",
       "Science Fiction"
     ],
-    "MinimumAge": 12,
+    "MinimumAge": 14,
     "Kijkwijzer": [
-      "Geweld",
-      "Angst"
+      "Angst",
+      "Geweld"
     ],
-    "Duration": "01:30:00"
+    "Duration": "02:06:00"
   },
   {
-    "Title": "The Color Purple",
-    "Description": "A black Southern woman struggles to find her identity after suffering abuse from her father and others over four decades.",
-    "ReleaseDate": "10-10-1986",
+    "Title": "Top Gun: Maverick",
+    "Description": "Het is jaren geleden dat Pete 'Maverick' Mitchell de pilotenopleiding volgde bij Top Gun. Inmiddels is hij een oude rot in het vak en is hij onverwachts teruggekeerd. Hij neemt vervolgens de rol van mentor op zich om een nieuwe generatie gevechtspiloten op te leiden.",
+    "ReleaseDate": "26-05-2022",
     "Genre": [
+      "Actie",
       "Drama"
     ],
     "MinimumAge": 12,
     "Kijkwijzer": [
-      "Geweld",
-      "Angst",
-      "Discriminatie"
+      "Geweld"
     ],
-    "Duration": "01:30:00"
+    "Duration": "02:11:00"
   }
 ]
