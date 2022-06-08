@@ -21,8 +21,8 @@ namespace CinemaApp
             DateTime thisDay = DateTime.Today;
 
             //Deze for loop loopt 7 keer en veranderd steeds de dayToAdd, hierdoor kunnen de komende 7 dagen toegevoegd worden aan de filmAgenda
-            DateTime dayToAdd = thisDay + new TimeSpan(24, 0, 0);
-            for (int i = 0; i < 7; i++)
+            DateTime dayToAdd = thisDay;
+            for (int i = 0; i <= 7; i++)
             {
                 //Loopt door alle locaties om de dayToAdd toe te voegen als die nog niet bestaat
                 for (int j = 0; j < App.filmAgenda.locations.Count; j++)
