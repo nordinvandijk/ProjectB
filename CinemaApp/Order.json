@@ -1,1 +1,132 @@
-[]
+[
+  {
+    "OrderID": 848291,
+    "Username": "Rick Sanchez",
+    "Seats": [
+      {
+        "Availability": "occupied",
+        "Price": 12.0,
+        "Row": 7,
+        "SeatNumber": 5
+      },
+      {
+        "Availability": "occupied",
+        "Price": 12.0,
+        "Row": 7,
+        "SeatNumber": 6
+      }
+    ],
+    "AddableItems": [
+      {
+        "Name": "Grolsch",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
+      },
+      {
+        "Name": "Grolsch",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
+      },
+      {
+        "Name": "Grolsch",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
+      },
+      {
+        "Name": "Grolsch",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
+      },
+      {
+        "Name": "Grolsch",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
+      },
+      {
+        "Name": "Grolsch",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
+      },
+      {
+        "Name": "Grolsch",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
+      },
+      {
+        "Name": "Grolsch",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
+      },
+      {
+        "Name": "Grolsch",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
+      },
+      {
+        "Name": "Grolsch",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
+      }
+    ],
+    "FilmTitle": "Batman Begins",
+    "Format": "2D",
+    "StartTimeString": "10-06-2022 16:00",
+    "EndTimeString": "10-06-2022 18:10",
+    "LocationName": "Rotterdam"
+  },
+  {
+    "OrderID": 547325,
+    "Username": "Rick Sanchez",
+    "Seats": [
+      {
+        "Availability": "occupied",
+        "Price": 18.0,
+        "Row": 8,
+        "SeatNumber": 4
+      },
+      {
+        "Availability": "occupied",
+        "Price": 18.0,
+        "Row": 8,
+        "SeatNumber": 5
+      }
+    ],
+    "AddableItems": [
+      {
+        "Name": "La Chouffe",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
+      },
+      {
+        "Name": "La Chouffe",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
+      },
+      {
+        "Name": "La Chouffe",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
+      },
+      {
+        "Name": "La Chouffe",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
+      },
+      {
+        "Name": "La Chouffe",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
+      },
+      {
+        "Name": "La Chouffe",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
+      }
+    ],
+    "FilmTitle": "Top Gun: Maverick",
+    "Format": "IMAX-3D",
+    "StartTimeString": "10-06-2022 23:00",
+    "EndTimeString": "11-06-2022 01:11",
+    "LocationName": "Rotterdam"
+  }
+]

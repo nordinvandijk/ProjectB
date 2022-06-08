@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "Username": "Rick Sanchez",
+    "Password": "GetSchwifty123",
+    "Email": "dontsendmemails@gmail.com",
+    "Abonnement": null,
+    "PhoneNumber": "0693527348"
+  }
+]

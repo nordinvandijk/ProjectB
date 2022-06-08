@@ -1,2 +1,120 @@
 [
+  {
+    "Seats": [
+      {
+        "Availability": "occupied",
+        "Price": 12.0,
+        "Row": 7,
+        "SeatNumber": 5
+      },
+      {
+        "Availability": "occupied",
+        "Price": 12.0,
+        "Row": 7,
+        "SeatNumber": 6
+      }
+    ],
+    "AddableItems": [
+      {
+        "Name": "Grolsch",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
+      },
+      {
+        "Name": "Grolsch",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
+      },
+      {
+        "Name": "Grolsch",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
+      },
+      {
+        "Name": "Grolsch",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
+      },
+      {
+        "Name": "Grolsch",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
+      },
+      {
+        "Name": "Grolsch",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
+      },
+      {
+        "Name": "Grolsch",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
+      },
+      {
+        "Name": "Grolsch",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
+      },
+      {
+        "Name": "Grolsch",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
+      },
+      {
+        "Name": "Grolsch",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
+      }
+    ],
+    "CurrentDate": "8-6-2022 00:00:00"
+  },
+  {
+    "Seats": [
+      {
+        "Availability": "occupied",
+        "Price": 18.0,
+        "Row": 8,
+        "SeatNumber": 4
+      },
+      {
+        "Availability": "occupied",
+        "Price": 18.0,
+        "Row": 8,
+        "SeatNumber": 5
+      }
+    ],
+    "AddableItems": [
+      {
+        "Name": "La Chouffe",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
+      },
+      {
+        "Name": "La Chouffe",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
+      },
+      {
+        "Name": "La Chouffe",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
+      },
+      {
+        "Name": "La Chouffe",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
+      },
+      {
+        "Name": "La Chouffe",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
+      },
+      {
+        "Name": "La Chouffe",
+        "Price": 3.0,
+        "Category": "Alcoholische dranken"
+      }
+    ],
+    "CurrentDate": "8-6-2022 00:00:00"
+  }
 ]
