@@ -63,7 +63,8 @@ namespace CinemaApp.Screens
                 else 
                 {
                     FilterList.Clear();
-                    App.FilmFilter.run();
+                    App.filmOverviewScreen.ChosenMovie = ChosenFilter;
+                    App.filmInfoScreen.run();
                 }
             }
         }

@@ -28,9 +28,7 @@ namespace CinemaApp
         public MovieManager movieManager;
         public UserManager userManager;
         public FilteredFilmScreen filteredFilmScreen;
-        public FilmFilter FilmFilter;
         public KijkwijzerFilmFilter kijkwijzerFilmFilter;
-        public KijkwijzerFilter kijkwijzerFilter;
         public Time time;
         public FilmAgenda filmAgenda;
         public OrderManager orderManager;
@@ -62,11 +60,9 @@ namespace CinemaApp
             seatsOverviewScreen = new SeatsOverviewScreen(this);
             subscriptionScreen = new SubscriptionScreen(this);
             filteredFilmScreen = new FilteredFilmScreen(this);
-            FilmFilter = new FilmFilter(this);
             movieManager = new MovieManager();
             userManager = new UserManager();
             kijkwijzerFilmFilter = new KijkwijzerFilmFilter(this);
-            kijkwijzerFilter = new KijkwijzerFilter(this);
             time = new Time(this);
             filmAgenda = new FilmAgenda(this);
             orderManager = new OrderManager(this);
