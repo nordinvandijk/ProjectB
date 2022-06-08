@@ -112,7 +112,7 @@ namespace CinemaApp.Screens
             }
             orderNames.Add("\nTerug");
 
-            string title = "Dit zijn al uw orders:";
+            string title = "Dit zijn al uw orders: Druk op enter om meer detail te zien over de order";
             string[] options = orderNames.ToArray();
             Menu reservationOverviewMenu = new Menu(options, title, 0);
             int chosenOption = reservationOverviewMenu.Run();

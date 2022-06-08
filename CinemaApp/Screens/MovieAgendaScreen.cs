@@ -77,7 +77,7 @@ namespace CinemaApp.Screens
                     // Hier wordt een user input gevraagd in de vorm "00-00-0000"
                     Clear();
                     CursorVisible = true;
-                    WriteLine("Voer een datum in volgens het formaat: 00-00-0000\nVoer 'terug' in om terug te gaan");
+                    WriteLine("Voer een datum in volgens het formaat: 00-00-0000\nDe datum mag niet meer dan 7 dagen in de toekomst zijn. Voer 'terug' in om terug te gaan");
                     string userInputDate = ReadLine();
                     CursorVisible = false;
 

@@ -21,7 +21,14 @@ namespace CinemaApp.Screens
 ███████║█████╗░░░░░██║░░░  █████╗░░██║██║░░░░░██╔████╔██║███████║██║░░░██║██║╚█████╗░
 ██╔══██║██╔══╝░░░░░██║░░░  ██╔══╝░░██║██║░░░░░██║╚██╔╝██║██╔══██║██║░░░██║██║░╚═══██╗
 ██║░░██║███████╗░░░██║░░░  ██║░░░░░██║███████╗██║░╚═╝░██║██║░░██║╚██████╔╝██║██████╔╝
-╚═╝░░╚═╝╚══════╝░░░╚═╝░░░  ╚═╝░░░░░╚═╝╚══════╝╚═╝░░░░░╚═╝╚═╝░░╚═╝░╚═════╝░╚═╝╚═════╝░";
+╚═╝░░╚═╝╚══════╝░░░╚═╝░░░  ╚═╝░░░░░╚═╝╚══════╝╚═╝░░░░░╚═╝╚═╝░░╚═╝░╚═════╝░╚═╝╚═════╝░
+__________________________________________________
+| Navigeer door het systeem met de pijltjestoetsen| 
+| of met de WSAD knoppen. Voor de applicatie      |
+| raden we je het aan om de scherm op full-screen |   
+| te zetten.                                      |
+|_________________________________________________|
+";
 
             if(App.userManager.currentUser != null){
                 string[] optionsLoggedIn = {"Films", "Evenementen", "Bioscopen", "Mijn Reserveringen", "Abonnement", "Uitloggen", "Afsluiten"};
