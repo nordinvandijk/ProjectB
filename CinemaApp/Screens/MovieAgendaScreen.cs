@@ -101,7 +101,6 @@ namespace CinemaApp.Screens
                     if(chosenDate == -1){
                         Clear();
                         WriteLine("Deze datum bestaat niet in het systeem");
-                        ConsoleUtils.WaitForKeyPress();
                     }
 
                     //
