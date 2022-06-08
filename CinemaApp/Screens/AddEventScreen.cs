@@ -98,7 +98,7 @@ namespace CinemaApp.Screens
 
                 case 4: //TicketPrice
                     Clear();
-                    WriteLine("Wat is de prijs voor een ticket?");
+                    WriteLine("Wat is de prijs voor een ticket? Vul of een heel getal in of een comma getal. Gebruik geen punt!");
                     CursorVisible = true;
                     float minPrice = -1;
                     ticketprice = ReadLine();

@@ -3698,7 +3698,640 @@
           },
           {
             "HallName": "Kleine Zaal",
-            "MovieItemlist": []
+            "MovieItemlist": [
+              {
+                "StartTimeString": "10-06-2022 22:00",
+                "EndTimeString": "11-06-2022 00:06",
+                "EndTimeWithCleaning": "11-06-2022 00:36",
+                "Format": "2D",
+                "Duration": "02:06:00",
+                "Title": "Ladies Night",
+                "LocationName": "Rotterdam",
+                "Seats": [
+                  [
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 0,
+                      "SeatNumber": 0
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 0,
+                      "SeatNumber": 1
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 0,
+                      "SeatNumber": 2
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 0,
+                      "SeatNumber": 3
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 0,
+                      "SeatNumber": 4
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 0,
+                      "SeatNumber": 5
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 0,
+                      "SeatNumber": 6
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 0,
+                      "SeatNumber": 7
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 0,
+                      "SeatNumber": 8
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 0,
+                      "SeatNumber": 9
+                    }
+                  ],
+                  [
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 1,
+                      "SeatNumber": 0
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 1,
+                      "SeatNumber": 1
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 1,
+                      "SeatNumber": 2
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 1,
+                      "SeatNumber": 3
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 1,
+                      "SeatNumber": 4
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 1,
+                      "SeatNumber": 5
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 1,
+                      "SeatNumber": 6
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 1,
+                      "SeatNumber": 7
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 1,
+                      "SeatNumber": 8
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 1,
+                      "SeatNumber": 9
+                    }
+                  ],
+                  [
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 2,
+                      "SeatNumber": 0
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 2,
+                      "SeatNumber": 1
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 2,
+                      "SeatNumber": 2
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 2,
+                      "SeatNumber": 3
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 2,
+                      "SeatNumber": 4
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 2,
+                      "SeatNumber": 5
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 2,
+                      "SeatNumber": 6
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 2,
+                      "SeatNumber": 7
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 2,
+                      "SeatNumber": 8
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 2,
+                      "SeatNumber": 9
+                    }
+                  ],
+                  [
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 3,
+                      "SeatNumber": 0
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 3,
+                      "SeatNumber": 1
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 3,
+                      "SeatNumber": 2
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 3,
+                      "SeatNumber": 3
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 3,
+                      "SeatNumber": 4
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 3,
+                      "SeatNumber": 5
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 3,
+                      "SeatNumber": 6
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 3,
+                      "SeatNumber": 7
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 3,
+                      "SeatNumber": 8
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 3,
+                      "SeatNumber": 9
+                    }
+                  ],
+                  [
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 4,
+                      "SeatNumber": 0
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 4,
+                      "SeatNumber": 1
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 4,
+                      "SeatNumber": 2
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 4,
+                      "SeatNumber": 3
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 4,
+                      "SeatNumber": 4
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 4,
+                      "SeatNumber": 5
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 4,
+                      "SeatNumber": 6
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 4,
+                      "SeatNumber": 7
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 4,
+                      "SeatNumber": 8
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 4,
+                      "SeatNumber": 9
+                    }
+                  ],
+                  [
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 5,
+                      "SeatNumber": 0
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 5,
+                      "SeatNumber": 1
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 5,
+                      "SeatNumber": 2
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 5,
+                      "SeatNumber": 3
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 5,
+                      "SeatNumber": 4
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 5,
+                      "SeatNumber": 5
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 5,
+                      "SeatNumber": 6
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 5,
+                      "SeatNumber": 7
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 5,
+                      "SeatNumber": 8
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 5,
+                      "SeatNumber": 9
+                    }
+                  ],
+                  [
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 6,
+                      "SeatNumber": 0
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 6,
+                      "SeatNumber": 1
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 6,
+                      "SeatNumber": 2
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 6,
+                      "SeatNumber": 3
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 6,
+                      "SeatNumber": 4
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 6,
+                      "SeatNumber": 5
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 6,
+                      "SeatNumber": 6
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 6,
+                      "SeatNumber": 7
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 6,
+                      "SeatNumber": 8
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 6,
+                      "SeatNumber": 9
+                    }
+                  ],
+                  [
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 7,
+                      "SeatNumber": 0
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 7,
+                      "SeatNumber": 1
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 7,
+                      "SeatNumber": 2
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 7,
+                      "SeatNumber": 3
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 7,
+                      "SeatNumber": 4
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 7,
+                      "SeatNumber": 5
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 7,
+                      "SeatNumber": 6
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 7,
+                      "SeatNumber": 7
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 7,
+                      "SeatNumber": 8
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 7,
+                      "SeatNumber": 9
+                    }
+                  ],
+                  [
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 8,
+                      "SeatNumber": 0
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 8,
+                      "SeatNumber": 1
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 8,
+                      "SeatNumber": 2
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 8,
+                      "SeatNumber": 3
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 8,
+                      "SeatNumber": 4
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 8,
+                      "SeatNumber": 5
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 8,
+                      "SeatNumber": 6
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 8,
+                      "SeatNumber": 7
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 8,
+                      "SeatNumber": 8
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 8,
+                      "SeatNumber": 9
+                    }
+                  ],
+                  [
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 9,
+                      "SeatNumber": 0
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 9,
+                      "SeatNumber": 1
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 9,
+                      "SeatNumber": 2
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 9,
+                      "SeatNumber": 3
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 9,
+                      "SeatNumber": 4
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 9,
+                      "SeatNumber": 5
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 9,
+                      "SeatNumber": 6
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 9,
+                      "SeatNumber": 7
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 9,
+                      "SeatNumber": 8
+                    },
+                    {
+                      "Availability": "available",
+                      "Price": 12.0,
+                      "Row": 9,
+                      "SeatNumber": 9
+                    }
+                  ]
+                ],
+                "IsEvent": true
+              }
+            ]
           }
         ]
       },
