@@ -81,7 +81,8 @@ namespace CinemaApp.Screens
                     TimeSpan durationTimeSpan;
                     durationInputCorrect = TimeSpan.TryParse(durationInputString, cultureInfo, out durationTimeSpan);
 
-                    if (!durationInputCorrect)
+                    int num = 0;
+                    if (!durationInputCorrect || Int32.TryParse(durationInputString,out num))
                         {
                             Clear();
                             WriteLine("Dit is geen juist format voor het invoeren van de evenement duur");

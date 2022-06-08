@@ -22,7 +22,7 @@ namespace CinemaApp.Screens
 
             string titel = @"Admin Panel";
 
-            string[] options = {"Film toevoegen", "Film verwijderen" ,"Film-agenda", "Evenement toevoegen","Omzet Overzicht", "Uitloggen"};
+            string[] options = {"Film toevoegen", "Film verwijderen" ,"Film-agenda", "Evenement toevoegen","Evenement verwijderen","Omzet Overzicht", "Uitloggen"};
             Menu AdminPanelMenu = new Menu(options, titel, 0);
             int ChosenOption = AdminPanelMenu.Run();
 
@@ -33,7 +33,7 @@ namespace CinemaApp.Screens
                     break;
                 case 1:
                     Clear();
-                    Write("Enter title: ");
+                    Write("Schrijf een titel zodat de film verwijdert kan worden: ");
                     string title = ReadLine(); 
                     App.movieManager.RemoveMovie(title); 
                     ConsoleUtils.WaitForKeyPress();
@@ -47,7 +47,15 @@ namespace CinemaApp.Screens
                     break;
                 case 4:
                     Clear();
-                    WriteLine("Van welke week wil je de datum zien? schrijf het zoals dit voorbeeld: 09-05-2022"); 
+                    Write("Schrijf een titel zodat de Evenement verwijdert kan worden: ");
+                    string evenement = ReadLine(); 
+                    App.eventManager.RemoveEvent(evenement); 
+                    ConsoleUtils.WaitForKeyPress();
+                    run();             
+                    break;
+                case 5:
+                    Clear();
+                    WriteLine("Van welke week wil je de datum zien? Schrijf een datum in de week. schrijf het zoals dit voorbeeld: 09-05-2022"); 
                     CursorVisible = true;
                     DateTime Omzetdate;
                     string OmzetdateString = ReadLine();
@@ -108,7 +116,7 @@ namespace CinemaApp.Screens
                     ConsoleUtils.WaitForKeyPress();
                     run();
                     break;
-                case 5:
+                case 6:
                     App.userManager.currentUser = null;
                     App.homeScreen.run();
                     break;      

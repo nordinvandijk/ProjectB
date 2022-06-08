@@ -21,7 +21,15 @@ namespace CinemaApp.Screens
 ███████║█████╗░░░░░██║░░░  █████╗░░██║██║░░░░░██╔████╔██║███████║██║░░░██║██║╚█████╗░
 ██╔══██║██╔══╝░░░░░██║░░░  ██╔══╝░░██║██║░░░░░██║╚██╔╝██║██╔══██║██║░░░██║██║░╚═══██╗
 ██║░░██║███████╗░░░██║░░░  ██║░░░░░██║███████╗██║░╚═╝░██║██║░░██║╚██████╔╝██║██████╔╝
-╚═╝░░╚═╝╚══════╝░░░╚═╝░░░  ╚═╝░░░░░╚═╝╚══════╝╚═╝░░░░░╚═╝╚═╝░░╚═╝░╚═════╝░╚═╝╚═════╝░";
+╚═╝░░╚═╝╚══════╝░░░╚═╝░░░  ╚═╝░░░░░╚═╝╚══════╝╚═╝░░░░░╚═╝╚═╝░░╚═╝░╚═════╝░╚═╝╚═════╝░
+
+╒═════════════════════════════════════════════════╕
+│ Navigeer door het systeem met de pijltjestoetsen│ 
+│ of met de WASD knoppen. Druk op ENTER om een    │
+│ gekozen optie te bevestigen. We raden je aan om │
+│ de applicatie in fullscreen te gebruiken.       │   
+╘═════════════════════════════════════════════════╛
+";
 
             if(App.userManager.currentUser != null){
                 string[] optionsLoggedIn = {"Films", "Evenementen", "Bioscopen", "Mijn Reserveringen", "Abonnement", "Uitloggen", "Afsluiten"};

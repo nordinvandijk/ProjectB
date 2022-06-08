@@ -16,7 +16,7 @@ namespace CinemaApp.Screens
         //Methods
         public override void run()
         {
-            string titel = "Selecteer film en bevestig met ENTER om meer informatie te krijgen\nOverzicht van beschikbare films:";
+            string titel = "Selecteer een film en bevestig met ENTER om meer informatie te krijgen\nOverzicht van beschikbare films:";
             
             List<string> optionsList = new List<string>();
             foreach (Movie mov in App.movieManager.movies) {

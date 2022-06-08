@@ -29,8 +29,8 @@ namespace CinemaApp.Screens
             var cultureInfo = new CultureInfo("nl-NL");
             DateTimeStyles styles = DateTimeStyles.None;
 
-            string titel = @"Titel";
-            string[] options = {$"Titel : {title}", $"desc : {desc}", $"releaseDate : {releaseDate}", 
+            string titel = @"Film toevoegen";
+            string[] options = {$"Titel : {title}", $"description : {desc}", $"releaseDate : {releaseDate}", 
             $"genre : {genreLeegOfvol}", $"Minimale leeftijd : {minAge}", $"kijkwijzer : {kijkwijzerLeegOfVol}" , $"Duur film : {duurFilm}", "Bevestig", "Terug"};
             Menu OrderConfirmationMenu = new Menu(options, titel, 0);
             int ChosenOption = OrderConfirmationMenu.Run();
@@ -92,11 +92,13 @@ namespace CinemaApp.Screens
                     genre = new string[lenGenre];
                     for(int i = 0; i<genre.Length; i++){
                         Clear();
-                        WriteLine($"Wat is genre nummer {i+1} van de film?");
+                        WriteLine($"Wat is genre nummer {i+1} van de film? Type 'terug' als je een verkeerde aantal hebt geschreven");
                         CursorVisible = true;
                         genre[i] = ReadLine();
                         CursorVisible = false;
-
+                        if(genre[i] == "terug"){
+                                run();
+                        }
                     }
                     genreLeegOfvol = "genre is toegevoegd";
                     run();
@@ -140,11 +142,13 @@ namespace CinemaApp.Screens
                     kijkwijzer = new string[LenKijkwijzers];
                     for(int i = 0; i<kijkwijzer.Length; i++){
                         Clear();
-                        WriteLine($"Wat is kijkwijzer nummer {i+1} van de film?");
+                        WriteLine($"Wat is kijkwijzer nummer {i+1} van de film? Type 'terug' als je terug wilt");
                         CursorVisible = true;
                         kijkwijzer[i] = ReadLine();
                         CursorVisible = false;
-
+                        if(kijkwijzer[i] == "terug"){
+                                run();
+                        }
                     }
                     kijkwijzerLeegOfVol = "kijkwijzer is toegevoegd";
                     run();
@@ -167,7 +171,8 @@ namespace CinemaApp.Screens
                         durationInputCorrect = TimeSpan.TryParse(durationInputString, cultureInfo, out durationTimeSpan);
                         
                         //Error message als er een verkeerde input is gegeven door de user
-                        if (!durationInputCorrect)
+                        int num = 0;
+                        if (!durationInputCorrect || Int32.TryParse(durationInputString, out num))
                         {
                             Clear();
                             WriteLine("Dit is geen juist formaat voor het invoeren van de film duur");
@@ -208,6 +213,7 @@ namespace CinemaApp.Screens
                         }               
                     }
                     else{
+                        Clear();
                         WriteLine("Sommige vakken zijn niet ingevuld");
                         ConsoleUtils.WaitForKeyPress();
                         run();

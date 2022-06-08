@@ -39,6 +39,17 @@ namespace CinemaApp
             UpdateJson();
             WriteLine("Evenement toegevoegd!");
         }
+        public void RemoveEvent(string Event) {
+            foreach (var Evenement in events.ToList()) { // Mischien handig om hier een reverse for loop te gebruiken ipv de list tijdelijk te kopieeren met ToList().
+                if (Evenement.Name == Event) {
+                    events.Remove(Evenement);
+                    UpdateJson();
+                    WriteLine("Evenement bestaat in het systeem en is het verwijderd");
+                    return;   
+                }
+            }
+            WriteLine("Evenement staat niet in het systeem");
+        } 
 
         public void LoadJson() 
         {
