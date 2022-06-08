@@ -33,7 +33,7 @@ namespace CinemaApp.Screens
                     break;
                 case 1:
                     Clear();
-                    Write("Schrijf een titel zodat de film verwijdert kan worden: ");
+                    Write("Voer een titel in van de film die verwijderd moet worden: ");
                     string title = ReadLine(); 
                     App.movieManager.RemoveMovie(title); 
                     ConsoleUtils.WaitForKeyPress();
@@ -47,7 +47,7 @@ namespace CinemaApp.Screens
                     break;
                 case 4:
                     Clear();
-                    Write("Schrijf een titel zodat de Evenement verwijdert kan worden: ");
+                    Write("Voer een titel in van het evenement dat verwijderd moet worden: ");
                     string evenement = ReadLine(); 
                     App.eventManager.RemoveEvent(evenement); 
                     ConsoleUtils.WaitForKeyPress();
@@ -55,13 +55,13 @@ namespace CinemaApp.Screens
                     break;
                 case 5:
                     Clear();
-                    WriteLine("Van welke week wil je de datum zien? Schrijf een datum in de week. schrijf het zoals dit voorbeeld: 09-05-2022"); 
+                    WriteLine("Van welke week wil je de omzet zien? Voer een datum van die week in. Schrijf het zoals dit voorbeeld: 09-05-2022"); 
                     CursorVisible = true;
                     DateTime Omzetdate;
                     string OmzetdateString = ReadLine();
                     while (!(DateTime.TryParse(OmzetdateString,cultureInfo,styles, out Omzetdate))){
                         Clear();
-                        WriteLine("Probeer the datum opnieuw in te vullen, Schrijf het zoals dit voorbeeld op: 09-05-2022");
+                        WriteLine("Probeer de datum opnieuw in te vullen, Schrijf het zoals dit voorbeeld op: 09-05-2022");
                         OmzetdateString = ReadLine();
                     } //public string Remove (int startIndex, int count);
                     CursorVisible = false;
@@ -112,7 +112,7 @@ namespace CinemaApp.Screens
                     WriteLine($"De totale omzet is: {TotaleOmzet} euro"); //print totale omzet
                     WriteLine($"De omzet van de toegevoegde accessoires/eten is: {addableItems} euro"); // print spullen/eten winst
                     WriteLine($"De omzet van de stoelen is: {seatOmzet} euro"); // print winst van stoelen 
-                    WriteLine($"De omzet van de Abonnementen is: {omzetAbonnement} euro"); // print winst van stoelen                     
+                    WriteLine($"De omzet van de abonnementen is: {omzetAbonnement} euro"); // print winst van stoelen                     
                     ConsoleUtils.WaitForKeyPress();
                     run();
                     break;

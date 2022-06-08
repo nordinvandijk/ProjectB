@@ -30,7 +30,7 @@ namespace CinemaApp.Screens
             DateTimeStyles styles = DateTimeStyles.None;
 
             string titel = @"Film toevoegen";
-            string[] options = {$"Titel : {title}", $"description : {desc}", $"releaseDate : {releaseDate}", 
+            string[] options = {$"Titel : {title}", $"description : {desc}", $"releasedatum : {releaseDate}", 
             $"genre : {genreLeegOfvol}", $"Minimale leeftijd : {minAge}", $"kijkwijzer : {kijkwijzerLeegOfVol}" , $"Duur film : {duurFilm}", "\nBevestig", "Terug"};
             Menu OrderConfirmationMenu = new Menu(options, titel, 0);
             int ChosenOption = OrderConfirmationMenu.Run();
@@ -47,7 +47,7 @@ namespace CinemaApp.Screens
                 
                 case 1:
                     Clear();
-                    WriteLine("Wat is de desc van de film?");
+                    WriteLine("Wat is de beschrijving van de film?");
                     CursorVisible = true;
                     desc = ReadLine();
                     CursorVisible = false;
@@ -56,13 +56,13 @@ namespace CinemaApp.Screens
                 
                 case 2:
                     Clear();
-                    WriteLine("Wat is de releaseDate van de film? Schrijf het zoals dit voorbeeld op: 09-05-2022"); 
+                    WriteLine("Wat is de releasedatum van de film? Schrijf het zoals dit voorbeeld op: 09-05-2022"); 
                     CursorVisible = true;
                     DateTime dateReleaseDate;
                     releaseDate = ReadLine();
                     while (!(DateTime.TryParse(releaseDate,cultureInfo,styles, out dateReleaseDate))){
                         Clear();
-                        WriteLine("Probeer the datum opnieuw in te vullen, Schrijf het zoals dit voorbeeld op: 09-05-2022");
+                        WriteLine("Probeer de datum opnieuw in te vullen, Schrijf het zoals dit voorbeeld op: 09-05-2022");
                         releaseDate = ReadLine();
                     } //public string Remove (int startIndex, int count);
                     CursorVisible = false;
@@ -84,7 +84,7 @@ namespace CinemaApp.Screens
                             if (lenGenre<=0) ConsoleUtils.WaitForKeyPress();
                         }
                         catch{
-                           WriteLine("De aantal genres moet een getal zijn");
+                           WriteLine("Het aantal genres moet een getal zijn");
                            ConsoleUtils.WaitForKeyPress();
                         }
                     }
@@ -134,7 +134,7 @@ namespace CinemaApp.Screens
                             if (LenKijkwijzers<=0) ConsoleUtils.WaitForKeyPress();
                         }
                         catch{
-                           WriteLine("De aantal kijkwijzers moet een getal zijn");
+                           WriteLine("Het aantal kijkwijzers moet een getal zijn");
                            ConsoleUtils.WaitForKeyPress();
                         }
                     }
@@ -150,7 +150,7 @@ namespace CinemaApp.Screens
                                 run();
                         }
                     }
-                    kijkwijzerLeegOfVol = "kijkwijzer is toegevoegd";
+                    kijkwijzerLeegOfVol = "Kijkwijzer is toegevoegd";
                     run();
                     break;
                 
@@ -161,7 +161,7 @@ namespace CinemaApp.Screens
                     {
                         //Hier wordt de gebruiker gevraagd om een film duur in te vullen
                         Clear();
-                        WriteLine($"Hoe lang duurt deze film? Voer een tijd in volgens het formaat : '00:00:00'");
+                        WriteLine($"Hoe lang duurt deze film? Voer een tijd in volgens de notatie : '00:00:00'");
                         CursorVisible = true;
                         string durationInputString = ReadLine();
                         CursorVisible = false;
@@ -175,7 +175,7 @@ namespace CinemaApp.Screens
                         if (!durationInputCorrect || Int32.TryParse(durationInputString, out num))
                         {
                             Clear();
-                            WriteLine("Dit is geen juist formaat voor het invoeren van de film duur");
+                            WriteLine("Dit is geen juiste notatie voor het invoeren van de duur van de film");
                             ConsoleUtils.WaitForKeyPress();
                         }
                         else
@@ -207,14 +207,14 @@ namespace CinemaApp.Screens
                             App.adminPanelScreen.run();
                         }
                         catch{
-                            WriteLine("De inputs waren verkeerd probeer het nog een keer.");
+                            WriteLine("De ingevoerde gegevens waren verkeerd, probeer het nog een keer.");
                             ConsoleUtils.WaitForKeyPress();
                             run();
                         }               
                     }
                     else{
                         Clear();
-                        WriteLine("Sommige vakken zijn niet ingevuld");
+                        WriteLine("Sommige gegevens zijn niet ingevuld");
                         ConsoleUtils.WaitForKeyPress();
                         run();
                     }

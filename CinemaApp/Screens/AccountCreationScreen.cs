@@ -29,7 +29,7 @@ namespace CinemaApp.Screens
             {
                 string titel = @"Account aanmaken";
                 string[] options = {$"Gebruikersnaam : {gebruikersnaam}", $"Wachtwoord : {wachtwoord}", $"Herhaal je wachtwoord : {wachtwoordHerhaal}",
-                $"Email : {email}", $"Telefoon nummer : {telefoon}", "Bevestigen", "\nTerug"};
+                $"E-mail : {email}", $"Telefoonnummer : {telefoon}", "Bevestigen", "\nTerug"};
                 Menu AccountCreationMenu = new Menu(options, titel, 0);
                 int ChosenOption = AccountCreationMenu.Run();
 
@@ -58,7 +58,7 @@ namespace CinemaApp.Screens
                         break;
                     case 3:
                         Clear();
-                        WriteLine("Voer je email in en bevestig met ENTER: ");
+                        WriteLine("Voer je e-mailadres in en bevestig met ENTER: ");
                         CursorVisible = true;
                         email = ReadLine();
                         while (true)
@@ -71,7 +71,7 @@ namespace CinemaApp.Screens
                             catch
                             {
                                 Clear();
-                                WriteLine("Voer een goede email in: ");
+                                WriteLine("Voer een goede e-mailadres in: ");
                                 email = ReadLine();
                             }
                         }
@@ -79,7 +79,7 @@ namespace CinemaApp.Screens
                         break;
                     case 4:
                         Clear();
-                        WriteLine("Voer je Nederlandse telefoon nummer in en bevestig met ENTER: ");
+                        WriteLine("Voer je Nederlandse telefoonnummer in en bevestig met ENTER: ");
 
                         CursorVisible = true;
                         telefoon = ReadLine();
@@ -87,7 +87,7 @@ namespace CinemaApp.Screens
                         {
                             Clear();
                             WriteLine("Voorbeeld: 0612345678 of +316123345678");
-                            WriteLine("Voer een goede Nederlandse telefoon nummer in: ");
+                            WriteLine("Voer een goede Nederlandse telefoonnummer in: ");
                             telefoon = ReadLine();
                         }
                         CursorVisible = false;
@@ -100,7 +100,7 @@ namespace CinemaApp.Screens
                         }
                         else if (gebruikersnaam == "<leeg>" || wachtwoord == "<leeg>" || wachtwoordHerhaal == "<leeg>" || email == "<leeg>" || telefoon == "<leeg>" || gebruikersnaam == "" || wachtwoord == "" || wachtwoordHerhaal == "" || email == "" || telefoon == "")
                         {
-                            WriteLine("Niet alle gegevens zijn doorgegeven");
+                            WriteLine("Niet alle gegevens zijn ingevoerd");
                         }
                         else if (App.userManager.CreateUser(gebruikersnaam, wachtwoord, email, telefoon))
                         {
@@ -133,7 +133,7 @@ namespace CinemaApp.Screens
 
                 string titel = @"Account aanmaken?";
                 string[] options = {$"Gebruikersnaam : {gebruikersnaam}", $"Wachtwoord : {wachtwoord}", $"Herhaal je wachtwoord : {wachtwoordHerhaal}",
-                $"Email : {email}", $"Telefoon nummer : {telefoon}", "Bevestigen", "Terug"};
+                $"E-mail : {email}", $"Telefoonnummer : {telefoon}", "Bevestigen", "Terug"};
                 Menu AccountCreationMenu = new Menu(options, titel, 0);
                 int ChosenOption = AccountCreationMenu.Run();
 
@@ -162,7 +162,7 @@ namespace CinemaApp.Screens
                         break;
                     case 3:
                         Clear();
-                        WriteLine("Voer je email in: ");
+                        WriteLine("Voer je e-mailadres in: ");
                         CursorVisible = true;
                         email = ReadLine();
                         while (true)
@@ -175,7 +175,7 @@ namespace CinemaApp.Screens
                             catch
                             {
                                 Clear();
-                                WriteLine("Voer een goede email in: ");
+                                WriteLine("Voer een goede e-mailadres in: ");
                                 email = ReadLine();
                             }
                         }
@@ -183,15 +183,15 @@ namespace CinemaApp.Screens
                         break;
                     case 4:
                         Clear();
-                        WriteLine("Voer je Nederlandse telefoon nummer in: ");
+                        WriteLine("Voer je Nederlandse telefoonnummer in: ");
                         CursorVisible = true;
                         telefoon = ReadLine();
                         int inttelefoon = -1;
                         while (!Int32.TryParse(telefoon, out inttelefoon) || inttelefoon <= 0 || telefoon[0] != '0' || telefoon[1] != '6' || telefoon.Length != 10)
                         {
                             Clear();
-                            WriteLine("Voorbeeld: 0612345678");
-                            WriteLine("Voer een goede Nederlandse telefoon nummer in: ");
+                            WriteLine("Voorbeeld: 0612345678 of +316123345678");
+                            WriteLine("Voer een goede Nederlandse telefoonnummer in: ");
                             telefoon = ReadLine();
                         }
                         CursorVisible = false;
@@ -204,7 +204,7 @@ namespace CinemaApp.Screens
                         }
                         else if (gebruikersnaam == "<leeg>" || wachtwoord == "<leeg>" || wachtwoordHerhaal == "<leeg>" || email == "<leeg>" || telefoon == "<leeg>" || gebruikersnaam == "" || wachtwoord == "" || wachtwoordHerhaal == "" || email == "" || telefoon == "")
                         {
-                            WriteLine("Niet alle gegevens zijn doorgegeven");
+                            WriteLine("Niet alle gegevens zijn ingevoerd");
                         }
                         else if (App.userManager.CreateUser(gebruikersnaam, wachtwoord, email, telefoon))
                         {

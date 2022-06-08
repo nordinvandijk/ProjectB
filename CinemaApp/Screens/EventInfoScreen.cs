@@ -64,7 +64,7 @@ namespace CinemaApp.Screens
             descriptionInBox += $"╘═{new string('═', longestLine)}═╛";
 
             Console.WriteLine("\nBeschrijving:\n" + descriptionInBox +
-                        "\nMinimale leeftijd: " + Event.MinimumAge +
+                        "\nMinimumleeftijd: " + Event.MinimumAge +
                          "\nTijdsduur: " + Event.Duration + "\nTicket prijs: " + Event.TicketPrice);
 
             // Deze integer wordt met 1 verhoogd elke keer voordat er een movieItem wordt gedisplayt, hierdoor kan het geselecteerde movieItem anders gedisplayt worden
@@ -106,7 +106,7 @@ namespace CinemaApp.Screens
                                         BackgroundColor = ConsoleColor.Black;
                                     }
 
-                                    Console.Write($"<{movieItem.Title} | Formaat: {movieItem.Format} | Tijd: {movieItem.StartTimeString.Substring(11)} - {movieItem.EndTimeString.Substring(11)} >");
+                                    Console.Write($"<{movieItem.Title} | Uitvoering: {movieItem.Format} | Tijd: {movieItem.StartTimeString.Substring(11)} - {movieItem.EndTimeString.Substring(11)} >");
                                     ResetColor();
                                     Console.Write("\n");
                                     numberMovieItem++;

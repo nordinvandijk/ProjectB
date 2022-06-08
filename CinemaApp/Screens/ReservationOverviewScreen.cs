@@ -48,7 +48,7 @@ namespace CinemaApp.Screens
             overviewTable += "\n|Stoelen|\n";
             foreach (Seat seat in order.Seats)
             {
-                overviewTable += $"   Stoel (Rij: {seat.Row} Stoel Nummer: {seat.SeatNumber}) Prijs: {String.Format("{0:0.00}",seat.Price)} euro\n";
+                overviewTable += $"   Stoel (Rij: {seat.Row} Stoelnummer: {seat.SeatNumber}) Prijs: {String.Format("{0:0.00}",seat.Price)} euro\n";
                 totalPrice += seat.Price;
             }
 
@@ -112,7 +112,7 @@ namespace CinemaApp.Screens
             }
             orderNames.Add("\nTerug");
 
-            string title = "Dit zijn al uw orders: Druk op enter om meer detail te zien over de order";
+            string title = "Dit zijn al uw orders: Druk op enter om meer details te zien over de order";
             string[] options = orderNames.ToArray();
             Menu reservationOverviewMenu = new Menu(options, title, 0);
             int chosenOption = reservationOverviewMenu.Run();

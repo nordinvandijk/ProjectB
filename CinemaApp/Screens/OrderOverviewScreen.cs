@@ -38,7 +38,7 @@ namespace CinemaApp.Screens
             overviewTable += "\n|Stoelen|\n";
             foreach (Seat seat in currentOrder.Seats)
             {
-                overviewTable += $"   Stoel (Rij: {seat.Row} Stoel Nummer: {seat.SeatNumber}) Prijs: {String.Format("{0:0.00}",seat.Price)} euro\n";
+                overviewTable += $"   Stoel (Rij: {seat.Row} Stoelnummer: {seat.SeatNumber}) Prijs: {String.Format("{0:0.00}",seat.Price)} euro\n";
                 totalPrice += seat.Price;
             }
 
@@ -72,7 +72,7 @@ namespace CinemaApp.Screens
         {
             Clear();
             string text = CreateOverview();
-            string[] options = { "Terug naar homescreen" };
+            string[] options = { "Terug naar hoofdmenu" };
             Menu orderOverviewMenu = new Menu(options, text, 0);
             int chosenOption = orderOverviewMenu.Run();
 

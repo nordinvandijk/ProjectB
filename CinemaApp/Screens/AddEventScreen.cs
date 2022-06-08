@@ -28,8 +28,8 @@ namespace CinemaApp.Screens
            var cultureInfo = new CultureInfo("nl-NL");
            
            //keuzes voor keuzemenu
-           string titel = @"Events toevoegen";
-           string[] options = {$"Naam event : {name}", $"Beschrijving : {description}", $"Minimale leeftijd : {minAge}", $"Duur evenement : {duration}", $"Ticket prijs: {ticketprice}", "\nBevestig", "Terug"}; 
+           string titel = @"Evenement toevoegen";
+           string[] options = {$"Naam Evenement : {name}", $"Beschrijving : {description}", $"Minimumleeftijd : {minAge}", $"Duur evenement : {duration}", $"Ticketprijs: {ticketprice}", "\nBevestig", "Terug"}; 
 
             Menu AddEventMenu = new Menu(options, titel, 0);
             int ChosenOption = AddEventMenu.Run();
@@ -85,7 +85,7 @@ namespace CinemaApp.Screens
                     if (!durationInputCorrect || Int32.TryParse(durationInputString,out num))
                         {
                             Clear();
-                            WriteLine("Dit is geen juist format voor het invoeren van de evenement duur");
+                            WriteLine("Dit is geen juiste notatie voor het invoeren van de duur van het evenement");
                             ConsoleUtils.WaitForKeyPress();
                         }
                         else
@@ -98,7 +98,7 @@ namespace CinemaApp.Screens
 
                 case 4: //TicketPrice
                     Clear();
-                    WriteLine("Wat is de prijs voor een ticket? Vul of een heel getal in of een comma getal. Gebruik geen punt!");
+                    WriteLine("Wat is de prijs voor een ticket? Vul óf een heel getal in óf een kommagetal. Gebruik geen punt!");
                     CursorVisible = true;
                     float minPrice = -1;
                     ticketprice = ReadLine();
@@ -130,14 +130,14 @@ namespace CinemaApp.Screens
                       App.adminPanelScreen.run();
                       }
                       catch {
-                        WriteLine("De inputs waren verkeerd probeer het nog een keer.");
+                        WriteLine("De ingevoerde gegevens waren verkeerd probeer het nog een keer.");
                         ConsoleUtils.WaitForKeyPress();
                         run();
                       }
                     }
                     else
                     {
-                        WriteLine("Sommige vakken zijn nog niet ingevuld");
+                        WriteLine("Sommige gegevens zijn nog niet ingevuld");
                         ConsoleUtils.WaitForKeyPress();
                         run();
                     }

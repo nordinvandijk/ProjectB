@@ -44,7 +44,7 @@ namespace CinemaApp
                 if (Evenement.Name == Event) {
                     events.Remove(Evenement);
                     UpdateJson();
-                    WriteLine("Evenement bestaat in het systeem en is het verwijderd");
+                    WriteLine("Evenement bestaat in het systeem en verwijderd");
                     return;   
                 }
             }
